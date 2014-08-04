@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Instabudka</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/js.js"></script>
 </head>
 <body>
 <div class="container">

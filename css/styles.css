@@ -583,6 +583,7 @@ textarea{
 				width: 460px;
 				height: auto;
 				margin:29px auto 0 auto;
+				overflow: hidden;
 			}
 				.gallery-closed_input input{
 					font-size: 36px;
@@ -595,7 +596,7 @@ textarea{
 					padding-left: 5px;
 					outline: none;
 				}
-				.gallery-closed_input p{
+				.gallery-closed_input a{
 					width: 110px;
 					height: 60px;
 					background: #dadada;
@@ -1546,10 +1547,14 @@ textarea{
 			border-bottom: 2px solid #e2e2e2;
 		}
 			.gallery-closed_input {
+				width: 100%;
 				margin-left: 0;
 				margin-top: 42px;
 			}
-
+				.gallery-closed_input input{
+					width: 435px;
+					height: 56px;
+				}
 	/*blog*/
 	.blog-belt{
 		width:  1180px;

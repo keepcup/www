@@ -17,60 +17,22 @@
 		</div>
 		<div class="belt">
 			<h2 class="main-h2">новости</h2>
+<?
+$select = $db->prepare("SELECT * FROM blog LIMIT 8");
+$select->execute();
+$row = $select->fetchAll();
+$select_count = $select->rowCount();
+for($i=0;$i<$select_count;$i++){?>
 			<div class="news">
 				<img src="images/news/news_test.png" alt="" class="news_img">
 				<div class="news-text">
 					<p class="news-date">14.05</p>
 					<p class="news-title">
-						Эксклюзивный брендинг с подсветкой для smashbox Эксклюзивный брендинг с подсветкой для Эксклюзивный брендинг с подсветкой для 
+					<?echo $row[$i]['title']?>
 					</p>
 				</div>
 			</div>
-			<div class="news">
-				<img src="images/news/news_test.png" alt="" class="news_img">
-				<div class="news-text">
-					<p class="news-date">14.05</p>
-					<p class="news-title">
-						Эксклюзивный брендинг с подсветкой для smashbox Эксклюзивный брендинг с подсветкой для Эксклюзивный брендинг с подсветкой для 
-					</p>
-				</div>
-			</div>
-			<div class="news">
-				<img src="images/news/news_test.png" alt="" class="news_img">
-				<div class="news-text">
-					<p class="news-date">14.05</p>
-					<p class="news-title">
-						Эксклюзивный брендинг с подсветкой для smashbox Эксклюзивный брендинг с подсветкой для Эксклюзивный брендинг с подсветкой для 
-					</p>
-				</div>
-			</div>
-			<div class="news">
-				<img src="images/news/news_test.png" alt="" class="news_img">
-				<div class="news-text">
-					<p class="news-date">14.05</p>
-					<p class="news-title">
-						Эксклюзивный брендинг с подсветкой для smashbox Эксклюзивный брендинг с подсветкой для Эксклюзивный брендинг с подсветкой для 
-					</p>
-				</div>
-			</div>
-			<div class="news in_1180">
-				<img src="images/news/news_test.png" alt="" class="news_img">
-				<div class="news-text">
-					<p class="news-date">14.05</p>
-					<p class="news-title">
-						Эксклюзивный брендинг с подсветкой для smashbox Эксклюзивный брендинг с подсветкой для Эксклюзивный брендинг с подсветкой для 
-					</p>
-				</div>
-			</div>
-			<div class="news in_1180">
-				<img src="images/news/news_test.png" alt="" class="news_img">
-				<div class="news-text">
-					<p class="news-date">14.05</p>
-					<p class="news-title">
-						Эксклюзивный брендинг с подсветкой для smashbox Эксклюзивный брендинг с подсветкой для Эксклюзивный брендинг с подсветкой для 
-					</p>
-				</div>
-			</div>
+<?}?>
 			<p class="clients">нас выбрали</p>
 			<ul class="clients_block">
 				<li><img src="images/clients/1.png" alt=""></li>
