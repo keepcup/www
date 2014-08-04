@@ -1,0 +1,289 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300|Roboto+Condensed:400italic,700italic,400,300,700&subset=latin,cyrillic);
+*{
+	margin: 0px;
+	padding:0px;
+	border:0px;
+	font-family:'Roboto Condensed', sans-serif;
+	font-weight: 400;
+	color:#333;
+	text-decoration: none;
+}
+body,html{
+	height: 100%;
+	min-height: 100%;
+}
+.container{
+	width:100%;
+	min-width: 1200px;
+	min-height: 100%;
+	height: auto;
+}
+.header{
+	width:100%;
+	min-width: 1200px;
+	min-height: 100%;
+	height: auto;
+	background-color: #fff;
+	margin: 0 auto;
+}
+.header-top{
+	width: 100%;
+	min-width: 1200px;
+	height: 120px;
+	border-bottom: 2px solid #dddddd;
+}
+
+.header-top-content {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+	.header-social{
+		width: 186px;
+		height: auto;
+		float: left;
+		margin: 45px 300px 0 0;
+	}
+		.header-social a, .header-social li{
+			width: 35px;
+			height: 35px;
+			display: inline-block;
+		}
+
+		.header-social ul { height: auto; list-style: none;}
+		.header-social li { margin-right: 23px;}
+
+		li#vk 	{	background: url(../images/header/social_pikt.png) 0 0;}
+		li#fb 	{	background: url(../images/header/social_pikt.png) -62px 0;}
+		li#gram {	background: url(../images/header/social_pikt.png) -124px 0;}
+	a.logo{
+		width: 250px;
+		height: 65px;
+		display: inline-block;
+		background: url(../images/header/logo.png);
+		background-size: 100% 100%;
+
+		margin-top: 20px;
+	}
+
+	.header-contacts {
+		height: 50px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto 0;		
+	}
+		.header-contacts p {
+			font-size: 18px;
+			font-weight: 300;
+		}
+
+.header-menu {
+	width: 100%;
+	height: 58px;
+	border-bottom: 2px solid #dddddd;
+}
+
+	.header-menu ul {
+		width: 800px;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+		padding-top: 18px;
+	}
+
+	.header-menu li {
+		display: inline-block;
+		margin: 0 10px;
+
+	}
+
+	.header-menu a {
+		text-transform: uppercase;
+		font-size: 18px;
+		font-weight: 300;
+		letter-spacing: 0px;
+	}
+
+/*end of header*/
+
+.footer {
+	width: 100%;
+	min-width: 1200px;
+	height: auto;
+}
+
+.footer-content {
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.footer-left {
+	width: 766px;
+	float: left;
+}
+	.footer-menu {
+		width: 100%;
+		border-bottom: 2px dotted #505050;
+		padding-bottom: 19px;
+		margin-bottom: 16px;
+	}
+		.footer-menu ul { 
+			width: 100%; 
+			padding-top: 18px;
+		}
+
+		.footer-menu li {
+			display: inline-block;
+			margin: 0 10px;
+		}
+
+		.footer-menu li:first-child { margin-left: 0; }
+		.footer-menu li:last-child { margin-right: 0; }
+
+		.footer-menu a {
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: 300;
+			letter-spacing: 0px;
+		}
+
+	.footer-links {
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		margin-bottom: 50px;
+	}
+
+		.footer-links ul {
+			list-style-type: none;
+			display: inline-block;
+			float: left;
+		}
+
+		.footer-links ul:last-child {
+			width: 217px;
+			float: right;
+		}
+
+		.footer-links a {
+			line-height: 21px;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: 300;
+		}
+
+	.footer-logos {
+		width: 100%;
+		height: auto;
+		margin-bottom: 95px;
+		overflow: hidden;
+	}
+
+		.footer-logos a#asart_logo {
+			width: 140px;
+			height: 73px;
+			display: inline-block;
+			background: url(../images/header/logo_asart.png);
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			float: left;
+		}
+
+		.footer-razrab {
+			width: 200px;
+			height: auto;
+			display: inline-block;
+			float: left;
+			padding: 13px 0 0 18px;
+		}
+
+			.footer-razrab p {		
+				font-family:'Roboto', sans-serif;	
+				font-size: 18px;
+				font-weight: 300;
+				color: #999;
+			}
+
+			.footer-razrab a {
+				font-family:'Roboto', sans-serif;	
+				font-size: 18px;
+				font-weight: 300;
+				color: #e94e1b;
+				text-decoration: underline;
+			}
+
+		.footer-logos a.logo {
+			float: right;
+			margin: 0;
+		}
+
+.footer-right {
+	width: 380px;
+	float: right;
+	height: auto;
+}
+	
+	.footer-social {
+		width: 145px;
+		height: auto;		
+		padding-top: 15px;
+		display: block;
+		float: none;
+		margin: 0 auto;
+		margin-bottom: 35px;
+	}
+
+	.footer-social ul {height: 30px;}
+
+	.footer-social a, .footer-social li{
+		width: 31px;
+		height: 30px;
+		display: inline-block;
+	}
+
+	.footer-social li:last-child {margin-right: 0;}
+
+	li#ft_vk 	{	background: url(../images/header/social_pikt_foot.png) 	0 0;	}
+	li#ft_fb 	{	background: url(../images/header/social_pikt_foot.png) -54px 0;	}
+	li#ft_gram  {	background: url(../images/header/social_pikt_foot.png) -109px 0;}
+
+	.footer-contacts {
+		height: auto;
+		text-align: center;
+		margin-bottom: 11px;
+	}
+			.footer-contacts p {
+				display: block;
+				font-size: 18px;
+				font-weight: 300;
+				margin: 0 auto;
+			}
+
+			.footer-contacts p.email { line-height: 60px; }
+
+	.footer a.zakaz_butt {		
+		width: 380px;
+		height: 61px;
+		display: inline-block;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		font-size: 24px;
+		font-weight: 400;
+		color: #fff;
+		text-transform: uppercase;
+		background-color: #f58026;
+
+		padding: 13px 75px;
+		border-radius: 7px;
+	}
+
+
+	
