@@ -1,5 +1,6 @@
 <?include "header.php";?>
 	<div class="content">
+	
 		<div class="gallery">
 			<div class="gallery-text-belt">
 				<div class="gallery-text_block">
