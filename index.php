@@ -3,7 +3,7 @@
 		<div class="slider">
 			<img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
 		</div>
-		<h1><span>выездные фотобудки</span> <span>в аренду</span></h1>
+		<h1><span>ввыездные фотобудки</span> <span>в аренду</span></h1>
 		<div class="insta_block">
 			<div class="insta insta_1">
 				<p class="insta_text">инстабудка</p>
