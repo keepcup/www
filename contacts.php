@@ -1,4 +1,4 @@
-<?include "header.php";?>
+<?include "header.php";$url='contacts';?>
 		<div class="content contacts">
 			<div class="top-block-belt">
 				<div class="pennant-info">
@@ -41,38 +41,7 @@
 			</div>
 			<div class="clients-belt">
 				<p class="clients">нас выбрали</p>
-				<ul class="clients_block">
-					<li><img src="images/clients/1.png" alt=""></li>
-					<li><img src="images/clients/2.png" alt=""></li>
-					<li><img src="images/clients/3.png" alt=""></li>
-					<li><img src="images/clients/4.png" alt=""></li>
-					<li><img src="images/clients/5.png" alt=""></li>
-					<li><img src="images/clients/6.png" alt=""></li>
-					<li><img src="images/clients/7.png" alt=""></li>
-					<li><img src="images/clients/8.png" alt=""></li>
-					<li><img src="images/clients/9.png" alt=""></li>
-					<li><img src="images/clients/10.png" alt=""></li>
-					<li><img src="images/clients/11.png" alt=""></li>
-					<li><img src="images/clients/12.png" alt=""></li>
-					<li><img src="images/clients/13.png" alt=""></li>
-					<li><img src="images/clients/14.png" alt=""></li>
-					<li><img src="images/clients/15.png" alt=""></li>
-					<li><img src="images/clients/1.png" alt=""></li>
-					<li><img src="images/clients/2.png" alt=""></li>
-					<li><img src="images/clients/3.png" alt=""></li>
-					<li><img src="images/clients/4.png" alt=""></li>
-					<li><img src="images/clients/5.png" alt=""></li>
-					<li><img src="images/clients/6.png" alt=""></li>
-					<li><img src="images/clients/7.png" alt=""></li>
-					<li><img src="images/clients/8.png" alt=""></li>
-					<li><img src="images/clients/9.png" alt=""></li>
-					<li><img src="images/clients/10.png" alt=""></li>
-					<li><img src="images/clients/11.png" alt=""></li>
-					<li><img src="images/clients/12.png" alt=""></li>
-					<li><img src="images/clients/13.png" alt=""></li>
-					<li><img src="images/clients/14.png" alt=""></li>
-					<li><img src="images/clients/15.png" alt=""></li>					
-				</ul>
+				<?include 'backend/clients.php';?>
 			</div>
 		</div>
 <?include "footer.php";?>

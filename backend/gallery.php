@@ -31,7 +31,6 @@ for($i=0;$i<$select_count;$i++){
 		</div>
 	<?}elseif($row[$i]['private'] == 1){?>
 		<div class="gallery">
-			
 			<div class="gallery-text_block">
 				<p class="gallery-date"><?echo date('d.m',strtotime($row[$i]['date']))?></p>
 				<p class="gallery-title"><span>закрытая фотогаллерея <span class="gallery-date-close">(<?echo date('d.m',strtotime($row[$i]['date']))?>)</span></span><br>

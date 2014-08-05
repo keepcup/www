@@ -25,6 +25,9 @@ textarea{
 	outline: none;
 	resize:none;
 }
+.id{
+	display: none;
+}
 .header{
 	width: 100%;
 }
@@ -1647,6 +1650,7 @@ textarea{
 		min-width: 1180px;
 		height: auto;
 		display: block;
+		margin-top: -2px;
 	}
 	.footer-content {
 		width: 1180px;
