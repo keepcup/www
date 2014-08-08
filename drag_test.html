@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<style>
+		#sortable{
+			color:#ccc;
+			list-style: none;
+			width: 500px;
+			background: #ccc;
+		}
+			#sortable div{
+				width: 150px;
+				height: 50px;
+				background: #9f3456;
+				float: left;
+				margin: 10px;
+			}
+	</style>
+</head>
+<body>
+	<div id="sortable">
+		<div class="draggable">1</div>
+		<div class="draggable">2</div>
+		<div class="draggable">3</div>
+		<div class="draggable">4</div>
+		<div class="draggable">5</div>
+		<div class="draggable">6</div>
+		<div class="draggable">7</div>
+		<div class="draggable">8</div>
+	</div>
+	
+<script>
+	$("#sortable").sortable({ revert:true });
+	$( "ul, li" ).disableSelection();
+</script>
+</body>
+</html>

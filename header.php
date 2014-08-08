@@ -41,10 +41,11 @@
 							<li id="gram"><a href="instagram.com"></a></li>
 						</ul>
 					</div>
-					<a href="instabudka.ru"><img src="images/header/logo.png" alt="" class="logo"></a>
+					<a href="/"><img src="images/header/logo.jpg" alt="" class="logo" width="250"></a>
 					<div class="header-contacts">
-						<p>Елизавета  +7 (906) 098 26 93</p>
-						<p>Александр  +7 (916) 034 62 54</p>
+						<p class="header-contacts-phone_1">Елизавета  +7 (906) 098 26 93</p>
+						<p class="header-contacts-phone_2">Александр  +7 (916) 034 62 54</p>
+						<p class="header-contacts-mail">info@instabudka.ru</p>
 					</div>
 				</div><!-- end of top_content -->				
 			</div>

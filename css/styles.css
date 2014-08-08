@@ -1330,25 +1330,27 @@ textarea{
 			li#vk 	{	background: url(../images/header/social_pikt.png) 0 0;}
 			li#fb 	{	background: url(../images/header/social_pikt.png) -62px 0;}
 			li#gram {	background: url(../images/header/social_pikt.png) -124px 0;}
-		a.logo{
-			width: 250px;
-			height: 65px;
+		.logo{
+			width: 260px;
 			display: inline-block;
-			background: url(../images/header/logo.png);
-			background-size: 100% 100%;
 			margin-top: 20px;
 		}
 		.header-contacts {
 			height: 50px;
 			position: absolute;
-			top: 0;
+			top: 21px;
 			bottom: 0;
 			right: 0;
-			margin: auto 0;		
 		}
 			.header-contacts p {
 				font-size: 18px;
 				font-weight: 300;
+			}
+			.header-contacts-phone_1{
+				margin-left: 3px;
+			}
+			.header-contacts-mail{
+				text-align: center;
 			}
 	.header-menu {
 		width: 100%;

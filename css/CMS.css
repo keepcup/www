@@ -1,0 +1,627 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300|Roboto+Condensed:400italic,700italic,400,300,700&subset=latin,cyrillic);
+*{
+	margin: 0px;
+	padding:0px;
+	border:0px;
+	font-family:'Roboto Condensed', sans-serif;
+	font-weight: 400;
+	color:#333;
+	text-decoration: none;
+}
+body,html{
+	height: 100%;
+	min-height: 100%;
+}
+.container{
+	width:100%;
+	min-width: 395px;
+	min-height: 100%;
+	height: auto;
+}
+
+	/*CMS*/
+	input{ 
+		outline: none;
+		vertical-align: top;
+	}
+	textarea  {
+		resize: none;
+		outline: none;
+	}
+	.CMS-opacity_05 {
+		opacity: .5;
+	}
+	.CMS.content {
+		width: 1180px;
+		margin: 0 auto 80px auto;
+	}
+	.CMS h2{
+		font-size: 24px;
+		line-height: 36px;
+		text-transform: uppercase;
+		text-align: center;
+		border: 2px solid #5783c1;
+		margin: 38px 0 20px 0;
+	}
+	.CMS input {
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 34px;
+		color: #7f7f7f;
+		border: 2px solid #7f7f7f;
+		padding: 0 0 2px 16px;
+	}
+	.CMS-block {
+		overflow: hidden;
+		border: 2px solid #d9dbdd;
+		border-bottom: none;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+		.CMS-block.last_block {border: 2px solid #d9dbdd;} 
+		.CMS-block .left-label {
+			width: 158px;
+			height: 100%; 
+			float: left;			
+			padding: 40px 8px 0 8px;			
+
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+					box-sizing: border-box;
+		}
+			.CMS-block .left-label p {
+				font-size: 18px;
+				line-height: 21px;
+				text-align: center;
+			}
+		.CMS-block .right-content {
+			width: 1018px;
+			height: 100%;
+			float: left;
+			/*overflow: hidden;*/
+			border-left: 2px solid #d9dbdd;
+
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+					box-sizing: border-box;
+		}
+		.CMS-buttons {float: left;}
+		.CMS-prewiew {
+			width: 716px;
+			height: 500px;
+			float: left;
+			padding: 18px 0 20px 20px;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+					box-sizing: border-box;
+		}
+			.CMS-prewiew.photo {font-size: 0;}
+			.photo-prewiew {
+				width: 152px;
+				height: 152px;
+				/*margin: 0 60px 20px 0;*/
+				float: left;
+				position: relative;
+				padding-right: 20px;
+			}
+				.photo-prewiew:before {
+					content: "";
+					display: block;
+					width: 14px;
+					height: 15px;
+					background: url(../images/CMS/close-cross.png) no-repeat;
+					position: absolute;
+					right: 0;
+					cursor: pointer;
+				}
+			.CMS-prewiew.photo .photo-prewiew:nth-child(3n+3) {margin-right: 0;}
+			.CMS-prewiew.photo img {
+				width: auto;
+				max-width: 152px;
+				height: auto;
+				max-height: 102px;
+				display: block;
+				margin: 0 auto;
+			}
+		.CMS .button {
+			position: relative;
+			width: 240px;
+			height: 40px;
+			background-color: #f58026;
+			overflow: hidden;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+					box-sizing: border-box;
+		}
+			.CMS .button p {
+				font-size: 18px;
+				line-height: 34px;
+				color: #fff;
+				text-align: center;
+			}
+			.CMS .button input {
+				position: absolute;
+				top:0;
+				left: 0;
+				cursor: pointer;
+				z-index: 1;
+			}
+			.CMS .button.add_photo {margin-bottom: 20px;}
+			.CMS .button.save {background-color: #71c592;}
+		.CMS-main-slide .CMS-buttons {padding: 78px 0 0 60px;}
+
+		.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}
+			.CMS-block.CMS-main-slide {	height: 262px;}
+			.CMS-block.CMS-main-clients {
+				min-height: 170px;
+				max-height: 722px;
+			}
+				.CMS-block.CMS-main-clients .left-label span {color: #a8a8a8;}
+		.CMS-block.CMS-main-clients .right-content {
+			font-size: 0;
+			padding: 18px 0 20px 85px;
+		}
+		.CMS-block .clients-prewiew {
+			width: 153px;
+			height: 150px;
+			display: inline-block;
+			vertical-align: top;			
+			line-height: 150px;
+			margin: 0 78px 30px 0;
+			overflow: hidden;
+		}
+		.CMS-block .clients-prewiew:nth-child(4n+4) {margin-right: 0;}
+			.CMS-block.CMS-main-clients .clients-prewiew input {
+				vertical-align: top;
+				float: right;
+			}
+			.CMS-block .clients-prewiew img {
+				width: 120px;
+				max-height: 150px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+		.CMS-block.instamini .CMS-buttons{	padding: 18px 0 40px 58px;	}
+		.CMS-block.instamini .CMS-prewiew img {
+			width: 152px;
+			float: right;
+			margin-right: 66px;
+		}
+
+		.CMS-block.create_gallery .right-content { padding: 30px 0 28px 58px; }
+			.CMS-block.create_gallery .button  {
+				display: inline-block;
+				margin-right: 87px;
+			}
+			.CMS-block.create_gallery .button:last-child {margin-right: 0;}
+			.CMS-block.create_gallery .button.closed {background-color: #e0343f;}
+		.CMS .new_gallery .right-content {
+			padding: 0;
+			font-size: 0;
+		}
+			.gallery-edit-form .CMS-buttons {
+				width: 100%;
+				padding: 18px 0 24px 58px;
+
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.gallery-edit-form p.label-pass, .gallery-edit-form p.label-date {
+				width: 720px;
+				font-size: 14px;
+				font-style: italic;
+				line-height: 16px;
+				color: #7f7f7f;
+				text-align: right;
+			}
+			.gallery-edit-form .button, .gallery-edit-form input {
+				display: inline-block;
+				vertical-align: top;
+			}
+				.gallery-edit-form input.pass {
+					width: 220px;
+					border-color: #e0343f;
+					margin-left: 80px;
+				}
+				.gallery-edit-form input.h_1, .gallery-edit-form input.h_2  { width: 380px;}
+				.gallery-edit-form input.date { 
+					width: 130px; 
+					margin-left: 80px;
+				}
+				.gallery-edit-form p.label-date {
+					width: 630px;
+					margin: 0 0 4px 0;
+				}
+			.gallery-edit-form .gallery-photos {
+				width: 100%;
+				height: 300px;
+				border-top: 2px solid #d9dbdd;				
+				/*overflow: hidden;*/
+				padding: 10px 0 0 58px;
+
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+				.gallery-edit-form .photo-left {
+					width: 240px;
+					height: 100%;
+					float: left;
+					margin-right: 20px;
+				}
+					.gallery-edit-form .top-label {
+						font-size: 18px;
+						margin-bottom: 15px;
+					}
+					.gallery-edit-form .button {margin-bottom: 20px;}
+				.gallery-edit-form .CMS-prewiew {
+					width: 698px;
+					padding: 0;
+					float: left;
+				}
+					.gallery-edit-form .CMS-prewiew .photo-prewiew {
+						width: 162px;
+						height: 148px;
+						padding-right: 16px;
+						font-size: 0;
+						line-height: 148px;
+						text-align: center;
+					}
+						.gallery-edit-form .CMS-prewiew .photo-prewiew img {
+							max-height: 138px;
+							display: inline-block;
+							vertical-align: middle;
+							padding: 3px;
+							border: 2px solid #fff;
+							cursor: pointer;
+						}
+						.gallery-edit-form .CMS-prewiew .photo-prewiew.active img {border-color: #71c592;}
+		.CMS-block.yours_gallery .right-content	{
+			min-height: 138px;
+			height: auto;
+			max-height: 900px;
+			padding: 18px 0 5px 17px;
+		}
+			.CMS-block .gallery {
+				width: 982px;
+				height: 122px;
+				border-bottom: 2px solid #888888;
+				margin-bottom: 18px;
+
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.CMS-block .gallery:last-child {border-bottom: none;}
+				.CMS-block .gallery img.prewiew {
+					width: 152px;
+					height: 102px;
+					display: block;
+					float: left;
+					margin-right: 26px;
+				}
+				.CMS-block .gallery .gallery-label {
+					height: 79px;
+					width: 560px;
+					float: left;
+					overflow: hidden;
+				}
+				.CMS-block .gallery p {
+					color: #6e6e6e;
+					font-weight: 300;
+					line-height: 24px;
+				}
+					.CMS-block .gallery p.h_1 {
+						max-height: 46px;
+						text-transform: uppercase;
+						font-size: 20px;
+						overflow: hidden;
+						color: #f58026;
+					}
+					.CMS-block .gallery p.h_2 {
+						max-height: 54px;
+						font-size: 18px;
+						line-height: 18px;
+					}
+					.CMS-block .gallery p.date {
+						width: 119px;
+						color: #f58026;
+						font-size: 48px;
+						line-height: 44px;
+						float: left;
+					}
+					.CMS-block .gallery p.pass {
+						width: 230px;
+						color: #e0343f;
+						font-size: 30px;
+						float: left;
+					}
+					.CMS-block .gallery .gallery-buttons {
+						width: 45px;
+						height: 19px;
+						float: right;
+						overflow: hidden;
+						margin: -9px 27px 0 0;
+					}
+						.CMS-block .gallery .gallery-buttons .edit {
+							float: left;
+							width: 18px;
+							height: 18px;
+							background: url(../images/CMS/edit-pencil.png) no-repeat;
+							margin-right: 11px;
+							cursor: pointer;
+						}
+						.CMS-block .gallery .gallery-buttons .close {
+							float: left;
+							width: 14px;
+							height: 15px;
+							background: url(../images/CMS/close-cross.png) no-repeat;
+							margin-top: 3px;
+							cursor: pointer;
+						}
+			.yours_gallery .gallery-edit-form {
+				width: 978px;
+				border: 2px solid #888;
+				margin-top: -20px;
+				margin-bottom: 18px;
+			}
+				.yours_gallery .gallery-edit-form .CMS-buttons, .yours_gallery .gallery-edit-form .gallery-photos {
+					padding-left: 39px;
+				}
+				.yours_gallery .gallery-edit-form .gallery-photos {border-color: #888;				}
+					.yours_gallery .gallery-edit-form .CMS-prewiew {width: 660px;}
+
+
+
+		.CMS-block.info-clients .right-content {padding: 18px 0 0 12px;}
+			.CMS-block.info-clients ul {font-size: 0;}
+			.CMS-block.info-clients li {
+				display: inline-block;
+				vertical-align: top;
+				margin: 0 10px 20px 0;
+			}
+				.CMS-block.info-clients li .label {display: inline-block;}
+				.CMS-block.info-clients li div.label {
+					width: 35px;
+					height: 35px;
+					background: url(../images/CMS/social.png) no-repeat;
+					margin: 2px 10px 0 0;
+				}
+					.CMS-block.info-clients li div.vk_CMS {background-position: 0 -35px;}
+					.CMS-block.info-clients li div.inst_CMS {background-position: 0 -70px;}
+					.CMS-block.info-clients li div.tw_CMS {background-position: 0 -105px;}
+				.CMS-block.info-clients li input {
+					width: 380px;
+					vertical-align: top;
+				}
+				.CMS-block.info-clients li>p {
+					width: 70px;
+					font-size: 16px;
+					color: #7f7f7f;
+					text-align: right;
+					margin: 8px 20px 0 0;
+				}
+				.CMS-block.info-clients li>.button.save {margin-left: 250px;}
+		.CMS-block.new-clients .right-content {
+			padding: 38px 0 20px 58px;
+		}
+			.CMS-block.new-clients .CMS-buttons {margin-right: 6px;}
+			.CMS-block.new-clients .new_client-form {
+				width: 474px;
+				float: left;
+				margin-right: 30px;
+			}
+				.CMS-block.new-clients .new_client-form p {
+					display: inline-block;
+					width: 93px;
+					text-align: right;
+					color: #7f7f7f;
+					line-height: 15px;
+					margin: 3px 16px 0 0;
+				}
+				.CMS-block.new-clients .new_client-form input{
+					width: 342px;
+					margin-bottom: 20px;
+				}
+			.CMS-block.new-clients .new_client-logo {
+				float: left;
+			}
+				.CMS-block.new-clients .clients-prewiew, .CMS-block.clients-clients .clients-prewiew {
+					width: 120px;
+					height: 124px;
+					line-height: 124px;
+					padding-right: 44px;
+					margin: 0;
+					margin-top: -7px;
+					position: relative;
+				}
+					.CMS-block.new-clients .clients-prewiew img, .CMS-block.clients-clients .clients-prewiew img {
+						max-height: 124px;
+					}
+					.CMS-block.new-clients .clients-prewiew:before, .CMS-block.clients-clients .clients-prewiew:before {
+						content: "";
+						display: block;
+						width: 14px;
+						height: 15px;
+						background: url(../images/CMS/close-cross.png) no-repeat;
+						position: absolute;
+						right: 0;
+						cursor: pointer;
+					}
+		.CMS-block.clients-clients .right-content {
+			height: 698px;
+			padding: 23px 0 5px 85px;
+		}
+			.CMS-block.clients-clients .clients-prewiew {
+				margin: 0 76px 66px 0;
+			}
+				.CMS-block.clients-clients .clients-prewiew:nth-child(4n+4) {margin-right: 0;}
+
+	.CMS-block.new_event .right-content {
+		padding: 18px 0 38px 19px;
+	}
+		.event-edit-form{
+			width: 978px;
+			padding: 20px 39px 24px 39px;
+			overflow: hidden;
+		}
+			.event-edit-form .left-side {
+				width: 240px;
+				float: left;
+				margin-right: 10px;
+			}
+				
+				.event-edit-form p.label-date {
+					width: 149px;
+					font-size: 14px;
+					font-style: italic;
+					line-height: 16px;
+					color: #7f7f7f;
+					text-align: right;
+				}
+				.event-edit-form .left-side .button.save {margin-bottom: 60px;}
+				.event-edit-form .left-side .button.decline {
+					background-color: #d9dbdd;
+					display: none;
+				}
+					.event-edit-form .left-side .button.decline p {color: #333;}
+				.event-edit-form .photo-prewiew {
+					width: 162px;
+					height: 148px;
+					padding-right: 16px;
+					font-size: 0;
+					line-height: 148px;
+					text-align: center;
+					margin: 0 0 52px 50px;
+				}
+					.event-edit-form .photo-prewiew img {
+						max-width: 152px;
+						max-height: 138px;
+						display: inline-block;
+						vertical-align: middle;
+						padding: 3px;
+						border: 2px solid #fff;
+					}
+			.event-edit-form .right-side {
+				width: 650px;
+				float: left;
+				overflow: hidden;
+			}
+					.event-edit-form .right-side input {
+						width: 542px;	
+						float: right;
+						margin-bottom: 20px;
+
+						-webkit-box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						box-sizing: border-box;
+					}
+					.event-edit-form .right-side textarea {
+						width: 542px;
+						height: 180px;
+						float: right;
+						border: 2px solid #7f7f7f;
+						padding: 7px 20px 18px 7px; 
+
+						font-size: 16px;
+						color: #333;
+						-webkit-box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						box-sizing: border-box;
+					}
+					.event-edit-form .right-side p {
+						width: 90px;
+						color: #7f7f7f;
+						font-size: 16px;
+						line-height: 40px;
+						text-align: right;
+						float: left;
+						margin-bottom: 20px;						
+					}
+						.event-edit-form .right-side p.label-text {
+							line-height: 15px;
+							margin-top: 11px;
+						}
+						.event-edit-form .right-side p.label-symbols_left {
+							width: 100%;
+							font-style: italic;
+							font-size: 14px;
+							line-height: 30px;
+						}
+			.event-edit-form .bottom-side {
+				float: left;
+				width: 900px;
+				overflow: hidden;
+			}
+				.event-edit-form  input.date {
+					width: 129px;
+				}
+				.event-edit-form .bottom-side input.gallery_url {
+					float: right;
+				}
+				.event-edit-form .bottom-side p.label-gallery_url {
+					display: inline-block;
+					width: 78px;
+					color: #7f7f7f;
+					font-size: 16px;
+					line-height: 15px;
+					text-align: right;
+					margin-left: 109px;
+				}
+
+				.event-edit-form .bottom-side input.gallery_url {
+					width: 542px;
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: border-box;
+					box-sizing: border-box;
+				}
+
+	.CMS-block.your_events .right-content {
+		min-height: 138px;
+		height: auto;
+		max-height: 900px;
+		padding: 18px 0 5px 17px;
+	}
+				.CMS-block .gallery.event .gallery-label {
+					height: 79px;
+					width: 350px;
+					float: left;
+					overflow: hidden;
+				}
+				
+				.CMS-block .event .photo-label {
+					width: 200px;
+					height: 79px;
+					float: left;
+				}
+					.CMS-block .event .photo-label p {
+						display: inline-block;
+						width: 150px;
+						font-size: 38px;
+						color: #999;
+						font-weight: 300;
+						text-align: right;
+					}
+					.CMS-block .event .photo-label .event-photos-label {
+						display: inline-block;
+						width: 23px;
+						height: 19px;
+						background: url(../images/CMS/event-photos-label.png) no-repeat;
+						margin-bottom: 3px;
+					}
+			.your_events .event-edit-form {
+				width: 900px;
+				border: 2px solid #888;
+				margin-top: -20px;
+				margin-bottom: 18px;
+			}
+				.your_events .event-edit-form .CMS-buttons, .your_events .event-edit-form .gallery-photos {
+					padding-left: 39px;
+				}
+
+
+
