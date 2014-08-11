@@ -1531,22 +1531,21 @@ textarea{
 					float: left;
 					line-height: 63px;
 					display: block;
-					padding-top: 16px;
+					padding-top: 23px;
 				}			
 				.gallery-title{
 					width: 960px;
-					padding: 23px 0 38px 22px;
+					padding: 30px 0 38px 22px;
 					float: left;
 				}
 				.gallery-number{
-					top:20px;
+					top:27px;
 					right:0;
 				}
 		.gallery-img-belt{
 			width: 100%;
 			margin:auto;
 			padding: 38px 0 33px 0;
-			border-bottom: 2px solid #e2e2e2;
 			font-size: 0;
 		}
 				.gallery-img-belt img{
@@ -1574,6 +1573,10 @@ textarea{
 		.gallery-date-close{
 			display: none;
 		}
+		.gallery.closed .gallery-date {padding-top: 16px;}
+		.gallery.closed .gallery-title {padding-top: 23px;}
+		.gallery.closed .gallery-number {top: 20px;}
+
 		.gallery-closed {
 			height: 106px;
 		}
