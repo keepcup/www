@@ -46,7 +46,9 @@ for($i=0;$i<$select_count;$i++){
 						<a href="" onclick="return false">Готово</a>
 					</div>
 				</div>
+				<div class="gallery-shadow_box"></div>
 			</div>
+
 		</div>
 	<?}
 }?>
