@@ -2110,7 +2110,8 @@ textarea{
 		margin: 0;
 		margin: -195px 0 122px 0;
 	}
-
+	/*instashar*/
+	.instashar .description-quote {margin-top: -210px;}
 
 	/*contacts*/
 	.contacts.content {
