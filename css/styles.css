@@ -161,6 +161,7 @@ textarea{
 		position: relative;
 		width: 100%;
 		height: auto;
+		margin-bottom: -3px;
 	}
 	.in_1180 {display: none;}
 	/*дополнительные блоки новостей, только для ширины экрана выше 1180*/
@@ -176,7 +177,7 @@ textarea{
 		}
 		.news-text{
 			position: absolute;
-			bottom:0px;
+			bottom: 3px;
 			width: 100%;
 			height: 100px;
 			background: url(../images/index/480/slider_text_bg.png);
@@ -191,7 +192,7 @@ textarea{
 				min-width: 105px;
 			}
 			.news-title{
-				font-size: 18px;
+				font-size: 20px;
 				text-transform: uppercase;
 				width: 71%;
 				min-width: 70px;
@@ -210,22 +211,27 @@ textarea{
 		border-bottom:2px solid #dddddd;
 	}
 	.clients_block{
-		display: table;
 		width: 100%;
 		height: auto;
-		margin: -21px 0 37px 0;
+		margin: 0 0 37px 0;
+		font-size: 0;
 	}
 		.clients_block li{
-			width: 33.33333%;
-			vertical-align: middle;
+			width: 33.3%;
+			height: 150px;
+			vertical-align: top;
+			line-height: 150px;
 			text-align: center;
 			display: inline-block;
-			margin-top: 12%;
+			overflow: hidden;
+			margin-top: 2%;
 		}
-		.clients_block img{
-			width: 100px;
-			height: auto;
-		}
+			.clients_block img{
+				width: 100px;
+				max-height: 150px;
+				display: inline-block;
+				vertical-align: middle;
+			}
 	.other_clients{
 		position: relative;
 		width: 100%;
@@ -879,6 +885,7 @@ textarea{
 		display: none;
 	}
 /*768px*/
+/*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
 @media all and (min-width: 768px) and (max-width: 1179px){
 	.phone{
 		left: 11.067708333%;
@@ -915,20 +922,18 @@ textarea{
 		margin-top: 40px;
 	}
 	.belt{
-		width: 85.9375%;
+		width: 100%;
 		margin: auto;
+		font-size: 0;
 	}
 	.news{
-		position: static;
-		width: 48.25%;
+		width: 50%;
 		height: auto;
 		margin-top:18px;
+		margin-bottom: 0;
 		min-height: 285;
 		display: inline-block;
 	}
-		.news:nth-of-type(odd){
-			margin-right: 3%;
-		}
 		.news_img{
 			display: block;
 			width: 100%;
@@ -936,47 +941,37 @@ textarea{
 		.news{
 			display: none;
 		}
-		.news:nth-of-type(-n+4){
+		.news:nth-of-type(-n+2){
 			display: inline-block;
 		}
-		.news-text{
-			position: static;
-			width: 100%;
-			height: 70px;
-			background:#f0f0f0;
+		.news-text {
+			height: 84px;
+			overflow: hidden;
+			bottom: 0;
 		}
-			.news-date{
-				font-size: 36px;
-				font-weight: 300;
-				color:#f58026;
-				margin:9px 0 0 2.291666666%;
-				float:left;
-				width: 9.50520833333%;
-				min-width: 85px;
+			.news-title {
+				width: 66%;
+				font-size: 18px;
 			}
-			.news-title{
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 16px;
-				text-transform: uppercase;
-				overflow: hidden; 
-				display: block;
-				min-width: 200px;
-				max-height:31px;
-				margin-top:0px;
-				padding-top: 18px;
+			.news-date {
+				font-size: 43px;
 			}
 	.clients{
-		border-top:2px solid #ddd;
-		margin-top: 54px;
+		width: 85.9375%;
+		margin: 0 auto;
+		margin-top: 26px;
 
 	}
 	.clients_block{
-		margin: -21px 0 27px 0;
+		width: 85.9375%;
+		margin: -21px auto 27px auto;
 	}
-		.clients_block li{
-			width: 33.33333%;
+		.clients_block li {
+			width: 26%;
 		}
+			.clients_block li:nth-child(3n+2) {
+				margin: 0 11%;
+			}
 		.clients_block img{
 			width: 120px;
 			height: auto;
@@ -1398,31 +1393,37 @@ textarea{
 			background: url(../images/index/h1_bg.png);
 		}
 	.insta_block {
-		width: 1180px;
-		height: 210px;
-		margin: 0 auto 53px auto;
-		padding-left: 4px;
+		width: 976px;
+		height: 268px;
+		margin: 138px auto 137px auto;
+		overflow: hidden;
 		-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;	
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;	
 	}
 	.insta {
-		width: 142px;
-		height: 140px;
-		margin: 18px 108px 0 108px;
+		width: 219px;
+		height: 219px;
 		display: inline-block;
-		float: none;
+		margin-top: 0;	
 	}
-	.insta_1{margin-left: 156px;}
-	.insta_3{margin-right: 156px;}
+	.insta_1{float: left;}
+	.insta_2{
+		text-align: center;	
+		margin-left: 160px;
+	}
+	.insta_3{float: right;}
 
 		.insta_1{background: url(../images/index/1180/instabudka_pikt.png) center top no-repeat;}
 		.insta_2{background: url(../images/index/1180/instamini_pikt.png) center top no-repeat;	}
 		.insta_3{background: url(../images/index/1180/instaball_pikt.png) center top no-repeat;	}
-		p.insta_text {margin-top: 161px;}
+		p.insta_text {
+			font-size: 22px;
+			margin-top: 240px;
+		}
 	
 	.belt {
-		width: 1180px;
+		width: 100%;
 		margin: 0 auto;
 		overflow: hidden;
 	}
@@ -1440,36 +1441,34 @@ textarea{
 		margin-bottom: 39px;
 	}
 	.in_1180 {display: inline-block;}
-	.news {
-		width: 360px;
+	.belt{
+		width: 100%;
+		margin: auto;
+		font-size: 0;
+	}
+	.news{
+		width: 33.33%;
 		height: auto;
-		margin: 0 0 40px 0;
-		display: inline-block;
-		float: left;
-	}
-	.news:nth-child(3n+3) {margin: 0 50px 40px 50px;}
-	.news_img {height: 240px;}
-	.news-text {
-		height: 80px;
-		position: static;
-		background: #f0f0f0;
-		overflow: hidden;
-		margin-top: -5px;
-	}
-	.news-date {
-		min-width: 92px;
-		font-size: 40px;
+		min-height: 285px;
 		display: inline-block;
 	}
-	.news-title {
-		width: 230px;
-		max-height: 36px;
-		font-size: 16px;
-		display: inline-block;
-		margin-top: 20px;
-		color: #333;
-		line-height: 18px;
-	}
+		.news_img{
+			display: block;
+			width: 100%;
+		}
+		.news-text {
+			height: 126px;
+			overflow: hidden;
+			bottom: 0;
+		}
+			.news-title {
+				width: 59%;
+				font-size: 27px;
+			}
+			.news-date {
+				width: 150px;
+				font-size: 65px;
+			}
 	.clients {
 		width: 100%;
 		float: left;
