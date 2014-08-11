@@ -1449,8 +1449,9 @@ textarea{
 	.news{
 		width: 33.33%;
 		height: auto;
-		min-height: 285px;
+		min-height: 262px;
 		display: inline-block;
+		margin-bottom: 59px;
 	}
 		.news_img{
 			display: block;
@@ -1460,25 +1461,31 @@ textarea{
 			height: 126px;
 			overflow: hidden;
 			bottom: 0;
+			background: url(../images/index/1180/slider_text_bg.png);
 		}
 			.news-title {
 				width: 59%;
 				font-size: 27px;
+				margin-top: 28px;
 			}
 			.news-date {
 				width: 150px;
 				font-size: 65px;
+				margin-top: 16px;
 			}
 	.clients {
 		width: 100%;
 		float: left;
-		border-top: 2px solid #ddd;
 		line-height: 52px;
 		padding-bottom: 1px;	
 	}
+		ul.clients_block {
+			width: 1180px;
+			margin: 0 auto;
+		}
 		.clients_block li{
 			width: 20%;
-			margin: 30px 0 35px 0;
+			margin: 10px 0 30px 0;
 		}
 		.clients_block img{
 			width: 120px;
