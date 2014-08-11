@@ -770,6 +770,7 @@ textarea{
 			font-size: 18px;
 			line-height: 24px;
 		}
+		.contacts .info .first {padding-left: 5px;}
 		.contacts .info .e-mail {margin-bottom: 24px;}
 		.contacts .info .social-headline {margin: 24px 0 9px 0;}
 		.contacts .info ul.social {
