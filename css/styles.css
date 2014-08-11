@@ -746,8 +746,8 @@ textarea{
 			font-size: 24px;
 			line-height: 24px;
 			font-weight: 300;
+			color: #5a5a5a;
 			text-align: center;
-			text-transform: uppercase;
 			margin: 0 auto;
 		}
 	.photography .img-belt {
@@ -1212,7 +1212,7 @@ textarea{
 		margin: 17px auto 32px auto;
 	}
 	/*photography*/
-		.photography .description-text_block p {width: 53.38%;}
+		.photography .description-text_block p {width: 54%;}
 	.photography .img-belt {
 		width: 85.93%;
 		overflow: hidden;
@@ -2222,7 +2222,7 @@ textarea{
 		padding: 35px 0 46px 0;
 		margin-bottom: 20px;
 	}
-		.photography .description-text_block p {width: 410px;}
+		.photography .description-text_block p {width: 412px;}
 	.photography .img-belt { 
 		width: 1180px;
 		font-size: 0;
