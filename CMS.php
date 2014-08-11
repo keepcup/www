@@ -7,15 +7,11 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/cms.js"></script>
-	<script type="text/javascript" src="js/jquery.damnUploader.min.js"></script>
-    <script src="js/interafce.js"></script>
-    <script src="js/uploader-setup.js"></script>
-	
 </head>
 <body>
 	<div class="container">
 		<div class="content CMS">
-			<!--<h2>Главная</h2>
+			<h2>Главная</h2>
 			<div class="CMS-block CMS-main-slide">
 				<div class="left-label">
 					<p>Слайдер</p>
@@ -23,7 +19,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Добавить фотографию</p>
 						</div>
 						<div class="button save">
@@ -179,7 +175,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -198,7 +194,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -217,7 +213,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -236,7 +232,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -257,7 +253,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -276,7 +272,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -295,7 +291,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -314,7 +310,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -335,7 +331,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -354,7 +350,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -373,7 +369,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -392,7 +388,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -413,7 +409,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Добавить фотографию</p>
 						</div>
 						<div class="button save">
@@ -442,7 +438,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
@@ -453,7 +449,7 @@
 						<img src="images/index/slider_test.png" alt="">
 					</div>
 				</div>
-			</div>-->
+			</div>
 
 			<h2>Галерея</h2>
 			<div class="CMS-block create_gallery">
@@ -610,7 +606,6 @@
 					</div>						
 				</div>
 			</div>
-<!--
 			<h2>Контакты</h2>
 			<div class="CMS-block info-clients">
 				<div class="left-label">
@@ -662,7 +657,7 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="filetype">
+							<input type="file">
 							<p>Добавить лого</p>
 						</div>
 						<div class="button save">
@@ -760,7 +755,7 @@
 				</div>
 				<div class="right-content">
 					<div class="event-edit-form"><!-- just copy this block -->
-					<!--	<div class="left-side">
+						<div class="left-side">
 							<div class="photo-prewiew">
 								<img src="images/index/slider_test.png" alt="">		
 							</div>
@@ -853,7 +848,7 @@
 						
 					</div>
 					<div class="event-edit-form"><!-- just copy this block -->
-					<!--	<div class="left-side">
+						<div class="left-side">
 							<div class="photo-prewiew">
 								<img src="images/index/slider_test.png" alt="">		
 							</div>
@@ -899,7 +894,7 @@
 						
 					</div>					
 				</div>
-			</div>-->
+			</div>
 
 
 
