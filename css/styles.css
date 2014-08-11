@@ -1195,21 +1195,28 @@ textarea{
 		font-size: 19px;
 	}
 	/*photostudio*/
+
 	.photostudio {
+	width: 100%;		
+		border-bottom: 2px solid #ddd; 
+		margin: 40px auto 25px auto;
+	}
+	.photostudio-belt{
 		width: 85.9375%;
-		margin: 40px auto 0 auto;
+		margin: 0 auto;
 	}
 	.photostudio ul { padding: 20px 2% 18px 4.68%;	}
 	.photostudio li {
 		font-size: 24px;
-		font-weight: 400;
+		font-weight: 300;
 		line-height: 29px;
 		background: url(../images/photostudio/768/li-dot.png) no-repeat 0 11px;
 		padding: 0 0 16px 13px;
 	}
 	.photostudio p {
 		width: 62%;
-		margin: 17px auto 32px auto;
+		padding-bottom: 17px;
+		margin: 17px auto 0 auto;
 	}
 	/*photography*/
 		.photography .description-text_block p {width: 54%;}
@@ -2256,7 +2263,7 @@ textarea{
 		}
 		.photostudio li {
 			font-size: 22px;
-			font-weight: 400;
+			font-weight: 300;
 			line-height: 26px;
 			word-spacing: -1px;
 			background: url(../images/photostudio/768/li-dot.png) no-repeat 0 11px;
