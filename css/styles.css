@@ -1838,6 +1838,7 @@ textarea{
 					font-weight: 300;
 					margin: 0 auto;
 				}
+				.footer-contacts p:first-child {padding-left: 3px;}
 
 				.footer-contacts p.email { line-height: 60px; }
 
