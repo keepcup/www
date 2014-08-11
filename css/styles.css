@@ -2103,7 +2103,16 @@ textarea{
 			}
 		.description-img{
 		}
-		/*contacts*/
+	/*instamini*/
+	.instamini .description-quote {margin-top: -212px;}
+	.instamini .decor-quote { margin-bottom: 119px; }
+	.instamini .features-quote {
+		margin: 0;
+		margin: -195px 0 122px 0;
+	}
+
+
+	/*contacts*/
 	.contacts.content {
 	}
 	.top-block-belt {
