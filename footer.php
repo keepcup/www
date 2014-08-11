@@ -43,7 +43,6 @@
 							<p>разработка проекта</p>
 							<a href="/">Asart group</a>
 						</div>
-						<a href="/" class="logo"></a>
 					</div>
 				</div>
 				<!-- EOF left -->

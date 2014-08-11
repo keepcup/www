@@ -1688,7 +1688,6 @@ textarea{
 		min-width: 1180px;
 		height: auto;
 		display: block;
-		margin-top: -2px;
 	}
 	.footer-content {
 		width: 1180px;
@@ -1831,7 +1830,7 @@ textarea{
 		.footer-contacts {
 			height: auto;
 			text-align: center;
-			margin-bottom: 11px;
+			margin-bottom: 16px;
 		}
 				.footer-contacts p {
 					display: block;
@@ -1852,12 +1851,16 @@ textarea{
 
 			font-size: 24px;
 			font-weight: 400;
-			color: #fff;
+			color: #999;
 			text-transform: uppercase;
-			background-color: #f58026;
+			background-color: #eee;
 
 			padding: 13px 75px;
 			border-radius: 7px;
+		}
+		.footer-main-1180 a.zakaz_butt:hover {
+			color: #fff;
+			background-color: #f58026;
 		}
 	/*end of footer-main-1180*/
 /*instabudka-1180*/
