@@ -16,6 +16,6 @@ $select_count = $select->rowCount();
 		$select_gallery->execute(array($row[$i]['gallery_id']));
 		$row_gallery = $select_gallery->fetch();
 	?>
-		<a <?if($row_gallery != 0){?>href="<?echo $row_gallery['url_name']?>"<?}?>><li><img src="images/clients/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['name']?>"></li></a>
+		<li><a <?if($row_gallery != 0){?>href="<?echo $row_gallery['url_name']?>"<?}?>><img src="images/clients/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['name']?>"></a></li>
 	<?}?>
 </ul>	

@@ -43,7 +43,6 @@
 							<p>разработка проекта</p>
 							<a href="/">Asart group</a>
 						</div>
-						<a href="/" class="logo"></a>
 					</div>
 				</div>
 				<!-- EOF left -->
@@ -56,8 +55,8 @@
 						</ul>
 					</div>
 					<div class="footer-contacts">
-						<p>Елизавета | +7 (906) 098 26 93</p>
-						<p>Александр | +7 (916) 034 62 54</p>
+						<p>Елизавета +7 (906) 098 26 93</p>
+						<p>Александр +7 (916) 034 62 54</p>
 						<p class="email">info@instabudka.ru</p>
 					</div>
 					<a href="/" class="zakaz_butt">заказать фотобудку</a>

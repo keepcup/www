@@ -161,6 +161,7 @@ textarea{
 		position: relative;
 		width: 100%;
 		height: auto;
+		margin-bottom: -3px;
 	}
 	.in_1180 {display: none;}
 	/*дополнительные блоки новостей, только для ширины экрана выше 1180*/
@@ -176,7 +177,7 @@ textarea{
 		}
 		.news-text{
 			position: absolute;
-			bottom:0px;
+			bottom: 3px;
 			width: 100%;
 			height: 100px;
 			background: url(../images/index/480/slider_text_bg.png);
@@ -191,7 +192,7 @@ textarea{
 				min-width: 105px;
 			}
 			.news-title{
-				font-size: 18px;
+				font-size: 20px;
 				text-transform: uppercase;
 				width: 71%;
 				min-width: 70px;
@@ -210,22 +211,27 @@ textarea{
 		border-bottom:2px solid #dddddd;
 	}
 	.clients_block{
-		display: table;
 		width: 100%;
 		height: auto;
-		margin: -21px 0 37px 0;
+		margin: 0 0 37px 0;
+		font-size: 0;
 	}
 		.clients_block li{
-			width: 33.33333%;
-			vertical-align: middle;
+			width: 33.3%;
+			height: 150px;
+			vertical-align: top;
+			line-height: 150px;
 			text-align: center;
 			display: inline-block;
-			margin-top: 12%;
+			overflow: hidden;
+			margin-top: 2%;
 		}
-		.clients_block img{
-			width: 100px;
-			height: auto;
-		}
+			.clients_block img{
+				width: 100px;
+				max-height: 150px;
+				display: inline-block;
+				vertical-align: middle;
+			}
 	.other_clients{
 		position: relative;
 		width: 100%;
@@ -525,18 +531,18 @@ textarea{
 		position: relative;
 		width: 100%;
 		height: auto;
-		box-shadow:0 0 15px rgba(0, 0, 0, 0.1) ;
-		box-shadow: 0 -8px 20px -10px rgba(0, 0, 0, 0.5) inset;
+		-webkit-box-shadow: 0 -10px 20px -10px rgba(0, 0, 0, 0.5) inset ;
+		   box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.5) inset ;
+
 	}
 		.gallery-shadow_box{
 			position: absolute;
 			bottom:0;
 			width: 100%;
-			height: 10px;
-			box-shadow:0 0 15px rgba(0, 0, 0, 0.1) ;
-			box-shadow: 0 -10px 20px -10px rgba(0, 0, 0, 0.5) inset;
-			z-index
+			height: 10px;			
 		}
+
+
 		.gallery:nth-of-type(odd){
 				background: #eee;
 			}
@@ -552,6 +558,7 @@ textarea{
 				font-weight: 300;
 			}
 			.gallery-title{
+				width: 89.5%;
 				font-size: 24px;
 				color: #6e6e6e;
 				line-height: 26px;
@@ -578,8 +585,7 @@ textarea{
 			}
 		.gallery-closed{
 			width: 100%;
-			height: 129px;
-			border-top: 2px solid #dbdbdb;
+			height: 100px;
 			clear: both;
 		}
 			.gallery-closed_input{
@@ -740,8 +746,8 @@ textarea{
 			font-size: 24px;
 			line-height: 24px;
 			font-weight: 300;
+			color: #5a5a5a;
 			text-align: center;
-			text-transform: uppercase;
 			margin: 0 auto;
 		}
 	.photography .img-belt {
@@ -764,6 +770,7 @@ textarea{
 			font-size: 18px;
 			line-height: 24px;
 		}
+		.contacts .info .first {padding-left: 5px;}
 		.contacts .info .e-mail {margin-bottom: 24px;}
 		.contacts .info .social-headline {margin: 24px 0 9px 0;}
 		.contacts .info ul.social {
@@ -879,6 +886,7 @@ textarea{
 		display: none;
 	}
 /*768px*/
+/*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
 @media all and (min-width: 768px) and (max-width: 1179px){
 	.phone{
 		left: 11.067708333%;
@@ -915,20 +923,18 @@ textarea{
 		margin-top: 40px;
 	}
 	.belt{
-		width: 85.9375%;
+		width: 100%;
 		margin: auto;
+		font-size: 0;
 	}
 	.news{
-		position: static;
-		width: 48.25%;
+		width: 50%;
 		height: auto;
 		margin-top:18px;
+		margin-bottom: 0;
 		min-height: 285;
 		display: inline-block;
 	}
-		.news:nth-of-type(odd){
-			margin-right: 3%;
-		}
 		.news_img{
 			display: block;
 			width: 100%;
@@ -936,59 +942,49 @@ textarea{
 		.news{
 			display: none;
 		}
-		.news:nth-of-type(-n+4){
+		.news:nth-of-type(-n+2){
 			display: inline-block;
 		}
-		.news-text{
-			position: static;
-			width: 100%;
-			height: 70px;
-			background:#f0f0f0;
+		.news-text {
+			height: 84px;
+			overflow: hidden;
+			bottom: 0;
 		}
-			.news-date{
-				font-size: 36px;
-				font-weight: 300;
-				color:#f58026;
-				margin:9px 0 0 2.291666666%;
-				float:left;
-				width: 9.50520833333%;
-				min-width: 85px;
+			.news-title {
+				width: 66%;
+				font-size: 18px;
 			}
-			.news-title{
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 16px;
-				text-transform: uppercase;
-				overflow: hidden; 
-				display: block;
-				min-width: 200px;
-				max-height:31px;
-				margin-top:0px;
-				padding-top: 18px;
+			.news-date {
+				font-size: 43px;
 			}
 	.clients{
-		border-top:2px solid #ddd;
-		margin-top: 54px;
+		width: 85.9375%;
+		margin: 0 auto;
+		margin-top: 26px;
 
 	}
 	.clients_block{
-		margin: -21px 0 27px 0;
+		width: 85.9375%;
+		margin: -21px auto 27px auto;
 	}
-		.clients_block li{
-			width: 33.33333%;
+		.clients_block li {
+			width: 26%;
 		}
+			.clients_block li:nth-child(3n+2) {
+				margin: 0 11%;
+			}
 		.clients_block img{
 			width: 120px;
 			height: auto;
 		}
 	/*gallery*/
 .gallery{
-	border-bottom: 2px solid #e2e2e2;
+	padding-top: 7px;
+	overflow: hidden;
 }
 	.gallery-text-belt{
 		width: 100%;
-		height: 67px;
-		border-bottom: 2px solid #e2e2e2;
+		height: auto;
 	}
 		.gallery-date{
 			font-size: 63px;
@@ -1000,14 +996,16 @@ textarea{
 		}
 		.gallery-text_block{
 			width: 85.9375%;
+			overflow: hidden;
 			margin: auto;
 		}
 			.gallery-title{
+				width: 68%;
 				padding: 7px 0 9px 2.8%;
 				float: left;
 			}
 			.gallery-number{
-				top:3px;
+				top:4px;
 				right:0;
 			}
 	.gallery-img-belt{
@@ -1028,12 +1026,25 @@ textarea{
 	.gallery-shadow_box{
 		display: none;
 	}
+		.gallery-closed .gallery-shadow_box { 
+			display: block;
+			height: 14px;
+			bottom: -3px;
+		}
 	.gallery{
 		box-shadow:none;
 	}
 	.gallery-date-close{
 		display: none;
 	}
+	.gallery-closed_input {
+		width: 85.3%;
+		margin-top: 37px;
+	}
+		.gallery-closed_input input {
+			width: 430px;
+		}
+
 
 	/*other_gallery*/
 
@@ -1185,24 +1196,31 @@ textarea{
 		font-size: 19px;
 	}
 	/*photostudio*/
+
 	.photostudio {
+	width: 100%;		
+		border-bottom: 2px solid #ddd; 
+		margin: 40px auto 25px auto;
+	}
+	.photostudio-belt{
 		width: 85.9375%;
-		margin: 40px auto 0 auto;
+		margin: 0 auto;
 	}
 	.photostudio ul { padding: 20px 2% 18px 4.68%;	}
 	.photostudio li {
 		font-size: 24px;
-		font-weight: 400;
+		font-weight: 300;
 		line-height: 29px;
 		background: url(../images/photostudio/768/li-dot.png) no-repeat 0 11px;
 		padding: 0 0 16px 13px;
 	}
 	.photostudio p {
 		width: 62%;
-		margin: 17px auto 32px auto;
+		padding-bottom: 17px;
+		margin: 17px auto 0 auto;
 	}
 	/*photography*/
-		.photography .description-text_block p {width: 53.38%;}
+		.photography .description-text_block p {width: 54%;}
 	.photography .img-belt {
 		width: 85.93%;
 		overflow: hidden;
@@ -1398,31 +1416,37 @@ textarea{
 			background: url(../images/index/h1_bg.png);
 		}
 	.insta_block {
-		width: 1180px;
-		height: 210px;
-		margin: 0 auto 53px auto;
-		padding-left: 4px;
+		width: 976px;
+		height: 268px;
+		margin: 138px auto 137px auto;
+		overflow: hidden;
 		-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;	
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;	
 	}
 	.insta {
-		width: 142px;
-		height: 140px;
-		margin: 18px 108px 0 108px;
+		width: 219px;
+		height: 219px;
 		display: inline-block;
-		float: none;
+		margin-top: 0;	
 	}
-	.insta_1{margin-left: 156px;}
-	.insta_3{margin-right: 156px;}
+	.insta_1{float: left;}
+	.insta_2{
+		text-align: center;	
+		margin-left: 160px;
+	}
+	.insta_3{float: right;}
 
 		.insta_1{background: url(../images/index/1180/instabudka_pikt.png) center top no-repeat;}
 		.insta_2{background: url(../images/index/1180/instamini_pikt.png) center top no-repeat;	}
 		.insta_3{background: url(../images/index/1180/instaball_pikt.png) center top no-repeat;	}
-		p.insta_text {margin-top: 161px;}
+		p.insta_text {
+			font-size: 22px;
+			margin-top: 240px;
+		}
 	
 	.belt {
-		width: 1180px;
+		width: 100%;
 		margin: 0 auto;
 		overflow: hidden;
 	}
@@ -1440,46 +1464,51 @@ textarea{
 		margin-bottom: 39px;
 	}
 	.in_1180 {display: inline-block;}
-	.news {
-		width: 360px;
+	.belt{
+		width: 100%;
+		margin: auto;
+		font-size: 0;
+	}
+	.news{
+		width: 33.33%;
 		height: auto;
-		margin: 0 0 40px 0;
+		min-height: 262px;
 		display: inline-block;
-		float: left;
+		margin-bottom: 59px;
 	}
-	.news:nth-child(3n+3) {margin: 0 50px 40px 50px;}
-	.news_img {height: 240px;}
-	.news-text {
-		height: 80px;
-		position: static;
-		background: #f0f0f0;
-		overflow: hidden;
-		margin-top: -5px;
-	}
-	.news-date {
-		min-width: 92px;
-		font-size: 40px;
-		display: inline-block;
-	}
-	.news-title {
-		width: 230px;
-		max-height: 36px;
-		font-size: 16px;
-		display: inline-block;
-		margin-top: 20px;
-		color: #333;
-		line-height: 18px;
-	}
+		.news_img{
+			display: block;
+			width: 100%;
+		}
+		.news-text {
+			height: 126px;
+			overflow: hidden;
+			bottom: 0;
+			background: url(../images/index/1180/slider_text_bg.png);
+		}
+			.news-title {
+				width: 59%;
+				font-size: 27px;
+				margin-top: 28px;
+			}
+			.news-date {
+				width: 150px;
+				font-size: 65px;
+				margin-top: 16px;
+			}
 	.clients {
 		width: 100%;
 		float: left;
-		border-top: 2px solid #ddd;
 		line-height: 52px;
 		padding-bottom: 1px;	
 	}
+		ul.clients_block {
+			width: 1180px;
+			margin: 0 auto;
+		}
 		.clients_block li{
 			width: 20%;
-			margin: 30px 0 35px 0;
+			margin: 10px 0 30px 0;
 		}
 		.clients_block img{
 			width: 120px;
@@ -1498,7 +1527,6 @@ textarea{
 	}
 		.gallery-text-belt{
 			height: 68px;
-			border-bottom: 2px solid #e2e2e2;
 		}
 			.gallery-text_block, .gallery-closed_block, .gallery-img_block{
 					width: 1180px;
@@ -1511,20 +1539,21 @@ textarea{
 					float: left;
 					line-height: 63px;
 					display: block;
+					padding-top: 23px;
 				}			
 				.gallery-title{
-					padding: 7px 0 9px 22px;
+					width: 960px;
+					padding: 30px 0 38px 22px;
 					float: left;
 				}
 				.gallery-number{
-					top:3px;
+					top:27px;
 					right:0;
 				}
 		.gallery-img-belt{
 			width: 100%;
 			margin:auto;
 			padding: 38px 0 33px 0;
-			border-bottom: 2px solid #e2e2e2;
 			font-size: 0;
 		}
 				.gallery-img-belt img{
@@ -1541,15 +1570,25 @@ textarea{
 		.gallery-shadow_box{
 			display: none;
 		}
+			.gallery-closed .gallery-shadow_box {
+				display: block;
+				height: 14px;
+				bottom: -3px;
+				-webkit-box-shadow: 0 -10px 20px -10px rgba(0, 0, 0, 0.5) inset ;
+			   			box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.5) inset ;
+			}
 		.gallery{
 			box-shadow:none;
 		}
 		.gallery-date-close{
 			display: none;
 		}
+		.gallery.closed .gallery-date {padding-top: 16px;}
+		.gallery.closed .gallery-title {padding-top: 23px;}
+		.gallery.closed .gallery-number {top: 20px;}
+
 		.gallery-closed {
-			height: 148px;
-			border-bottom: 2px solid #e2e2e2;
+			height: 106px;
 		}
 			.gallery-closed_input {
 				width: 100%;
@@ -1652,7 +1691,6 @@ textarea{
 		min-width: 1180px;
 		height: auto;
 		display: block;
-		margin-top: -2px;
 	}
 	.footer-content {
 		width: 1180px;
@@ -1795,7 +1833,7 @@ textarea{
 		.footer-contacts {
 			height: auto;
 			text-align: center;
-			margin-bottom: 11px;
+			margin-bottom: 16px;
 		}
 				.footer-contacts p {
 					display: block;
@@ -1803,6 +1841,7 @@ textarea{
 					font-weight: 300;
 					margin: 0 auto;
 				}
+				.footer-contacts p:first-child {padding-left: 3px;}
 
 				.footer-contacts p.email { line-height: 60px; }
 
@@ -1816,12 +1855,16 @@ textarea{
 
 			font-size: 24px;
 			font-weight: 400;
-			color: #fff;
+			color: #999;
 			text-transform: uppercase;
-			background-color: #f58026;
+			background-color: #eee;
 
 			padding: 13px 75px;
 			border-radius: 7px;
+		}
+		.footer-main-1180 a.zakaz_butt:hover {
+			color: #fff;
+			background-color: #f58026;
 		}
 	/*end of footer-main-1180*/
 /*instabudka-1180*/
@@ -1841,7 +1884,7 @@ textarea{
 			font-style: normal;
 			text-align: left;
 			margin: -329px 0 78px 0;
-			width: 600px;
+			width: 610px;
 		}
 			.description-quote-span{
 				display: inline-block;
@@ -2048,10 +2091,29 @@ textarea{
 				}
 		.other_gallery{
 			border-top: 2px solid #dedede;
+			height: 160px;
 		}
+			.other_gallery p {margin-top: 12px;}
+			.other_gallery-text:before, .other_gallery-text:after {
+				display: block;
+			}
+
+			.other_gallery-text:after {
+				margin-top: 3px;
+			}
 		.description-img{
 		}
-		/*contacts*/
+	/*instamini*/
+	.instamini .description-quote {margin-top: -212px;}
+	.instamini .decor-quote { margin-bottom: 119px; }
+	.instamini .features-quote {
+		margin: 0;
+		margin: -195px 0 122px 0;
+	}
+	/*instashar*/
+	.instashar .description-quote {margin-top: -210px;}
+
+	/*contacts*/
 	.contacts.content {
 	}
 	.top-block-belt {
@@ -2193,7 +2255,7 @@ textarea{
 		padding: 35px 0 46px 0;
 		margin-bottom: 20px;
 	}
-		.photography .description-text_block p {width: 410px;}
+		.photography .description-text_block p {width: 412px;}
 	.photography .img-belt { 
 		width: 1180px;
 		font-size: 0;
@@ -2227,7 +2289,7 @@ textarea{
 		}
 		.photostudio li {
 			font-size: 22px;
-			font-weight: 400;
+			font-weight: 300;
 			line-height: 26px;
 			word-spacing: -1px;
 			background: url(../images/photostudio/768/li-dot.png) no-repeat 0 11px;
