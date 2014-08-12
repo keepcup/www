@@ -56,7 +56,7 @@ body,html{
 		overflow: hidden;
 		border: 2px solid #d9dbdd;
 		border-bottom: none;
-
+		min-height: 168px;
 		-webkit-box-sizing: border-box;
 		   -moz-box-sizing: border-box;
 				box-sizing: border-box;
@@ -118,7 +118,6 @@ body,html{
 					top: 0;
 					cursor: pointer;
 				}
-			.CMS-prewiew.photo .photo-prewiew:nth-child(3n+3) {margin-right: 0;}
 			.CMS-prewiew.photo img {
 				width: auto;
 				max-width: 152px;
@@ -128,6 +127,7 @@ body,html{
 				margin: 0 auto;
 			}
 		.CMS .button {
+			position: relative;
 			width: 240px;
 			height: 40px;
 			background-color: #f58026;
@@ -144,8 +144,9 @@ body,html{
 				text-align: center;
 			}
 			.CMS .button input {
+				position: absolute;
 				opacity: 0;
-				display: none;
+				cursor: pointer;
 			}
 			.CMS .button.add_photo {margin-bottom: 20px;}
 			.CMS .button.save {background-color: #71c592;}
@@ -192,12 +193,14 @@ body,html{
 			}
 
 		.CMS-block.instamini .CMS-buttons{	padding: 18px 0 40px 58px;	}
-		.CMS-block.instamini .CMS-prewiew img {
+		.CMS-block.instamini .CMS-prewiew div {
 			width: 152px;
 			float: right;
 			margin-right: 66px;
 		}
-
+			.CMS-block.instamini .CMS-prewiew div img{
+				width: 100%;
+			}
 		.CMS-block.create_gallery .right-content { padding: 30px 0 28px 58px; }
 			.CMS-block.create_gallery .button  {
 				display: inline-block;

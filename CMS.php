@@ -44,55 +44,6 @@
 							<div class="close_cross"></div>
 						</div>
 					</div>
-					<div class="CMS-prewiew photo">
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/CMS/test.jpg" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-					</div>
-					<div class="CMS-prewiew photo">
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/CMS/test.jpg" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-					</div>
 				</div>
 			</div>
 			<div class="CMS-block CMS-main-clients last_block">
@@ -164,62 +115,6 @@
 						<img src="images/clients/1.png"alt="">
 						<input type="checkbox">
 					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/3.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/4.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/5.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/6.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/7.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/CMS/test.jpg" alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/9.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/10.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/11.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/12.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/13.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/14.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/15.png"alt="">
-						<input type="checkbox">
-					</div>
 				</div>
 			</div>
 
@@ -231,15 +126,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -250,15 +149,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -269,15 +172,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -288,15 +195,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -309,15 +220,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -328,15 +243,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -347,15 +266,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -366,15 +289,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -387,15 +314,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -406,15 +337,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -425,15 +360,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -444,15 +383,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>

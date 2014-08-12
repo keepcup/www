@@ -24,13 +24,9 @@ $(document).ready(function() {
 		dataArray.length = 0;
 		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
 		var defaultUploadBtn = $(this).prev('.CMS-buttons').find('input');
-		
-		
-		// Передаем в files все полученные изображения
 		var files = e.dataTransfer.files;
-		// Проверяем на максимальное количество файлов
-			// Передаем массив с файлами в функцию загрузки на предпросмотр
-			loadInView(files);
+		loadInView(files);
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 	});
 	
 	// При нажатии на кнопку выбора файлов
@@ -79,7 +75,7 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-				cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[i].value+'" alt=""></div>'); 
+			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[i].value+'" alt=""></div>'); 
 		}
 		return false;
 	}
