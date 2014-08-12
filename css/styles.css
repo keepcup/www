@@ -1922,6 +1922,9 @@ textarea{
 			line-height: 54px;
 			cursor: pointer;
 		}
+			.insta-menu-block ul li:hover {
+				color: #f58026;
+			}
 	.instabudka_h2{
 	position: relative;
 	margin:0 auto 0px auto;
