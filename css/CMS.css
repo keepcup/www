@@ -43,7 +43,7 @@ body,html{
 		border: 2px solid #5783c1;
 		margin: 38px 0 20px 0;
 	}
-	.CMS input {
+	.CMS input[type=text] {
 		height: 34px;
 		font-size: 22px;
 		font-weight: 300;
@@ -172,10 +172,18 @@ body,html{
 			overflow: hidden;
 		}
 		.CMS-block .clients-prewiew:nth-child(4n+4) {margin-right: 0;}
-			.CMS-block.CMS-main-clients .clients-prewiew input {
+			.icheckbox_minimal-green {
 				vertical-align: top;
 				float: right;
+				cursor: pointer;
+				width: 20px;
+				height: 20px;
+				background: url(../images/CMS/input_unchecked.png);
 			}
+			.icheckbox_minimal-green.checked {
+				background: url(../images/CMS/input_checked.png);
+			}
+
 			.CMS-block .clients-prewiew img {
 				width: 120px;
 				max-height: 150px;

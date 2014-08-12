@@ -12,4 +12,12 @@ $(document).ready(function(){
             top:e.pageY-offT-14
         })
     });
+        */
+    // icheck init
+    $(".clients-prewiew input").iCheck({
+        checkboxClass: 'icheckbox_minimal-green',
+        increaseArea: '100%' 
+    });
+
+
 })/*end*/
