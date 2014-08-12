@@ -19,11 +19,12 @@ $(document).ready(function() {
 	// Область информер о загруженных изображениях - скрыта
 	
 	// Метод при падении файла в зону загрузки
-	$('.drop-files').on('drop', function(e) {
+	$('.CMS-prewiew').on('drop', function(e) {
+		previewZone = $(this);
 		dataArray.length = 0;
-		$('.dropped-files > .image').remove();
-		var defaultUploadBtn = $(this).find('.uploadbtn1');
-		previewZone = $(this).closest('.drop-files').next('.uploaded-holder').find('.dropped-files');
+		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
+		var defaultUploadBtn = $(this).prev('.CMS-buttons').find('input');
+		
 		
 		// Передаем в files все полученные изображения
 		var files = e.dataTransfer.files;
@@ -33,14 +34,15 @@ $(document).ready(function() {
 	});
 	
 	// При нажатии на кнопку выбора файлов
-	$('.uploadbtn1').on('change', function() {
+	$('.upload_btn').on('change', function() {
+		previewZone = $(this).closest('.CMS-buttons').next();
    		// Заполняем массив выбранными изображениями
    		var files = $(this)[0].files;
    		// Проверяем на максимальное количество файлов
 			// Передаем массив с файлами в функцию загрузки на предпросмотр
 			loadInView(files);
 			// Очищаем инпут файл путем сброса формы
-            $(this).closest('form').each(function(){
+            $(this).closest('.frm').each(function(){
 	        	    this.reset();
 			});
 	});
@@ -77,7 +79,7 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-				cs.append('<div id="img-'+i+'" class="image '+cs+'" style="background: url('+dataArray[i].value+'); background-size: cover;"> <a href="#" id="drop-'+i+'" class="drop-button">Удалить изображение</a></div>'); 
+				cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[i].value+'" alt=""></div>'); 
 		}
 		return false;
 	}
@@ -113,20 +115,15 @@ $(document).ready(function() {
 	$('#dropped-files #upload-button .delete').click(restartFiles);
 	*/
 	// Загрузка изображений на сервер
-	$('.upload-button .upload').click(function() {
+	$('.save').click(function() {
 		// Для каждого файла
 		$.each(dataArray, function(index, file) {	
 			// загружаем страницу и передаем значения, используя HTTP POST запрос 
-			$.post('upload.php', dataArray[index], function(data) {
+			$.post('backend/upload.php', dataArray[index], function(data) {
 				var fileName = dataArray[index].name;
 				// Формируем в виде списка все загруженные изображения
 				// data формируется в upload.php
 				var dataSplit = data.split(':');
-				if(dataSplit[1] == 'загружен успешно') {
-					$('#uploaded-files').append('<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> загружен успешно</li>');
-				}else {
-					$('#uploaded-files').append('<li><a href="images/'+data+'. Имя файла: '+dataArray[index].name+'</li>');
-				}
 			});
 		});
 		dataArray.length = 0;
@@ -134,17 +131,17 @@ $(document).ready(function() {
 		return false;
 	});
 	// Простые стили для области перетаскивания
-	$('.drop-files').on('dragenter', function() {
+	/*$('.CMS-prewiew').on('dragenter', function() {
 		$(this).css({'box-shadow' : 'inset 0px 0px 20px rgba(0, 0, 0, 0.1)', 'border' : '4px dashed #bb2b2b'});
 		return false;
-	});
+	});*/
 	
-	$('.drop-files').on('drop', function() {
-		$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
+	$('.CMS-prewiew').on('drop', function() {
+		//$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
 		return false;
 	});
-	$('.drop-files').on('dragleave', function() {
+	/*$('.CMS-prewiew').on('dragleave', function() {
 		$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
 		return false;
-	});
+	});*/
 });

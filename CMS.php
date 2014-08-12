@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/cms.js"></script>
+	<script type="text/javascript" src="js/uploader.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -19,12 +20,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Добавить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохронить</p>
 						</div>
+					</div>
+					<div class="CMS-prewiew photo sortable" ondragover="return false">
+						<div class="photo-prewiew photo-prewiew-old"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew photo-prewiew-old"><img src="images/CMS/test.jpg" alt=""></div>
+						<div class="photo-prewiew photo-prewiew-old"><img src="images/index/slider_test.png" alt=""></div>
 					</div>
 					<div class="CMS-prewiew photo">
 						<div class="photo-prewiew">
@@ -64,6 +72,17 @@
 							<div class="close_cross"></div>
 						</div>
 					</div>
+					<div class="CMS-prewiew photo">
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/CMS/test.jpg" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+					</div>
 				</div>
 			</div>
 			<div class="CMS-block CMS-main-clients last_block">
@@ -81,6 +100,114 @@
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/3.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/4.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/5.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/6.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/7.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/CMS/test.jpg" alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/9.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/10.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/11.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/12.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/13.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/14.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/15.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/1.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/2.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/3.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/4.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/5.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/6.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/7.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/CMS/test.jpg" alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/9.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/10.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/11.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/12.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/13.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/14.png"alt="">
+						<input type="checkbox">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/15.png"alt="">
 						<input type="checkbox">
 					</div>
 				</div>
