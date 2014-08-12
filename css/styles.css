@@ -305,6 +305,7 @@ textarea{
 		width: 100%;
 		height: auto;
 	}
+		.insta-menu {display: none;}
 		.instabudka_h2{
 			position: absolute;
 			top:0px;
@@ -526,6 +527,19 @@ textarea{
 				color: #666;
 				display: none;
 			}
+	/*instamini*/
+		.instamini .description-block_1{
+			background: url(../images/instamini/480/desc_1.png) 37px 7px no-repeat;
+		}
+		.instamini .description-block_2{
+			background: url(../images/instamini/480/desc_2.png) 37px 7px no-repeat;
+		}
+		.instamini .description-block_3{
+			background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;
+		}
+		.instamini .features-img_2{
+			background: url(../images/instamini/480/features_2.png);
+		}
 	/*gallery*/
 	.gallery{
 		position: relative;
@@ -1196,6 +1210,11 @@ textarea{
 		font-weight: 400;
 		font-size: 19px;
 	}
+	/*instamini*/
+		.instamini .description-block_1{	background: url(../images/instamini/768/desc_1.png) 37px 7px no-repeat;	}
+		.instamini .description-block_2{	background: url(../images/instamini/768/desc_2.png) 37px 7px no-repeat;	}
+		.instamini .description-block_3{	background: url(../images/instamini/768/desc_3.png) 37px 7px no-repeat;	}
+		.instamini .features-img_2{	background: url(../images/instamini/768/features_2.png);}
 	/*photostudio*/
 
 	.photostudio {
@@ -1869,7 +1888,41 @@ textarea{
 		}
 	/*end of footer-main-1180*/
 /*instabudka-1180*/
-.instabudka_h2{
+.insta-menu {
+	width: 100%;
+	height: 58px;
+	display: block;
+	background: url(../images/instabudka/h2_bg.png);
+	position: absolute;
+	top: 0;
+}
+	.insta-menu-block {
+		width: 784px;
+		height: 100%;
+		font-size: 0;
+		margin: 0 auto;
+	}
+		.insta-menu-block p, .insta-menu-block ul li{
+			font-size: 34px;
+			line-height: 50px;
+			display: inline-block;
+			text-transform: uppercase;
+			color: #303030;
+			font-weight: 300;
+		}
+		.insta-menu-block p {width: 190px;}
+		.insta-menu-block ul {
+			display: inline-block;
+			margin-left: 24px;
+			vertical-align: top;
+		}
+		.insta-menu-block ul li {
+			font-size: 22px;
+			margin: 0 13px;
+			line-height: 54px;
+			cursor: pointer;
+		}
+	.instabudka_h2{
 	position: relative;
 	margin:0 auto 0px auto;
 	width: 1180px;
@@ -1941,18 +1994,10 @@ textarea{
 				.description-block:nth-of-type(odd){
 					background: #eee;
 				}
-				.description-block_1{
-					background: url(../images/instabudka/1180/desc.png) 0px 15px no-repeat;
-				}
-				.description-block_2{
-					background: url(../images/instabudka/1180/desc.png) -180px 15px no-repeat;
-				}
-				.description-block_3{
-					background: url(../images/instabudka/1180/desc.png) -360px 15px no-repeat;
-				}
-				.description-block_4{
-					background: url(../images/instabudka/1180/desc.png) -540px 15px no-repeat;
-				}
+				.description-block_1{background: url(../images/instabudka/1180/desc.png) 0px 15px no-repeat;}
+				.description-block_2{background: url(../images/instabudka/1180/desc.png) -180px 15px no-repeat;}
+				.description-block_3{background: url(../images/instabudka/1180/desc.png) -360px 15px no-repeat;}
+				.description-block_4{background: url(../images/instabudka/1180/desc.png) -540px 15px no-repeat;}
 			.description-block p{
 				width: 180px;
 				height: 250px;
@@ -2016,6 +2061,7 @@ textarea{
 			font-size: 22px;
 			margin-top:13px;
 		}
+		.decor .function-block:last-child, .decor .function-block img {margin-bottom: 140px;}
 		.decor .function-block,.decor .function-block ul{
 			padding-bottom: 5px;
 		}
@@ -2054,9 +2100,6 @@ textarea{
 			.features .function-block_1{
 				text-align: center;
 			}
-			.function-block_2{
-				font-size: 14px;
-			}
 			.features-img{
 				width: 220px;
 				height: 220px;
@@ -2088,9 +2131,15 @@ textarea{
 				padding: 0;
 				width: 350px;
 			}
+				.features .function-block ul.function-block_2 {width: 357px;}
 				.features .function-block ul.function-block_2 li{
 					display: block;
 					margin: 0;
+				}
+				.features .function-block ul.function-block_2 li, .features p.function-block_2 {
+					font-size: 22px;
+					font-weight: 400;
+					font-family: 'Roboto Condensed';
 				}
 		.other_gallery{
 			border-top: 2px solid #dedede;
@@ -2107,12 +2156,16 @@ textarea{
 		.description-img{
 		}
 	/*instamini*/
-	.instamini .description-quote {margin-top: -212px;}
+	.instamini .description-quote {margin-top: -212px;}	
+		.instamini .description-block_1{background: url(../images/instamini/1180/desc.png) 0px 15px no-repeat;}
+		.instamini .description-block_2{background: url(../images/instamini/1180/desc.png) -180px 15px no-repeat;}
+		.instamini .description-block_3{background: url(../images/instamini/1180/desc.png) -360px 15px no-repeat;}
 	.instamini .decor-quote { margin-bottom: 119px; }
 	.instamini .features-quote {
 		margin: 0;
 		margin: -195px 0 122px 0;
 	}
+		.instamini .features-img_2{background: url(../images/instamini/1180/features.png) -219px 0;}
 	/*instashar*/
 	.instashar .description-quote {margin-top: -210px;}
 

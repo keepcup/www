@@ -1,6 +1,17 @@
 <?include "header.php";?>
 	<div class="content instamini">
 		<div class="description">
+			<div class="insta-menu">
+				<div class="insta-menu-block">
+					<p>инстамини</p>
+					<ul>
+						<li>описание</li>
+						<li>функции</li>
+						<li>оформление</li>
+						<li>особенности</li>
+					</ul>
+				</div>
+			</div>
 			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
 			<div class="belt_1180">
 				<p class="description-quote">
@@ -55,7 +66,7 @@
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
-					<span class='description-quote-span'>Ей найдётся место</span>
+					<span class='description-quote-span'>ей найдется место</span>
 					<span class='description-quote-span'>на любой вечеринке</span>
 					<span class='description-quote-span'>или мероприятии</span>
 					<span class='quote'>»</span>
@@ -90,7 +101,7 @@
 						</p>
 						<img class="function-img" src="images/instabudka/desc_test.jpg" alt="">
 						<p class="function-block_2">
-							Инстамини очень мобильна. Даже в маленьком пространстве ей найдется место.
+							Инстамини очень мобильна. Даже в маленьком пространстве ей найдётся место.
 						</p>
 					</div>
 				</div><!--function-block-end-->
@@ -101,7 +112,7 @@
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> 
-						<span class='description-quote-span'>Инстамини</span>
+						<span class='description-quote-span'>инстамини</span>
 						<span class='description-quote-span'>привлекает гостей</span>
 						<span class='description-quote-span'>на событие</span>
 						<span class='quote'>»</span>
@@ -116,7 +127,7 @@
 						<ul class="function-block_2">
 							<li>Бесплатная разработка дизайн макета панелей фотостойки. </li>
 							<li>Печать наклеек на переднюю и заднюю панели фотостойки. </li>
-							<li>БИзготовление панелей из полистирола с подсветкой для вашего бренда.</li>
+							<li>Изготовление панелей из полистирола с подсветкой для вашего бренда.</li>
 						</ul>				  
 					</div>
 				</div><!--function-block-end-->
@@ -153,7 +164,7 @@
 			<div class="belt_1180">
 				<p class="description-quote features-quote">
 					<span class='quote'>«</span> 
-					<span class='description-quote-span'>Разместите её</span>
+					<span class='description-quote-span'>разместите её</span>
 					<span class='description-quote-span'>на фоне пресвола</span> 
 					<span class='quote'>»</span>
 				</p>
