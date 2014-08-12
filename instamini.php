@@ -90,7 +90,7 @@
 						</p>
 						<img class="function-img" src="images/instabudka/desc_test.jpg" alt="">
 						<p class="function-block_2">
-							Инстамини очень мобильна. Даже в маленьком пространстве ей найдется место.
+							Инстамини очень мобильна. Даже в маленьком пространстве ей найдётся место.
 						</p>
 					</div>
 				</div><!--function-block-end-->
@@ -153,7 +153,7 @@
 			<div class="belt_1180">
 				<p class="description-quote features-quote">
 					<span class='quote'>«</span> 
-					<span class='description-quote-span'>разместите ее</span>
+					<span class='description-quote-span'>разместите её</span>
 					<span class='description-quote-span'>на фоне пресвола</span> 
 					<span class='quote'>»</span>
 				</p>
