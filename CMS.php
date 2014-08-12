@@ -31,9 +31,18 @@
 						</div>
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
-						<div class="photo-prewiew photo-prewiew-old"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew photo-prewiew-old"><img src="images/CMS/test.jpg" alt=""></div>
-						<div class="photo-prewiew photo-prewiew-old"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/CMS/test.jpg" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
 					</div>
 					<div class="CMS-prewiew photo">
 						<div class="photo-prewiew">
