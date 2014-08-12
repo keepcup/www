@@ -845,6 +845,7 @@ textarea{
 			box-sizing: border-box;
 		}
 		.contacts .zakaz input {
+			height: 40px;
 			font-size: 22px;
 			line-height: 36px;
 			text-align: center;
