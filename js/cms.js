@@ -10,6 +10,14 @@ $(document).ready(function(){
         $(this).find("input").css({
             left:e.pageX-aaa-160,
             top:e.pageY-offT-14
-        })*/
+        })
     });
+        */
+    // icheck init
+    $(".clients-prewiew input").iCheck({
+        checkboxClass: 'icheckbox_minimal-green',
+        increaseArea: '100%' 
+    });
+
+
 })/*end*/
