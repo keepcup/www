@@ -408,40 +408,22 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Добавить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew photo">
+					<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 						<div class="photo-prewiew">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
 						<div class="photo-prewiew">
 							<img src="images/CMS/test.jpg" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew">
-							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
 						<div class="photo-prewiew">
@@ -464,15 +446,19 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Изменить фотографию</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew">
-						<img src="images/index/slider_test.png" alt="">
+					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
