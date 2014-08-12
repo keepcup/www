@@ -305,6 +305,7 @@ textarea{
 		width: 100%;
 		height: auto;
 	}
+		.insta-menu {display: none;}
 		.instabudka_h2{
 			position: absolute;
 			top:0px;
@@ -1887,6 +1888,18 @@ textarea{
 		}
 	/*end of footer-main-1180*/
 /*instabudka-1180*/
+.insta-menu {
+	width: 100%;
+	height: 58px;
+	display: block;
+	background: url(../images/instabudka/h2_bg.png);
+	position: absolute;
+	top: 0;
+}
+	.insta-menu-block {
+		width: 800px;
+		height: 100%;
+	}
 .instabudka_h2{
 	position: relative;
 	margin:0 auto 0px auto;
