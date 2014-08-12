@@ -1,6 +1,17 @@
 <?include "header.php";?>
 	<div class="content instamini">
 		<div class="description">
+			<div class="insta-menu">
+				<div class="insta-menu-block">
+					<p>инстамини</p>
+					<ul>
+						<li>описание</li>
+						<li>функции</li>
+						<li>оформление</li>
+						<li>особенности</li>
+					</ul>
+				</div>
+			</div>
 			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
 			<div class="belt_1180">
 				<p class="description-quote">

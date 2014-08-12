@@ -1897,10 +1897,32 @@ textarea{
 	top: 0;
 }
 	.insta-menu-block {
-		width: 800px;
+		width: 784px;
 		height: 100%;
+		font-size: 0;
+		margin: 0 auto;
 	}
-.instabudka_h2{
+		.insta-menu-block p, .insta-menu-block ul li{
+			font-size: 34px;
+			line-height: 50px;
+			display: inline-block;
+			text-transform: uppercase;
+			color: #303030;
+			font-weight: 300;
+		}
+		.insta-menu-block p {width: 190px;}
+		.insta-menu-block ul {
+			display: inline-block;
+			margin-left: 24px;
+			vertical-align: top;
+		}
+		.insta-menu-block ul li {
+			font-size: 22px;
+			margin: 0 13px;
+			line-height: 54px;
+			cursor: pointer;
+		}
+	.instabudka_h2{
 	position: relative;
 	margin:0 auto 0px auto;
 	width: 1180px;
