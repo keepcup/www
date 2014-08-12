@@ -7,11 +7,8 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/cms.js"></script>
-<<<<<<< HEAD
 	<script type="text/javascript" src="js/uploader.js"></script>
-=======
 	<script type="text/javascript" src="js/jquery.icheck.js"></script>
->>>>>>> origin/CMS_cool_buttons
 </head>
 <body>
 	<div class="container">
