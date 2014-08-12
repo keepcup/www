@@ -27,15 +27,42 @@
 						</div>
 					</div>
 					<div class="CMS-prewiew photo">
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/CMS/test.jpg" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/CMS/test.jpg" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -309,15 +336,42 @@
 						</div>
 					</div>
 					<div class="CMS-prewiew photo">
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-						<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/CMS/test.jpg" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -386,15 +440,42 @@
 								</div>
 							</div>
 							<div class="CMS-prewiew photo sortable upload-rows" id="drop-box">
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/CMS/test.jpg" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>			
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew active">
+									<img src="images/CMS/test.jpg" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew active">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>		
 							</div>
 								<div class="button">
 									<p>Добавить фото</p>
@@ -431,7 +512,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						
@@ -456,15 +537,42 @@
 								</div>
 							</div>
 							<div class="CMS-prewiew photo">
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/CMS/test.jpg" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>			
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew active">
+									<img src="images/CMS/test.jpg" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew active">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>
+								<div class="photo-prewiew">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>
+								</div>			
 							</div>
 						</div>
 					</div>
@@ -477,7 +585,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						
@@ -491,7 +599,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						
@@ -565,6 +673,7 @@
 					<div class="new_client-logo">
 						<div class="clients-prewiew">
 							<img src="images/clients/3.png"alt="">
+							<div class="close_cross"></div>
 						</div>
 					</div>					
 				</div>
@@ -576,66 +685,87 @@
 				<div class="right-content">
 					<div class="clients-prewiew">
 						<img src="images/clients/1.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/2.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/3.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/4.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/5.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/6.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/7.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/CMS/test.jpg" alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/9.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/10.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/11.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/12.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/13.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/14.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/15.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/1.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/2.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/3.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/4.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/5.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/6.png"alt="">
+						<div class="close_cross"></div>
 					</div>
 				</div>
 			</div>
@@ -649,7 +779,8 @@
 					<div class="event-edit-form"><!-- just copy this block -->
 						<div class="left-side">
 							<div class="photo-prewiew">
-								<img src="images/index/slider_test.png" alt="">		
+								<img src="images/index/slider_test.png" alt="">
+								<div class="close_cross"></div>	
 							</div>
 							<div class="button add_photo">
 								<p>Добавить фото</p>
@@ -698,7 +829,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						
@@ -716,7 +847,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						
@@ -734,7 +865,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						
@@ -742,7 +873,8 @@
 					<div class="event-edit-form"><!-- just copy this block -->
 						<div class="left-side">
 							<div class="photo-prewiew">
-								<img src="images/index/slider_test.png" alt="">		
+								<img src="images/index/slider_test.png" alt="">								
+								<div class="close_cross"></div>		
 							</div>
 							<div class="button add_photo">
 								<p>Добавить фото</p>
@@ -780,7 +912,7 @@
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close"></div>
+							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 						

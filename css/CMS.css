@@ -107,14 +107,14 @@ body,html{
 				position: relative;
 				padding-right: 20px;
 			}
-				.photo-prewiew:before {
-					content: "";
+				.close_cross {
 					display: block;
 					width: 14px;
 					height: 15px;
 					background: url(../images/CMS/close-cross.png) no-repeat;
 					position: absolute;
 					right: 0;
+					top: 0;
 					cursor: pointer;
 				}
 			.CMS-prewiew.photo .photo-prewiew:nth-child(3n+3) {margin-right: 0;}
@@ -354,13 +354,10 @@ body,html{
 							margin-right: 11px;
 							cursor: pointer;
 						}
-						.CMS-block .gallery .gallery-buttons .close {
+						.CMS-block .gallery .gallery-buttons .close_cross {
 							float: left;
-							width: 14px;
-							height: 15px;
-							background: url(../images/CMS/close-cross.png) no-repeat;
 							margin-top: 3px;
-							cursor: pointer;
+							position: static;
 						}
 			.yours_gallery .gallery-edit-form {
 				width: 978px;
@@ -440,16 +437,6 @@ body,html{
 				}
 					.CMS-block.new-clients .clients-prewiew img, .CMS-block.clients-clients .clients-prewiew img {
 						max-height: 124px;
-					}
-					.CMS-block.new-clients .clients-prewiew:before, .CMS-block.clients-clients .clients-prewiew:before {
-						content: "";
-						display: block;
-						width: 14px;
-						height: 15px;
-						background: url(../images/CMS/close-cross.png) no-repeat;
-						position: absolute;
-						right: 0;
-						cursor: pointer;
 					}
 		.CMS-block.clients-clients .right-content {
 			height: 698px;
