@@ -50,7 +50,7 @@
 				<div class="left-label">
 					<p>Отображение клиентов <span>(12 шт.)</span></p>
 				</div>
-				<div class="right-content">
+				<div class="right-content sortable">
 					<div class="clients-prewiew">
 						<img src="images/clients/1.png"alt="">
 						<input type="checkbox" class="icheckbox_minimal-green">
