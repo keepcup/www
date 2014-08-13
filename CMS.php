@@ -493,7 +493,7 @@
 							<p class="label-pass">максимум 5 символов</p>	
 						</div>
 						<div class="gallery-photos">
-							<div class="photo-left">
+							<div class="photo-left CMS-buttons">
 								<p class="top-label">Фотографии</p>
 								<div class="button">
 									<p>Добавить фото</p>

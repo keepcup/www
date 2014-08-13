@@ -14,24 +14,32 @@ $(document).ready(function() {
 	var defaultUploadBtn;
 	
 	// Массив для всех изображений
-	var dataArray = [];
-	
+	dataArray = {};
 	// Область информер о загруженных изображениях - скрыта
 	
 	// Метод при падении файла в зону загрузки
-	$('.CMS-prewiew').on('drop', function(e) {
+	$('.CMS-prewiew').on('click', function(e) {
 		previewZone = $(this);
-		dataArray.length = 0;
-		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
+		dataArray = [];
+		Index = $('.CMS-prewiew').index(previewZone);
+		hashArray[''+Index] = [];
+		alert(hashArray['0'])
+		
+		$('.photo-prewiew-new').remove();
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 		loadInView(files);
-		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 	});
 	
 	// При нажатии на кнопку выбора файлов
 	$('.upload_btn').on('change', function() {
-		previewZone = $(this).closest('.CMS-buttons').next();
+		previewZone = $(this).parent().parent().parent().next();
+
+		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+		
    		// Заполняем массив выбранными изображениями
    		var files = $(this)[0].files;
    		// Проверяем на максимальное количество файлов
