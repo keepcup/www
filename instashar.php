@@ -25,24 +25,24 @@
 			<h2 class="instabudka_h2">описание</h2>
 			<!--<div class="description-pennant"></div>-->
 			<p class="description-text">
-				<span>выделаете фотографию</span><br>
-				<span>и размещаете ее в instagram</span><br>
-				<span>с уникальным #хештегом</span><br>
-				<span>принтер следит за этим #хештегом</span><br>
-				<span>печатает фото за 10 секунд</span><br>
+				<span>ДЕЛАЕТ МОМЕНТАЛЬНЫЕ СНИМКИ</span><br>
+				<span>ПЕЧАТАЕТ ЗА 10 СЕКУНД</span><br>
+				<span>размещаете фото в</span><a class='description-text-instagram'></a><br>
+				<span>со специальным #хештегом,</span><br>
+				<span>следит за этим #хештегом</span><br>
 			</p>
 
 			<div class="belt_1180">
 				<div class="description-block">
 					<p class=" description-block_1">
-						1 человек<br>
-						1 фотография<br>
-						1 минута<br>
+						15 секунд<br>
+						на 1 фото<br>
 					</p>
 				</div>
 				<div class="description-block">
 					<p class=" description-block_2">
-						диаметр шара 60 см
+						диаметр<br>
+						шара — 60 см
 					</p>
 				</div>
 				<div class="description-block">
@@ -66,42 +66,42 @@
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
-					<span class='description-quote-span'>Ей найдётся место</span>
-					<span class='description-quote-span'>на любой вечеринке</span>
-					<span class='description-quote-span'>или мероприятии</span>
+					<span class='description-quote-span'>мгновенные красочные фотографии,</span>
+					<span class='description-quote-span'>которые будут и напечатаны</span>
+					<span class='description-quote-span'>прямо на месте из сети Instagram</span>
 					<span class='quote'>»</span>
 				</p>
 				<h2 class="instabudka_h2">функции</h2>
 				<div class="function-block">
 					<div class="function-block-content">
 						<p class="function-block_1">
-							Фон для фотографии
+							оригинальный дизайн
 						</p>
 						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="123">
 						<p class="function-block_2">
-							Для Инстамини можно выбрать любой фон: баннер, стена или любой другой пейзаж
+							Уникальный дизайн инстаграм принтера в форме сферы; возможность установить на любой ровной поверхности или опциональной стойке; компактные размеры.
 						</p>
 					</div>
 				</div><!--function-block-end-->
 				<div class="function-block">
 					<div class="function-block-content">
 						<p class="function-block_1">
-							синхронизация <span>с социальными сетями</span>
+							мягкая цветная подсветка
 						</p>
 						<img class="function-img" src="images/instabudka/desc_test.jpg" alt="">
 						<p class="function-block_2">
-							вы можете быстро и удобно разместить фото в социальных сетях Facebook, Twitter, а также отправить на  e-mail
+							Наш инстаграм принтер обладает встроенной цветной подсветкой, которая может светится разными цветами.
 						</p>
 					</div>
 				</div><!--function-block-end-->
 				<div class="function-block">
 					<div class="function-block-content">
 						<p class="function-block_1">
-							компактные размеры
+							безлимитная печать
 						</p>
 						<img class="function-img" src="images/instabudka/desc_test.jpg" alt="">
 						<p class="function-block_2">
-							Инстамини очень мобильна. Даже в маленьком пространстве ей найдется место.
+							В нашем Инсташаре встроен термосублимационный принтер с высокой скоростью печати, а также мощное программное обеспечение.
 						</p>
 					</div>
 				</div><!--function-block-end-->
@@ -112,22 +112,22 @@
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> 
-						<span class='description-quote-span'>Инстамини</span>
-						<span class='description-quote-span'>привлекает гостей</span>
-						<span class='description-quote-span'>на событие</span>
+						<span class='description-quote-span'>инсташар</span>
+						<span class='description-quote-span'>дарит праздник всем</span>
+						<span class='description-quote-span'>гостям на мероприятии</span>
 						<span class='quote'>»</span>
 					</p>
 				<h2 class="instabudka_h2">оформление</h2>
 				<div class="function-block">
 					<div class="function-block-content">
 						<p class="function-block_1 decor-block_1">
-							брендирование фотостойки
+							брендирование <span>инстаграм принтера</span>
 						</p>
 						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="">
 						<ul class="function-block_2">
-							<li>Бесплатная разработка дизайн макета панелей фотостойки. </li>
-							<li>Печать наклеек на переднюю и заднюю панели фотостойки. </li>
-							<li>БИзготовление панелей из полистирола с подсветкой для вашего бренда.</li>
+							<li>Бесплатная разработка дизайн макета внешней поверхности Инсташара;</li>
+							<li>печать наклеек на поверхность с подсветкой для вашего бренда; </li>
+							<li>нанесение #хештега на поверхность.</li>
 						</ul>				  
 					</div>
 				</div><!--function-block-end-->
@@ -138,76 +138,14 @@
 						</p>
 						<img class="function-img" src="images/instabudka/desc_test.jpg" alt="">
 						<ul class="function-block_2 ">
-							<li>Бесплатная разработка дизайн макета фотографий и интерактивных фонов. </li>
-							<li>Размер фотографий: 5х15 и 10х15. </li>
+							<li>Бесплатная разработка дизайн макета фотографий. </li>
+							<li>Размер фотографий: 10х15. </li>
 							<li>Возможность размещать до 8-ми кадров на 1 фото.</li>
-						</ul>
-					</div>
-				</div><!--function-block-end-->
-				<div class="function-block">
-					<div class="function-block-content">
-						<p class="function-block_1 decor-block_1">
-							брендирование реквизита
-						</p>
-						<img class="function-img" src="images/instabudka/instabudka_osobennosti.jpg" alt="">
-						<ul class="function-block_2">
-							<li>Бесплатная разработка дизайн макета реквизита. </li>
-							<li>Изготовление аксессуаров для фотосессии из бумаги, картона и дерева. </li>
-							<li>Изготовление конвертов и пригласительных.</li>
 						</ul>
 					</div>
 				</div><!--function-block-end-->
 			</div>
 		</div><!--decor-end-->
-		<div class="features">
-			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
-			<div class="belt_1180">
-				<p class="description-quote features-quote">
-					<span class='quote'>«</span> 
-					<span class='description-quote-span'>Разместите её</span>
-					<span class='description-quote-span'>на фоне пресвола</span> 
-					<span class='quote'>»</span>
-				</p>
-				<h2 class="instabudka_h2">особенности</h2>
-				<div class="function-block">
-					<div class="function-block-content">
-						<p class="function-block_1">
-							фотооборудование
-						</p>
-						<div class="features-img_1 features-img"></div>
-						<ul class="function-block_2">
-							<li>Студийное освещение</li>
-							<li>Автоматическая обработка фотографий</li>
-							<li>Мягкий рассеянный свет</li>
-							<li>Цифровая зеркальная камера</li>
-							<li>Термосублимационный принтер</li>
-						</ul>
-					</div>
-				</div><!--function-block-end-->
-				<div class="function-block">
-					<div class="function-block-content">
-						<p class="function-block_1">
-							монтаж за 15 минут
-						</p>
-						<div class="features-img_2 features-img"></div>
-						<p class="function-block_2">			
-							Наша фотостойка очень мобильна и собирается за считанные минуты.
-						</p>
-					</div>
-				</div><!--function-block-end-->
-				<div class="function-block">
-					<div class="function-block-content">
-						<p class="function-block_1">
-							доставка
-						</p>
-						<div class="features-img_3 features-img"></div>
-						<p class="function-block_2">
-							Мы предлагаем услугу доставки за пределы Москвы и Московской области.
-						</p>
-					</div>
-				</div><!--function-block-end-->
-			</div>
-		</div><!--features-end-->
 		<div class="other_gallery">
 			<p><a href="#" class="other_gallery-text">галерея мероприятий</a></p>
 		</div>

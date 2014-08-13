@@ -528,18 +528,28 @@ textarea{
 				display: none;
 			}
 	/*instamini*/
-		.instamini .description-block_1{
-			background: url(../images/instamini/480/desc_1.png) 37px 7px no-repeat;
+		.instamini .description-block_1{background: url(../images/instamini/480/desc_1.png) 37px 7px no-repeat;	}
+		.instamini .description-block_2{background: url(../images/instamini/480/desc_2.png) 37px 7px no-repeat;	}
+		.instamini .description-block_3{background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;	}
+		.instamini .features-img_2{	background: url(../images/instamini/480/features_2.png);}
+	/*instashar*/
+		.instashar .description-text-instagram {
+			display: inline-block;
+			margin:  0 0 -8px -13px;
+			height: 36px;
+			width: 42px;
+			background: url(../images/instashar/480/quote_instagram.png) center left no-repeat,#eee;
 		}
-		.instamini .description-block_2{
-			background: url(../images/instamini/480/desc_2.png) 37px 7px no-repeat;
+		.instashar .description-block_1{
+			background: url(../images/instashar/480/desc_1.png) 37px 7px no-repeat;
+			padding-top: 27px;
 		}
-		.instamini .description-block_3{
-			background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;
+		.instashar .description-block_2{
+			background: url(../images/instashar/480/desc_2.png) 37px 7px no-repeat;
+			padding-top: 25px;
 		}
-		.instamini .features-img_2{
-			background: url(../images/instamini/480/features_2.png);
-		}
+		.instashar .description-block_3{background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;	}
+
 	/*gallery*/
 	.gallery{
 		position: relative;
