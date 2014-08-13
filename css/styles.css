@@ -2189,17 +2189,22 @@ textarea{
 	}
 		.instamini .features-img_2{background: url(../images/instamini/1180/features.png) -219px 0;}
 	/*instashar*/
-	.instashar .description-quote {margin-top: -210px;}
+	.instashar .insta-menu-block ul {margin-left: 200px;}
+	.instashar .description-quote {
+		width: 710px;
+		margin: -213px 0 140px 0;
+	}
 		.instashar .description-block_1{
 			background: url(../images/instashar/1180/desc.png) 0px 15px no-repeat;
-			padding-top: 0;
+			padding-top: 238px;
 		}
 		.instashar .description-block_2{
 			background: url(../images/instashar/1180/desc.png) -180px 15px no-repeat;
-			padding-top: 0;
+			padding-top: 238px;
 		}
 		.instashar .description-block_3{background: url(../images/instamini/1180/desc.png) -360px 15px no-repeat;}
-
+	.instashar .function-quote {margin: -313px 0 182px 0;}
+	.instashar .decor-quote {margin: -237px 0 204px 0;}
 	/*contacts*/
 	.contacts.content {
 	}

@@ -8,7 +8,6 @@
 						<li>описание</li>
 						<li>функции</li>
 						<li>оформление</li>
-						<li>особенности</li>
 					</ul>
 				</div>
 			</div>
@@ -16,8 +15,7 @@
 			<div class="belt_1180">
 				<p class="description-quote">
 					<span class='quote'>«</span>
-					<span class='description-quote-span'>инсташар - это</span>
-					<span class='description-quote-span'>инстаграм принтер </span>
+					<span class='description-quote-span'>инсташар - это инстаграм принтер </span>
 					<span class='description-quote-span'>в виде шара</span>
 					<span class='quote'>»</span>
 				</p>
@@ -66,9 +64,10 @@
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
-					<span class='description-quote-span'>мгновенные красочные фотографии,</span>
-					<span class='description-quote-span'>которые будут и напечатаны</span>
-					<span class='description-quote-span'>прямо на месте из сети Instagram</span>
+					<span class='description-quote-span'>мгновенные красочные</span>
+					<span class='description-quote-span'>фотографии, которые будут </span>
+					<span class='description-quote-span'>напечатаны прямо на месте </span>
+					<span class='description-quote-span'>из сети Instagram</span>					
 					<span class='quote'>»</span>
 				</p>
 				<h2 class="instabudka_h2">функции</h2>
@@ -112,8 +111,7 @@
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> 
-						<span class='description-quote-span'>инсташар</span>
-						<span class='description-quote-span'>дарит праздник всем</span>
+						<span class='description-quote-span'>инсташар дарит праздник всем</span>
 						<span class='description-quote-span'>гостям на мероприятии</span>
 						<span class='quote'>»</span>
 					</p>
