@@ -14,27 +14,37 @@ $(document).ready(function() {
 	var defaultUploadBtn;
 	
 	// Массив для всех изображений
-	dataArray = {};
-	// Область информер о загруженных изображениях - скрыта
-	
-	// Метод при падении файла в зону загрузки
-	$('.CMS-prewiew').on('click', function(e) {
-		previewZone = $(this);
-		dataArray = [];
-		Index = $('.CMS-prewiew').index(previewZone);
-		hashArray[''+Index] = [];
-		alert(hashArray['0'])
-		
-		$('.photo-prewiew-new').remove();
-		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+	var dataArray = [];
+	var dataArrayArray = [];
+	var Index;
 
+	// Область информер о загруженных изображениях - скрыта
+	/*$('.CMS-prewiew').on('click', function() {
+		dataArrayArray = ['44','44'];
+		previewZone = $(this);
+		Index = $('.CMS-prewiew').index(previewZone);
+		dataArray[Index]=dataArrayArray;
+		dataArray[Index].push("44",'55');
+		alert(dataArray[Index])
+		/*dataArray[Index]='11';
+		var gg = dataArray[Index].push("44",'55');
+		alert(dataArray[Index])
+	})*/
+	// Метод при падении файла в зону загрузки
+	$('.CMS-prewiew').on('drop', function(e) {
+		previewZone = $(this);
+		Index = $('.CMS-prewiew').index(previewZone);
+
+		dataArray[Index]=dataArrayArray;
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+		alert(dataArray)
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
-		loadInView(files);
+		loadInView(files,Index);
 	});
 	
 	// При нажатии на кнопку выбора файлов
-	$('.upload_btn').on('change', function() {
+	/*$('.upload_btn').on('change', function() {
 		previewZone = $(this).parent().parent().parent().next();
 
 		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
@@ -49,10 +59,10 @@ $(document).ready(function() {
             $(this).closest('.frm').each(function(){
 	        	    this.reset();
 			});
-	});
+	});*/
 	
 	// Функция загрузки изображений на предросмотр
-	function loadInView(files) {
+	function loadInView(files,Index) {
 		// Для каждого файла
 		$.each(files, function(index, file) {
 			// Создаем новый экземпляра FileReader
@@ -61,8 +71,10 @@ $(document).ready(function() {
 				fileReader.onload = (function(file) {
 					return function(e) {
 						// Помещаем URI изображения в массив
-						dataArray.push({name : file.name, value : this.result});
-						addImage((dataArray.length-1),previewZone);
+
+						dataArray[Index].push({name : file.name, value : this.result});
+						addImage((dataArray[Index].length-1),previewZone,Index);
+
 					}; 
 				})(files[index]);
 			// Производим чтение картинки по URI
@@ -72,10 +84,10 @@ $(document).ready(function() {
 	}
 		
 	// Процедура добавления эскизов на страницу
-	function addImage(ind,cs) {
+	function addImage(ind,cs,Index) {
 		// Если индекс отрицательный значит выводим весь массив изображений
 		if (ind < 0 ) { 
-		start = 0; end = dataArray.length; 
+		start = 0; end = dataArray[Index].length; 
 		} else {
 		// иначе только определенное изображение 
 		start = ind; end = ind+1; } 
@@ -83,7 +95,7 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[i].value+'" alt=""></div>'); 
+			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[Index][i].value+'" alt=""></div>'); 
 		}
 		return false;
 	}
@@ -120,6 +132,7 @@ $(document).ready(function() {
 	*/
 	// Загрузка изображений на сервер
 	$('.save').click(function() {
+		var $(this).prev().find('input');
 		// Для каждого файла
 		$.each(dataArray, function(index, file) {	
 			// загружаем страницу и передаем значения, используя HTTP POST запрос 
