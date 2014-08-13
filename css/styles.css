@@ -214,7 +214,7 @@ textarea{
 		width: 100%;
 		height: auto;
 		margin: 0 0 37px 0;
-		font-size: 0;
+		font-size: 0.001px;
 	}
 		.clients_block li{
 			width: 33.3%;
@@ -940,7 +940,7 @@ textarea{
 	.belt{
 		width: 100%;
 		margin: auto;
-		font-size: 0;
+		font-size: 0.001px;
 	}
 	.news{
 		width: 50%;
@@ -1279,7 +1279,6 @@ textarea{
 		margin: 0 auto;
 	}
 	.contacts .clients_block {
-		margin-top: -61px;
 		margin-bottom: 80px;
 	}
 /*footer*/
@@ -1487,7 +1486,7 @@ textarea{
 	.belt{
 		width: 100%;
 		margin: auto;
-		font-size: 0;
+		font-size: 0.001px;
 	}
 	.news{
 		width: 33.33%;
@@ -1574,7 +1573,7 @@ textarea{
 			width: 100%;
 			margin:auto;
 			padding: 38px 0 33px 0;
-			font-size: 0;
+			font-size: 0.001px;
 		}
 				.gallery-img-belt img{
 					width: 380px;
@@ -1899,7 +1898,7 @@ textarea{
 	.insta-menu-block {
 		width: 784px;
 		height: 100%;
-		font-size: 0;
+		font-size: 0.001px;
 		margin: 0 auto;
 	}
 		.insta-menu-block p, .insta-menu-block ul li{
@@ -1982,7 +1981,7 @@ textarea{
 	.belt_1180{
 		width: 1180px;
 		margin: auto;
-		font-size: 0px;
+		font-size: 0.001px;
 	}
 		.description-block{
 			width: 295px;
@@ -2317,7 +2316,7 @@ textarea{
 		.photography .description-text_block p {width: 412px;}
 	.photography .img-belt { 
 		width: 1180px;
-		font-size: 0;
+		font-size: 0.001px;
 		margin-bottom: 24px;
 	}
 	.photography .img-belt img {		
