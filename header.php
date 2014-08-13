@@ -40,14 +40,18 @@
 				<li>мероприятия</li>
 			</ul>
 			<script>
-				// $('.menu').click(function(){
-				// 	var menuDown = $('.menu-down');
-				// 	if(menuDown.css('display') == 'none'){
-				// 		menuDown.css({"display":"block"});
-				// 	}else{
-				// 		menuDown.css({"display":"none"});
-				// 	}
-				// })
+				$('.menu').click(function(){
+					var menuDown = $('.menu-down');
+					var menu = $('.menu')
+					if(menuDown.css('display') == 'none'){
+						menuDown.css({"display":"block"});
+						menu.css({"background":"url(../images/header/menu_pikt_active.png)"});
+					}else{
+						menuDown.css({"display":"none"});
+						menu.css({"background":"url(../images/header/menu_pikt.png)"});
+
+					}
+				})
 			</script>
 		</div>
 	</div><!--header_end-->

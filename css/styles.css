@@ -70,7 +70,7 @@ textarea{
 			cursor: pointer;
 		}
 		.menu-down{
-			/*display: none;*/
+			display: none;
 			position: absolute;
 			top:58px;
 			width: 100%;
@@ -133,6 +133,9 @@ textarea{
 					.menu-social_3{
 						background: url(../images/index/480/menu_social.png) 37px;
 					}
+		.phone-down {
+			display: none;
+		}
 /*content*/
 	.slider{
 		width: 100%;
