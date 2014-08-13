@@ -82,7 +82,7 @@ textarea{
 			.menu-down li{
 				font-size: 18px;
 				font-weight: 400;
-				color:#9d9d9d;
+				color:#666;
 				text-transform: uppercase;
 				line-height: 58px;
 				width: 100%;
@@ -91,24 +91,48 @@ textarea{
 				border-top: 1px solid #f3f3f3;
 				list-style: none;
 			}
-			.menu-social{
-				height: 58px;
-			}
-				.menu-social div{
+				.menu-down .insta-list {
+					font-size: 0.001px;
+					line-height: 46px;
+				}
+				.menu-down .insta-list p {
+					height: 45px;
+					font-size: 18px;
+					color: #666;
+					line-height: 44px;
 					display: inline-block;
-					width: 37px;
-					height: 36px;
-					margin:9px 4px 0 auto;
+					border-right: 1px solid #999;
+					border-left: 1px solid #f3f3f3;
+					padding: 0 31px;
+					margin-top: 7px;
 				}
-				.menu-social_1{
-					background: url(../images/index/480/menu_social.png);
+				.menu-down .insta-list p:first-child {
+					border-left: none;
+					padding-left: 0;
 				}
-				.menu-social_2{
-					background: url(../images/index/480/menu_social.png) 82px;
+				.menu-down .insta-list p:last-child {
+					border-right: none;
+					padding-right: 0;
 				}
-				.menu-social_3{
-					background: url(../images/index/480/menu_social.png) 37px;
+
+				.menu-social{
+					height: 58px;
 				}
+					.menu-social div{
+						display: inline-block;
+						width: 37px;
+						height: 36px;
+						margin:9px 4px 0 auto;
+					}
+					.menu-social_1{
+						background: url(../images/index/480/menu_social.png);
+					}
+					.menu-social_2{
+						background: url(../images/index/480/menu_social.png) 82px;
+					}
+					.menu-social_3{
+						background: url(../images/index/480/menu_social.png) 37px;
+					}
 /*content*/
 	.slider{
 		width: 100%;

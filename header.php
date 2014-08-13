@@ -13,15 +13,26 @@
 		<img src="images/header/logo.png" alt="" class="logo">
 		<div class="title_block">
 			<div class="phone"></div>
+			<ul class="phone-down">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 			<p class="title">главная</p>
 			<div class="menu"></div>
 			<ul class="menu-down">
-				<li class="menu-social">
+				<!-- <li class="menu-social">
 					<div class="menu-social_1"></div>
 					<div class="menu-social_2"></div>
 					<div class="menu-social_3"></div>
 				</li>
-				<li>фотобудка</li>
+				<li>фотобудка</li> -->
+				<li class="insta-list">
+					<p>инстабудка</p>
+					<p>инстамини</p>
+					<p>инсташар</p>
+				</li>
 				<li>фотосъёмка</li>
 				<li>мобильная фотостудия</li>
 				<li>галерея</li>
@@ -29,14 +40,14 @@
 				<li>мероприятия</li>
 			</ul>
 			<script>
-			/*	$('.menu').click(function(){
-					var menuDown = $('.menu-down');
-					if(menuDown.css('display') == 'none'){
-						menuDown.css({"display":"block"});
-					}else{
-						menuDown.css({"display":"none"});
-					}
-				})*/
+				// $('.menu').click(function(){
+				// 	var menuDown = $('.menu-down');
+				// 	if(menuDown.css('display') == 'none'){
+				// 		menuDown.css({"display":"block"});
+				// 	}else{
+				// 		menuDown.css({"display":"none"});
+				// 	}
+				// })
 			</script>
 		</div>
 	</div><!--header_end-->
