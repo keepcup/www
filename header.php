@@ -14,8 +14,8 @@
 		<div class="title_block">
 			<div class="phone"></div>
 			<ul class="phone-down">
-				<li>Елизавета +7 (906) 098 26 93</li>
-				<li>Александр +7 (916) 034 62 54</li>
+				<li class="phone-contact">Елизавета +7 (906) 098 26 93</li>
+				<li class="phone-contact">Александр +7 (916) 034 62 54</li>
 				<li class="phone-social">
 					<a href="/"><div class="phone-social_1"></div></a>
 					<a href="/"><div class="phone-social_2"></div></a>

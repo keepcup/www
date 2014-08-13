@@ -114,6 +114,15 @@ textarea{
 					border-right: none;
 					padding-right: 0;
 				}
+			.phone-down li {
+				font-weight: 300;
+				font-size: 24px;
+				color: #333;
+			}
+				.phone-down li.phone-contact {
+					height: 55px;
+					padding-bottom: 3px;
+				}
 			.phone-social{
 				height: 58px;
 			}
@@ -938,9 +947,11 @@ textarea{
 	.phone{
 		left: 11.067708333%;
 	}
+		.phone-down li {font-size: 24px;}
 	.menu{
 		right:  11.067708333%;
 	}
+		.menu-down .insta-list a {	width: 254px;}
 	h1{
 		line-height: 61px;
 		text-align: left;
