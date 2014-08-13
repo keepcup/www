@@ -96,6 +96,7 @@ textarea{
 					line-height: 46px;
 				}
 				.menu-down .insta-list p {
+					width: 158px;
 					height: 45px;
 					font-size: 18px;
 					color: #666;
@@ -103,7 +104,6 @@ textarea{
 					display: inline-block;
 					border-right: 1px solid #999;
 					border-left: 1px solid #f3f3f3;
-					padding: 0 31px;
 					margin-top: 7px;
 				}
 				.menu-down .insta-list p:first-child {
