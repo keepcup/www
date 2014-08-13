@@ -12,41 +12,31 @@ $(document).ready(function() {
 	var previewZone
 	// Кнопка выбора файлов
 	var defaultUploadBtn;
-	
-	// Массив для всех изображений
+	var prewiewCount = $('.CMS-prewiew').index();
 	var dataArray = [];
-	var dataArrayArray = [];
+	// Массив для всех изображений
+	for(var i = 0; i < prewiewCount; i++){
+		dataArray[i] = [];
+	}
 	var Index;
 
 	// Область информер о загруженных изображениях - скрыта
-	/*$('.CMS-prewiew').on('click', function() {
-		dataArrayArray = ['44','44'];
-		previewZone = $(this);
-		Index = $('.CMS-prewiew').index(previewZone);
-		dataArray[Index]=dataArrayArray;
-		dataArray[Index].push("44",'55');
-		alert(dataArray[Index])
-		/*dataArray[Index]='11';
-		var gg = dataArray[Index].push("44",'55');
-		alert(dataArray[Index])
-	})*/
 	// Метод при падении файла в зону загрузки
 	$('.CMS-prewiew').on('drop', function(e) {
 		previewZone = $(this);
 		Index = $('.CMS-prewiew').index(previewZone);
-
-		dataArray[Index]=dataArrayArray;
+		
+		//dataArray[Index]=dataArrayArray;
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
-		alert(dataArray)
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 		loadInView(files,Index);
 	});
 	
 	// При нажатии на кнопку выбора файлов
-	/*$('.upload_btn').on('change', function() {
+	$('.upload_btn').on('change', function() {
 		previewZone = $(this).parent().parent().parent().next();
-
+		Index = $('.CMS-prewiew').index(previewZone);
 		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		
@@ -54,12 +44,12 @@ $(document).ready(function() {
    		var files = $(this)[0].files;
    		// Проверяем на максимальное количество файлов
 			// Передаем массив с файлами в функцию загрузки на предпросмотр
-			loadInView(files);
+			loadInView(files,Index);
 			// Очищаем инпут файл путем сброса формы
             $(this).closest('.frm').each(function(){
 	        	    this.reset();
 			});
-	});*/
+	});
 	
 	// Функция загрузки изображений на предросмотр
 	function loadInView(files,Index) {
@@ -132,18 +122,20 @@ $(document).ready(function() {
 	*/
 	// Загрузка изображений на сервер
 	$('.save').click(function() {
-		var $(this).prev().find('input');
+		var saveView = $(this).parent('div').next();
+
+		saveIndex = $('.CMS-prewiew').index(saveView);
 		// Для каждого файла
-		$.each(dataArray, function(index, file) {	
+		$.each(dataArray[saveIndex], function(index, file) {	
 			// загружаем страницу и передаем значения, используя HTTP POST запрос 
-			$.post('backend/upload.php', dataArray[index], function(data) {
-				var fileName = dataArray[index].name;
+			$.post('backend/upload.php', dataArray[saveIndex][index], function(data) {
+				var fileName = dataArray[saveIndex][index].name;
 				// Формируем в виде списка все загруженные изображения
 				// data формируется в upload.php
 				var dataSplit = data.split(':');
 			});
 		});
-		dataArray.length = 0;
+		dataArray[saveIndex] = [];
 		// Показываем список загруженных файлов
 		return false;
 	});
