@@ -1225,6 +1225,16 @@ textarea{
 		.instamini .description-block_2{	background: url(../images/instamini/768/desc_2.png) 37px 7px no-repeat;	}
 		.instamini .description-block_3{	background: url(../images/instamini/768/desc_3.png) 37px 7px no-repeat;	}
 		.instamini .features-img_2{	background: url(../images/instamini/768/features_2.png);}
+	/*instashar*/
+		.instashar .description-block_1{
+			background: url(../images/instashar/768/desc_1.png) 37px 7px no-repeat;	
+			padding-top: 40px;
+		}
+		.instashar .description-block_2{
+			background: url(../images/instashar/768/desc_2.png) 37px 7px no-repeat;
+			padding-top: 40px;	
+		}
+		.instashar .description-block_3{	background: url(../images/instamini/768/desc_3.png) 37px 7px no-repeat;	}
 	/*photostudio*/
 
 	.photostudio {
@@ -1935,16 +1945,16 @@ textarea{
 				color: #f58026;
 			}
 	.instabudka_h2{
-	position: relative;
-	margin:0 auto 0px auto;
-	width: 1180px;
-	font-size: 58px;
-	line-height: 60px;
-	text-align: left;
-	background: none;
-	padding-bottom: 5px;
-	border-bottom: 2px solid #dedede;
-}
+		position: relative;
+		margin:0 auto 0px auto;
+		width: 1180px;
+		font-size: 58px;
+		line-height: 60px;
+		text-align: left;
+		background: none;
+		padding-bottom: 5px;
+		border-bottom: 2px solid #dedede;
+	}
 		.description-quote{
 			font-size: 49px;
 			font-style: normal;
