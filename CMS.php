@@ -497,15 +497,15 @@
 								<p class="top-label">Фотографии</p>
 								<div class="button">
 									<p>Добавить фото</p>
-									<form class="upload-form" method="post" action="./serverLogic.fallback.php" enctype="multipart/form-data">
-										<input type="file" class="file-input" name="my-file"/>
+									<form class="frm"> 
+										<input type="file" multiple class="upload_btn" />
 									</form>
 								</div>
 								<div class="button save">
 									 <p>Сохранить</p>
 								</div>
 							</div>
-							<div class="CMS-prewiew photo sortable upload-rows" id="drop-box">
+							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 								<div class="photo-prewiew">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
@@ -522,26 +522,6 @@
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>		
 							</div>
 								<div class="button">
 									<p>Добавить фото</p>
@@ -549,7 +529,7 @@
 										<input type="file" class="file-input_2" name="my-files_2"/>
 									</form>
 								</div>
-							<div class="CMS-prewiew photo sortable upload-rows_2" id="drop-box_2">
+							<div class="CMS-prewiew photo sortable">
 								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
 								<div class="photo-prewiew active"><img src="images/CMS/test.jpg" alt=""></div>
 								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>

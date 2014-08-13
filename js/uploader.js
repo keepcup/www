@@ -23,7 +23,7 @@ $(document).ready(function() {
 		previewZone = $(this);
 		dataArray.length = 0;
 		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
-		var defaultUploadBtn = $(this).prev('.CMS-buttons').find('input');
+		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 		loadInView(files);
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}

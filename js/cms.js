@@ -8,7 +8,7 @@ $(document).ready(function(){
         offT = $(this).offset().top;
         aaa= $(this).find("input").width();
         $(this).find("input").css({
-            left:e.pageX-aaa-160,
+            left:e.pageX-aaa-340,
             top:e.pageY-offT-14
         })
     });
