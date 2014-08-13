@@ -17,9 +17,9 @@
 				<li>Елизавета +7 (906) 098 26 93</li>
 				<li>Александр +7 (916) 034 62 54</li>
 				<li class="phone-social">
-					<div class="menu-social_1"></div>
-					<div class="menu-social_2"></div>
-					<div class="menu-social_3"></div>
+					<a href="/"><div class="phone-social_1"></div></a>
+					<a href="/"><div class="phone-social_2"></div></a>
+					<a href="/"><div class="phone-social_3"></div></a>
 				</li>
 				<li>
 					<div class="order_button">
@@ -37,15 +37,15 @@
 				</li>
 				<li>фотобудка</li> -->
 				<li class="insta-list">
-					<p>инстабудка</p>
-					<p>инстамини</p>
-					<p>инсташар</p>
+					<a href="/">инстабудка</a>
+					<a href="/">инстамини</a>
+					<a href="/">инсташар</a>
 				</li>
-				<li>фотосъёмка</li>
-				<li>мобильная фотостудия</li>
-				<li>галерея</li>
-				<li>контакты</li>
-				<li>мероприятия</li>
+				<li><a href="/">фотосъёмка</a></li>
+				<li><a href="/">мобильная фотостудия</a></li>
+				<li><a href="/">галерея</a></li>
+				<li><a href="/">контакты</a></li>
+				<li><a href="/">мероприятия</a></li>
 			</ul>
 			<script>
 				$('.menu').click(function(){

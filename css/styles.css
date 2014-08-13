@@ -95,7 +95,7 @@ textarea{
 					font-size: 0.001px;
 					line-height: 46px;
 				}
-				.menu-down .insta-list p {
+				.menu-down .insta-list a {
 					width: 158px;
 					height: 45px;
 					font-size: 18px;
@@ -106,32 +106,29 @@ textarea{
 					border-left: 1px solid #f3f3f3;
 					margin-top: 7px;
 				}
-				.menu-down .insta-list p:first-child {
+				.menu-down .insta-list a:first-child {
 					border-left: none;
 					padding-left: 0;
 				}
-				.menu-down .insta-list p:last-child {
+				.menu-down .insta-list a:last-child {
 					border-right: none;
 					padding-right: 0;
 				}
-				.menu-social{
-					height: 58px;
+			.phone-social{
+				height: 58px;
+			}
+				.phone-social div{
+					display: inline-block;
+					width: 35px;
+					height: 35px;
+					margin: 12px 12px 0 12px;
 				}
-					.menu-social div{
-						display: inline-block;
-						width: 37px;
-						height: 36px;
-						margin:9px 4px 0 auto;
-					}
-					.menu-social_1{
-						background: url(../images/index/480/menu_social.png);
-					}
-					.menu-social_2{
-						background: url(../images/index/480/menu_social.png) 82px;
-					}
-					.menu-social_3{
-						background: url(../images/index/480/menu_social.png) 37px;
-					}
+				.phone-social_1{background: url(../images/header/social_pikt_phone.png);}
+				.phone-social_2{background: url(../images/header/social_pikt_phone.png) 35px;}
+				.phone-social_3{background: url(../images/header/social_pikt_phone.png) 70px;}
+			.phone-down .order_button p {
+				padding-top: 0;
+			}
 
 /*content*/
 	.slider{
