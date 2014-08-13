@@ -70,13 +70,14 @@ textarea{
 			cursor: pointer;
 		}
 		.menu-down{
-			display: none;
+			/*display: none;*/
 			position: absolute;
 			top:58px;
 			width: 100%;
 			background:#dadada;
 			border-top: 1px solid #999;
 			border-bottom: 1px solid #f3f3f3;
+			z-index: 99;
 		}
 			.menu-down li{
 				font-size: 18px;

@@ -28,6 +28,16 @@
 				<li>контакты</li>
 				<li>мероприятия</li>
 			</ul>
+			<script>
+			/*	$('.menu').click(function(){
+					var menuDown = $('.menu-down');
+					if(menuDown.css('display') == 'none'){
+						menuDown.css({"display":"block"});
+					}else{
+						menuDown.css({"display":"none"});
+					}
+				})*/
+			</script>
 		</div>
 	</div><!--header_end-->
 	<!-- header-main-1180 -->
