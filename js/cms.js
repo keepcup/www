@@ -6,9 +6,8 @@ $(document).ready(function(){
         var offL, offR, inpStart, aaa;
         offL = $(this).offset().left;
         offT = $(this).offset().top;
-        aaa= $(this).find("input").width();
         $(this).find("input").css({
-            left:e.pageX-aaa-340,
+            left:e.pageX-offL-160,
             top:e.pageY-offT-14
         })
     });
