@@ -69,7 +69,7 @@ textarea{
 			background: url(../images/header/menu_pikt.png);
 			cursor: pointer;
 		}
-		.menu-down{
+		.menu-down, .phone-down{
 			display: none;
 			position: absolute;
 			top:58px;
@@ -79,7 +79,7 @@ textarea{
 			border-bottom: 1px solid #f3f3f3;
 			z-index: 99;
 		}
-			.menu-down li{
+			.menu-down li, .phone-down li{
 				font-size: 18px;
 				font-weight: 400;
 				color:#666;
@@ -114,7 +114,6 @@ textarea{
 					border-right: none;
 					padding-right: 0;
 				}
-
 				.menu-social{
 					height: 58px;
 				}
@@ -133,9 +132,7 @@ textarea{
 					.menu-social_3{
 						background: url(../images/index/480/menu_social.png) 37px;
 					}
-		.phone-down {
-			display: none;
-		}
+
 /*content*/
 	.slider{
 		width: 100%;

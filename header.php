@@ -14,10 +14,18 @@
 		<div class="title_block">
 			<div class="phone"></div>
 			<ul class="phone-down">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>Елизавета +7 (906) 098 26 93</li>
+				<li>Александр +7 (916) 034 62 54</li>
+				<li class="phone-social">
+					<div class="menu-social_1"></div>
+					<div class="menu-social_2"></div>
+					<div class="menu-social_3"></div>
+				</li>
+				<li>
+					<div class="order_button">
+						<p>Заказать фотобудку</p>						
+					</div>
+				</li>
 			</ul>
 			<p class="title">главная</p>
 			<div class="menu"></div>
@@ -42,13 +50,33 @@
 			<script>
 				$('.menu').click(function(){
 					var menuDown = $('.menu-down');
-					var menu = $('.menu')
+					var menu = $('.menu');
+					var phoneDown = $('.phone-down');
+					var phone = $('.phone');
 					if(menuDown.css('display') == 'none'){
 						menuDown.css({"display":"block"});
 						menu.css({"background":"url(../images/header/menu_pikt_active.png)"});
+						phoneDown.css({"display":"none"});
+						phone.css({"background":"url(../images/header/phone_pikt.png)"});
 					}else{
 						menuDown.css({"display":"none"});
 						menu.css({"background":"url(../images/header/menu_pikt.png)"});
+
+					}
+				})
+				$('.phone').click(function(){
+					var menuDown = $('.menu-down');
+					var menu = $('.menu');
+					var phoneDown = $('.phone-down');
+					var phone = $('.phone');
+					if(phoneDown.css('display') == 'none'){
+						phoneDown.css({"display":"block"});
+						phone.css({"background":"url(../images/header/phone_pikt_active.png)"});
+						menuDown.css({"display":"none"});
+						menu.css({"background":"url(../images/header/menu_pikt.png)"});
+					}else{
+						phoneDown.css({"display":"none"});
+						phone.css({"background":"url(../images/header/phone_pikt.png)"});
 
 					}
 				})
