@@ -240,7 +240,8 @@ textarea{
 		text-transform: uppercase;
 		text-align: center;
 		line-height: 58px;
-		border-bottom:2px solid #dddddd;
+		border-bottom: 2px solid #dddddd;
+		border-top: 2px solid #dddddd;
 	}
 	.clients_block{
 		width: 100%;
@@ -869,7 +870,6 @@ textarea{
 	.zakaz {
 		width: 100%;
 		height: auto;
-		border-bottom: 2px solid #dedede;
 		padding-bottom: 40px;
 	}
 		.contacts .zakaz h2 {
@@ -879,7 +879,6 @@ textarea{
 			text-transform: uppercase;
 			text-align: center;
 			color: #999;
-			border-bottom: 2px solid #ddd;
 		}
 		.contacts .zakaz>p {
 			width: 65%;
@@ -1321,7 +1320,6 @@ textarea{
 		}
 	.contacts .zakaz {
 		width: 85.9375%;
-		border-bottom: none;
 		margin: 0 auto;
 	}
 		.contacts .zakaz>p {width: 48%}
@@ -2277,8 +2275,9 @@ textarea{
 	}
 	.top-block-belt {
 		width: 1180px;
-		height: 898px;		
+		height: auto;		
 		margin: 0 auto;
+		overflow: hidden;
 	}
 	.contacts .pennant-info {
 		width: 300px;
@@ -2392,7 +2391,6 @@ textarea{
 	.contacts .zakaz {
 		width: 1180px;
 		float: left;
-		border-bottom: none;
 		padding-bottom: 100px;
 	}
 		.contacts .zakaz>p {
