@@ -31,15 +31,15 @@
 			<div class="menu"></div>
 			<ul class="menu-down">
 				<li class="insta-list">
-					<a href="/">инстабудка</a>
-					<a href="/">инстамини</a>
-					<a href="/">инсташар</a>
+					<a href="/instabudka.php">инстабудка</a>
+					<a href="/instamini.php">инстамини</a>
+					<a href="/instashar.php">инсташар</a>
 				</li>
-				<li><a href="/">фотосъёмка</a></li>
-				<li><a href="/">мобильная фотостудия</a></li>
-				<li><a href="/">галерея</a></li>
-				<li><a href="/">контакты</a></li>
-				<li><a href="/">мероприятия</a></li>
+				<li><a href="/photography.php">фотосъёмка</a></li>
+				<li><a href="/photostudio.php">мобильная фотостудия</a></li>
+				<li><a href="/gallery.php">галерея</a></li>
+				<li><a href="/contacts.php">контакты</a></li>
+				<li><a href="/blog.php">мероприятия</a></li>
 			</ul>
 			<script>
 				$('.menu').click(function(){
@@ -98,12 +98,19 @@
 			</div>
 			<div class="header-menu">
 				<ul>
-					<li><a href="/instabudka.php">фотобудка</a></li>
+					<li><a href="#">фотобудка</a></li>
 					<li><a href="/photography.php">фотосъёмка</a></li>
 					<li><a href="/photostudio.php">мобильная фотостудия</a></li>
 					<li><a href="/gallery.php">галерея</a></li>
 					<li><a href="/contacts.php">контакты</a></li>
 					<li><a href="/blog.php">мероприятия</a></li>
+				</ul>
+			</div>
+			<div class="header-menu-down">
+				<ul>
+					<li><a href="/instabudka.php"></a></li>
+					<li><a href="/instamini.php"></a></li>
+					<li><a href="/instashar.php"></a></li>
 				</ul>
 			</div>
 		</div><!-- end of header-main-1180 -->
