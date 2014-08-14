@@ -42,11 +42,11 @@
 				<li><a href="/blog.php">мероприятия</a></li>
 			</ul>
 			<script>
-				$('.menu').click(function(){
-					var menuDown = $('.menu-down');
-					var menu = $('.menu');
-					var phoneDown = $('.phone-down');
-					var phone = $('.phone');
+				var menuDown = $('.menu-down');
+				var menu = $('.menu');
+				var phoneDown = $('.phone-down');
+				var phone = $('.phone');
+				$('.menu').click(function(){					
 					if(menuDown.css('display') == 'none'){
 						menuDown.css({"display":"block"});
 						menu.css({"background":"url(../images/header/menu_pikt_active.png)"});
@@ -59,10 +59,6 @@
 					}
 				})
 				$('.phone').click(function(){
-					var menuDown = $('.menu-down');
-					var menu = $('.menu');
-					var phoneDown = $('.phone-down');
-					var phone = $('.phone');
 					if(phoneDown.css('display') == 'none'){
 						phoneDown.css({"display":"block"});
 						phone.css({"background":"url(../images/header/phone_pikt_active.png)"});
@@ -98,20 +94,29 @@
 			</div>
 			<div class="header-menu">
 				<ul>
-					<li><a href="#">фотобудка</a></li>
+					<li class="insta-butt"><a href="#">фотобудка</a></li>
 					<li><a href="/photography.php">фотосъёмка</a></li>
-					<li><a href="/photostudio.php">мобильная фотостудия</a></li>
+					<li><a class="active-url" href="/photostudio.php">мобильная фотостудия</a></li>
 					<li><a href="/gallery.php">галерея</a></li>
 					<li><a href="/contacts.php">контакты</a></li>
 					<li><a href="/blog.php">мероприятия</a></li>
+
+				</ul>
+			</div>	
+			<div class="header-menu-down-belt">
+				<ul class="header-menu-down">
+					<li><a href="/instabudka.php">Инстабудка</a></li>
+					<li><a href="/instamini.php">Инстамини</a></li>
+					<li><a href="/instashar.php">инсташар</a></li>
 				</ul>
 			</div>
-			<div class="header-menu-down">
-				<ul>
-					<li><a href="/instabudka.php"></a></li>
-					<li><a href="/instamini.php"></a></li>
-					<li><a href="/instashar.php"></a></li>
-				</ul>
-			</div>
+			<script>
+				var headMenuDownBelt = $('.header-menu-down-belt');
+				var headMenuDown = $('.header-menu-down');
+				$('.insta-butt')
+					.mouseenter(function(){
+						headMenuDownBelt.css({'display':'block'});
+					})
+			</script>
 		</div><!-- end of header-main-1180 -->
 <?include "db.php";?>

@@ -1467,6 +1467,38 @@ textarea{
 			letter-spacing: 0px;
 		}
 		.header-menu a:hover {color: #999;}
+		.active-url {color: #f58026;}
+	.header-menu-down-belt {
+		width: 820px;
+		display: none;
+		position: absolute;
+		z-index: 99;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+	}
+		.header-menu-down {
+			display: block;
+			width: 132px;
+			background: #f3f3f3;
+		}
+			.header-menu-down li {
+				font-size: 16px;
+				text-transform: uppercase;
+				line-height: 36px;
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid #d9dbdd;
+				border-top: 1px solid #fdfdfd;
+				list-style: none;
+			}
+			.header-menu-down li:first-child {border-top: none;}
+				.header-menu-down li a {
+					color: #666;
+					font-weight: 300;
+				}
+				.header-menu-down li a:hover {color: #f58026;}
+
 	/*end of header*/
 
 	/*index*/
