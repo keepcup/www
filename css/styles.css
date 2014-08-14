@@ -1448,40 +1448,40 @@ textarea{
 		height: 58px;
 		border-bottom: 2px solid #dddddd;
 	}
-		.header-menu ul {
+		.header-menu>ul {
 			width: 800px;
 			height: auto;
 			display: block;
 			margin: 0 auto;
-			padding-top: 18px;
 		}
-		.header-menu li {
+		.header-menu>ul>li {
 			display: inline-block;
 			margin: 0 10px;
 
 		}
-		.header-menu a {
+		.header-menu>ul>li>a {
+			display: inline-block;
 			text-transform: uppercase;
 			font-size: 18px;
 			font-weight: 300;
 			letter-spacing: 0px;
+			line-height: 58px;
 		}
 		.header-menu a:hover {color: #999;}
 		.active-url {color: #f58026;}
-	.header-menu-down-belt {
-		width: 820px;
-		display: none;
-		position: absolute;
-		z-index: 99;
-		right: 0;
-		left: 0;
-		margin: 0 auto;
+	.insta-butt {
+		position: relative;
+		line-height: 60px;
 	}
 		.header-menu-down {
-			display: block;
+			position: absolute;
+			display: none;
 			width: 132px;
 			background: #f3f3f3;
+			left: -20px;
+			top: 60px;
 		}
+		li.insta-butt:hover>ul {display: block;}
 			.header-menu-down li {
 				font-size: 16px;
 				text-transform: uppercase;
