@@ -45,5 +45,5 @@
 		    loop: true,
 		    calculateHeight: true
 		})
-		</script>
+	</script>
 <?include "footer.php";?>
