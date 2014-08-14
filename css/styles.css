@@ -551,13 +551,7 @@ textarea{
 				text-transform: uppercase;
 				background: url(../images/index/other_clients_underline.png) bottom repeat-x;
 			}
-			.other_gallery-text:before, .other_gallery-text:after {
-				content: "————";
-				font-weight: 300;
-				font-size: 10px;			
-				line-height: 52px;
-				letter-spacing: -2.3px;
-				color: #666;
+			.other_gallery .line {
 				display: none;
 			}
 	/*instamini*/
@@ -1112,14 +1106,23 @@ textarea{
 			margin-top: 0;
 			margin-bottom: 15px;
 		}
-
-		.other_gallery-text:before, .other_gallery-text:after {
+		.other_gallery-text {
+			display: inline-block;
+			height: 25px;	
+		}
+		.other_gallery .line {
 			display: block;
+			width: 20px;
+			height: 5px;
+			color: #666;
+			border-bottom: 1px solid #666;
+			margin: 32px auto 26px auto;
+		}
+		.other_gallery .line:last-child {
+			margin-top: 22px;
+			margin-bottom: 46px;
 		}
 
-		.other_gallery-text:after {
-			margin-top: 3px;
-		}
 	/*blog*/
 	.blog-belt{
 		width:  85.9375%;
@@ -2230,16 +2233,23 @@ textarea{
 				}
 		.other_gallery{
 			border-top: 2px solid #dedede;
-			height: 160px;
+			height: 156px;
 		}
-			.other_gallery p {margin-top: 12px;}
-			.other_gallery-text:before, .other_gallery-text:after {
+			.other_gallery .line {
 				display: block;
+				width: 20px;
+				height: 5px;
+				color: #666;
+				border-bottom: 1px solid #666;
+				margin: 32px auto 26px auto;
 			}
-
-			.other_gallery-text:after {
-				margin-top: 3px;
+			.other_gallery .line:last-child {
+				margin-top: 22px;
 			}
+			.other_gallery p {
+				margin: 12px 0 0 0;
+			}
+			
 		.description-img{
 		}
 	/*instamini*/
