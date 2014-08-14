@@ -207,7 +207,9 @@
 			</div>
 		</div><!--features-end-->
 		<div class="other_gallery">
+			<div class="line"></div>
 			<p><a href="#" class="other_gallery-text">галерея мероприятий</a></p>
+			<div class="line"></div>
 		</div>
 	</div><!--content_end-->
 <?include "footer.php";?>

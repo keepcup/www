@@ -69,7 +69,7 @@ textarea{
 			background: url(../images/header/menu_pikt.png);
 			cursor: pointer;
 		}
-		.menu-down{
+		.menu-down, .phone-down{
 			display: none;
 			position: absolute;
 			top:58px;
@@ -77,11 +77,12 @@ textarea{
 			background:#dadada;
 			border-top: 1px solid #999;
 			border-bottom: 1px solid #f3f3f3;
+			z-index: 99;
 		}
-			.menu-down li{
+			.menu-down li, .phone-down li{
 				font-size: 18px;
 				font-weight: 400;
-				color:#9d9d9d;
+				color:#666;
 				text-transform: uppercase;
 				line-height: 58px;
 				width: 100%;
@@ -90,24 +91,55 @@ textarea{
 				border-top: 1px solid #f3f3f3;
 				list-style: none;
 			}
-			.menu-social{
+				.menu-down a {color: #666;}
+				.menu-down .insta-list {
+					font-size: 0.001px;
+					line-height: 46px;
+				}
+				.menu-down .insta-list a {
+					width: 158px;
+					height: 45px;
+					font-size: 18px;
+					color: #666;
+					line-height: 44px;
+					display: inline-block;
+					border-right: 1px solid #999;
+					border-left: 1px solid #f3f3f3;
+					margin-top: 7px;
+				}
+				.menu-down .insta-list a:first-child {
+					border-left: none;
+					padding-left: 0;
+				}
+				.menu-down .insta-list a:last-child {
+					border-right: none;
+					padding-right: 0;
+				}
+			.phone-down li {
+				font-weight: 300;
+				font-size: 24px;
+				color: #333;
+			}
+				.phone-down li.phone-contact {
+					height: 55px;
+					padding-bottom: 3px;
+				}
+			.phone-social{
 				height: 58px;
 			}
-				.menu-social div{
+				.phone-social div{
 					display: inline-block;
-					width: 37px;
-					height: 36px;
-					margin:9px 4px 0 auto;
+					width: 35px;
+					height: 35px;
+					margin: 12px 12px 0 12px;
 				}
-				.menu-social_1{
-					background: url(../images/index/480/menu_social.png);
-				}
-				.menu-social_2{
-					background: url(../images/index/480/menu_social.png) 82px;
-				}
-				.menu-social_3{
-					background: url(../images/index/480/menu_social.png) 37px;
-				}
+				.phone-social_1{background: url(../images/header/social_pikt_phone.png);}
+				.phone-social_2{background: url(../images/header/social_pikt_phone.png) 35px;}
+				.phone-social_3{background: url(../images/header/social_pikt_phone.png) 70px;}
+			.phone-down .order_button p {
+				padding-top: 0;
+			}
+
 /*content*/
 	.slider{
 		width: 100%;
@@ -208,13 +240,14 @@ textarea{
 		text-transform: uppercase;
 		text-align: center;
 		line-height: 58px;
-		border-bottom:2px solid #dddddd;
+		border-bottom: 2px solid #dddddd;
+		border-top: 2px solid #dddddd;
 	}
 	.clients_block{
 		width: 100%;
 		height: auto;
 		margin: 0 0 37px 0;
-		font-size: 0;
+		font-size: 0.001px;
 	}
 		.clients_block li{
 			width: 33.3%;
@@ -518,28 +551,32 @@ textarea{
 				text-transform: uppercase;
 				background: url(../images/index/other_clients_underline.png) bottom repeat-x;
 			}
-			.other_gallery-text:before, .other_gallery-text:after {
-				content: "————";
-				font-weight: 300;
-				font-size: 10px;			
-				line-height: 52px;
-				letter-spacing: -2.3px;
-				color: #666;
+			.other_gallery .line {
 				display: none;
 			}
 	/*instamini*/
-		.instamini .description-block_1{
-			background: url(../images/instamini/480/desc_1.png) 37px 7px no-repeat;
+		.instamini .description-block_1{background: url(../images/instamini/480/desc_1.png) 37px 7px no-repeat;	}
+		.instamini .description-block_2{background: url(../images/instamini/480/desc_2.png) 37px 7px no-repeat;	}
+		.instamini .description-block_3{background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;	}
+		.instamini .features-img_2{	background: url(../images/instamini/480/features_2.png);}
+	/*instashar*/
+		.instashar .description-text-instagram {
+			display: inline-block;
+			margin:  0 0 -8px -13px;
+			height: 36px;
+			width: 42px;
+			background: url(../images/instashar/480/quote_instagram.png) center left no-repeat,#eee;
 		}
-		.instamini .description-block_2{
-			background: url(../images/instamini/480/desc_2.png) 37px 7px no-repeat;
+		.instashar .description-block_1{
+			background: url(../images/instashar/480/desc_1.png) 37px 7px no-repeat;
+			padding-top: 27px;
 		}
-		.instamini .description-block_3{
-			background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;
+		.instashar .description-block_2{
+			background: url(../images/instashar/480/desc_2.png) 37px 7px no-repeat;
+			padding-top: 25px;
 		}
-		.instamini .features-img_2{
-			background: url(../images/instamini/480/features_2.png);
-		}
+		.instashar .description-block_3{background: url(../images/instamini/480/desc_3.png) 37px 7px no-repeat;	}
+
 	/*gallery*/
 	.gallery{
 		position: relative;
@@ -827,7 +864,6 @@ textarea{
 	.zakaz {
 		width: 100%;
 		height: auto;
-		border-bottom: 2px solid #dedede;
 		padding-bottom: 40px;
 	}
 		.contacts .zakaz h2 {
@@ -837,7 +873,6 @@ textarea{
 			text-transform: uppercase;
 			text-align: center;
 			color: #999;
-			border-bottom: 2px solid #ddd;
 		}
 		.contacts .zakaz>p {
 			width: 65%;
@@ -906,9 +941,11 @@ textarea{
 	.phone{
 		left: 11.067708333%;
 	}
+		.phone-down li {font-size: 24px;}
 	.menu{
 		right:  11.067708333%;
 	}
+		.menu-down .insta-list a {	width: 254px;}
 	h1{
 		line-height: 61px;
 		text-align: left;
@@ -940,7 +977,7 @@ textarea{
 	.belt{
 		width: 100%;
 		margin: auto;
-		font-size: 0;
+		font-size: 0.001px;
 	}
 	.news{
 		width: 50%;
@@ -1069,14 +1106,23 @@ textarea{
 			margin-top: 0;
 			margin-bottom: 15px;
 		}
-
-		.other_gallery-text:before, .other_gallery-text:after {
+		.other_gallery-text {
+			display: inline-block;
+			height: 25px;	
+		}
+		.other_gallery .line {
 			display: block;
+			width: 20px;
+			height: 5px;
+			color: #666;
+			border-bottom: 1px solid #666;
+			margin: 32px auto 26px auto;
+		}
+		.other_gallery .line:last-child {
+			margin-top: 22px;
+			margin-bottom: 46px;
 		}
 
-		.other_gallery-text:after {
-			margin-top: 3px;
-		}
 	/*blog*/
 	.blog-belt{
 		width:  85.9375%;
@@ -1215,6 +1261,16 @@ textarea{
 		.instamini .description-block_2{	background: url(../images/instamini/768/desc_2.png) 37px 7px no-repeat;	}
 		.instamini .description-block_3{	background: url(../images/instamini/768/desc_3.png) 37px 7px no-repeat;	}
 		.instamini .features-img_2{	background: url(../images/instamini/768/features_2.png);}
+	/*instashar*/
+		.instashar .description-block_1{
+			background: url(../images/instashar/768/desc_1.png) 37px 7px no-repeat;	
+			padding-top: 40px;
+		}
+		.instashar .description-block_2{
+			background: url(../images/instashar/768/desc_2.png) 37px 7px no-repeat;
+			padding-top: 40px;	
+		}
+		.instashar .description-block_3{	background: url(../images/instamini/768/desc_3.png) 37px 7px no-repeat;	}
 	/*photostudio*/
 
 	.photostudio {
@@ -1267,7 +1323,6 @@ textarea{
 		}
 	.contacts .zakaz {
 		width: 85.9375%;
-		border-bottom: none;
 		margin: 0 auto;
 	}
 		.contacts .zakaz>p {width: 48%}
@@ -1279,7 +1334,6 @@ textarea{
 		margin: 0 auto;
 	}
 	.contacts .clients_block {
-		margin-top: -61px;
 		margin-bottom: 80px;
 	}
 /*footer*/
@@ -1395,24 +1449,57 @@ textarea{
 		height: 58px;
 		border-bottom: 2px solid #dddddd;
 	}
-		.header-menu ul {
+		.header-menu>ul {
 			width: 800px;
 			height: auto;
 			display: block;
 			margin: 0 auto;
-			padding-top: 18px;
 		}
-		.header-menu li {
+		.header-menu>ul>li {
 			display: inline-block;
 			margin: 0 10px;
 
 		}
-		.header-menu a {
+		.header-menu>ul>li>a {
+			display: inline-block;
 			text-transform: uppercase;
 			font-size: 18px;
 			font-weight: 300;
 			letter-spacing: 0px;
+			line-height: 58px;
 		}
+		.header-menu a:hover {color: #999;}
+		.active-url {color: #f58026;}
+	.insta-butt {
+		position: relative;
+		line-height: 60px;
+	}
+		.header-menu-down {
+			position: absolute;
+			display: none;
+			width: 132px;
+			background: #f3f3f3;
+			left: -20px;
+			top: 60px;
+		}
+		li.insta-butt:hover>ul {display: block;}
+			.header-menu-down li {
+				font-size: 16px;
+				text-transform: uppercase;
+				line-height: 36px;
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px solid #d9dbdd;
+				border-top: 1px solid #fdfdfd;
+				list-style: none;
+			}
+			.header-menu-down li:first-child {border-top: none;}
+				.header-menu-down li a {
+					color: #666;
+					font-weight: 300;
+				}
+				.header-menu-down li a:hover {color: #f58026;}
+
 	/*end of header*/
 
 	/*index*/
@@ -1487,7 +1574,7 @@ textarea{
 	.belt{
 		width: 100%;
 		margin: auto;
-		font-size: 0;
+		font-size: 0.001px;
 	}
 	.news{
 		width: 33.33%;
@@ -1574,7 +1661,7 @@ textarea{
 			width: 100%;
 			margin:auto;
 			padding: 38px 0 33px 0;
-			font-size: 0;
+			font-size: 0.001px;
 		}
 				.gallery-img-belt img{
 					width: 380px;
@@ -1899,7 +1986,7 @@ textarea{
 	.insta-menu-block {
 		width: 784px;
 		height: 100%;
-		font-size: 0;
+		font-size: 0.001px;
 		margin: 0 auto;
 	}
 		.insta-menu-block p, .insta-menu-block ul li{
@@ -1922,17 +2009,20 @@ textarea{
 			line-height: 54px;
 			cursor: pointer;
 		}
+			.insta-menu-block ul li:hover {
+				color: #f58026;
+			}
 	.instabudka_h2{
-	position: relative;
-	margin:0 auto 0px auto;
-	width: 1180px;
-	font-size: 58px;
-	line-height: 60px;
-	text-align: left;
-	background: none;
-	padding-bottom: 5px;
-	border-bottom: 2px solid #dedede;
-}
+		position: relative;
+		margin:0 auto 0px auto;
+		width: 1180px;
+		font-size: 58px;
+		line-height: 60px;
+		text-align: left;
+		background: none;
+		padding-bottom: 5px;
+		border-bottom: 2px solid #dedede;
+	}
 		.description-quote{
 			font-size: 49px;
 			font-style: normal;
@@ -1979,7 +2069,7 @@ textarea{
 	.belt_1180{
 		width: 1180px;
 		margin: auto;
-		font-size: 0px;
+		font-size: 0.001px;
 	}
 		.description-block{
 			width: 295px;
@@ -2143,16 +2233,23 @@ textarea{
 				}
 		.other_gallery{
 			border-top: 2px solid #dedede;
-			height: 160px;
+			height: 156px;
 		}
-			.other_gallery p {margin-top: 12px;}
-			.other_gallery-text:before, .other_gallery-text:after {
+			.other_gallery .line {
 				display: block;
+				width: 20px;
+				height: 5px;
+				color: #666;
+				border-bottom: 1px solid #666;
+				margin: 32px auto 26px auto;
 			}
-
-			.other_gallery-text:after {
-				margin-top: 3px;
+			.other_gallery .line:last-child {
+				margin-top: 22px;
 			}
+			.other_gallery p {
+				margin: 12px 0 0 0;
+			}
+			
 		.description-img{
 		}
 	/*instamini*/
@@ -2167,15 +2264,30 @@ textarea{
 	}
 		.instamini .features-img_2{background: url(../images/instamini/1180/features.png) -219px 0;}
 	/*instashar*/
-	.instashar .description-quote {margin-top: -210px;}
-
+	.instashar .insta-menu-block ul {margin-left: 200px;}
+	.instashar .description-quote {
+		width: 710px;
+		margin: -213px 0 140px 0;
+	}
+		.instashar .description-block_1{
+			background: url(../images/instashar/1180/desc.png) 0px 15px no-repeat;
+			padding-top: 238px;
+		}
+		.instashar .description-block_2{
+			background: url(../images/instashar/1180/desc.png) -180px 15px no-repeat;
+			padding-top: 238px;
+		}
+		.instashar .description-block_3{background: url(../images/instamini/1180/desc.png) -360px 15px no-repeat;}
+	.instashar .function-quote {margin: -313px 0 182px 0;}
+	.instashar .decor-quote {margin: -237px 0 204px 0;}
 	/*contacts*/
 	.contacts.content {
 	}
 	.top-block-belt {
 		width: 1180px;
-		height: 898px;		
+		height: auto;		
 		margin: 0 auto;
+		overflow: hidden;
 	}
 	.contacts .pennant-info {
 		width: 300px;
@@ -2289,7 +2401,6 @@ textarea{
 	.contacts .zakaz {
 		width: 1180px;
 		float: left;
-		border-bottom: none;
 		padding-bottom: 100px;
 	}
 		.contacts .zakaz>p {
@@ -2314,7 +2425,7 @@ textarea{
 		.photography .description-text_block p {width: 412px;}
 	.photography .img-belt { 
 		width: 1180px;
-		font-size: 0;
+		font-size: 0.001px;
 		margin-bottom: 24px;
 	}
 	.photography .img-belt img {		
