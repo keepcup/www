@@ -39,11 +39,12 @@
 	</div><!--content_end-->
 	<script>
 		var mySwiper = new Swiper('.swiper-container',{
+			calculateHeight: true,
 		    freeModeFluid: true,
 		    autoplay: 5000,
+		    autoplayDisableOnInteraction: false,
 		    speed: 500,
-		    loop: true,
-		    calculateHeight: true
+		    loop: true		    
 		})
 	</script>
 <?include "footer.php";?>
