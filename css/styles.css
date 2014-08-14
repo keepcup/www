@@ -1505,12 +1505,14 @@ textarea{
 	/*index*/
 
 	h1{
+		position: relative;
 		width: 1180px;
 		line-height: 85px;
 		text-align: left;
 		font-size: 84px;
 		margin:-250px auto 61px auto;
-		border-bottom:0px solid #dddddd;		
+		border-bottom:0px solid #dddddd;
+		z-index: 99;		
 	}
 		h1 span{
 			max-width:900px; 
@@ -2493,6 +2495,7 @@ textarea{
 .swiper-wrapper {
 	position:relative;
 	width:100%;
+	overflow: hidden;
 	-webkit-transition-property:-webkit-transform, left, top;
 	-webkit-transition-duration:0s;
 	-webkit-transform:translate3d(0px,0,0);
@@ -2528,13 +2531,10 @@ textarea{
 	margin: 0 auto;
 }
 .swiper-slide {
-	position: relative;
 	float: left;
-	font-size: 0;
 }
 	.swiper-slide img{
-		width: 900px;
-		height: 100px;
+		width: 100%;
 	}
 /* IE10 Windows Phone 8 Fixes */
 .swiper-wp8-horizontal {

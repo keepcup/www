@@ -39,7 +39,6 @@
 	</div><!--content_end-->
 	<script>
 		var mySwiper = new Swiper('.swiper-container',{
-		    slidesPerView: 'auto',
 		    freeModeFluid: true
 		})
 	</script>
