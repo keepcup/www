@@ -39,15 +39,11 @@
 	</div><!--content_end-->
 	<script>
 		var mySwiper = new Swiper('.swiper-container',{
-		    freeModeFluid: true
+		    freeModeFluid: true,
+		    autoplay: 5000,
+		    speed: 500,
+		    loop: true,
+		    calculateHeight: true
 		})
-		var swiper = $('.swiper-container').swiper()
-		$(window).resize(function(){
-		  //Calc Height
-		  $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
-		  //ReInit Swiper
-		  swiper.reInit()
-		})
-		 $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
 		</script>
 <?include "footer.php";?>
