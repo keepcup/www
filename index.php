@@ -41,7 +41,7 @@
 		var mySwiper = new Swiper('.swiper-container',{
 			calculateHeight: true,
 		    freeModeFluid: true,
-		    autoplay: 5000,
+		    autoplay: 20000,
 		    autoplayDisableOnInteraction: false,
 		    speed: 500,
 		    loop: true		    
