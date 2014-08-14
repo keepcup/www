@@ -81,19 +81,21 @@ body,html{
 			width: 1018px;
 			height: 100%;
 			float: left;
-			overflow: hidden;
+			/*overflow: hidden;*/
 			border-left: 2px solid #d9dbdd;
-
 			-webkit-box-sizing: border-box;
 			   -moz-box-sizing: border-box;
 					box-sizing: border-box;
 		}
 		.CMS-buttons {float: left;}
 		.CMS-prewiew {
-			width: 716px;
+			position: relative;
+			width: 696px;
+			/*height: 222px;*/
+			/*padding: 18px 0 20px 20px;*/
+			margin: 0 0 20px 20px;
 			height: 100%;
 			float: left;
-			padding: 18px 0 20px 20px;
 			overflow: hidden;
 
 			-webkit-box-sizing: border-box;
@@ -103,7 +105,7 @@ body,html{
 			.CMS-prewiew.photo {font-size: 0;}
 			.photo-prewiew {
 				width: 152px;
-				margin: 0 60px 20px 0;
+				margin: 20px 60px 0 0;
 				display: inline-block;
 				position: relative;
 				padding-right: 20px;
@@ -153,7 +155,7 @@ body,html{
 			.CMS .button.save {background-color: #71c592;}
 		.CMS-main-slide .CMS-buttons {padding: 78px 0 0 60px;}
 
-		.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}
+		/*.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}*/
 			.CMS-block.CMS-main-slide {	height: 262px;}
 			.CMS-block.CMS-main-clients {
 				min-height: 170px;

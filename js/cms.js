@@ -1,6 +1,10 @@
 $(document).ready(function(){
-	$(".sortable").sortable({ revert:true });
-	$( "ul, li" ).disableSelection();
+    $('.CMS-prewiew').perfectScrollbar({
+        wheelSpeed: 20,
+        wheelPropagation: false,
+        suppressScrollX: true
+    });
+	$(".sortable").not('.ps-scrollbar-y-rail').sortable({ revert:true, cancel: ".ps-scrollbar-y-rail" });
 	/*input file*/
 	$(".button").mousemove(function(e) {
         var offL, offR, inpStart, aaa;
@@ -15,4 +19,5 @@ $(document).ready(function(){
         checkboxClass: 'icheckbox_minimal-green',
         increaseArea: '100%' 
     });
+    
 })/*end*/

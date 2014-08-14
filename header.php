@@ -36,7 +36,8 @@
 				<div class="header-top-content">
 					<div class="header-social">
 						<ul>
-							<li id="vk"><a href="vk.com"></a></li>
+							<li id="vk"><a href="vk.com
+							"></a></li>
 							<li id="fb"><a href="facebook.com"></a></li>
 							<li id="gram"><a href="instagram.com"></a></li>
 						</ul>

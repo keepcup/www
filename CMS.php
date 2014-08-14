@@ -4,11 +4,13 @@
 	<meta charset="UTF-8">
 	<title>CMS</title>
 	<link rel="stylesheet" href="css/CMS.css">
+	<link rel="stylesheet" href="css/perfect-scrollbar.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/cms.js"></script>
 	<script type="text/javascript" src="js/uploader.js"></script>
 	<script type="text/javascript" src="js/jquery.icheck.js"></script>
+	<script type="text/javascript" src="js/perfect-scrollbar-0.4.8.with-mousewheel.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -31,6 +33,26 @@
 						</div>
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew photo-prewiew-old">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
 						<div class="photo-prewiew photo-prewiew-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
