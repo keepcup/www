@@ -1,7 +1,18 @@
 <?include "header.php";$url='index';?>
+<script src="/js/idangerous.swiper-2.1.min.js"></script>
 	<div class="content">
-		<div class="slider">
-			<img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
+		<div class="slider swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img ">
+				</div>
+				<div class="swiper-slide">
+				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
+				</div>
+				<div class="swiper-slide">
+				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
+				</div>
+		    </div>
 		</div>
 		<h1><span>выездные фотобудки</span> <span>в аренду</span></h1>
 		<div class="insta_block">
@@ -26,4 +37,10 @@
 			<div class="pennant"></div>
 		</div>
 	</div><!--content_end-->
+	<script>
+		var mySwiper = new Swiper('.swiper-container',{
+		    slidesPerView: 'auto',
+		    freeModeFluid: true
+		})
+	</script>
 <?include "footer.php";?>
