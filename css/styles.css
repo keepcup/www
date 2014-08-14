@@ -142,6 +142,7 @@ textarea{
 
 /*content*/
 	h1{
+		position: relative;
 		font-size: 26px;
 		font-weight: 300;
 		color: #999999;
@@ -149,6 +150,7 @@ textarea{
 		text-align: center;
 		padding:8px 0 13px 0;
 		border-bottom:2px solid #dddddd;
+		z-index: 999;
 	}
 		h1 span{
 			color: #999999;
