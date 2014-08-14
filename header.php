@@ -30,12 +30,6 @@
 			<p class="title">главная</p>
 			<div class="menu"></div>
 			<ul class="menu-down">
-				<!-- <li class="menu-social">
-					<div class="menu-social_1"></div>
-					<div class="menu-social_2"></div>
-					<div class="menu-social_3"></div>
-				</li>
-				<li>фотобудка</li> -->
 				<li class="insta-list">
 					<a href="/">инстабудка</a>
 					<a href="/">инстамини</a>

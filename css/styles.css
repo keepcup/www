@@ -91,6 +91,7 @@ textarea{
 				border-top: 1px solid #f3f3f3;
 				list-style: none;
 			}
+				.menu-down a {color: #666;}
 				.menu-down .insta-list {
 					font-size: 0.001px;
 					line-height: 46px;
