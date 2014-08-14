@@ -2525,6 +2525,7 @@ textarea{
 }
 .swiper-slide {
 	float: left;
+	display: inline-block;
 }
 	.swiper-slide img{
 		width: 100%;

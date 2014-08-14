@@ -42,13 +42,11 @@
 		    freeModeFluid: true
 		})
 		var swiper = $('.swiper-container').swiper()
-		$(window).resize(function(){
+		
 		  //Unset height
-		  $('.swiper-container').css({height:''})
 		  //Calc Height
 		  $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
 		  //ReInit Swiper
-		  swiper.reInit()
-		})
+		
 		</script>
 <?include "footer.php";?>
