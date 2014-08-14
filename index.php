@@ -43,8 +43,11 @@
 		})
 		var swiper = $('.swiper-container').swiper()
 		$(window).resize(function(){
+<<<<<<< HEAD
 		  //Unset height
 		  
+=======
+>>>>>>> origin/Add_instamini
 		  //Calc Height
 		  $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
 		  //ReInit Swiper
