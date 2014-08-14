@@ -1,7 +1,7 @@
 <?include "header.php";$url='index';?>
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
 	<div class="content">
-		<div class="slider swiper-container">
+		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img ">
@@ -41,5 +41,14 @@
 		var mySwiper = new Swiper('.swiper-container',{
 		    freeModeFluid: true
 		})
-	</script>
+		var swiper = $('.swiper-container').swiper()
+		$(window).resize(function(){
+		  //Unset height
+		  $('.swiper-container').css({height:''})
+		  //Calc Height
+		  $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+		  //ReInit Swiper
+		  swiper.reInit()
+		})
+		</script>
 <?include "footer.php";?>
