@@ -40,21 +40,39 @@
 		</div>
 	</div><!--content_end-->
 	<script>
-		var mySwiper = new Swiper('.swiper-container',{
-		    freeModeFluid: true,
-		    autoplay: 20000,
-		    autoplayDisableOnInteraction: false,
-		    speed: 500,
-		    loop: true		    
+		$(document).ready(function(){
+			var mySwiper = new Swiper('.swiper-container',{
+			    freeModeFluid: true,
+			    autoplay: 20000,
+			    autoplayDisableOnInteraction: false,
+			    speed: 500,
+			    loop: true   
+			})
 		})
-		var swiper = $('.swiper-container').swiper()
+		// var mySwiper = $('.swiper-container').swiper({
+		// 	onTouchStart : function() {
+		// 		//Do something when you touch the slide
+		// 		alert('OMG you touch the slide!') 
+		// 	}
+		// 	onFirstInit : function () {
+		// 		$('.swiper-container').css({height:''})
+		// 		//Calc Height
+		// 		$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+		// 		//ReInit Swiper
+		// 		mySwiper.reInit()
+		// 	}
+		// })
+		var mySwiper = $('.swiper-container').swiper()
 		$(window).resize(function(){
-		  //Calc Height
-		  $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
-		  //ReInit Swiper
-		  swiper.reInit()
+			//Unset height
+			$('.swiper-container').css({height:''})
+			//Calc Height
+			$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+			//ReInit Swiper
+			mySwiper.reInit()
 		})
-		$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+		// $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+		// swiper.reInit()
 		$('.button-swiper-left').click(function(){
 			mySwiper.swipePrev()
 		})
@@ -76,6 +94,14 @@
 		$('.swiper-container').mouseleave(function(){
 			$('.button-swiper-left').css({'display': 'none'});
 			$('.button-swiper-right').css({'display': 'none'});
+		})
+		$(document).ready(function(){
+			//Unset height
+			$('.swiper-container').css({height:''})
+			//Calc Height
+			$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+			//ReInit Swiper
+			swiper.reInit()
 		})
 	</script>
 <?include "footer.php";?>
