@@ -23,7 +23,9 @@ for($i=3;$i<$select_count;$i++){
 				<div class="gallery-img_block">
 					<?$photo_preview=explode(',', $row[$i]['photo_preview']);
 					foreach ($photo_preview as $value) {?>
-						<img src="images/gallery/images/<?echo $row[$i]['url_name'].'/'.$value?>" alt="">
+						<a class="fancybox" rel="group" href="images/gallery/images/<?echo $row[$i]['url_name'].'/'.$value?>">
+							<img src="images/gallery/images/<?echo $row[$i]['url_name'].'/'.$value?>" alt="" />
+						</a>
 					<?};?>
 				</div>
 			</div>
@@ -31,3 +33,8 @@ for($i=3;$i<$select_count;$i++){
 		</div>
 	<?}
 }?>
+<script>
+		$(document).ready(function() {
+			$(".fancybox").fancybox();
+		});
+</script>
