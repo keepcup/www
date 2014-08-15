@@ -1386,7 +1386,7 @@ textarea{
 		margin: 0 auto;
 		display: block;
 		position: relative;
-		z-index: 9999;
+		z-index: 8000;
 	}
 	.header-top{
 		width: 100%;
