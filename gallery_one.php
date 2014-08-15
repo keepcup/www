@@ -1,4 +1,4 @@
 <?include "header.php";?>
 	<div class="content">
-	<?include 'backend/gallery.php';?>
+	<?include 'backend/gallery_one.php';?>
 <?include "footer.php";?>

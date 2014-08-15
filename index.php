@@ -1,5 +1,6 @@
 <?include "header.php";$url='index';?>
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
+<!-- <script src="/js/idangerous.swiper.min.js"></script> -->
 	<div class="content">
 		<div class="swiper-container">
 			<div class="button-swiper-left"></div>
@@ -40,14 +41,12 @@
 		</div>
 	</div><!--content_end-->
 	<script>
-		$(document).ready(function(){
-			var mySwiper = new Swiper('.swiper-container',{
-			    freeModeFluid: true,
-			    autoplay: 20000,
-			    autoplayDisableOnInteraction: false,
-			    speed: 500,
-			    loop: true   
-			})
+		var mySwiper = new Swiper('.swiper-container',{
+			freeModeFluid: true,
+		    autoplay: 20000,
+		    autoplayDisableOnInteraction: false,
+		    speed: 500,
+		    loop: true
 		})
 		// var mySwiper = $('.swiper-container').swiper({
 		// 	onTouchStart : function() {
@@ -70,31 +69,41 @@
 			$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
 			//ReInit Swiper
 			mySwiper.reInit()
+			page_w = $("html").width()
 		})
 		// $('.swiper-container').css({height: $('.swiper-container').find('img').height()})
 		// swiper.reInit()
-		$('.button-swiper-left').click(function(){
-			mySwiper.swipePrev()
-		})
-		$('.button-swiper-right').click(function(){
-			mySwiper.swipeNext()
-		})
-		$('.main-h1').mouseenter(function(){
-			$('.button-swiper-left').css({'display': 'block'});
-			$('.button-swiper-right').css({'display': 'block'});
-		})
-		$('.swiper-container').mouseenter(function(){
-			$('.button-swiper-left').css({'display': 'block'});
-			$('.button-swiper-right').css({'display': 'block'});
-		})
-		$('.main-h1').mouseleave(function(){
-			$('.button-swiper-left').css({'display': 'none'});
-			$('.button-swiper-right').css({'display': 'none'});
-		})
-		$('.swiper-container').mouseleave(function(){
-			$('.button-swiper-left').css({'display': 'none'});
-			$('.button-swiper-right').css({'display': 'none'});
-		})
+			page_w = $("html").width();	
+			$('.button-swiper-left').click(function(){
+				mySwiper.swipePrev()
+			})
+			$('.button-swiper-right').click(function(){
+				mySwiper.swipeNext()
+			})
+			$('.main-h1').mouseenter(function(){
+				if (page_w >= 1180){
+					$('.button-swiper-left').css({'display': 'block'});
+					$('.button-swiper-right').css({'display': 'block'});
+				}
+			})
+			$('.swiper-container').mouseenter(function(){
+				if (page_w >= 1180){
+					$('.button-swiper-left').css({'display': 'block'});
+					$('.button-swiper-right').css({'display': 'block'});
+				}
+			})
+			$('.main-h1').mouseleave(function(){
+				if (page_w >= 1180){
+					$('.button-swiper-left').css({'display': 'none'});
+					$('.button-swiper-right').css({'display': 'none'});
+				}
+			})
+			$('.swiper-container').mouseleave(function(){
+				if (page_w >= 1180){
+					$('.button-swiper-left').css({'display': 'none'});
+					$('.button-swiper-right').css({'display': 'none'});
+				}
+			})
 		$(document).ready(function(){
 			//Unset height
 			$('.swiper-container').css({height:''})
