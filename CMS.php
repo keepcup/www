@@ -82,6 +82,18 @@
 						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
 					<div class="clients-prewiew">
+						<img src="images/clients/2.png"alt="">
+						<input type="checkbox" class="icheckbox_minimal-green">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/2.png"alt="">
+						<input type="checkbox" class="icheckbox_minimal-green">
+					</div>
+					<div class="clients-prewiew">
+						<img src="images/clients/2.png"alt="">
+						<input type="checkbox" class="icheckbox_minimal-green">
+					</div>
+					<div class="clients-prewiew">
 						<img src="images/clients/3.png"alt="">
 						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
@@ -504,7 +516,6 @@
 					<p>Новая галерея</p>
 				</div>
 				<div class="right-content">
-	                       
 					<div class="gallery-edit-form">
 						 <div class="CMS-buttons"><!-- в данном случае в этом блоке CMS-buttons не только кнопки, но также и формы. Блок используется как конетйнер -->
 							 <input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
@@ -515,7 +526,7 @@
 							<p class="label-pass">максимум 5 символов</p>	
 						</div>
 						<div class="gallery-photos">
-							<div class="photo-left CMS-buttons">
+							<div class="photo-left">
 								<p class="top-label">Фотографии</p>
 								<div class="button">
 									<p>Добавить фото</p>
@@ -545,7 +556,7 @@
 									<div class="close_cross"></div>
 								</div>
 							</div>
-								<div class="button">
+								<<!-- div class="button">
 									<p>Добавить фото</p>
 									<form class="upload-form_2" method="post" action="./serverLogic.fallback.php" enctype="multipart/form-data">
 										<input type="file" class="file-input_2" name="my-files_2"/>
@@ -561,7 +572,7 @@
 								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
 								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
 								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>			
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div><!-- end of .right-content -->				

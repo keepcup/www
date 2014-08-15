@@ -81,8 +81,9 @@ body,html{
 			width: 1018px;
 			height: 100%;
 			float: left;
-			/*overflow: hidden;*/
+			overflow: hidden;
 			border-left: 2px solid #d9dbdd;
+
 			-webkit-box-sizing: border-box;
 			   -moz-box-sizing: border-box;
 					box-sizing: border-box;
@@ -91,16 +92,11 @@ body,html{
 		.CMS-prewiew {
 			position: relative;
 			width: 696px;
-			/*height: 222px;*/
-			/*padding: 18px 0 20px 20px;*/
-			margin: 0 0 20px 20px;
+			height: 100px;
 			height: 100%;
 			float: left;
+			margin-left: 20px;
 			overflow: hidden;
-
-			-webkit-box-sizing: border-box;
-			   -moz-box-sizing: border-box;
-					box-sizing: border-box;
 		}
 			.CMS-prewiew.photo {font-size: 0;}
 			.photo-prewiew {
@@ -156,15 +152,18 @@ body,html{
 		.CMS-main-slide .CMS-buttons {padding: 78px 0 0 60px;}
 
 		/*.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}*/
-			.CMS-block.CMS-main-slide {	height: 262px;}
+			.CMS-block.CMS-main-slide {	height: 282px;}
 			.CMS-block.CMS-main-clients {
 				min-height: 170px;
 				max-height: 722px;
 			}
 				.CMS-block.CMS-main-clients .left-label span {color: #a8a8a8;}
 		.CMS-block.CMS-main-clients .right-content {
+			position: relative;
+			overflow: hidden;
+			height:640px;
 			font-size: 0;
-			padding: 18px 0 20px 85px;
+			padding-left:85px;
 		}
 		.CMS-block .clients-prewiew {
 			width: 153px;
@@ -172,7 +171,7 @@ body,html{
 			display: inline-block;
 			vertical-align: top;			
 			line-height: 150px;
-			margin: 0 78px 30px 0;
+			margin: 30px 78px 0 0;
 			overflow: hidden;
 		}
 			.icheckbox_minimal-green {
@@ -198,7 +197,7 @@ body,html{
 		.CMS-block.instamini .CMS-prewiew div {
 			width: 152px;
 			float: right;
-			margin:0 66px 0 0;
+			margin-right:66px;
 		}
 			.CMS-block.instamini .CMS-prewiew div img{
 				width: 100%;
@@ -273,6 +272,7 @@ body,html{
 					}
 					.gallery-edit-form .button {margin-bottom: 20px;}
 				.gallery-edit-form .CMS-prewiew {
+					margin-left: 0;
 					width: 698px;
 					padding: 0;
 					float: left;
