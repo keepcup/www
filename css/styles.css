@@ -150,7 +150,7 @@ textarea{
 		text-align: center;
 		padding:8px 0 13px 0;
 		border-bottom:2px solid #dddddd;
-		z-index: 999;
+		z-index: 9;
 	}
 		h1 span{
 			color: #999999;
@@ -1414,9 +1414,12 @@ textarea{
 			.header-social ul { height: auto; list-style: none;}
 			.header-social li { margin-right: 23px;}
 
-			li#vk 	{	background: url(../images/header/social_pikt.png) 0 0;}
-			li#fb 	{	background: url(../images/header/social_pikt.png) -62px 0;}
-			li#gram {	background: url(../images/header/social_pikt.png) -124px 0;}
+			li#vk 	{	background: url(../images/header/social_pikt.png) 0 -35px;}
+			li#fb 	{	background: url(../images/header/social_pikt.png) -35px -35px;}
+			li#gram {	background: url(../images/header/social_pikt.png) -70px -35px;}
+			li#vk:hover 	{	background: url(../images/header/social_pikt.png) 0 0;}
+			li#fb:hover 	{	background: url(../images/header/social_pikt.png) -35px 0;}
+			li#gram:hover   {	background: url(../images/header/social_pikt.png) -70px 0;}
 		.logo{
 			width: 260px;
 			display: inline-block;
@@ -1507,7 +1510,7 @@ textarea{
 		font-size: 84px;
 		margin:-250px auto 61px auto;
 		border-bottom:0px solid #dddddd;
-		z-index: 99;		
+		z-index: 9;		
 	}
 		h1 span{
 			max-width:900px; 
