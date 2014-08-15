@@ -2487,9 +2487,7 @@ textarea{
 	z-index:1;
 	cursor: pointer;
 }
-/*.swiper-container:hover .button-swiper-left, .swiper-container:hover .button-swiper-right {
-	display: block;
-}*/
+
 .swiper-wrapper {
 	position:relative;
 	width:100%;
