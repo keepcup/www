@@ -2487,6 +2487,9 @@ textarea{
 	z-index:1;
 	cursor: pointer;
 }
+/*.swiper-container:hover .button-swiper-left, .swiper-container:hover .button-swiper-right {
+	display: block;
+}*/
 .swiper-wrapper {
 	position:relative;
 	width:100%;
@@ -2538,4 +2541,27 @@ textarea{
 }
 .swiper-wp8-vertical {
 	-ms-touch-action: pan-x;
+}
+.button-swiper-left {
+	display: none;
+	width: 107px;
+	height: 108px;
+	background: url(../images/index/icon_left_slide.png);
+	position: absolute;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
+	z-index: 9;
+}
+.button-swiper-right {
+	display: none;
+	width: 107px;
+	height: 108px;
+	background: url(../images/index/icon_right_slide.png);
+	position: absolute;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 9;
 }

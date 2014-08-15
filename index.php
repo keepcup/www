@@ -2,6 +2,7 @@
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
 	<div class="content">
 		<div class="swiper-container">
+			<div class="button-swiper-left"></div>
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img ">
@@ -13,8 +14,9 @@
 				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
 				</div>
 		    </div>
+		    <div class="button-swiper-right"></div>
 		</div>
-		<h1><span>выездные фотобудки</span> <span>в аренду</span></h1>
+		<h1 class="main-h1"><span>выездные фотобудки</span> <span>в аренду</span></h1>
 		<div class="insta_block">
 			<div class="insta insta_1">
 				<p class="insta_text">инстабудка</p>
@@ -53,5 +55,27 @@
 		  swiper.reInit()
 		})
 		$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+		$('.button-swiper-left').click(function(){
+			mySwiper.swipePrev()
+		})
+		$('.button-swiper-right').click(function(){
+			mySwiper.swipeNext()
+		})
+		$('.main-h1').mouseenter(function(){
+			$('.button-swiper-left').css({'display': 'block'});
+			$('.button-swiper-right').css({'display': 'block'});
+		})
+		$('.swiper-container').mouseenter(function(){
+			$('.button-swiper-left').css({'display': 'block'});
+			$('.button-swiper-right').css({'display': 'block'});
+		})
+		$('.main-h1').mouseleave(function(){
+			$('.button-swiper-left').css({'display': 'none'});
+			$('.button-swiper-right').css({'display': 'none'});
+		})
+		$('.swiper-container').mouseleave(function(){
+			$('.button-swiper-left').css({'display': 'none'});
+			$('.button-swiper-right').css({'display': 'none'});
+		})
 	</script>
 <?include "footer.php";?>
