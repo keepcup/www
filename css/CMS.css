@@ -165,6 +165,10 @@ body,html{
 			font-size: 0;
 			padding-left:85px;
 		}
+			.CMS-block.CMS-main-clients .right-content .scroll-content{
+				width: 933px;
+				right: 0;
+			}
 		.CMS-block .clients-prewiew {
 			width: 153px;
 			height: 150px;

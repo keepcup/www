@@ -1,10 +1,11 @@
 $(document).ready(function(){
-    $('.sortable').perfectScrollbar({
-        wheelSpeed: 20,
-        wheelPropagation: false,
-        suppressScrollX: false
-    });
-	$(".sortable").sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
+    // $('.sortable').perfectScrollbar({
+    //     wheelSpeed: 20,
+    //     wheelPropagation: false,
+    //     suppressScrollX: false
+    // });
+$('.sortable').sbscroller();
+	$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
 	/*input file*/
 	$(".button").mousemove(function(e) {
         var offL, offR, inpStart, aaa;

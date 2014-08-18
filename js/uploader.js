@@ -23,7 +23,8 @@ $(document).ready(function() {
 	// Область информер о загруженных изображениях - скрыта
 	// Метод при падении файла в зону загрузки
 	$('.CMS-prewiew').on('drop', function(e) {
-		previewZone = $(this);
+		previewZone = $(this).find('.upload_preview');
+		alert(previewZone.html())
 		Index = $('.CMS-prewiew').index(previewZone);
 		
 		//dataArray[Index]=dataArrayArray;
