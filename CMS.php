@@ -58,14 +58,6 @@
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/CMS/test.jpg" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -170,10 +162,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -193,10 +187,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -216,10 +212,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -239,10 +237,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -264,10 +264,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -287,10 +289,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -310,10 +314,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -333,10 +339,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -358,10 +366,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -381,10 +391,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -404,10 +416,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -427,10 +441,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -469,6 +485,15 @@
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+						<div class="photo-prewiew">
+							<img src="images/index/slider_test.png" alt="">
+							<div class="close_cross"></div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -490,10 +515,12 @@
 							<p>Сохранить</p>
 						</div>
 					</div>
-					<div class="CMS-prewiew delete_current" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew photo-prewiew-old">
-							<img src="images/index/slider_test.png" alt="">
-						</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-prewiew photo-prewiew-old delete_current">
+								<img src="images/index/slider_test.png" alt="" class="">
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -557,7 +584,7 @@
 									<div class="close_cross"></div>
 								</div>
 							</div>
-								<<!-- div class="button">
+								<!-- div class="button">
 									<p>Добавить фото</p>
 									<form class="upload-form_2" method="post" action="./serverLogic.fallback.php" enctype="multipart/form-data">
 										<input type="file" class="file-input_2" name="my-files_2"/>
@@ -595,7 +622,6 @@
 							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
-						
 					</div>
 					<div class="gallery-edit-form">
 						<div class="CMS-buttons"><!-- в данном случае в этом блоке CMS-buttons не только кнопки, но также и формы. Блок используется как конетйнер -->

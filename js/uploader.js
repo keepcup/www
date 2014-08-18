@@ -24,8 +24,7 @@ $(document).ready(function() {
 	// Метод при падении файла в зону загрузки
 	$('.CMS-prewiew').on('drop', function(e) {
 		previewZone = $(this).find('.upload_preview');
-		alert(previewZone.html())
-		Index = $('.CMS-prewiew').index(previewZone);
+		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		
 		//dataArray[Index]=dataArrayArray;
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
@@ -36,8 +35,8 @@ $(document).ready(function() {
 	
 	// При нажатии на кнопку выбора файлов
 	$('.upload_btn').on('change', function() {
-		previewZone = $(this).parent().parent().parent().next();
-		Index = $('.CMS-prewiew').index(previewZone);
+		previewZone = $(this).parent().parent().parent().next().find('.upload_preview');
+		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		
@@ -86,7 +85,7 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[Index][i].value+'" alt=""></div>'); 
+			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_old"></div></div>'); 
 		}
 		return false;
 	}
@@ -101,7 +100,21 @@ $(document).ready(function() {
 		
 		return false;
 	}*/
-	
+	$('.close_cross').live('click',function(){
+		$this= $(this);
+		timeOut= 500;
+		$this.closest('.photo-prewiew').fadeOut(timeOut)
+		setTimeout( function() { $this.closest('.photo-prewiew').remove()}, timeOut);
+	});
+	$('.close_cross_old').live('click',function(){
+		Index = $('.CMS-prewiew').index($(this).closest('.CMS-prewiew'));
+		deleteIndex = $(this).closest('.CMS-prewiew').find('.close_cross_old').index(this);
+		// dataArray[Index][deleteIndex]=[];
+		dataArray[Index].splice(deleteIndex,1);
+		// alert(deleteIndex)
+		// alert(dataArray[Index][0]);
+		// alert(dataArray[Index][deleteIndex]);
+	})
 	// Удаление только выбранного изображения 
 	/*$("#dropped-files").on("click","a[id^='drop']", function() {
 		// получаем название id
@@ -123,9 +136,9 @@ $(document).ready(function() {
 	*/
 	// Загрузка изображений на сервер
 	$('.save').click(function() {
-		var saveView = $(this).parent('div').next();
+		var saveView = $(this).parent('div').next().find('.upload_preview');
 
-		saveIndex = $('.CMS-prewiew').index(saveView);
+		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
 		// Для каждого файла
 		$.each(dataArray[saveIndex], function(index, file) {	
 			// загружаем страницу и передаем значения, используя HTTP POST запрос 
