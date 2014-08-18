@@ -41,6 +41,14 @@
 		</div>
 	</div><!--content_end-->
 	<script>
+		$(document).ready(function(){
+			//Unset height
+			$('.swiper-container').css({height:''})
+			//Calc Height
+			$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
+			//ReInit Swiper
+			swiper.reInit()
+		})
 		var mySwiper = new Swiper('.swiper-container',{
 			freeModeFluid: true,
 		    autoplay: 20000,
@@ -92,25 +100,12 @@
 					$('.button-swiper-right').css({'display': 'block'});
 				}
 			})
-			$('.main-h1').mouseleave(function(){
+			$('.swiper-container, .main-h1').mouseleave(function(){
 				if (page_w >= 1180){
 					$('.button-swiper-left').css({'display': 'none'});
 					$('.button-swiper-right').css({'display': 'none'});
 				}
 			})
-			$('.swiper-container').mouseleave(function(){
-				if (page_w >= 1180){
-					$('.button-swiper-left').css({'display': 'none'});
-					$('.button-swiper-right').css({'display': 'none'});
-				}
-			})
-		$(document).ready(function(){
-			//Unset height
-			$('.swiper-container').css({height:''})
-			//Calc Height
-			$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
-			//ReInit Swiper
-			swiper.reInit()
-		})
+		
 	</script>
 <?include "footer.php";?>
