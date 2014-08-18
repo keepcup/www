@@ -683,6 +683,40 @@ body,html{
 			}
 			.enter-butt:hover {background: #72c391;	}
 			.enter-butt:hover p{color: #fff;}
+	/*пароль*/
+	.chng_pass .right-content {
+		padding: 38px 0 40px 58px;
+	}
+		.chng_pass-form {
+			width: 462px;
+			overflow: hidden;
+		}
+			.chng_pass-form p {
+				font-size: 16px;
+				line-height: 15px;
+				color: #7f7f7f;
+				width: 80px;
+				display: inline-block;
+				text-align: right;
+				margin-top: 3px;
+			}
+			.chng_pass-form p:first-child {
+				margin-bottom: 30px;
+			}
+			.chng_pass-form input {
+				width: 362px;
+				height: 40px;
+				float: right;
+
+				font-size: 22px;
+				font-weight: 300;
+				color: #7f7f7f;
+				border: 2px solid #7f7f7f;
+				padding: 0 0 2px 16px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
 
 
 

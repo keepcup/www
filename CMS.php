@@ -988,6 +988,26 @@
 				</div>
 			</div>
 
+			<h2>Пароль</h2>
+			<div class="CMS-block chng_pass last_block">
+				<div class="left-label">
+					<p>Смена пароля</p>
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button save">
+							<p>Сохранить</p>
+						</div>
+					</div>
+					<div class="chng_pass-form">
+						<p>старый пароль</p>
+						<input type="password" name="old_pass">
+						<p>новый пороль</p>
+						<input type="password" name="new_pass">
+					</div>
+				</div>
+			</div>
+
 
 
 
