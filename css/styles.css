@@ -124,6 +124,7 @@ textarea{
 					height: 55px;
 					padding-bottom: 3px;
 				}
+				.phone-down li.phone-contact:first-child {padding-left: 2px;}
 			.phone-social{
 				height: 58px;
 			}
