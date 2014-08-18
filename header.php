@@ -14,7 +14,7 @@
 <body>
 <div class="container">
 	<div class="header">
-		<img src="images/header/logo.png" alt="" class="logo">
+		<a href="/"><img src="images/header/logo.png" alt="" class="logo"></a>
 		<div class="title_block">
 			<div class="phone"></div>
 			<ul class="phone-down">
