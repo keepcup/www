@@ -34,6 +34,7 @@ body,html{
 	.CMS.content {
 		width: 1180px;
 		margin: 0 auto 80px auto;
+		position: relative;
 	}
 	.CMS h2{
 		font-size: 24px;
@@ -625,6 +626,63 @@ body,html{
 				.your_events .event-edit-form .CMS-buttons, .your_events .event-edit-form .gallery-photos {
 					padding-left: 39px;
 				}
+
+	/*CMS enter*/
+	.enter-form {
+		display: inline-block;
+		width: 354px;
+		height: 228px;
+		background: #eaeaea;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 6px 23px;
+		margin: auto;
+
+		-webkit-box-shadow:0 2px 6px rgba(0, 0, 0, .34);
+      	   -moz-box-shadow:0 2px 6px rgba(0, 0, 0, .34);
+          	    box-shadow:0 2px 6px rgba(0, 0, 0, .34);
+	}
+		.enter-form p {
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 33px;
+		}
+		.enter-form input {
+			width: 334px;
+			height: 58px;
+			border: 2px solid #cecece;
+
+			font-weight: 300;
+			font-size: 24px;
+
+			padding: 0 5px 0 14px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.enter-form input[type='password'] {
+			letter-spacing: 5px;
+		}
+		.enter-butt {
+			width: 98px;
+			height: 30px;
+			background: #cecece;
+			margin: 10px auto 0 auto;
+			cursor: pointer;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+			.enter-butt p {
+				text-align: center;
+				line-height: 22px;
+				font-size: 18px;
+			}
+			.enter-butt:hover {background: #72c391;	}
+			.enter-butt:hover p{color: #fff;}
 
 
 
