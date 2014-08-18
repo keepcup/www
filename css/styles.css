@@ -1211,7 +1211,7 @@ textarea{
 		}
 		.other_gallery .line:last-child {
 			margin-top: 22px;
-			margin-bottom: 46px;
+			margin-bottom: 26px;
 		}
 
 	/*blog*/
@@ -1433,9 +1433,10 @@ textarea{
 	}
 	.social-footer {
 		width: 100%;
-		height: 81px;
+		height: 90px;
 		display: block;
 		background-color: #fff;
+		padding-top: 10px;
 		margin-top: -1px;
 	}
 	ul.social-footer {
