@@ -1083,6 +1083,8 @@ textarea{
 			display: block;
 			height: 14px;
 			bottom: -3px;
+			-webkit-box-shadow: 0 -10px 20px -10px rgba(0, 0, 0, 0.5) inset ;
+			   		box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.5) inset ;
 		}
 	.gallery{
 		box-shadow:none;
