@@ -2364,6 +2364,16 @@ textarea{
 		.instamini .features-img_2{background: url(../images/instamini/1180/features.png) -219px 0;}
 	/*instashar*/
 	.instashar .insta-menu-block ul {margin-left: 200px;}
+	.instashar .description-text span{
+					font-size: 36px;
+					line-height: 48px;
+					padding:0 10px;
+				}
+				.instashar .description-text-instagram{
+					margin:  0 0 -10px -5px;
+					height: 48px;
+					background: url(../images/instashar/1180/quote_instagram.png) center left no-repeat,#eee;
+				}
 	.instashar .description-quote {
 		width: 710px;
 		margin: -213px 0 140px 0;
@@ -2379,6 +2389,21 @@ textarea{
 		.instashar .description-block_3{background: url(../images/instamini/1180/desc.png) -360px 15px no-repeat;}
 	.instashar .function-quote {margin: -313px 0 182px 0;}
 	.instashar .decor-quote {margin: -237px 0 204px 0;}
+	/*.description-text span{
+				font-size: 36px;
+				line-height: 48px;
+				padding:0 10px;
+			}
+			.description-text-facebook{
+				margin:  0 0 -10px -5px;
+				height: 48px;
+				background: url(../images/instabudka/1180/icon_facebook.png) center left no-repeat,#eee;
+			}
+			.description-text-twitter{
+				margin:  0 0 -10px -1px;
+				height: 48px;
+				background: url(../images/instabudka/1180/icon_twitter.png) center left no-repeat,#eee;
+			}*/
 	/*contacts*/
 	.contacts.content {
 	}
