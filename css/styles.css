@@ -589,7 +589,7 @@ textarea{
 		}
 
 
-		.gallery:nth-of-type(odd){
+		.gallery:nth-of-type(even){
 				background: #eee;
 			}
 		.gallery-text_block{
@@ -1066,6 +1066,12 @@ textarea{
 		}
 		.gallery-img-belt img:nth-of-type(odd){
 			margin-right: 2.5%;
+		}
+		.gallery-img-belt a:nth-of-type(odd) img{
+			margin-right: 2.5%;
+		}
+		.gallery-img-belt a:nth-of-type(even) img{
+			margin-right: 0;
 		}
 		.gallery-img-belt img:nth-of-type(-n+4){
 			display: inline-block;
@@ -1759,6 +1765,9 @@ textarea{
 				}
 				
 				.gallery-img-belt img:nth-of-type(3n+3){
+					margin-right: 0 !important;
+				}
+				.gallery-img-belt a:nth-of-type(3n+3) img{
 					margin-right: 0 !important;
 				}
 				.gallery-img_block img{
