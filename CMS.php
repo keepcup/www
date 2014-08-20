@@ -34,27 +34,27 @@
 						</div>
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
-						<div class="photo-prewiew photo-prewiew-old">
+						<div class="photo-preview photo-preview-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew photo-prewiew-old">
+						<div class="photo-preview photo-preview-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew photo-prewiew-old">
+						<div class="photo-preview photo-preview-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew photo-prewiew-old">
+						<div class="photo-preview photo-preview-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew photo-prewiew-old">
+						<div class="photo-preview photo-preview-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew photo-prewiew-old">
+						<div class="photo-preview photo-preview-old">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
@@ -164,7 +164,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -189,7 +189,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -214,7 +214,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -239,7 +239,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -266,7 +266,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -291,7 +291,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -316,7 +316,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -341,7 +341,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -368,7 +368,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -393,7 +393,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -418,7 +418,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -443,7 +443,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -469,27 +469,27 @@
 						</div>
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
-						<div class="photo-prewiew">
+						<div class="photo-preview">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew">
+						<div class="photo-preview">
 							<img src="images/CMS/test.jpg" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew">
+						<div class="photo-preview">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew">
+						<div class="photo-preview">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew">
+						<div class="photo-preview">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-prewiew">
+						<div class="photo-preview">
 							<img src="images/index/slider_test.png" alt="">
 							<div class="close_cross"></div>
 						</div>
@@ -517,7 +517,7 @@
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
-							<div class="photo-prewiew photo-prewiew-old delete_current">
+							<div class="photo-preview photo-preview-old delete_current">
 								<img src="images/index/slider_test.png" alt="" class="">
 							</div>
 						</span>
@@ -565,21 +565,24 @@
 								<div class="button save">
 									 <p>Сохранить</p>
 								</div>
+								<div class="button decline">
+									<p>Отменить</p>
+								</div>
 							</div>
 							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
-								<div class="photo-prewiew">
+								<div class="photo-preview">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-prewiew active">
+								<div class="photo-preview active">
 									<img src="images/CMS/test.jpg" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-prewiew">
+								<div class="photo-preview">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-prewiew active">
+								<div class="photo-preview active">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
@@ -591,15 +594,15 @@
 									</form>
 								</div>
 							<div class="CMS-prewiew photo sortable">
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/CMS/test.jpg" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-prewiew"><img src="images/index/slider_test.png" alt=""></div>			
+								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview active"><img src="images/CMS/test.jpg" alt=""></div>
+								<div class="photo-preview active"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview active"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
+								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>			
 							</div> -->
 						</div>
 					</div>
@@ -637,48 +640,19 @@
 								<p class="top-label">Фотографии</p>
 								<div class="button">
 									<p>Добавить фото</p>
+									<form class="frm"> 
+										<input type="file" multiple class="upload_btn" />
+									</form>
 								</div>
 								<div class="button save">
 									 <p>Сохранить</p>
 								</div>
 							</div>
-							<div class="CMS-prewiew photo">
-								<div class="photo-prewiew">
+							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
+								<div class="photo-preview">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-prewiew active">
-									<img src="images/CMS/test.jpg" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew active">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-prewiew">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>			
 							</div>
 						</div>
 					</div>
@@ -763,119 +737,89 @@
 				<div class="right-content">
 					<div class="CMS-buttons">
 						<div class="button add_photo">
-							<input type="file">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
 							<p>Добавить лого</p>
 						</div>
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
 					</div>
+					<div class="new_client-logo CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-preview photo-preview-old delete_current">
+								<img src="images/clients/3.png"alt="">
+							</div>
+						</span>
+					</div>
 					<div class="new_client-form">
 						<p>название компании</p>
 						<input type="text" name="company_name">
 						<p>ссылка на мероприятие</p>
 						<input type="text" name="event_url">
-					</div>
-					<div class="new_client-logo">
-						<div class="clients-prewiew">
-							<img src="images/clients/3.png"alt="">
-							<div class="close_cross"></div>
-						</div>
-					</div>					
+					</div>				
 				</div>
 			</div>
 			<div class="CMS-block clients-clients last_block">
 				<div class="left-label">
 					<p>Клиенты</p>
 				</div>
-				<div class="right-content">
+				<div class="right-content sortable">
 					<div class="clients-prewiew">
-						<img src="images/clients/1.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/3.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/4.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/5.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/6.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/7.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/CMS/test.jpg" alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/9.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/10.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/11.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/12.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 					<div class="clients-prewiew">
-						<img src="images/clients/13.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/14.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/15.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/3.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/4.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/5.png"alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/6.png"alt="">
+						<img src="images/clients/1.png" alt="">
 						<div class="close_cross"></div>
 					</div>
 				</div>
 			</div>
-
 			<h2>Мероприятия</h2>
 			<div class="CMS-block new_event">
 				<div class="left-label">
@@ -884,20 +828,23 @@
 				<div class="right-content">
 					<div class="event-edit-form"><!-- just copy this block -->
 						<div class="left-side">
-							<div class="photo-prewiew">
-								<img src="images/index/slider_test.png" alt="">
-								<div class="close_cross"></div>	
-							</div>
 							<div class="button add_photo">
+								<form class="frm"> 
+									<input type="file" multiple class="upload_btn" />
+								</form>
 								<p>Добавить фото</p>
 							</div>
 							<div class="button save">
 								<p>Сохранить</p>
 							</div>
-							<div class="button decline">
-								<p>Отменить</p>
-							</div>
-														
+						</div>
+						<div class="new_client-logo CMS-prewiew" ondragover="return false" ondragstart="return false">
+							<span class="delete_current upload_preview">
+								<div class="photo-preview">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>	
+								</div>
+							</span>
 						</div>
 						<div class="right-side">
 							<p class="h_1">заголовок1</p>
@@ -938,7 +885,6 @@
 							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
-						
 					</div>
 					<div class="gallery event">
 						<img class="prewiew" src="images/index/slider_test.png" alt="">
@@ -978,11 +924,10 @@
 					</div>
 					<div class="event-edit-form"><!-- just copy this block -->
 						<div class="left-side">
-							<div class="photo-prewiew">
-								<img src="images/index/slider_test.png" alt="">								
-								<div class="close_cross"></div>		
-							</div>
 							<div class="button add_photo">
+								<form class="frm"> 
+									<input type="file" multiple class="upload_btn" />
+								</form>
 								<p>Добавить фото</p>
 							</div>
 							<div class="button save">
@@ -991,7 +936,14 @@
 							<div class="button decline">
 								<p>Отменить</p>
 							</div>
-														
+						</div>
+						<div class="new_client-logo CMS-prewiew" ondragover="return false" ondragstart="return false">
+							<span class="delete_current upload_preview">
+								<div class="photo-preview">
+									<img src="images/index/slider_test.png" alt="">
+									<div class="close_cross"></div>	
+								</div>
+							</span>
 						</div>
 						<div class="right-side">
 							<p class="h_1">заголовок1</p>

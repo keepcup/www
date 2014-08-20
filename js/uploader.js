@@ -19,10 +19,13 @@ $(document).ready(function() {
 		dataArray[i] = [];
 	}
 	var Index;
-
+// $('.sortable').on( function() {
+// 	$('.sortable').sbscroller('refresh');
+// });
 	// Область информер о загруженных изображениях - скрыта
 	// Метод при падении файла в зону загрузки
 	$('.CMS-prewiew').on('drop', function(e) {
+		
 		previewZone = $(this).find('.upload_preview');
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		
@@ -31,13 +34,14 @@ $(document).ready(function() {
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 		loadInView(files,Index);
+
 	});
 	
 	// При нажатии на кнопку выбора файлов
 	$('.upload_btn').on('change', function() {
 		previewZone = $(this).parent().parent().parent().next().find('.upload_preview');
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
-		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
+		$('.photo-preview-new').not(previewZone+'.photo-preview-new').remove();
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		
    		// Заполняем массив выбранными изображениями
@@ -85,8 +89,9 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_old"></div></div>'); 
+			cs.append('<div class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
 		}
+		$('.sortable').sbscroller('refresh');
 		return false;
 	}
 	
@@ -103,17 +108,17 @@ $(document).ready(function() {
 	$('.close_cross').live('click',function(){
 		$this= $(this);
 		timeOut= 500;
-		$this.closest('.photo-prewiew').fadeOut(timeOut)
-		setTimeout( function() { $this.closest('.photo-prewiew').remove()}, timeOut);
+		$this.closest('.photo-preview').fadeOut(timeOut)
+		setTimeout( function() { $this.closest('.photo-preview').remove()}, timeOut);
 	});
-	$('.close_cross_old').live('click',function(){
+	$('.close_cross_new').live('click',function(){
 		Index = $('.CMS-prewiew').index($(this).closest('.CMS-prewiew'));
-		deleteIndex = $(this).closest('.CMS-prewiew').find('.close_cross_old').index(this);
+		deleteIndex = $(this).closest('.CMS-prewiew').find('.close_cross_new').index(this);
 		// dataArray[Index][deleteIndex]=[];
 		dataArray[Index].splice(deleteIndex,1);
 		// alert(deleteIndex)
 		// alert(dataArray[Index][0]);
-		// alert(dataArray[Index][deleteIndex]);
+		
 	})
 	// Удаление только выбранного изображения 
 	/*$("#dropped-files").on("click","a[id^='drop']", function() {
@@ -137,7 +142,7 @@ $(document).ready(function() {
 	// Загрузка изображений на сервер
 	$('.save').click(function() {
 		var saveView = $(this).parent('div').next().find('.upload_preview');
-
+		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
 		// Для каждого файла
 		$.each(dataArray[saveIndex], function(index, file) {	
@@ -149,6 +154,8 @@ $(document).ready(function() {
 				var dataSplit = data.split(':');
 			});
 		});
+
+		// alert(dataArray[saveIndex].length)
 		dataArray[saveIndex] = [];
 		// Показываем список загруженных файлов
 		return false;

@@ -46,7 +46,7 @@
 		$scrollpane.css('overflow','hidden');
 		
 		//compare the height of the scroll content to the scroll pane to see if we need a scrollbar
-		var difference = 1;//eg it's 200px longer
+		var difference = $scrollpane.find('.scroll-content').height()-$scrollpane.height();//eg it's 200px longer
 		$scrollpane.data('difference',difference); 
 		
 		if(difference<=0 && $scrollpane.find('.slider-wrap').length>0)//scrollbar exists but is no longer required
