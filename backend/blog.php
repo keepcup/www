@@ -31,7 +31,7 @@ for($i=0;$i<$select_count;$i++){
 					<span><?echo date('d',strtotime($row[$i]['date']))?></span><?echo date('.m',strtotime($row[$i]['date']))?>
 				</p>
 				<ul class="blog-social">
-					<a href=""><li class="blog-social-vk"></li></a>
+					<a href=""><li class="blog-social-vk" id='vk_repo'></li></a>
 					<a href=""><li class="blog-social-fb"></li></a>
 					<a href=""><li class="blog-social-tw"></li></a>
 				</ul>
