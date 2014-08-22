@@ -13,8 +13,8 @@
 	handleTopImage : false,
 	handleBottomImage : false,
 	handleGripImage : false,
-	mousewheel : false,
-	autohide : false
+	mousewheel : true,
+	autohide : true
     };
 	
 	return this.each(function() { 
@@ -22,12 +22,18 @@
 		 $.extend( settings, $(this).data() );//include any previously stored options for this scroll pane
 		 if (!$(this).hasClass('scroll-pane')){//traps the case where refresh has been called on slider that has not been set up
 			  $(this).addClass('scroll-pane').data(options);//add a class and store the options as data against the element in case they are needed later
-			  $(this).contents().wrapAll('<div class="scroll-content upload_prewiew"/>');
+			  $(this).contents().wrapAll('<div class="scroll-content upload_preview"/>');
 		 }
 		 setSlider($(this));
 	  }  
 	  else if (options === 'reset') {
 		$(this).find('.slider-vertical').slider({ value: 100 });
+	  }
+	  else if (options === 'disable') {
+	  	alert('gs')
+	  	// $(this).find('.slider-vertical').removeClass('.slider-vertical');
+	  	// $(this).closest('.upload_preview').children('.slider-vertical').removeClass('.slider-vertical');
+		// $(this).find('.slider-vertical').slider({ value: 100 });
 	  } 
 	  else {
 		  if ( options ) { 
