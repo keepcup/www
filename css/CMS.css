@@ -28,6 +28,9 @@ body,html{
 		resize: none;
 		outline: none;
 	}
+	.right-content{
+		position: relative;
+	}
 	.CMS-opacity_05 {
 		opacity: .5;
 	}
@@ -107,12 +110,14 @@ body,html{
 			overflow: hidden;
 		}
 			.CMS-prewiew.photo {font-size: 0;}
-			.photo-prewiew {
+			.photo-preview {
+				height: 102px;
 				width: 152px;
 				margin: 20px 60px 0 0;
 				display: inline-block;
 				position: relative;
 				padding-right: 20px;
+
 			}
 				.close_cross {
 					display: block;
@@ -130,7 +135,12 @@ body,html{
 				height: auto;
 				max-height: 102px;
 				display: block;
-				margin: 0 auto;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 11px;
+				left: 0;
 			}
 		.CMS .button {
 			position: relative;
@@ -177,6 +187,10 @@ body,html{
 			font-size: 0;
 			padding-left:85px;
 		}
+			.CMS-block.CMS-main-clients .right-content .scroll-content{
+				width: 933px;
+				right: 0;
+			}
 		.CMS-block .clients-prewiew {
 			width: 153px;
 			height: 150px;
@@ -293,38 +307,33 @@ body,html{
 					padding: 0;
 					float: left;
 				}
-					.gallery-edit-form .CMS-prewiew .photo-prewiew {
-						width: 152px;
+					.gallery-edit-form .CMS-prewiew .photo-preview {
+						width: 140px;
 						height: 148px;
-						padding-right: 20px;
+						padding-right: 25px;
 						font-size: 0;
 						line-height: 148px;
 					}
-						.gallery-edit-form .CMS-prewiew .photo-prewiew img {
+						.gallery-edit-form .CMS-prewiew .photo-preview img {
 							max-height: 98px;
-							max-width: 147px;
+							max-width: 137px;
 							display: block;
 							margin:0 auto;
-							padding: 5px;
 							
 							cursor: pointer;
 						}
-						.gallery-edit-form .CMS-prewiew .photo-prewiew.active img {padding:3px;border: 2px solid #71c592;}
+						.gallery-edit-form .CMS-prewiew .photo-preview.active img {padding:3px;border: 2px solid #71c592;}
 		.CMS-block.yours_gallery .right-content	{
-			min-height: 138px;
+			min-height: 900px;
 			height: auto;
 			max-height: 900px;
-			padding: 18px 0 5px 17px;
+			padding: 0 0 5px 17px;
 		}
 			.CMS-block .gallery {
 				width: 982px;
 				height: 122px;
 				border-bottom: 2px solid #888888;
-				margin-bottom: 18px;
-
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
+				margin-top: 18px;
 			}
 			.CMS-block .gallery:last-child {border-bottom: none;}
 				.CMS-block .gallery img.prewiew {
@@ -393,14 +402,14 @@ body,html{
 			.yours_gallery .gallery-edit-form {
 				width: 978px;
 				border: 2px solid #888;
-				margin-top: -20px;
 				margin-bottom: 18px;
+				margin-top: -2px;
 			}
 				.yours_gallery .gallery-edit-form .CMS-buttons, .yours_gallery .gallery-edit-form .gallery-photos {
 					padding-left: 39px;
 				}
 				.yours_gallery .gallery-edit-form .gallery-photos {border-color: #888;				}
-					.yours_gallery .gallery-edit-form .CMS-prewiew {width: 660px;}
+					.yours_gallery .gallery-edit-form .CMS-prewiew {width: 679px;}
 
 
 
@@ -454,30 +463,46 @@ body,html{
 					width: 340px;
 					margin-bottom: 20px;
 				}
-			.CMS-block.new-clients .new_client-logo {
-				float: left;
+			.delete_current .close_cross{
+				display: none;
 			}
-				.CMS-block.new-clients .clients-prewiew, .CMS-block.clients-clients .clients-prewiew {
+			.CMS-block.new-clients .new_client-logo {
+				position: absolute;
+				top:30px;
+				right:50px;
+			}
+				.CMS-block.new-clients .CMS-prewiew{
+					width: auto;
+					height: 130px;
+					margin-top: 10px;
+				}
+				.CMS-block.new-clients .photo-preview, .CMS-block.clients-clients .clients-prewiew {
 					width: 120px;
 					height: 124px;
 					line-height: 124px;
-					padding-right: 44px;
+					padding-right: 24px;
 					margin: 0;
-					margin-top: -7px;
 					position: relative;
 				}
-					.CMS-block.new-clients .clients-prewiew img, .CMS-block.clients-clients .clients-prewiew img {
+					.CMS-block.new-clients .photo-preview img, .CMS-block.clients-clients .clients-prewiew img {
 						max-height: 124px;
+						max-width: 100%;
 					}
 		.CMS-block.clients-clients .right-content {
 			height: 698px;
-			padding: 23px 0 5px 85px;
+			padding: 0 0 5px 85px;
 		}
 			.CMS-block.clients-clients .clients-prewiew {
-				margin: 0 76px 66px 0;
+				margin: 33px 76px 33px 0;
 			}
-				.CMS-block.clients-clients .clients-prewiew:nth-child(4n+4) {margin-right: 0;}
-
+	.CMS-block.new_event .CMS-prewiew{
+		position: absolute;
+		top:20px;
+		left: 30px;
+		width: 240px;
+		height: 140px;
+		margin: 0;
+	}
 	.CMS-block.new_event .right-content {
 		padding: 18px 0 38px 19px;
 	}
@@ -489,7 +514,7 @@ body,html{
 			.event-edit-form .left-side {
 				width: 240px;
 				float: left;
-				margin-right: 10px;
+				margin:190px 10px 0 0;
 			}
 				
 				.event-edit-form p.label-date {
@@ -500,13 +525,16 @@ body,html{
 					color: #7f7f7f;
 					text-align: right;
 				}
-				.event-edit-form .left-side .button.save {margin-bottom: 60px;}
-				.event-edit-form .left-side .button.decline {
+				.event-edit-form .left-side .button.save {margin-bottom:20px;}
+				.button.decline {
 					background-color: #d9dbdd;
+					margin-bottom: 20px;
+				}
+					.button.decline p {color: #333;}
+				.event-edit-form .photo-preview .close_cross{
 					display: none;
 				}
-					.event-edit-form .left-side .button.decline p {color: #333;}
-				.event-edit-form .photo-prewiew {
+				.event-edit-form .photo-preview {
 					width: 162px;
 					height: 148px;
 					padding-right: 16px;
@@ -515,7 +543,7 @@ body,html{
 					text-align: center;
 					margin: 0 0 52px 50px;
 				}
-					.event-edit-form .photo-prewiew img {
+					.event-edit-form .photo-preview img {
 						max-width: 152px;
 						max-height: 138px;
 						display: inline-block;
@@ -523,6 +551,17 @@ body,html{
 						padding: 3px;
 						border: 2px solid #fff;
 					}
+			.event-edit-form{
+				position: relative;
+			}
+			.event-edit-form .CMS-prewiew{
+				position: absolute;
+				top:20px;
+				left: 30px;
+				width: 240px;
+				height: 140px;
+				margin: 0;
+			}
 			.event-edit-form .right-side {
 				width: 650px;
 				float: left;
@@ -600,10 +639,10 @@ body,html{
 				}
 
 	.CMS-block.your_events .right-content {
-		min-height: 138px;
+		min-height: 900px;
 		height: auto;
 		max-height: 900px;
-		padding: 18px 0 5px 17px;
+		padding: 0 0 5px 17px;
 	}
 				.CMS-block .gallery.event .gallery-label {
 					height: 79px;
@@ -635,13 +674,14 @@ body,html{
 			.your_events .event-edit-form {
 				width: 900px;
 				border: 2px solid #888;
-				margin-top: -20px;
+				margin-top: -2px;
 				margin-bottom: 18px;
 			}
 				.your_events .event-edit-form .CMS-buttons, .your_events .event-edit-form .gallery-photos {
 					padding-left: 39px;
 				}
 
+<<<<<<< HEAD
 	/*CMS enter*/
 	.enter-form {
 		display: inline-block;
@@ -734,4 +774,9 @@ body,html{
 			}
 
 
+=======
+.upload_preview{
+	position: absolute;
+}
+>>>>>>> origin/CMS_JS
 

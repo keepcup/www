@@ -19,25 +19,29 @@ $(document).ready(function() {
 		dataArray[i] = [];
 	}
 	var Index;
-
+// $('.sortable').on( function() {
+// 	$('.sortable').sbscroller('refresh');
+// });
 	// Область информер о загруженных изображениях - скрыта
 	// Метод при падении файла в зону загрузки
-	$('.CMS-prewiew').on('drop', function(e) {
-		previewZone = $(this);
-		Index = $('.CMS-prewiew').index(previewZone);
+	$('.CMS-prewiew').live('drop', function(e) {
+		
+		previewZone = $(this).find('.upload_preview');
+		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		
 		//dataArray[Index]=dataArrayArray;
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 		loadInView(files,Index);
+
 	});
 	
 	// При нажатии на кнопку выбора файлов
-	$('.upload_btn').on('change', function() {
-		previewZone = $(this).parent().parent().parent().next();
-		Index = $('.CMS-prewiew').index(previewZone);
-		$('.photo-prewiew-new').not(previewZone+'.photo-prewiew-new').remove();
+	$('.upload_btn').live('change', function() {
+		previewZone = $(this).parent().parent().parent().next().find('.upload_preview');
+		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
+		$('.photo-preview-new').not(previewZone+'.photo-preview-new').remove();
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		
    		// Заполняем массив выбранными изображениями
@@ -85,8 +89,10 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div class="photo-prewiew photo-prewiew-new"><img src="'+dataArray[Index][i].value+'" alt=""></div>'); 
+			cs.append('<div class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
 		}
+		$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
+		$('.sortable').sbscroller('refresh');
 		return false;
 	}
 	
@@ -100,7 +106,21 @@ $(document).ready(function() {
 		
 		return false;
 	}*/
-	
+	$('.close_cross').live('click',function(){
+		$this= $(this);
+		timeOut= 500;
+		$this.closest('.photo-preview').fadeOut(timeOut)
+		setTimeout( function() { $this.closest('.photo-preview').remove()}, timeOut);
+	});
+	$('.close_cross_new').live('click',function(){
+		Index = $('.CMS-prewiew').index($(this).closest('.CMS-prewiew'));
+		deleteIndex = $(this).closest('.CMS-prewiew').find('.close_cross_new').index(this);
+		// dataArray[Index][deleteIndex]=[];
+		dataArray[Index].splice(deleteIndex,1);
+		// alert(deleteIndex)
+		// alert(dataArray[Index][0]);
+		
+	})
 	// Удаление только выбранного изображения 
 	/*$("#dropped-files").on("click","a[id^='drop']", function() {
 		// получаем название id
@@ -121,10 +141,10 @@ $(document).ready(function() {
 	$('#dropped-files #upload-button .delete').click(restartFiles);
 	*/
 	// Загрузка изображений на сервер
-	$('.save').click(function() {
-		var saveView = $(this).parent('div').next();
-
-		saveIndex = $('.CMS-prewiew').index(saveView);
+	$('.save').live('click',function() {
+		var saveView = $(this).parent('div').next().find('.upload_preview');
+		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
 		// Для каждого файла
 		$.each(dataArray[saveIndex], function(index, file) {	
 			// загружаем страницу и передаем значения, используя HTTP POST запрос 
@@ -135,6 +155,8 @@ $(document).ready(function() {
 				var dataSplit = data.split(':');
 			});
 		});
+
+		// alert(dataArray[saveIndex].length)
 		dataArray[saveIndex] = [];
 		// Показываем список загруженных файлов
 		return false;
@@ -145,7 +167,7 @@ $(document).ready(function() {
 		return false;
 	});*/
 	
-	$('.CMS-prewiew').on('drop', function() {
+	$('.CMS-prewiew').live('drop', function() {
 		//$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
 		return false;
 	});
