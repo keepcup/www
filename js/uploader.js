@@ -24,7 +24,7 @@ $(document).ready(function() {
 // });
 	// Область информер о загруженных изображениях - скрыта
 	// Метод при падении файла в зону загрузки
-	$('.CMS-prewiew').on('drop', function(e) {
+	$('.CMS-prewiew').live('drop', function(e) {
 		
 		previewZone = $(this).find('.upload_preview');
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
@@ -38,7 +38,7 @@ $(document).ready(function() {
 	});
 	
 	// При нажатии на кнопку выбора файлов
-	$('.upload_btn').on('change', function() {
+	$('.upload_btn').live('change', function() {
 		previewZone = $(this).parent().parent().parent().next().find('.upload_preview');
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		$('.photo-preview-new').not(previewZone+'.photo-preview-new').remove();
@@ -91,6 +91,7 @@ $(document).ready(function() {
 			// размещаем загруженные изображения
 			cs.append('<div class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
 		}
+		$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
 		$('.sortable').sbscroller('refresh');
 		return false;
 	}
@@ -140,7 +141,7 @@ $(document).ready(function() {
 	$('#dropped-files #upload-button .delete').click(restartFiles);
 	*/
 	// Загрузка изображений на сервер
-	$('.save').click(function() {
+	$('.save').live('click',function() {
 		var saveView = $(this).parent('div').next().find('.upload_preview');
 		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
@@ -166,7 +167,7 @@ $(document).ready(function() {
 		return false;
 	});*/
 	
-	$('.CMS-prewiew').on('drop', function() {
+	$('.CMS-prewiew').live('drop', function() {
 		//$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
 		return false;
 	});
