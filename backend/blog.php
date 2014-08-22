@@ -31,11 +31,7 @@ for($i=0;$i<$select_count;$i++){
 					<span><?echo date('d',strtotime($row[$i]['date']))?></span><?echo date('.m',strtotime($row[$i]['date']))?>
 				</p>
 				<ul class="blog-social">
-					<li class="blog-social-vk" id='vk_repo'>
-						<div class="addthis_toolbox addthis_default_style">
-     						<a class="addthis_button_facebook_send"></a>
-     					</div>
-     				</li>
+					<a href=""><li class="blog-social-vk"></li></a>
 					<a href=""><li class="blog-social-fb"></li></a>
 					<a href=""><li class="blog-social-tw"></li></a>
 				</ul>

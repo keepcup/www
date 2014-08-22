@@ -7,9 +7,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/js.js"></script>
 
-	<!-- vk_api -->
-	<script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
-
 	<!-- Add fancyBox -->
 	<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
