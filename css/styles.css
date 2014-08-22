@@ -124,6 +124,7 @@ textarea{
 					height: 55px;
 					padding-bottom: 3px;
 				}
+				.phone-down li.phone-contact:first-child {padding-left: 2px;}
 			.phone-social{
 				height: 58px;
 			}
@@ -141,14 +142,8 @@ textarea{
 			}
 
 /*content*/
-	.slider{
-		width: 100%;
-		height:auto;
-	}
-		.slider_img{
-			width: 100%;
-		}
 	h1{
+		position: relative;
 		font-size: 26px;
 		font-weight: 300;
 		color: #999999;
@@ -156,6 +151,7 @@ textarea{
 		text-align: center;
 		padding:8px 0 13px 0;
 		border-bottom:2px solid #dddddd;
+		z-index: 9;
 	}
 		h1 span{
 			color: #999999;
@@ -594,7 +590,7 @@ textarea{
 		}
 
 
-		.gallery:nth-of-type(odd){
+		.gallery:nth-of-type(even){
 				background: #eee;
 			}
 		.gallery-text_block{
@@ -1023,7 +1019,7 @@ textarea{
 			width: 26%;
 		}
 			.clients_block li:nth-child(3n+2) {
-				margin: 0 11%;
+				margin: 2% 11% 0 11%;
 			}
 		.clients_block img{
 			width: 120px;
@@ -1072,6 +1068,12 @@ textarea{
 		.gallery-img-belt img:nth-of-type(odd){
 			margin-right: 2.5%;
 		}
+		.gallery-img-belt a:nth-of-type(odd) img{
+			margin-right: 2.5%;
+		}
+		.gallery-img-belt a:nth-of-type(even) img{
+			margin-right: 0;
+		}
 		.gallery-img-belt img:nth-of-type(-n+4){
 			display: inline-block;
 		}
@@ -1082,6 +1084,8 @@ textarea{
 			display: block;
 			height: 14px;
 			bottom: -3px;
+			-webkit-box-shadow: 0 -10px 20px -10px rgba(0, 0, 0, 0.5) inset ;
+			   		box-shadow: 0 -10px 15px -10px rgba(0, 0, 0, 0.5) inset ;
 		}
 	.gallery{
 		box-shadow:none;
@@ -1096,7 +1100,97 @@ textarea{
 		.gallery-closed_input input {
 			width: 430px;
 		}
+	/*swiper*/
+	.swiper-container {
+		width: 100%;
+		margin:0 auto;
+		position:relative;
+		overflow:hidden;
+		-webkit-backface-visibility:hidden;
+		-moz-backface-visibility:hidden;
+		-ms-backface-visibility:hidden;
+		-o-backface-visibility:hidden;
+		backface-visibility:hidden;
+		/* Fix of Webkit flickering */
+		z-index:1;
+		cursor: pointer;
+	}
 
+	.swiper-wrapper {
+		position:relative;
+		width:100%;
+		overflow: hidden;
+		-webkit-transition-property:-webkit-transform, left, top;
+		-webkit-transition-duration:0s;
+		-webkit-transform:translate3d(0px,0,0);
+		-webkit-transition-timing-function:ease;
+		
+		-moz-transition-property:-moz-transform, left, top;
+		-moz-transition-duration:0s;
+		-moz-transform:translate3d(0px,0,0);
+		-moz-transition-timing-function:ease;
+		
+		-o-transition-property:-o-transform, left, top;
+		-o-transition-duration:0s;
+		-o-transform:translate3d(0px,0,0);
+		-o-transition-timing-function:ease;
+		-o-transform:translate(0px,0px);
+		
+		-ms-transition-property:-ms-transform, left, top;
+		-ms-transition-duration:0s;
+		-ms-transform:translate3d(0px,0,0);
+		-ms-transition-timing-function:ease;
+		
+		transition-property:transform, left, top;
+		transition-duration:0s;
+		transform:translate3d(0px,0,0);
+		transition-timing-function:ease;
+	}
+	.swiper-free-mode > .swiper-wrapper {
+		-webkit-transition-timing-function: ease-out;
+		-moz-transition-timing-function: ease-out;
+		-ms-transition-timing-function: ease-out;
+		-o-transition-timing-function: ease-out;
+		transition-timing-function: ease-out;
+		margin: 0 auto;
+	}
+	.swiper-slide {
+		float: left;
+		display: inline-block;
+	}
+		.swiper-slide img{
+			width: 100%;
+		}
+	/* IE10 Windows Phone 8 Fixes */
+	.swiper-wp8-horizontal {
+		-ms-touch-action: pan-y;
+	}
+	.swiper-wp8-vertical {
+		-ms-touch-action: pan-x;
+	}
+	.button-swiper-left {
+		display: none;
+		width: 107px;
+		height: 108px;
+		background: url(../images/index/icon_left_slide.png);
+		position: absolute;
+		margin: auto 0;
+		top: 0;
+		bottom: 0;
+		z-index: 9;
+	}
+	.button-swiper-right {
+		display: none;
+		width: 107px;
+		height: 108px;
+		background: url(../images/index/icon_right_slide.png);
+		position: absolute;
+		margin: auto 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 9;
+	}
 
 	/*other_gallery*/
 
@@ -1120,7 +1214,7 @@ textarea{
 		}
 		.other_gallery .line:last-child {
 			margin-top: 22px;
-			margin-bottom: 46px;
+			margin-bottom: 26px;
 		}
 
 	/*blog*/
@@ -1342,9 +1436,10 @@ textarea{
 	}
 	.social-footer {
 		width: 100%;
-		height: 81px;
+		height: 90px;
 		display: block;
 		background-color: #fff;
+		padding-top: 10px;
 		margin-top: -1px;
 	}
 	ul.social-footer {
@@ -1391,7 +1486,7 @@ textarea{
 		margin: 0 auto;
 		display: block;
 		position: relative;
-		z-index: 9999;
+		z-index: 8000;
 	}
 	.header-top{
 		width: 100%;
@@ -1419,9 +1514,12 @@ textarea{
 			.header-social ul { height: auto; list-style: none;}
 			.header-social li { margin-right: 23px;}
 
-			li#vk 	{	background: url(../images/header/social_pikt.png) 0 0;}
-			li#fb 	{	background: url(../images/header/social_pikt.png) -62px 0;}
-			li#gram {	background: url(../images/header/social_pikt.png) -124px 0;}
+			li#vk 	{	background: url(../images/header/social_pikt.png) 0 -35px;}
+			li#fb 	{	background: url(../images/header/social_pikt.png) -35px -35px;}
+			li#gram {	background: url(../images/header/social_pikt.png) -70px -35px;}
+			li#vk:hover 	{	background: url(../images/header/social_pikt.png) 0 0;}
+			li#fb:hover 	{	background: url(../images/header/social_pikt.png) -35px 0;}
+			li#gram:hover   {	background: url(../images/header/social_pikt.png) -70px 0;}
 		.logo{
 			width: 260px;
 			display: inline-block;
@@ -1505,12 +1603,14 @@ textarea{
 	/*index*/
 
 	h1{
+		position: relative;
 		width: 1180px;
 		line-height: 85px;
 		text-align: left;
 		font-size: 84px;
 		margin:-250px auto 61px auto;
-		border-bottom:0px solid #dddddd;		
+		border-bottom:0px solid #dddddd;
+		z-index: 9;		
 	}
 		h1 span{
 			max-width:900px; 
@@ -1669,6 +1769,9 @@ textarea{
 				}
 				
 				.gallery-img-belt img:nth-of-type(3n+3){
+					margin-right: 0 !important;
+				}
+				.gallery-img-belt a:nth-of-type(3n+3) img{
 					margin-right: 0 !important;
 				}
 				.gallery-img_block img{
@@ -2265,6 +2368,16 @@ textarea{
 		.instamini .features-img_2{background: url(../images/instamini/1180/features.png) -219px 0;}
 	/*instashar*/
 	.instashar .insta-menu-block ul {margin-left: 200px;}
+	.instashar .description-text span{
+					font-size: 36px;
+					line-height: 48px;
+					padding:0 10px;
+				}
+				.instashar .description-text-instagram{
+					margin:  0 0 -10px -5px;
+					height: 48px;
+					background: url(../images/instashar/1180/quote_instagram.png) center left no-repeat,#eee;
+				}
 	.instashar .description-quote {
 		width: 710px;
 		margin: -213px 0 140px 0;
@@ -2280,6 +2393,7 @@ textarea{
 		.instashar .description-block_3{background: url(../images/instamini/1180/desc.png) -360px 15px no-repeat;}
 	.instashar .function-quote {margin: -313px 0 182px 0;}
 	.instashar .decor-quote {margin: -237px 0 204px 0;}
+
 	/*contacts*/
 	.contacts.content {
 	}
@@ -2475,3 +2589,97 @@ textarea{
 			margin: 0 auto;
 		}
 }
+<<<<<<< HEAD
+=======
+/*swiper*/
+.swiper-container {
+	width: 100%;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+	cursor: pointer;
+}
+
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	overflow: hidden;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+	display: inline-block;
+}
+	.swiper-slide img{
+		width: 100%;
+	}
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+.button-swiper-left {
+	display: none;
+	width: 107px;
+	height: 108px;
+	background: url(../images/index/icon_left_slide.png);
+	position: absolute;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
+	z-index: 9;
+}
+.button-swiper-right {
+	display: none;
+	width: 107px;
+	height: 108px;
+	background: url(../images/index/icon_right_slide.png);
+	position: absolute;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 9;
+}
+>>>>>>> origin/Add_instamini

@@ -89,6 +89,7 @@
 						<img src="images/clients/2.png"alt="">
 						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
+<<<<<<< HEAD
 					<div class="clients-prewiew">
 						<img src="images/clients/2.png"alt="">
 						<input type="checkbox" class="icheckbox_minimal-green">
@@ -149,6 +150,8 @@
 						<img src="images/clients/1.png"alt="">
 						<input type="checkbox">
 					</div>
+=======
+>>>>>>> origin/Add_instamini
 				</div>
 			</div>
 
@@ -526,7 +529,7 @@
 							<p class="label-pass">максимум 5 символов</p>	
 						</div>
 						<div class="gallery-photos">
-							<div class="photo-left">
+							<div class="photo-left CMS-buttons">
 								<p class="top-label">Фотографии</p>
 								<div class="button">
 									<p>Добавить фото</p>
@@ -996,6 +999,26 @@
 						<p class="pass">пароль: 245B7</p>						
 						
 					</div>					
+				</div>
+			</div>
+
+			<h2>Пароль</h2>
+			<div class="CMS-block chng_pass last_block">
+				<div class="left-label">
+					<p>Смена пароля</p>
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button save">
+							<p>Сохранить</p>
+						</div>
+					</div>
+					<div class="chng_pass-form">
+						<p>старый пароль</p>
+						<input type="password" name="old_pass">
+						<p>новый пороль</p>
+						<input type="password" name="new_pass">
+					</div>
 				</div>
 			</div>
 

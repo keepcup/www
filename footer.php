@@ -66,5 +66,7 @@
 		</div>
 		<!-- end of footer -->
 </div><!--container_end-->
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53f4d5562d80f020"></script>
 </body>
 </html>

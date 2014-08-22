@@ -35,6 +35,7 @@ for($i=0;$i<$select_count;$i++){
 					<a href=""><li class="blog-social-fb"></li></a>
 					<a href=""><li class="blog-social-tw"></li></a>
 				</ul>
+				<!-- <div class="blog-social addthis_sharing_toolbox"></div> -->
 				<?if($photo_count!=0){?><a href="<?echo $blog_number_row['url_name']?>" class="blog-number"><?echo $photo_count?><span></span></a><?}?>
 				<div class="blog-text-belt">
 					<p class="blog-text"><?echo $row[$i]['text']?></p>
