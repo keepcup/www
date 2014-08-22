@@ -1,21 +1,17 @@
 $(document).ready(function(){
-<<<<<<< HEAD
-<<<<<<< HEAD
-    $('.sortable').perfectScrollbar({
-        wheelSpeed: 20,
-        wheelPropagation: false,
-        suppressScrollX: false
-    });
+    // $('.sortable').perfectScrollbar({
+    //     wheelSpeed: 20,
+    //     wheelPropagation: false,
+    //     suppressScrollX: false
+    // });
 	$(".sortable").sortable({ revert:true, cancel: ".ps-scrollbar-y-rail" });
-=======
     $('.CMS-prewiew').perfectScrollbar({
         wheelSpeed: 20,
         wheelPropagation: false,
         suppressScrollX: true
     });
 	$(".sortable").not('.ps-scrollbar-y-rail').sortable({ revert:true, cancel: ".ps-scrollbar-y-rail" });
->>>>>>> origin/Add_instamini
-=======
+
     // $('.sortable').perfectScrollbar({
     //     wheelSpeed: 20,
     //     wheelPropagation: false,
@@ -87,7 +83,6 @@ $(document).ready(function(){
     $('.sortable').sbscroller();
     $('.sbscroller').sbscroller();
 	$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
->>>>>>> origin/CMS_JS
 	/*input file*/
 	$(".button").mousemove(function(e) {
         var offL, offR, inpStart, aaa;

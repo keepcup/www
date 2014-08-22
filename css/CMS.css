@@ -95,18 +95,10 @@ body,html{
 		.CMS-prewiew {
 			position: relative;
 			width: 696px;
-<<<<<<< HEAD
 			height: 100px;
 			height: 100%;
 			float: left;
 			margin-left: 20px;
-=======
-			/*height: 222px;*/
-			/*padding: 18px 0 20px 20px;*/
-			margin: 0 0 20px 20px;
-			height: 100%;
-			float: left;
->>>>>>> origin/Add_instamini
 			overflow: hidden;
 		}
 			.CMS-prewiew.photo {font-size: 0;}
@@ -170,11 +162,7 @@ body,html{
 		.CMS-main-slide .CMS-buttons {padding: 78px 0 0 60px;}
 
 		/*.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}*/
-<<<<<<< HEAD
-			.CMS-block.CMS-main-slide {	height: 282px;}
-=======
 			.CMS-block.CMS-main-slide {	height: 262px;}
->>>>>>> origin/Add_instamini
 			.CMS-block.CMS-main-clients {
 				min-height: 170px;
 				max-height: 722px;
@@ -223,11 +211,7 @@ body,html{
 		.CMS-block.instamini .CMS-prewiew div {
 			width: 152px;
 			float: right;
-<<<<<<< HEAD
 			margin-right:66px;
-=======
-			margin:0 66px 0 0;
->>>>>>> origin/Add_instamini
 		}
 			.CMS-block.instamini .CMS-prewiew div img{
 				width: 100%;
@@ -681,7 +665,6 @@ body,html{
 					padding-left: 39px;
 				}
 
-<<<<<<< HEAD
 	/*CMS enter*/
 	.enter-form {
 		display: inline-block;
@@ -772,11 +755,7 @@ body,html{
 				-moz-box-sizing: border-box;
 				box-sizing: border-box;
 			}
-
-
-=======
 .upload_preview{
 	position: absolute;
 }
->>>>>>> origin/CMS_JS
 

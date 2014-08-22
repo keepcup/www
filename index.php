@@ -1,14 +1,9 @@
 <?include "header.php";$url='index';?>
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
-<<<<<<< HEAD
-	<div class="content">
-		<div class="slider swiper-container">
-=======
-<!-- <script src="/js/idangerous.swiper.min.js"></script> -->
+<script src="/js/idangerous.swiper.min.js"></script>
 	<div class="content">
 		<div class="swiper-container">
 			<div class="button-swiper-left"></div>
->>>>>>> origin/Add_instamini
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img ">
@@ -20,10 +15,7 @@
 				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
 				</div>
 		    </div>
-<<<<<<< HEAD
-=======
 		    <div class="button-swiper-right"></div>
->>>>>>> origin/Add_instamini
 		</div>
 		<h1 class="main-h1"><span>выездные фотобудки</span> <span>в аренду</span></h1>
 		<div class="insta_block">
@@ -49,12 +41,10 @@
 		</div>
 	</div><!--content_end-->
 	<script>
-<<<<<<< HEAD
 		var mySwiper = new Swiper('.swiper-container',{
 		    slidesPerView: 'auto',
 		    freeModeFluid: true
 		})
-=======
 		$(document).ready(function(){
 			//Unset height
 			$('.swiper-container').css({height:''})
@@ -120,7 +110,5 @@
 					$('.button-swiper-right').css({'display': 'none'});
 				}
 			})
-		
->>>>>>> origin/Add_instamini
 	</script>
 <?include "footer.php";?>

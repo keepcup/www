@@ -82,69 +82,6 @@
 						<img src="images/clients/2.png"alt="">
 						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
-<<<<<<< HEAD
-					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
-						<input type="checkbox" class="icheckbox_minimal-green">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/3.png"alt="">
-						<input type="checkbox" class="icheckbox_minimal-green">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/4.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/5.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/6.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/7.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/CMS/test.jpg" alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/9.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/10.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/11.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/12.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/13.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/14.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/15.png"alt="">
-						<input type="checkbox">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png"alt="">
-						<input type="checkbox">
-					</div>
-=======
->>>>>>> origin/Add_instamini
 				</div>
 			</div>
 
