@@ -30,7 +30,7 @@
 							<p>Добавить фотографию</p>
 						</div>
 						<div class="button save">
-							<p>Сохронить</p>
+							<p>Сохранить</p>
 						</div>
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
@@ -68,19 +68,15 @@
 				<div class="right-content sortable">
 					<div class="clients-prewiew">
 						<img src="images/clients/1.png"alt="">
-						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/2.png"alt="">
-						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/2.png"alt="">
-						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
 					<div class="clients-prewiew">
 						<img src="images/clients/2.png"alt="">
-						<input type="checkbox" class="icheckbox_minimal-green">
 					</div>
 				</div>
 			</div>
@@ -857,7 +853,7 @@
 					<div class="chng_pass-form">
 						<p>старый пароль</p>
 						<input type="password" name="old_pass">
-						<p>новый пороль</p>
+						<p>новый пароль</p>
 						<input type="password" name="new_pass">
 					</div>
 				</div>
