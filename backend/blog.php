@@ -26,19 +26,23 @@ for($i=0;$i<$select_count;$i++){
 					<br>
 					<?echo $row[$i]['title_small']?></p>
 				</div>
-				<img src="images/blog/images/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['url_name']?>">
+				<img class="blog-img" src="images/blog/images/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['url_name']?>">
 				<p class="blog-date">
 					<span><?echo date('d',strtotime($row[$i]['date']))?></span><?echo date('.m',strtotime($row[$i]['date']))?>
 				</p>
-				<ul class="blog-social">
-					<li class="blog-social-vk" id='vk_repo'>
-						<div class="addthis_toolbox addthis_default_style">
-     						<a class="addthis_button_facebook_send"></a>
-     					</div>
-     				</li>
-					<a href=""><li class="blog-social-fb"></li></a>
-					<a href=""><li class="blog-social-tw"></li></a>
-				</ul>
+				<div class="addthis_toolbox blog-social">
+					<div class="custom_images">
+						<a class="addthis_button_vk">
+							<img class="blog-social-vk" src="images/blog/1180/social-content-vk.png" alt="Share to Facebook" />
+						</a>
+						<a class="addthis_button_facebook">
+							<img class="blog-social-fb" src="images/blog/1180/social-content-fb.png" alt="Share to Twitter" />
+						</a>
+						<a class="addthis_button_twitter">
+							<img class="blog-social-tw" src="images/blog/1180/social-content-tw.png" alt="More..." />
+						</a>
+					</div>
+				</div>
 				<!-- <div class="blog-social addthis_sharing_toolbox"></div> -->
 				<?if($photo_count!=0){?><a href="<?echo $blog_number_row['url_name']?>" class="blog-number"><?echo $photo_count?><span></span></a><?}?>
 				<div class="blog-text-belt">
