@@ -30,8 +30,9 @@ for($i=0;$i<$select_count;$i++){
 				<p class="blog-date">
 					<span><?echo date('d',strtotime($row[$i]['date']))?></span><?echo date('.m',strtotime($row[$i]['date']))?>
 				</p>
-				<div class="addthis_toolbox blog-social">
-					<div class="custom_images">
+				<div class="addthis_toolbox blog-social" addthis:url="<?echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."#".$row[$i]['url_name']?>" 
+					addthis:title="<?echo $row[$i]['title']?>" addthis:description="<?echo $row[$i]['text']?>">
+					<div class="custom_images"> 
 						<a class="addthis_button_vk">
 							<img class="blog-social-vk" src="images/blog/1180/social-content-vk.png" alt="Share to Facebook" />
 						</a>
@@ -50,6 +51,7 @@ for($i=0;$i<$select_count;$i++){
 				</div>
 				<div class="blog-text_display">
 					<ul><li></li><li></li><li></li></ul>
+
 				</div>
 			</div>
 		</div>
@@ -63,3 +65,6 @@ for($i=0;$i<$select_count;$i++){
 		</div>
 	<?}		
 }?>
+ 
+ <!-- social buttons -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53f4d5562d80f020"></script>
