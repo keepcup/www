@@ -1,6 +1,6 @@
 <?include "header.php";$url='index';?>
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
-<script src="/js/idangerous.swiper.min.js"></script>
+<!-- <script src="/js/idangerous.swiper.min.js"></script> -->
 	<div class="content">
 		<div class="swiper-container">
 			<div class="button-swiper-left"></div>
@@ -41,10 +41,6 @@
 		</div>
 	</div><!--content_end-->
 	<script>
-		var mySwiper = new Swiper('.swiper-container',{
-		    slidesPerView: 'auto',
-		    freeModeFluid: true
-		})
 		$(document).ready(function(){
 			//Unset height
 			$('.swiper-container').css({height:''})
@@ -110,5 +106,6 @@
 					$('.button-swiper-right').css({'display': 'none'});
 				}
 			})
+		
 	</script>
 <?include "footer.php";?>
