@@ -95,7 +95,7 @@ body,html{
 		.CMS-prewiew {
 			position: relative;
 			width: 696px;
-			height: 100px;
+			min-height: 100px;
 			height: 100%;
 			float: left;
 			margin-left: 20px;
@@ -206,7 +206,13 @@ body,html{
 				display: inline-block;
 				vertical-align: middle;
 			}
-
+		.instamini .CMS-prewiew{
+			height: 150px;
+			float: right;
+		}
+			.instamini .CMS-prewiew .upload_preview{
+				position: relative;
+			}
 		.CMS-block.instamini .CMS-buttons{	padding: 18px 0 40px 58px;	}
 		.CMS-block.instamini .CMS-prewiew div {
 			width: 152px;
@@ -306,7 +312,6 @@ body,html{
 							
 							cursor: pointer;
 						}
-						.gallery-edit-form .CMS-prewiew .photo-preview.active img {padding:3px;border: 2px solid #71c592;}
 		.CMS-block.yours_gallery .right-content	{
 			min-height: 900px;
 			height: auto;
@@ -456,7 +461,7 @@ body,html{
 				right:50px;
 			}
 				.CMS-block.new-clients .CMS-prewiew{
-					width: auto;
+					width: 130px;
 					height: 130px;
 					margin-top: 10px;
 				}
@@ -758,4 +763,6 @@ body,html{
 .upload_preview{
 	position: absolute;
 }
-
+.display{
+	display: none;
+}

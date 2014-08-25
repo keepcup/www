@@ -505,16 +505,13 @@
 								<div class="button save">
 									 <p>Сохранить</p>
 								</div>
-								<div class="button decline">
-									<p>Отменить</p>
-								</div>
 							</div>
 							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 								<div class="photo-preview">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-preview active">
+								<div class="photo-preview galleryChecked">
 									<img src="images/CMS/test.jpg" alt="">
 									<div class="close_cross"></div>
 								</div>
@@ -522,7 +519,7 @@
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
-								<div class="photo-preview active">
+								<div class="photo-preview galleryChecked">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
@@ -553,6 +550,7 @@
 					<p>Ваши галереи</p>
 				</div>
 				<div class="right-content sbscroller">
+				<?for($i=0;$i<9;$i++){?>
 					<div class="gallery">
 						<img class="prewiew" src="images/index/slider_test.png" alt="">
 						<p class="date">24.05</p>
@@ -566,8 +564,7 @@
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 					</div>
-					<!---->
-					<!-- <div class="gallery-edit-form">
+					<div class="gallery-edit-form display">
 						<div class="CMS-buttons">
 							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
 							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
@@ -589,172 +586,17 @@
 									<p>Сохранить</p>
 								</div>
 							</div>
-							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
+							<div class="CMS-prewiew photo sortable_edit" ondragover="return false" ondragstart="return false">
+								<?for($d=0;$d<9;$d++){?>
 								<div class="photo-preview">
 									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>
 								</div>
+								<?}?>
 							</div>
 						</div>
-					</div> -->
-					<!--  -->
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>					
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-						
-					</div>						
+					</div><!-- gallery-edit-form -->
+				<?}?>
 				</div>
 			</div>
 			<h2>Контакты</h2>
@@ -940,41 +782,7 @@
 					<p>Ваши мероприятия</p>
 				</div>
 				<div class="right-content sbscroller">
-					<div class="gallery event">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="photo-label">
-							<p>11</p>
-							<div class="event-photos-label"></div>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-					</div>
-					<div class="gallery event">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="photo-label">
-							<p>28</p>
-							<div class="event-photos-label"></div>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-						
-					</div>
+				<?for($i=0;$i<9;$i++){?>
 					<div class="gallery event">
 						<img class="prewiew" src="images/index/slider_test.png" alt="">
 						<p class="date">24.05</p>
@@ -991,9 +799,8 @@
 							<div class="close_cross"></div>
 						</div>
 						<p class="pass">пароль: 245B7</p>						
-						
 					</div>
-					<div class="event-edit-form"><!-- just copy this block -->
+					<div class="event-edit-form display">
 						<div class="left-side">
 							<div class="button add_photo">
 								<form class="frm"> 
@@ -1026,26 +833,13 @@
 							<p class="label-symbols_left">1000 символов</p>
 						</div>
 						<div class="bottom-side">
-							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">						
+							<input type="text" name="date" class="date" placeholder="ДАТА">						
 							<input type="text" name="gallery_url" class="gallery_url">
 							<p class="label-gallery_url">ссылка на галерею</p>
 							<p class="label-date">в формате 01.02</p>
 						</div>						
-					</div>
-					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
-						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
-						</div>
-						<div class="gallery-buttons">
-							<div class="edit"></div>
-							<div class="close_cross"></div>
-						</div>
-						<p class="pass">пароль: 245B7</p>						
-						
-					</div>					
+					</div><!-- event-edit-form -->
+					<?}?>
 				</div>
 			</div>
 
