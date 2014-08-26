@@ -1,25 +1,14 @@
 <?
-// if (in_array($_SERVER['HTTP_USER_AGENT'], array(
-//   'facebookexternalhit/1.1 (+https://www.facebook.com/externalhit_uatext.php)',
-//   'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
-// ))) {
+if (in_array($_SERVER['HTTP_USER_AGENT'], array(
+  'facebookexternalhit/1.1 (+https://www.facebook.com/externalhit_uatext.php)',
+  'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
+))) || (in_array($_SERVER['HTTP_USER_AGENT'], 'Twitterbot')) {
   //it's probably Facebook's bot
 	include "../db.php";
 	$select = $db->prepare("SELECT * FROM blog WHERE id=?");
 	$select->execute(array($_GET['id']));
 	$row = $select->fetchAll();
-	$select_count = $select->rowCount();
-	for($i=0;$i<$select_count;$i++){
-		
-			$photo_count=0;
-			if($row[$i]['gallery_id'] !=0){
-				$blog_number = $db->prepare("SELECT photo,url_name FROM gallery WHERE id=?");
-				$blog_number->execute(array($row[$i]['gallery_id']));
-				$blog_number_row = $blog_number->fetch();
-				$photo=explode(',', $blog_number_row['photo']);
-				$photo_count=count($photo);
-			}
-			
+	$select_count = $select->rowCount();			
 	?>
 		<head>
 			<meta property="og:type"            content="article" /> 
@@ -41,14 +30,12 @@
 					</div>
 			</div> -->
 
-	<?}
-// }
-// else {
-//   //that's not Facebook
-// 	header("Location: http://test.asartdesign.ru/blog_soc_test.php");
-// 	die();
+	<?} else {
+  //that's not Facebook
+	header("Location: http://test.asartdesign.ru/blog_soc_test.php");
+	die();
 
-// }
+}
 
  ?>
  <!-- social buttons -->
