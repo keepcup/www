@@ -36,7 +36,7 @@ for($i=0;$i<$select_count;$i++){
 						<a class="addthis_button_vk">
 							<img class="blog-social-vk" src="images/blog/1180/social-content-vk.png" alt="Share to Facebook" />
 						</a>
-						<a class="addthis_button_facebook">
+						<a class="addthis_button_facebook" href="/blog_soc_test.php">
 							<img class="blog-social-fb" src="images/blog/1180/social-content-fb.png" alt="Share to Twitter" />
 						</a>
 						<a class="addthis_button_twitter">
