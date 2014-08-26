@@ -30,7 +30,7 @@ for($i=0;$i<$select_count;$i++){
 				<p class="blog-date">
 					<span><?echo date('d',strtotime($row[$i]['date']))?></span><?echo date('.m',strtotime($row[$i]['date']))?>
 				</p>
-				<div class="addthis_toolbox blog-social" addthis:url="<?echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."#".$row[$i]['url_name']?>" 
+				<div class="addthis_toolbox blog-social" addthis:url="<?echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."#".$row[$i]['id']?>" 
 					addthis:title="<?echo $row[$i]['title']?>" addthis:description="<?echo $row[$i]['text']?>">
 					<div class="custom_images"> 
 						<a class="addthis_button_vk">
@@ -66,4 +66,31 @@ for($i=0;$i<$select_count;$i++){
 }?>
  
  <!-- social buttons -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53f4d5562d80f020"></script>
+<script>
+	$(".addthis_button_facebook").click(function(){
+		var title = $(this).closest(".blog-belt").find(".blog-title").text();
+		var url = window.location;
+		var description = $(this).closest(".blog-belt").find(".blog-text").text();
+		var image = document.location.protocol + "//" + document.location.hostname + "/" + $(this).closest(".blog-belt").find(".blog-img").attr("src");
+		if($("meta[property='og:title']").length) {
+			$("meta[property='og:title']").attr("content", title);
+			$("meta[property='og:url']").attr("content", url);
+			$("meta[property='og:description']").attr("content", description);
+			$("meta[property='og:image']").attr("content", image);
+		}else {
+			$("head").append('<meta property="og:title" content="' + title + '" />');
+			$("head").append('<meta property="og:url" content="' + url + '" />');
+			$("head").append('<meta property="og:description" content="' + description + '" />');
+			$("head").append('<meta property="og:image" content="' + image + '" />');
+
+		}
+	})
+	$(".addthis_button_vk").click(function(){
+		var image = document.location.protocol + "//" + document.location.hostname + "/" + $(this).closest(".blog-belt").find(".blog-img").attr("src");
+		if($("metameta[property='og:image']").length) {
+			$("meta[property='og:image']").attr("content", image);
+		}
+	})
+</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53f4d5562d80f020"></script>
+

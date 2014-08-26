@@ -6,18 +6,17 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="js/js.js"></script>
-
-	<script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
 	
 	<!-- Add fancyBox -->
 	<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 	<meta property="fb:app_id"          content="530815097061929" /> 
-	<meta property="og:type"            content="blog" /> 
-	<meta property="og:url"             content="http://samples.ogp.me/136756249803614" /> 
-	<meta property="og:title"           content="Chocolate Pecan Pie" /> 
-	<meta property="og:image"           content="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xpa1/t39.2178-6/851565_496755187057665_544240989_n.jpg" /> 
+	<meta property="og:type"            content="article" /> 
+	<!-- <meta property="og:title"           content="LoremLorem" />
+	<meta property="og:url"           	content="http://test.asartdesign.ru/blog_soc_test.php#" />
+	<meta property="og:image"           content="http://test.asartdesign.ru/images/blog/images/smashbox.jpg" />
+	<meta property="og:description"     content="wleifuahewliufhalwueifhlawieflaiebfliaewbflaiwebfliawbeflibawleifblawiebflawbeflawbe" /> -->
 </head>
 <body>
 <div class="container">
@@ -26,7 +25,7 @@
 		<div class="title_block">
 			<div class="phone"></div>
 			<ul class="phone-down">
-				<li class="phone-contact">Елизавета +7 (906) 098 26 93</li>
+				<li class="phone-contact">Елизавета +7 (906) 098 26 93 <?echo date("Y-m-d H:i:s")?></li>
 				<li class="phone-contact">Александр +7 (916) 034 62 54</li>
 				<li class="phone-social">
 					<a href="/"><div class="phone-social_1"></div></a>
