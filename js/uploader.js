@@ -112,20 +112,36 @@ $(document).ready(function() {
 		
 		return false;
 	}*/
-	$('.close_cross').live('click',function(){
+	// $('.close_cross').live('click',function(){
+	// 	$this= $(this);
+	// 	timeOut= 500;
+	// 	$this.closest('.photo-preview').fadeOut(timeOut)
+	// 	setTimeout( function() { $this.closest('.photo-preview').remove()}, timeOut);
+
+	// });
+	$('.close_cross_new').live('click',function(){
 		$this= $(this);
 		timeOut= 500;
 		$this.closest('.photo-preview').fadeOut(timeOut)
 		setTimeout( function() { $this.closest('.photo-preview').remove()}, timeOut);
-	});
-	$('.close_cross_new').live('click',function(){
-		Index = $('.CMS-prewiew').index($(this).closest('.CMS-prewiew'));
-		deleteIndex = $(this).closest('.CMS-prewiew').find('.close_cross_new').index(this);
-		// dataArray[Index][deleteIndex]=[];
+
+		Index = $('.CMS-prewiew').index($this.closest('.CMS-prewiew'));
+		deleteIndex = $this.closest('.CMS-prewiew').find('.close_cross_new').index(this);
 		dataArray[Index].splice(deleteIndex,1);
-		// alert(deleteIndex)
-		// alert(dataArray[Index][0]);
-		
+	})
+	$('.photo-preview-old').find('.close_cross').live('click',function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.photo-preview').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.closest('.CMS-prewiew').prev().find('.tname').text();
+			var deletePosition = closeCross.closest('.photo-preview-old').attr('id').replace('item_','');
+			var saveView = closeCross.closest('.upload_preview');
+			closeCross.closest('.photo-preview').remove();
+			var position = saveView.sortable("toArray");
+			$.post('backend/position.php', {position:position, tablename: tablename });
+			$.post('backend/delete.php', {deletePosition:deletePosition, tablename: tablename});
+		}, timeOut);
 	})
 	// Удаление только выбранного изображения 
 	/*$("#dropped-files").on("click","a[id^='drop']", function() {
@@ -153,13 +169,12 @@ $(document).ready(function() {
 		// maxPosition = saveView.find('.max_position').text();
 		// maxPosition = parseInt(maxPosition)+1;
 		// alert(position.join(",").replace(/item_/g," "))
-		maxPosition =Math.max.apply(null,position.join("").split('item_'));
+		// maxPosition =Math.max.apply(null,position.join("").split('item_'));
 
 		startPosition = saveView.find('.photo-preview-old').length;
 		saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
 		// alert(parseInt(position.join(",").replace(/item_/g," ")))
 
-		// alert(position.indexOf('4'))
 		var tablename = $(this).next().text();
 		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
