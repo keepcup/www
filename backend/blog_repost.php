@@ -31,11 +31,16 @@ if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
 
 	<?
 	} else {
-  //that's not Facebook
-	header('Location: <?echo "http://".$_SERVER['HTTP_HOST']."blog.php"?>');
-	die();
-
-}
+  		//that's not Facebook
+		/* Redirect to a different page in the current directory that was requested */
+		$host  = $_SERVER['HTTP_HOST'];
+		$id	   = "?id=".$_GET['id']);
+		// $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		// $id = 'mypage.php';
+		// header("Location: http://$host$uri/$extra");
+		header("Location: http://$host/blog.php$id");
+		die();
+	}
 
  ?>
  <!-- social buttons -->
