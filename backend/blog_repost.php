@@ -32,7 +32,7 @@ if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
 	<?
 	} else {
   //that's not Facebook
-	header("Location: http://test.asartdesign.ru/blog_soc_test.php");
+	header('Location: <?echo "http://".$_SERVER['HTTP_HOST']."blog.php"?>');
 	die();
 
 }
