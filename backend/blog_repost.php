@@ -1,4 +1,4 @@
-<?
+<?php
 if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
   'facebookexternalhit/1.1 (+https://www.facebook.com/externalhit_uatext.php)',
   'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
@@ -29,11 +29,13 @@ if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
 					</div>
 			</div>
 
-	<?
+	<?php
 	} else {
   //that's not Facebook
-	header('Location: <?echo "http://".$_SERVER['HTTP_HOST']."blog.php"?>');
-	die();
+		$host = $_SERVER['HTTP_HOST'];
+		$id   = $_GET['id'];
+		header("Location: http://".$host."/blog.php?id=".$id);
+		die();
 
 }
 
