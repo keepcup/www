@@ -38,7 +38,7 @@ if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
 		// $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 		// $id = 'mypage.php';
 		// header("Location: http://$host$uri/$extra");
-		header("Location: http://test.asartdesign.ru/blog.php");
+		header("Location: http://$host/blog.php$id");
 		die();
 	}
 
