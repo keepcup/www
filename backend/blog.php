@@ -31,9 +31,9 @@ for($i=0;$i<$select_count;$i++){
 					<span><?echo date('d',strtotime($row[$i]['date']))?></span><?echo date('.m',strtotime($row[$i]['date']))?>
 				</p>
 				<ul class="blog-social">
-					<a href=""><li class="blog-social-vk"></li></a>
-					<a href=""><li class="blog-social-fb"></li></a>
-					<a href=""><li class="blog-social-tw"></li></a>
+					<a href="http://vk.com/share.php?url=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>"><li class="blog-social-vk"></li></a>
+					<a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>"><li class="blog-social-fb"></li></a>
+					<a href="http://twitter.com/share?url=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>&text=<?echo $row[$i]['title']." ".$row[$i]['title_small']?>"><li class="blog-social-tw"></li></a>	
 				</ul>
 				<!-- <div class="blog-social addthis_sharing_toolbox"></div> -->
 				<?if($photo_count!=0){?><a href="<?echo $blog_number_row['url_name']?>" class="blog-number"><?echo $photo_count?><span></span></a><?}?>
