@@ -33,7 +33,7 @@
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
-						<span class='display'>main_slider</span>
+						<span class='display tname'>main_slider</span>
 					</div>
 
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
@@ -50,8 +50,8 @@
 					<?for($i=0;$i<$slider_count;$i++){
 					?>
 						<div id="item_<?echo $slider_row[$i]['position']?>" class="photo-preview photo-preview-old">
-							<img src="images/index/slider/<?echo $slider_row[$i]['img']?>" alt="">
-							<div class="close_cross"></div>
+							<img src="<?echo $slider_row[$i]['img']?>" alt="">
+							<div class="close_cross">1</div>
 						</div>
 					<?}?>
 					

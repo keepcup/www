@@ -13,7 +13,7 @@
 			<div class="swiper-wrapper">
 				<?for($i=0;$i<$slider_count;$i++){?>
 				<div class="swiper-slide">
-				   <img src="images/index/slider/<?echo $slider_row[$i]['img'];?>" alt="" class="slider_img ">
+				   <img src="<?echo $slider_row[$i]['img'];?>" alt="" class="slider_img ">
 				</div>
 				<?}?>
 		    </div>
