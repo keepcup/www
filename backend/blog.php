@@ -64,6 +64,3 @@ for($i=0;$i<$select_count;$i++){
 		</div>
 	<?}		
 }?>
- 
- <!-- social buttons -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53f4d5562d80f020"></script>
