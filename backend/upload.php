@@ -1,16 +1,13 @@
 <?php
-// Создаем подключение к серверу
-$db = mysql_connect ("servername","user","password"); 
-// Выбираем БД
-mysql_select_db ("dbname",$db);
-
+include '../db.php';
 // Все загруженные файлы помещаются в эту папку
-$uploaddir = '../images/cms/images/';
+$uploaddir = '../images/index/slider/';
 
 // Вытаскиваем необходимые данные
-$file = $_POST['value'];
-$name = $_POST['name'];
-
+$file = $_POST['file']['value'];
+$name = $_POST['file']['name'];
+$table = $_POST['tablename'];
+$position = $_POST['position'];
 // Получаем расширение файла
 $getMime = explode('.', $name);
 $mime = end($getMime);
@@ -26,14 +23,17 @@ $decodedData = base64_decode($encodedData);
 // Мы будем создавать произвольное имя!
 $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 
-// Создаем изображение на сервере
 if(file_put_contents($uploaddir.$randomName, $decodedData)) {
-	// Записываем данные изображения в БД
-	mysql_query ("INSERT INTO images (date,catalog,filename) VALUES (NOW(),'$uploaddir','$randomName')");
-	echo $randomName.":загружен успешно";
+	switch($table){
+		case 'main_slider':
+		   $position = str_replace('item_','',$position);
+			$insert = $db->prepare("INSERT INTO $table (img,position) VALUES ('$randomName','$position')");
+			$insert->execute();
+			break;
+		
+	}
 }
 else {
-	// Показать сообщение об ошибке, если что-то пойдет не так.
-	echo "Что-то пошло не так. Убедитесь, что файл не поврежден!";
+	echo "Что-то пошло не так.";
 }
 ?>

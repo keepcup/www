@@ -19,6 +19,8 @@ $(document).ready(function() {
 		dataArray[i] = [];
 	}
 	var Index;
+	var maxPosition;
+	var beforePosition;
 // $('.sortable').on( function() {
 // 	$('.sortable').sbscroller('refresh');
 // });
@@ -79,6 +81,10 @@ $(document).ready(function() {
 		
 	// Процедура добавления эскизов на страницу
 	function addImage(ind,cs,Index) {
+		// maxPosition = cs.find('.max_position').text();
+		// maxPosition = parseInt(maxPosition)+1;
+		beforePosition = cs.sortable("toArray");
+		maxPosition =Math.max.apply(null,beforePosition.join("").split('item_'))+1;
 		// Если индекс отрицательный значит выводим весь массив изображений
 		if (ind < 0 ) { 
 		start = 0; end = dataArray[Index].length; 
@@ -89,7 +95,7 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
+			cs.append('<div id="item_'+maxPosition+'" class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
 		}
 		$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
 		$('.sortable').sbscroller('refresh');
@@ -143,17 +149,33 @@ $(document).ready(function() {
 	// Загрузка изображений на сервер
 	$('.save').live('click',function() {
 		var saveView = $(this).parent('div').next().find('.upload_preview');
+		var position = saveView.sortable("toArray");
+		// maxPosition = saveView.find('.max_position').text();
+		// maxPosition = parseInt(maxPosition)+1;
+		// alert(position.join(",").replace(/item_/g," "))
+		maxPosition =Math.max.apply(null,position.join("").split('item_'));
+
+		startPosition = saveView.find('.photo-preview-old').length;
+		saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+		// alert(parseInt(position.join(",").replace(/item_/g," ")))
+
+		// alert(position.indexOf('4'))
+		var tablename = $(this).next().text();
 		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
 		// Для каждого файла
+		$.post('backend/position.php', {position:position, tablename: tablename });
 		$.each(dataArray[saveIndex], function(index, file) {	
-			// загружаем страницу и передаем значения, используя HTTP POST запрос 
-			$.post('backend/upload.php', dataArray[saveIndex][index], function(data) {
-				var fileName = dataArray[saveIndex][index].name;
-				// Формируем в виде списка все загруженные изображения
-				// data формируется в upload.php
-				var dataSplit = data.split(':');
-			});
+			// загружаем страницу и передаем значения, используя HTTP POST запрос
+			$.post('backend/upload.php', {position:position[index+startPosition], tablename: tablename, file :dataArray[saveIndex][index] }
+			
+			 // , function(data) {
+			// 	var fileName = dataArray[saveIndex][index].name;
+			// 	// Формируем в виде списка все загруженные изображения
+			// 	// data формируется в upload.php
+			// 	var dataSplit = data.split(':');
+			// } tableName: "main_slider"
+			);
 		});
 
 		// alert(dataArray[saveIndex].length)

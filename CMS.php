@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="js/jquery.sbscroller.js"></script>
 </head>
 <body>
+<?include "db.php";?>
 	<div class="container">
 		<div class="content CMS">
 			<h2>Главная</h2>
@@ -32,32 +33,28 @@
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display'>main_slider</span>
 					</div>
+
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
-						<div class="photo-preview photo-preview-old">
-							<img src="images/index/slider_test.png" alt="">
+					<?
+					$slider_position = $db->prepare("SELECT main_slider FROM position");
+					$slider_position->execute();
+					$slider_position_row = $slider_position->fetch();
+
+					$slider = $db->prepare("SELECT * FROM main_slider ORDER BY FIELD( position,  $slider_position_row[0] )");
+					$slider->execute();
+					$slider_row = $slider->fetchAll();
+					$slider_count = $slider->rowCount();?>
+					<!-- <span class='max_position'><?echo max(explode(",",$slider_position_row[0]));?></span> -->
+					<?for($i=0;$i<$slider_count;$i++){
+					?>
+						<div id="item_<?echo $slider_row[$i]['position']?>" class="photo-preview photo-preview-old">
+							<img src="images/index/slider/<?echo $slider_row[$i]['img']?>" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-preview photo-preview-old">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview photo-preview-old">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview photo-preview-old">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview photo-preview-old">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview photo-preview-old">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
+					<?}?>
+					
 					</div>
 				</div>
 			</div>
@@ -501,6 +498,7 @@
 								<div class="button save">
 									 <p>Сохранить</p>
 								</div>
+
 							</div>
 							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 								<div class="photo-preview">
