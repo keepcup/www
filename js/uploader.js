@@ -81,10 +81,14 @@ $(document).ready(function() {
 		
 	// Процедура добавления эскизов на страницу
 	function addImage(ind,cs,Index) {
-		// maxPosition = cs.find('.max_position').text();
-		// maxPosition = parseInt(maxPosition)+1;
-		beforePosition = cs.sortable("toArray");
-		maxPosition =Math.max.apply(null,beforePosition.join("").split('item_'))+1;
+		var tableName = cs.closest('.CMS-prewiew').prev('div').find('.tname').text();
+
+		if(cs.hasClass('delete_current')){
+			maxPosition = ind;
+		}else{
+			beforePosition = cs.sortable("toArray");
+			maxPosition =Math.max.apply(null,beforePosition.join("").split(tableName+'_'))+1;
+		}
 		// Если индекс отрицательный значит выводим весь массив изображений
 		if (ind < 0 ) { 
 		start = 0; end = dataArray[Index].length; 
@@ -95,7 +99,7 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div id="item_'+maxPosition+'" class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
+			cs.append('<div id="'+tableName+'_'+maxPosition+'" class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
 		}
 		$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
 		$('.sortable').sbscroller('refresh');
@@ -135,12 +139,12 @@ $(document).ready(function() {
 		closeCross.closest('.photo-preview').fadeOut(timeOut)
 		setTimeout( function() {
 			var tablename = closeCross.closest('.CMS-prewiew').prev().find('.tname').text();
-			var deletePosition = closeCross.closest('.photo-preview-old').attr('id').replace('item_','');
+			var deletePosition = closeCross.closest('.photo-preview-old').attr('id').split('_');
 			var saveView = closeCross.closest('.upload_preview');
 			closeCross.closest('.photo-preview').remove();
 			var position = saveView.sortable("toArray");
 			$.post('backend/position.php', {position:position, tablename: tablename });
-			$.post('backend/delete.php', {deletePosition:deletePosition, tablename: tablename});
+			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
 		}, timeOut);
 	})
 	// Удаление только выбранного изображения 
@@ -164,39 +168,35 @@ $(document).ready(function() {
 	*/
 	// Загрузка изображений на сервер
 	$('.save').live('click',function() {
-		var saveView = $(this).parent('div').next().find('.upload_preview');
-		var position = saveView.sortable("toArray");
-		// maxPosition = saveView.find('.max_position').text();
-		// maxPosition = parseInt(maxPosition)+1;
-		// alert(position.join(",").replace(/item_/g," "))
-		// maxPosition =Math.max.apply(null,position.join("").split('item_'));
-
-		startPosition = saveView.find('.photo-preview-old').length;
-		saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
-		// alert(parseInt(position.join(",").replace(/item_/g," ")))
-
-		var tablename = $(this).next().text();
-		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
-		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
-		// Для каждого файла
-		$.post('backend/position.php', {position:position, tablename: tablename });
-		$.each(dataArray[saveIndex], function(index, file) {	
-			// загружаем страницу и передаем значения, используя HTTP POST запрос
-			$.post('backend/upload.php', {position:position[index+startPosition], tablename: tablename, file :dataArray[saveIndex][index] }
+		var saveButton = $(this);
+		var saveView = saveButton.parent('div').next().find('.upload_preview');
+		var saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
+		if(saveButton.hasClass('instabudka_save')){
+			var table = saveButton.next().text().split("_");
+			var tableName = table[0];
+			var tableFile = table[1];
+			$.each(dataArray[saveIndex], function(index, file) {	
+				// загружаем страницу и передаем значения, используя HTTP POST запрос
+				$.post('backend/upload.php', {tablefile: tableFile, tablename: tableName, file :dataArray[saveIndex][index] });
+			});
+		}else{
 			
-			 // , function(data) {
-			// 	var fileName = dataArray[saveIndex][index].name;
-			// 	// Формируем в виде списка все загруженные изображения
-			// 	// data формируется в upload.php
-			// 	var dataSplit = data.split(':');
-			// } tableName: "main_slider"
-			);
-		});
+			var position = saveView.sortable("toArray");
 
-		// alert(dataArray[saveIndex].length)
-		dataArray[saveIndex] = [];
-		// Показываем список загруженных файлов
-		return false;
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			
+			$.post('backend/position.php', {position:position, tablename: tableName });
+			$.each(dataArray[saveIndex], function(index, file) {	
+				// загружаем страницу и передаем значения, используя HTTP POST запрос
+				$.post('backend/upload.php', {position:position[index+startPosition], tablename: tableName, file :dataArray[saveIndex][index] });
+			});
+			dataArray[saveIndex] = [];
+			return false;
+		}
 	});
 	// Простые стили для области перетаскивания
 	/*$('.CMS-prewiew').on('dragenter', function() {

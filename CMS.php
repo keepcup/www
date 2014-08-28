@@ -33,28 +33,28 @@
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
-						<span class='display tname'>main_slider</span>
+						<span class='display tname'>mainslider</span>
 					</div>
 
 					<div class="CMS-prewiew photo sortable" ondragover="return false">
 					<?
-					$slider_position = $db->prepare("SELECT main_slider FROM position");
-					$slider_position->execute();
-					$slider_position_row = $slider_position->fetch();
+					$position = $db->prepare("SELECT * FROM position");
+					$position->execute();
+					$position_row = $position->fetch();
+					$main_slider = $position_row['mainSlider'];
+					$main_clients = $position_row['mainClients'];
 
-					$slider = $db->prepare("SELECT * FROM main_slider ORDER BY FIELD( position,  $slider_position_row[0] )");
+					$slider = $db->prepare("SELECT * FROM main_slider ORDER BY FIELD( position,  $main_slider)");
 					$slider->execute();
 					$slider_row = $slider->fetchAll();
-					$slider_count = $slider->rowCount();?>
-					<!-- <span class='max_position'><?echo max(explode(",",$slider_position_row[0]));?></span> -->
-					<?for($i=0;$i<$slider_count;$i++){
+					$slider_count = $slider->rowCount();
+					for($i=0;$i<$slider_count;$i++){
 					?>
-						<div id="item_<?echo $slider_row[$i]['position']?>" class="photo-preview photo-preview-old">
+						<div id="mainslider_<?echo $slider_row[$i]['position']?>" class="photo-preview photo-preview-old">
 							<img src="<?echo $slider_row[$i]['img']?>" alt="">
-							<div class="close_cross">1</div>
+							<div class="close_cross"></div>
 						</div>
 					<?}?>
-					
 					</div>
 				</div>
 			</div>
@@ -62,22 +62,31 @@
 				<div class="left-label">
 					<p>Отображение клиентов <span>(12 шт.)</span></p>
 				</div>
+				<div class="CMS-buttons">
+					<div class="button save">
+						<p>Сохранить</p>
+					</div>
+					<span class='display tname'>mainclients</span>
+				</div>
 				<div class="right-content sortable">
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png"alt="">
+					<?
+					$main_clients_db = $db->prepare("SELECT * FROM clients ORDER BY FIELD( main_position,  $main_clients)");
+					$main_clients_db->execute();
+					$main_clients_row = $main_clients_db->fetchAll();
+					$main_clients_count = $main_clients_db->rowCount();
+					for($i=0;$i<$main_clients_count;$i++){
+					?>
+					<div id="mainclients_<?echo $main_clients_row[$i]['main_position']?>" class="clients-prewiew">
+						<img src="<?echo $main_clients_row[$i]['img']?>" alt="">
 					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/2.png"alt="">
-					</div>
+					<?}?>
 				</div>
 			</div>
-
+			<?
+			$insta_db = $db->prepare("SELECT * FROM insta");
+			$insta_db->execute();
+			$insta_row = $insta_db->fetchAll();
+			?>
 			<h2>Инстабудка</h2>
 			<div class="CMS-block instamini">
 				<div class="left-label">
@@ -91,14 +100,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_1</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[0]['img'];?>" alt="">
 							</div>
 						</span>
 					</div>
@@ -116,14 +126,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_2</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[1]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -141,14 +152,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_3</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[2]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -166,14 +178,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_4</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[3]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -193,14 +206,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_5</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[4]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -218,14 +232,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_6</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[5]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -243,14 +258,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_7</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[6]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -268,14 +284,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_8</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[7]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -295,14 +312,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_9</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[8]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -320,14 +338,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_10</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[9]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -345,14 +364,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_11</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[10]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -370,14 +390,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_12</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[11]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -400,33 +421,21 @@
 						<div class="button save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>photography</span>
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
-						<div class="photo-preview">
-							<img src="images/index/slider_test.png" alt="">
+					<?
+					$photography_db = $db->prepare("SELECT * FROM photography ORDER BY FIELD( position,  $main_slider)");
+					$photography_db->execute();
+					$photography_row = $photography_db->fetchAll();
+					$photography_count = $photography_db->rowCount();
+					for($i=0;$i<$photography_count;$i++){
+					?>
+						<div id="photography_<?echo $photography_row[$i]['position']?>" class="photo-preview photo-preview-old">
+							<img src="<?echo $photography_row[$i]['img']?>" alt="">
 							<div class="close_cross"></div>
 						</div>
-						<div class="photo-preview">
-							<img src="images/CMS/test.jpg" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-						<div class="photo-preview">
-							<img src="images/index/slider_test.png" alt="">
-							<div class="close_cross"></div>
-						</div>
-
+					<?}?>
 					</div>
 				</div>
 			</div>
@@ -444,14 +453,15 @@
 							</form>
 							<p>Изменить фотографию</p>
 						</div>
-						<div class="button save">
+						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>insta_13</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/index/slider_test.png" alt="" class="">
+								<img src="<?echo $insta_row[12]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
@@ -479,8 +489,8 @@
 				<div class="right-content">
 					<div class="gallery-edit-form">
 						 <div class="CMS-buttons"><!-- в данном случае в этом блоке CMS-buttons не только кнопки, но также и формы. Блок используется как конетйнер -->
-							 <input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
-							 <input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
+							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
+							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
 							<p class="label-date">в формате 01.02</p>
 							<input type="text" name="h_2" class="h_2" value="Заголовок 2" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
 							<input type="text" name="pass" class="pass" value="ПАРОЛЬ" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
@@ -498,7 +508,6 @@
 								<div class="button save">
 									 <p>Сохранить</p>
 								</div>
-
 							</div>
 							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 								<div class="photo-preview">
@@ -518,23 +527,6 @@
 									<div class="close_cross"></div>
 								</div>
 							</div>
-								<!-- div class="button">
-									<p>Добавить фото</p>
-									<form class="upload-form_2" method="post" action="./serverLogic.fallback.php" enctype="multipart/form-data">
-										<input type="file" class="file-input_2" name="my-files_2"/>
-									</form>
-								</div>
-							<div class="CMS-prewiew photo sortable">
-								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview active"><img src="images/CMS/test.jpg" alt=""></div>
-								<div class="photo-preview active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview active"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>
-								<div class="photo-preview"><img src="images/index/slider_test.png" alt=""></div>			
-							</div> -->
 						</div>
 					</div>
 				</div><!-- end of .right-content -->				
@@ -558,6 +550,7 @@
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 					</div>
+					<!---->
 					<div class="gallery-edit-form display">
 						<div class="CMS-buttons">
 							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
@@ -578,6 +571,9 @@
 								</div>
 								<div class="button save">
 									<p>Сохранить</p>
+								</div>
+								<div class="button decline">
+									<p>Отменить</p>
 								</div>
 							</div>
 							<div class="CMS-prewiew photo sortable_edit" ondragover="return false" ondragstart="return false">
@@ -794,6 +790,7 @@
 						</div>
 						<p class="pass">пароль: 245B7</p>						
 					</div>
+					<!---->
 					<div class="event-edit-form display">
 						<div class="left-side">
 							<div class="button add_photo">

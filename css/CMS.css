@@ -164,9 +164,21 @@ body,html{
 		/*.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}*/
 			.CMS-block.CMS-main-slide {	height: 262px;}
 			.CMS-block.CMS-main-clients {
+				position: relative;
 				min-height: 170px;
 				max-height: 722px;
 			}
+				.CMS-block.CMS-main-clients .CMS-buttons{
+					position: absolute;
+					top:600px; 
+					right:0;
+					width: 1016px;
+					z-index: 1;
+				}
+				.CMS-block.CMS-main-clients .save{
+					width: 100%;
+					cursor: pointer;
+				}
 				.CMS-block.CMS-main-clients .left-label span {color: #a8a8a8;}
 		.CMS-block.CMS-main-clients .right-content {
 			position: relative;
