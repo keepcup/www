@@ -1547,6 +1547,11 @@ textarea{
 		height: 58px;
 		border-bottom: 2px solid #dddddd;
 	}
+	.sticky {
+		position: fixed; 
+		top: 0;
+		background-color: #fff;
+	}
 		.header-menu>ul {
 			width: 880px;
 			height: auto;
