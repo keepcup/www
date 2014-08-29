@@ -115,6 +115,19 @@
 					<li><a href="/contacts.php">контакты</a></li>
 					<li><a href="/blog.php">мероприятия</a></li>
 				</ul>
+				<script>
+					$( "li.insta-butt>ul" ).hide();
+					$("li.insta-butt").mouseenter(function(){
+						if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
+						    $( "li.insta-butt>ul" ).slideDown( "slow" );
+						}
+					});
+					$("li.insta-butt").mouseleave(function(){
+						$( "li.insta-butt>ul" ).slideUp( "slow", function() {
+							$( "li.insta-butt>ul" ).hide();
+						});
+					})
+				</script>
 			</div>			
 		</div><!-- end of header-main-1180 -->
 <?include "db.php";?>

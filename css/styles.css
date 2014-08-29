@@ -1585,13 +1585,13 @@ textarea{
 	}
 		.header-menu-down {
 			position: absolute;
-			display: none;
+			display: block;
 			width: 132px;
 			background: #f3f3f3;
 			left: -20px;
 			top: 60px;
 		}
-		li.insta-butt:hover>ul {display: block;}
+		/*li.insta-butt:hover>ul {display: block;}*/
 			.header-menu-down li {
 				font-size: 16px;
 				text-transform: uppercase;
