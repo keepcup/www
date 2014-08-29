@@ -595,8 +595,11 @@ textarea{
 			height: 10px;			
 		}
 
-
-		.gallery:nth-of-type(even){
+		a.gallery-bgc {
+			display: block;
+			overflow: hidden;
+		}
+		.gallery-bgc:nth-child(even){
 				background: #eee;
 			}
 		.gallery-text_block{
@@ -1737,10 +1740,10 @@ textarea{
 	}
 
 	/*gallery*/
-	.gallery:nth-of-type(even){
+	.gallery-bgc:nth-child(even){
 		background: #eee;
 	}
-	.gallery:nth-of-type(odd){
+	.gallery-bgc:nth-child(odd){
 		background: #fff;
 	}
 		.gallery-text-belt{

@@ -119,7 +119,7 @@
 					$( "li.insta-butt>ul" ).hide();
 					$("li.insta-butt").mouseenter(function(){
 						if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
-						    $( "li.insta-butt>ul" ).slideDown( "slow" );
+						    $( "li.insta-butt>ul" ).slideDown( "fast" );
 						}
 					});
 					$("li.insta-butt").mouseleave(function(){
