@@ -123,7 +123,7 @@
 						}
 					});
 					$("li.insta-butt").mouseleave(function(){
-						$( "li.insta-butt>ul" ).slideUp( "slow", function() {
+						$( "li.insta-butt>ul" ).slideUp( "fast", function() {
 							$( "li.insta-butt>ul" ).hide();
 						});
 					})
