@@ -34,6 +34,7 @@
 			<p class="title">главная</p>
 			<div class="menu"></div>
 			<ul class="menu-down">
+				<li><a href="/index.php">главная</a></li>
 				<li class="insta-list">
 					<a href="/instabudka.php">инстабудка</a>
 					<a href="/instamini.php">инстамини</a>
@@ -99,6 +100,7 @@
 			</div>
 			<div class="header-menu">
 				<ul>
+					<li><a href="/index.php">главная</a></li>
 					<li class="insta-butt">
 						<a href="#">фотобудка</a>
 						<ul class="header-menu-down">
