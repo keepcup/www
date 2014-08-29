@@ -45,13 +45,15 @@ for($i=0;$i<$select_count;$i++){
 				</div>
 			</div>
 		</div>
-<?	}elseif ($url=='index'){?>
-		<div class="news">
-			<img src="images/blog/images/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['url_name']?>" class="news_img">
-			<div class="news-text">
-				<p class="news-date">14.05</p>
-				<p class="news-title"><?echo $row[$i]['title']?></p>
+<?	}elseif ($url=='index'){?>		
+			<div class="news">
+				<a href="/blog.php">
+					<img src="images/blog/images/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['url_name']?>" class="news_img">
+					<div class="news-text">
+						<p class="news-date">14.05</p>
+						<p class="news-title"><?echo $row[$i]['title']?></p>
+					</div>
+				</a>	
 			</div>
-		</div>
 	<?}		
 }?>
