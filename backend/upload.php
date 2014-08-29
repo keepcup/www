@@ -1,7 +1,7 @@
 <?php
 include '../db.php';
 // Все загруженные файлы помещаются в эту папку
-include 'сut_images.php';
+include 'cut_images.php';
 
 // Вытаскиваем необходимые данные
 $file = $_POST['file']['value'];
@@ -88,10 +88,25 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}
 			$url_name = 'url_name';
 			$file_name = 'file_name';
-			$position = str_replace($table.'_','',$position);
-			$insert = $db->prepare("INSERT INTO $table (title,title_small,date,private,password,url_name,file_name) VALUES (?,?,?,?,?,?,?)");
-			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$new_perfs[1][1],$new_perfs[3][1],$url_name,$file_name));
-			print $db->lastInsertId(); 
+			$insert = $db->prepare("INSERT INTO $table (title,title_small,date,url_name,file_name) VALUES (?,?,?,?,?)");
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$url_name,$file_name));
+			echo $db->lastInsertId(); 
+			break;
+		case 'gallery_closed':
+			$results = urldecode($_POST['textserialize']);
+			$perfs = explode("&", $results);
+			foreach($perfs as $i => $value) {
+				$new_perfs[$i] = explode("=", $value);
+			}
+			$url_name = 'url_name';
+			$file_name = 'file_name';
+
+			// $namePath = "../images/gallery/".$randomName;
+			// file_put_contents($namePath,$decodedData);
+
+			$insert = $db->prepare("INSERT INTO gallery (title,title_small,date,url_name,file_name) VALUES (?,?,?,?,?)");
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$url_name,$file_name));
+			echo $db->lastInsertId(); 
 			break;
 	}
 ?>

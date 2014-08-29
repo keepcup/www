@@ -494,8 +494,6 @@
 							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
 							<p class="label-date">в формате 01.02</p>
 							<input type="text" name="h_2" class="h_2" value="Заголовок 2" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
-							<input type="text" name="pass" class="pass" value="ПАРОЛЬ" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
-							<p class="label-pass">максимум 5 символов</p>
 							</form>
 						</div>
 						<div class="gallery-photos">
@@ -517,7 +515,44 @@
 						</div>
 					</div>
 				</div><!-- end of .right-content -->				
-			</div><!-- end of .CMS-block .new_gallery -->			
+			</div><!-- end of .CMS-block .new_gallery -->
+			<!-- closed_gallery -->
+			<div class="CMS-block new_gallery">
+				<div class="left-label">
+					<p>Новая галерея</p>
+				</div>
+				<div class="right-content">
+					<div class="gallery-edit-form">
+						 <div class="CMS-buttons">
+							<form id="new_closed_gallery_form">
+							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
+							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
+							<p class="label-date">в формате 01.02</p>
+							<input type="text" name="h_2" class="h_2" value="Заголовок 2" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
+							<input type="text" name="pass" class="pass" value="ПАРОЛЬ" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
+							<p class="label-pass">максимум 5 символов</p>
+							</form>
+						</div>
+						<div class="gallery-photos">
+							<div class="photo-left CMS-buttons closed_gallery">
+								<div class="button">
+									<p>Добавить фото</p>
+									<form class="frm"> 
+										<input type="file" multiple class="upload_btn" />
+									</form>
+								</div>
+								<div class="button save new_closed_gallery_save">
+									 <p>Сохранить</p>
+								</div>
+								<span class='display tname'>gallery_closed</span>
+							</div>
+							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
+							</div>
+						</div>
+					</div>
+				</div><!-- end of .right-content -->				
+			</div><!-- end of .CMS-block .new_gallery -->
+			<!-- closed_gallery_end -->		
 			<div class="CMS-block yours_gallery last_block">
 				<div class="left-label">
 					<p>Ваши галереи</p>

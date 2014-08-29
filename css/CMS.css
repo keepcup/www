@@ -779,3 +779,13 @@ body,html{
 .display{
 	display: none;
 }
+.closed_gallery{
+	position: absolute;
+	top:0px;
+	right: 30px;
+}
+.closed_gallery .button{
+	
+	width: 132px;
+	float: right;
+}

@@ -131,7 +131,7 @@ $(document).ready(function() {
 			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
 		}, timeOut);
 	})
-	
+	var lastInsertdeId;
 	// Загрузка изображений на сервер
 	$('.save').live('click',function() {
 		var saveButton = $(this);
@@ -148,20 +148,37 @@ $(document).ready(function() {
 		}else if(saveButton.hasClass('new_gallery_save')){
 			var textserialize = $('#new_gallery_form').serialize();
 			var position = saveView.sortable("toArray");
-
 			startPosition = saveView.find('.photo-preview-old').length;
 			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
 
 			var tableName = saveButton.next().text();
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			// $.post('backend/position.php', {position:position, tablename: tableName });
+			file = dataArray[saveIndex];
+			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(dataid,success){
+				lastInsertedId= dataid;
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName, position: position});
+				alert(lastInsertedId);
+			});
 			
-			$.post('backend/position.php', {position:position, tablename: tableName });
-			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(data){
-				lastInsertdeId = data;
+			dataArray[saveIndex] = [];
+			return false;
+		}else if(saveButton.hasClass('new_closed_gallery_save')){
+			var textserialize = $('#new_closed_gallery_form').serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			// $.post('backend/position.php', {position:position, tablename: tableName });
+			file = dataArray[saveIndex];
+			alert(tableName)
+			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(dataid,success){
+				lastInsertedId= dataid;
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName});
+				alert(lastInsertedId);
 			});
-			$.each(dataArray[saveIndex], function(index, file) {	
-				$.post('backend/upload_images.php', {lastinsertdeid:lastInsertdeId, position:position[index+startPosition], tablename: tableName, file :dataArray[saveIndex][index] });
-			});
+			
 			dataArray[saveIndex] = [];
 			return false;
 		}else{
