@@ -1405,7 +1405,7 @@ textarea{
 		width: 48.484848%;
 		float: left;		
 	}
-		.photography .img-belt img:nth-child(even) {float: right;}
+		.photography .img-belt a:nth-child(even) img {float: right;}
 	/*contacts*/
 	.contacts .map-box {
 		width: 100%;
