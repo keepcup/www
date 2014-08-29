@@ -2558,7 +2558,7 @@ textarea{
 		margin: 0 20px 20px 0;
 	}
 		.photography .img-belt img:nth-child(n) {display: inline-block;}
-		.photography .img-belt img:nth-child(3n+3) {margin-right: 0;}
+		.photography .img-belt a:nth-child(3n+3) img {margin-right: 0;}
 			/*photostudio*/
 	.photostudio {
 		width: 1180px;

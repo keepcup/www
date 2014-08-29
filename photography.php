@@ -6,40 +6,40 @@
 				</p>
 			</div>
 			<div class="img-belt">
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
-				<a class="fancybox" href="images/photography/photorraphy-test.jpg">
+				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
 					<img src="images/photography/photorraphy-test.jpg" alt="">
 				</a>
 			</div>
