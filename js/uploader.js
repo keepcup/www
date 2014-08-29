@@ -179,6 +179,23 @@ $(document).ready(function() {
 				// загружаем страницу и передаем значения, используя HTTP POST запрос
 				$.post('backend/upload.php', {tablefile: tableFile, tablename: tableName, file :dataArray[saveIndex][index] });
 			});
+		}else if(saveButton.hasClass('new_gallery_save')){
+			var textserialize = $('#new_gallery_form').serialize();
+			var position = saveView.sortable("toArray");
+
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			
+			$.post('backend/position.php', {position:position, tablename: tableName });
+			$.each(dataArray[saveIndex], function(index, file) {	
+				// загружаем страницу и передаем значения, используя HTTP POST запрос
+				$.post('backend/upload.php', {textserialize:textserialize , position:position[index+startPosition], tablename: tableName, file :dataArray[saveIndex][index] });
+			});
+			dataArray[saveIndex] = [];
+			return false;
 		}else{
 			
 			var position = saveView.sortable("toArray");

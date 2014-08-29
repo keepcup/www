@@ -489,12 +489,14 @@
 				<div class="right-content">
 					<div class="gallery-edit-form">
 						 <div class="CMS-buttons"><!-- в данном случае в этом блоке CMS-buttons не только кнопки, но также и формы. Блок используется как конетйнер -->
+							<form id="new_gallery_form">
 							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
 							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
 							<p class="label-date">в формате 01.02</p>
 							<input type="text" name="h_2" class="h_2" value="Заголовок 2" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
 							<input type="text" name="pass" class="pass" value="ПАРОЛЬ" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
-							<p class="label-pass">максимум 5 символов</p>	
+							<p class="label-pass">максимум 5 символов</p>
+							</form>
 						</div>
 						<div class="gallery-photos">
 							<div class="photo-left CMS-buttons">
@@ -505,27 +507,12 @@
 										<input type="file" multiple class="upload_btn" />
 									</form>
 								</div>
-								<div class="button save">
+								<div class="button save new_gallery_save">
 									 <p>Сохранить</p>
 								</div>
+								<span class='display tname'>gallery</span>
 							</div>
 							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
-								<div class="photo-preview">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-preview galleryChecked">
-									<img src="images/CMS/test.jpg" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-preview">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
-								<div class="photo-preview galleryChecked">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>
-								</div>
 							</div>
 						</div>
 					</div>
