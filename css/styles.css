@@ -1867,6 +1867,8 @@ textarea{
 					position: absolute;
 					bottom: 0;
 				}
+				/*Safari-Fix*/
+				.blog-date { right: 360px;}
 				.blog-social li{
 					display: inline-block;
 					width: 16px;
