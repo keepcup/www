@@ -106,23 +106,7 @@ $(document).ready(function() {
 		return false;
 	}
 	
-	// Функция удаления всех изображений
-	/*function restartFiles() {
-		// Удаляем все изображения на странице и скрываем кнопки
-		$('#dropped-files > .image').remove();
 	
-		// Очищаем массив
-		dataArray.length = 0;
-		
-		return false;
-	}*/
-	// $('.close_cross').live('click',function(){
-	// 	$this= $(this);
-	// 	timeOut= 500;
-	// 	$this.closest('.photo-preview').fadeOut(timeOut)
-	// 	setTimeout( function() { $this.closest('.photo-preview').remove()}, timeOut);
-
-	// });
 	$('.close_cross_new').live('click',function(){
 		$this= $(this);
 		timeOut= 500;
@@ -147,25 +131,7 @@ $(document).ready(function() {
 			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
 		}, timeOut);
 	})
-	// Удаление только выбранного изображения 
-	/*$("#dropped-files").on("click","a[id^='drop']", function() {
-		// получаем название id
- 		var elid = $(this).attr('id');
-		// создаем массив для разделенных строк
-		var temp = new Array();
-		// делим строку id на 2 части
-		temp = elid.split('-');
-		// получаем значение после тире тоесть индекс изображения в массиве
-		dataArray.splice(temp[1],1);
-		// Удаляем старые эскизы
-		$('#dropped-files > .image').remove();
-		// Обновляем эскизи в соответсвии с обновленным массивом
-		addImage(-1);		
-	});
 	
-	// Удалить все изображения кнопка 
-	$('#dropped-files #upload-button .delete').click(restartFiles);
-	*/
 	// Загрузка изображений на сервер
 	$('.save').live('click',function() {
 		var saveButton = $(this);
@@ -190,9 +156,11 @@ $(document).ready(function() {
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 			
 			$.post('backend/position.php', {position:position, tablename: tableName });
+			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(data){
+				lastInsertdeId = data;
+			});
 			$.each(dataArray[saveIndex], function(index, file) {	
-				// загружаем страницу и передаем значения, используя HTTP POST запрос
-				$.post('backend/upload.php', {textserialize:textserialize , position:position[index+startPosition], tablename: tableName, file :dataArray[saveIndex][index] });
+				$.post('backend/upload_images.php', {lastinsertdeid:lastInsertdeId, position:position[index+startPosition], tablename: tableName, file :dataArray[saveIndex][index] });
 			});
 			dataArray[saveIndex] = [];
 			return false;
@@ -215,18 +183,9 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	// Простые стили для области перетаскивания
-	/*$('.CMS-prewiew').on('dragenter', function() {
-		$(this).css({'box-shadow' : 'inset 0px 0px 20px rgba(0, 0, 0, 0.1)', 'border' : '4px dashed #bb2b2b'});
-		return false;
-	});*/
-	
+
 	$('.CMS-prewiew').live('drop', function() {
-		//$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
 		return false;
 	});
-	/*$('.CMS-prewiew').on('dragleave', function() {
-		$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
-		return false;
-	});*/
+	
 });

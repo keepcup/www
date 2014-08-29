@@ -1,83 +1,7 @@
 <?php
 include '../db.php';
 // Все загруженные файлы помещаются в эту папку
-function resize($file_input, $file_output, $w_o, $h_o, $percent = false) {
-	list($w_i, $h_i, $type) = getimagesize($file_input);
-	if (!$w_i || !$h_i) {
-		echo 'Невозможно получить длину и ширину изображения';
-		return;
-        }
-        $types = array('','gif','jpeg','png');
-        $ext = $types[$type];
-        if ($ext) {
-    	        $func = 'imagecreatefrom'.$ext;
-    	        $img = $func($file_input);
-        } else {
-    	        echo 'Некорректный формат файла';
-		return;
-        }
-	if ($percent) {
-		$w_o *= $w_i / 100;
-		$h_o *= $h_i / 100;
-	}
-	if (!$h_o) $h_o = $w_o/($w_i/$h_i);
-	if (!$w_o) $w_o = $h_o/($h_i/$w_i);
-
-	$img_o = imagecreatetruecolor($w_o, $h_o);
-	imagecopyresampled($img_o, $img, 0, 0, 0, 0, $w_o, $h_o, $w_i, $h_i);
-	if ($type == 2) {
-		return imagejpeg($img_o,$file_output,90);
-	} else {
-		$func = 'image'.$ext;
-		return $func($img_o,$file_output);
-	}
-}
-function crop($file_input, $file_output, $crop = 'square',$percent = false) {
-	list($w_i, $h_i, $type) = getimagesize($file_input);
-	if (!$w_i || !$h_i) {
-		echo 'Невозможно получить длину и ширину изображения';
-		return;
-        }
-        $types = array('','gif','jpeg','png');
-        $ext = $types[$type];
-        if ($ext) {
-    	        $func = 'imagecreatefrom'.$ext;
-    	        $img = $func($file_input);
-        } else {
-    	        echo 'Некорректный формат файла';
-		return;
-        }
-	if ($crop == 'square') {
-		if ($w_i > $h_i) {
-			$x_o = ($w_i - $h_i) / 2;
-			$min = $h_i;
-		} else {
-			$y_o = ($h_i - $w_i) / 2;
-			$min = $w_i;
-		}
-		$w_o = $h_o = $min;
-	} else {
-		list($x_o, $y_o, $w_o, $h_o) = $crop;
-		if ($percent) {
-			$w_o *= $w_i / 100;
-			$h_o *= $h_i / 100;
-			$x_o *= $w_i / 100;
-			$y_o *= $h_i / 100;
-		}
-    	        if ($w_o < 0) $w_o += $w_i;
-	        $w_o -= $x_o;
-	   	if ($h_o < 0) $h_o += $h_i;
-		$h_o -= $y_o;
-	}
-	$img_o = imagecreatetruecolor($w_o, $h_o);
-	imagecopy($img_o, $img, 0, 0, $x_o, $y_o, $w_o, $h_o);
-	if ($type == 2) {
-		return imagejpeg($img_o,$file_output,90);
-	} else {
-		$func = 'image'.$ext;
-		return $func($img_o,$file_output);
-	}
-}
+include 'сut_images.php';
 
 // Вытаскиваем необходимые данные
 $file = $_POST['file']['value'];
@@ -157,27 +81,17 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$insert->execute(array($namePath,$position));
 			break;
 		case 'gallery':
-			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
-			#узнать величину картинок
-			#сохраняет и в джпг и в пнг исправить
-			list($w, $h) = getimagesize($file);
-			if($w>1728 && $h>698){
-				$w=($w-1728)/2;
-				$h=($h-698)/2;
-				crop($file,$namePath,array($w,$h,-$w,-$h));
-			}else{
-				resize($file,$namePath,1728,698);
-			}
 			$results = urldecode($_POST['textserialize']);
 			$perfs = explode("&", $results);
-			foreach($perfs as $value) {
-			    $perfs[$value][] = explode("=", $value);
+			foreach($perfs as $i => $value) {
+				$new_perfs[$i] = explode("=", $value);
 			}
-			
+			$url_name = 'url_name';
+			$file_name = 'file_name';
 			$position = str_replace($table.'_','',$position);
-			$insert = $db->prepare("INSERT INTO $table (photo,position,title) VALUES (?,?,?)");
-			$insert->execute(array($namePath,$position,$perfs[1][1]));
+			$insert = $db->prepare("INSERT INTO $table (title,title_small,date,private,password,url_name,file_name) VALUES (?,?,?,?,?,?,?)");
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$new_perfs[1][1],$new_perfs[3][1],$url_name,$file_name));
+			print $db->lastInsertId(); 
 			break;
 	}
-
 ?>
