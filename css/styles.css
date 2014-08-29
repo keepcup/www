@@ -43,6 +43,12 @@ textarea{
 		border-top:2px solid #dddddd;
 		border-bottom:2px solid #dddddd;
 	}
+	.sticky {
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+		background-color: #fff;
+	}
 		.title{
 			font-size: 18px;
 			font-weight: 700;
@@ -1547,7 +1553,7 @@ textarea{
 		height: 58px;
 		border-bottom: 2px solid #dddddd;
 	}
-	.sticky {
+	.sticky-1180 {
 		position: fixed; 
 		top: 0;
 		background-color: #fff;
