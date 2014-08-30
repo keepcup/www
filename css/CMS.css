@@ -779,7 +779,13 @@ body,html{
 .display{
 	display: none;
 }
-.closed_gallery{
+.gallery-edit-form .closed_gallery{
+	height: 0px;
+	width: 0px;
+	padding: 0;
+	margin: 0;
+}
+.closed_gallery .photo-left{
 	position: absolute;
 	top:0px;
 	right: 30px;
@@ -789,3 +795,26 @@ body,html{
 	width: 132px;
 	float: right;
 }
+
+.edit_closed_gallery .CMS-buttons{
+	height: 198px;
+}
+	.gallery-edit-form  .edit_closed_gallery-photos{
+		height: 0px;
+		padding: 0;
+		margin: 0;
+		border:0;
+	}
+	.edit_closed_gallery-photos .photo-left{
+		position: absolute;
+		top:18px;
+		right: 30px;
+		width: 150px;
+	}
+	.edit_closed_gallery-photos .button{
+		width: 132px;
+		float: right;
+	}
+	.gallery-edit-form{
+		position: relative;
+	}

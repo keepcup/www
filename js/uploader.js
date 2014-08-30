@@ -123,12 +123,27 @@ $(document).ready(function() {
 		closeCross.closest('.photo-preview').fadeOut(timeOut)
 		setTimeout( function() {
 			var tablename = closeCross.closest('.CMS-prewiew').prev().find('.tname').text();
+			var galleryId = closeCross.closest('.CMS-prewiew').prev().find('.tid').text();
 			var deletePosition = closeCross.closest('.photo-preview-old').attr('id').split('_');
 			var saveView = closeCross.closest('.upload_preview');
 			closeCross.closest('.photo-preview').remove();
 			var position = saveView.sortable("toArray");
-			$.post('backend/position.php', {position:position, tablename: tablename });
-			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
+			
+			alert(galleryId)
+			$.post('backend/position.php', {position:position, tablename: tablename, id : galleryId });
+			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename, id : galleryId});
+		}, timeOut);
+	})
+	$('.delete_gallery').click(function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.gallery').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.next().text();
+			var galleryId = closeCross.prev().text();
+			closeCross.closest('.gallery').remove();
+			var galleryDeleteFlag = 1;
+			$.post('backend/delete.php', {gallerydeleteflag: galleryDeleteFlag , tablename: tablename, id : galleryId});
 		}, timeOut);
 	})
 	var lastInsertdeId;
@@ -155,7 +170,8 @@ $(document).ready(function() {
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 			// $.post('backend/position.php', {position:position, tablename: tableName });
 			file = dataArray[saveIndex];
-			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(dataid,success){
+			alert(position)
+			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
 				lastInsertedId= dataid;
 				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName, position: position});
 				alert(lastInsertedId);
@@ -179,6 +195,41 @@ $(document).ready(function() {
 				alert(lastInsertedId);
 			});
 			
+			dataArray[saveIndex] = [];
+			return false;
+		}else if(saveButton.hasClass('update_gallery_save')){
+			var textserialize = saveButton.closest('.gallery-photos').prev().find('.gallery_update_form').serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			// $.post('backend/position.php', {position:position, tablename: tableName });
+			file = dataArray[saveIndex];
+			id= saveButton.prev().text()
+			alert(position)
+			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
+				lastInsertedId= dataid;
+				$.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
+				alert(lastInsertedId);
+			});
+			dataArray[saveIndex] = [];
+			return false;
+		}else if(saveButton.hasClass('update_closed_gallery_save')){
+			var textserialize = saveButton.closest('.gallery-photos').prev().find('.gallery_update_form').serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			file = dataArray[saveIndex];
+			id= saveButton.prev().text()
+			alert(id)
+			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position,file :file}, function(dataid,success){
+				lastInsertedId= dataid;
+				// $.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
+				alert(lastInsertedId);
+			});
 			dataArray[saveIndex] = [];
 			return false;
 		}else{

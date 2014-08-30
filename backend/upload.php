@@ -2,7 +2,7 @@
 include '../db.php';
 // Все загруженные файлы помещаются в эту папку
 include 'cut_images.php';
-
+include 'strtr.php';
 // Вытаскиваем необходимые данные
 $file = $_POST['file']['value'];
 $name = $_POST['file']['name'];
@@ -86,10 +86,14 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			foreach($perfs as $i => $value) {
 				$new_perfs[$i] = explode("=", $value);
 			}
-			$url_name = 'url_name';
-			$file_name = 'file_name';
-			$insert = $db->prepare("INSERT INTO $table (title,title_small,date,url_name,file_name) VALUES (?,?,?,?,?)");
-			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$url_name,$file_name));
+			$url_name = translit($new_perfs[0][1].' '.$new_perfs[2][1]);
+			$url_name = str_replace(' ','-',$url_name)."-".$new_perfs[1][1];
+
+			$position =implode(",", $_POST['position']);
+			$position = str_replace($table.'_','',$position);
+
+			$insert = $db->prepare("INSERT INTO $table (title,title_small,date,url_name,position) VALUES (?,?,?,?,?)");
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$url_name, $position));
 			echo $db->lastInsertId(); 
 			break;
 		case 'gallery_closed':
@@ -98,14 +102,11 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			foreach($perfs as $i => $value) {
 				$new_perfs[$i] = explode("=", $value);
 			}
-			$url_name = 'url_name';
-			$file_name = 'file_name';
+			$url_name = translit($new_perfs[0][1].' '.$new_perfs[2][1]);
+			$url_name = str_replace(' ','-',$url_name)."-".$new_perfs[1][1];
 
-			// $namePath = "../images/gallery/".$randomName;
-			// file_put_contents($namePath,$decodedData);
-
-			$insert = $db->prepare("INSERT INTO gallery (title,title_small,date,url_name,file_name) VALUES (?,?,?,?,?)");
-			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$url_name,$file_name));
+			$insert = $db->prepare("INSERT INTO gallery (title,title_small,date,password,url_name) VALUES (?,?,?,?,?)");
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$new_perfs[3][1],$url_name));
 			echo $db->lastInsertId(); 
 			break;
 	}

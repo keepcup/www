@@ -19,9 +19,10 @@ $position =implode(",", $_POST['position']);
 			$insert->execute();
 			break;
 		case 'gallery':
+			$id = $_POST['id'];
 			$position = str_replace($table.'_','',$position);
-			$insert = $db->prepare("UPDATE position SET $table='$position'");
-			$insert->execute();
+			$insert = $db->prepare("UPDATE gallery SET position='$position' WHERE id = ?");
+			$insert->execute(array($id));
 			break;
 	}
 ?>

@@ -474,15 +474,15 @@
 					<p>Создать</p>
 				</div>
 				<div class="right-content">
-					<div class="button">
+					<div class="button create_new_gallery">
 						<p>Создать галерею</p>
 					</div>
-					<div class="button closed">
+					<div class="button closed create_new_closed_gallery">
 						<p>Создать закрытую галерею</p>
 					</div>
 				</div>
 			</div>
-			<div class="CMS-block new_gallery">
+			<div class="CMS-block new_gallery display">
 				<div class="left-label">
 					<p>Новая галерея</p>
 				</div>
@@ -517,7 +517,7 @@
 				</div><!-- end of .right-content -->				
 			</div><!-- end of .CMS-block .new_gallery -->
 			<!-- closed_gallery -->
-			<div class="CMS-block new_gallery">
+			<div class="CMS-block new_gallery display">
 				<div class="left-label">
 					<p>Новая галерея</p>
 				</div>
@@ -533,12 +533,12 @@
 							<p class="label-pass">максимум 5 символов</p>
 							</form>
 						</div>
-						<div class="gallery-photos">
-							<div class="photo-left CMS-buttons closed_gallery">
+						<div class="gallery-photos closed_gallery">
+							<div class="photo-left CMS-buttons">
 								<div class="button">
 									<p>Добавить фото</p>
 									<form class="frm"> 
-										<input type="file" multiple class="upload_btn" />
+										<input type="file" class="upload_btn" />
 									</form>
 								</div>
 								<div class="button save new_closed_gallery_save">
@@ -546,62 +546,86 @@
 								</div>
 								<span class='display tname'>gallery_closed</span>
 							</div>
-							<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
+							<div class="CMS-prewiew photo sortable display" ondragover="return false" ondragstart="return false">
 							</div>
 						</div>
 					</div>
 				</div><!-- end of .right-content -->				
 			</div><!-- end of .CMS-block .new_gallery -->
-			<!-- closed_gallery_end -->		
+			<!-- closed_gallery_end -->
+				
 			<div class="CMS-block yours_gallery last_block">
 				<div class="left-label">
 					<p>Ваши галереи</p>
 				</div>
 				<div class="right-content sbscroller">
-				<?for($i=0;$i<9;$i++){?>
+				<?
+				$gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY id DESC");
+				// $gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY date DESC");
+				$gallery_db->execute();
+				$gallery_row = $gallery_db->fetchAll();
+				$gallery_count = $gallery_db->rowCount();
+
+				
+				for($i=0;$i<$gallery_count;$i++){
+					$position = $gallery_row[$i]['position'];
+					$gallery_img_db = $db->prepare("SELECT * FROM gallery_img WHERE gallery_id =? ORDER BY FIELD( position, $position)");
+					$gallery_img_db->execute(array($gallery_row[$i]['id']));
+					$gallery_img_row = $gallery_img_db->fetchAll();
+					$gallery_img_count = $gallery_img_db->rowCount();
+				?>	
 					<div class="gallery">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
+						<?if($gallery_row[$i]['password'] == ''){?><img class="prewiew" src="<?echo $gallery_img_row[0]['img']?>" alt=""><?}?>
+						<p class="date"><?echo $gallery_row[$i]['date']?></p>
 						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
+							<p class="h_1"><?echo $gallery_row[$i]['title']?></p>
+							<p class="h_2"><?echo $gallery_row[$i]['title_small'].$gallery_row[$i]['position']?></p>
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close_cross"></div>
+							<span class='display tid'><?echo $gallery_row[$i]['id']?></span>
+							<div class="close_cross delete_gallery"></div>
+							<span class='display tname'><?if($gallery_row[$i]['password'] == ''){echo 'gallery';}else{echo 'gallery_closed';}?></span>
 						</div>
-						<p class="pass">пароль: 245B7</p>						
+						<?if($gallery_row[$i]['password'] != ''){?><p class="pass">пароль: <?echo $gallery_row[$i]['password']?></p><?}?>					
 					</div>
 					<!---->
-					<div class="gallery-edit-form display">
+					<div class="gallery-edit-form display edit_closed_gallery">
 						<div class="CMS-buttons">
-							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
-							<input type="text" name="date" class="date" value="ДАТА" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
+							<form class="gallery_update_form">
+							<input type="text" name="h_1" class="h_1" value="<?echo $gallery_row[$i]['title']?>" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
+							<input type="text" name="date" class="date" value="<?echo $gallery_row[$i]['date']?>" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
 							<p class="label-date">в формате 01.02</p>
-							<input type="text" name="h_2" class="h_2" value="Заголовок 2" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
-							<input type="text" name="pass" class="pass" value="ПАРОЛЬ" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
-							<p class="label-pass">максимум 5 символов</p>	
+							<input type="text" name="h_2" class="h_2" value="<?echo $gallery_row[$i]['title_small']?>" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
+							<?if($gallery_row[$i]['password'] != ''){?><input type="text" name="pass" class="pass" value="<?echo $gallery_row[$i]['password']?>" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
+							<p class="label-pass">максимум 5 символов</p><?}?>	
+							</form>
 						</div>
-						<div class="gallery-photos">
+						<div class="gallery-photos <?if($gallery_row[$i]['password'] != ''){?>edit_closed_gallery-photos<?}?>">
 							<div class="photo-left">
-								<p class="top-label">Фотографии</p>
+								<!-- <p class="top-label">Фотографии</p> -->
 								<div class="button">
 									<p>Добавить фото</p>
 									<form class="frm"> 
 										<input type="file" multiple class="upload_btn" />
 									</form>
 								</div>
-								<div class="button save">
+								<span class='display tid'><?echo $gallery_row[$i]['id']?></span>
+								<div class="button save <?if($gallery_row[$i]['password'] == ''){echo 'update_gallery_save';}else{echo 'update_closed_gallery_save';}?>">
 									<p>Сохранить</p>
 								</div>
+								<span class='display tname'><?if($gallery_row[$i]['password'] == ''){echo 'gallery';}else{echo 'gallery_closed';}?></span>
 								<div class="button decline">
 									<p>Отменить</p>
 								</div>
 							</div>
 							<div class="CMS-prewiew photo sortable_edit" ondragover="return false" ondragstart="return false">
-								<?for($d=0;$d<9;$d++){?>
-								<div class="photo-preview">
-									<img src="images/index/slider_test.png" alt="">
+							
+								<?
+								for($d=0;$d<$gallery_img_count;$d++){
+								?>
+								<div id="gallery_<?echo $gallery_img_row[$d]['position']?>" class="photo-preview photo-preview-old">
+									<img src="<?echo $gallery_img_row[$d]['img']?>" alt="">
 									<div class="close_cross"></div>
 								</div>
 								<?}?>

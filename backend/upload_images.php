@@ -6,6 +6,7 @@ include 'cut_images.php';
 // Вытаскиваем необходимые данные
 $files = $_POST['file'];
 // $name = $_POST['file'];
+$startPosition =$_POST['startPosition'];
 $table = $_POST['tablename'];
 $position = $_POST['position'];
 foreach ($files as $key => $value) {
@@ -41,23 +42,15 @@ foreach ($files as $key => $value) {
 				resize($file,$namePath,1728,698);
 			}
 			
-				$position[$key] = str_replace($table.'_','',$position[$key]);
+				$position[$key+$startPosition] = str_replace($table.'_','',$position[$key+$startPosition]);
 				$insert = $db->prepare("INSERT INTO gallery_img (img,gallery_id,position) VALUES (?,?,?)");
-				$insert->execute(array($namePath,$gallery_id,$position[$key]));
+				$insert->execute(array($namePath,$gallery_id,$position[$key+$startPosition]));
 				
 			break;
 		case 'gallery_closed':
 			$gallery_id = $_POST['lastinsertedid'];
 			$namePath = "../images/gallery/images/".$randomName;
 			
-			list($w, $h) = getimagesize($file);
-			if($w>1728 && $h>698){
-				$w=($w-1728)/2;
-				$h=($h-698)/2;
-				crop($file,$namePath,array($w,$h,-$w,-$h));
-			}else{
-				resize($file,$namePath,1728,698);
-			}
 			file_put_contents($namePath,$decodedData);
 
 				$insert = $db->prepare("INSERT INTO gallery_img (img,gallery_id) VALUES (?,?)");

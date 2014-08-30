@@ -61,4 +61,22 @@ $(document).ready(function(){
         checkboxClass: 'icheckbox_minimal-green',
         increaseArea: '100%' 
     });
+    $('.create_new_gallery').click(function(){
+        $(this).closest('.create_gallery').next().next().addClass('display');
+        create_new_gallery = $(this).closest('.create_gallery').next();
+        if(create_new_gallery.hasClass('display')){
+            create_new_gallery.removeClass('display');
+        }else{
+            create_new_gallery.addClass('display');
+        }
+    })
+    $('.create_new_closed_gallery').click(function(){
+        $(this).closest('.create_gallery').next().addClass('display');;
+        create_new_gallery = $(this).closest('.create_gallery').next().next();
+        if(create_new_gallery.hasClass('display')){
+            create_new_gallery.removeClass('display');
+        }else{
+            create_new_gallery.addClass('display');
+        }
+    })
 })/*end*/
