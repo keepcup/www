@@ -24,5 +24,10 @@ $position =implode(",", $_POST['position']);
 			$insert = $db->prepare("UPDATE gallery SET position='$position' WHERE id = ?");
 			$insert->execute(array($id));
 			break;
+		case 'contactsclients':
+			$position = str_replace('clients_','',$position);
+			$insert = $db->prepare("UPDATE position SET contactsClients='$position'");
+			$insert->execute();
+			break;
 	}
 ?>

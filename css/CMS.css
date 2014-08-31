@@ -818,3 +818,17 @@ body,html{
 	.gallery-edit-form{
 		position: relative;
 	}
+.clients-clients{
+	position: relative;
+}
+.clients-clients .CMS-buttons{
+	position: absolute;
+	top:658px; 
+	right:0;
+	width: 1016px;
+	z-index: 1;
+}
+	.clients-clients .save{
+		width: 100%;
+		cursor: pointer;
+	}

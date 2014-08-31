@@ -1,26 +1,20 @@
 <?php
 include '../db.php';
-// Все загруженные файлы помещаются в эту папку
 include 'cut_images.php';
 include 'strtr.php';
-// Вытаскиваем необходимые данные
 $file = $_POST['file']['value'];
 $name = $_POST['file']['name'];
 $table = $_POST['tablename'];
 $position = $_POST['position'];
-// Получаем расширение файла
 $getMime = explode('.', $name);
 $mime = end($getMime);
 
-// Выделим данные
 $data = explode(',', $file);
 
-// Декодируем данные, закодированные алгоритмом MIME base64
 $encodedData = str_replace(' ','+',$data[1]);
 $decodedData = base64_decode($encodedData);
 
-// Вы можете использовать данное имя файла, или создать произвольное имя.
-// Мы будем создавать произвольное имя!
+
 $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 
 	switch($table){
@@ -109,5 +103,55 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$new_perfs[3][1],$url_name));
 			echo $db->lastInsertId(); 
 			break;
+		case 'clients':
+			$namePath = '../images/'.$_POST['tablename']."/".$randomName;
+			
+			$results = urldecode($_POST['textserialize']);
+			$perfs = explode("&", $results);
+			foreach($perfs as $i => $value) {
+				$new_perfs[$i] = explode("=", $value);
+			}
+
+			list($w, $h) = getimagesize($file);
+				// crop($file,$namePath,array($w,$h,-$w,-$h));
+			// 1000  200
+			if($w>$h){
+				$scale= $w/$h;
+				$newHeight = round(($w-100)/$scale);
+				resize($file,$namePath,100,$h-$newHeight);
+			}elseif($w<$h){
+				resize($file,$namePath,100,100);
+			}
+			$select_row['id'] = 0;
+			$gallery_id = explode('/',$new_perfs[1][1]);
+			$gallery_id = end($gallery_id);
+			if(!empty($gallery_id)){
+				$select = $db->prepare("SELECT id,url_name FROM gallery WHERE url_name = ?");
+				$select->execute(array($gallery_id));
+				$select_row = $select->fetch();
+				$gallery_id = $select_row['id'];
+			}else{
+				$gallery_id= 0;
+			}
+			$position = str_replace($table.'_','',$position);
+			$insert = $db->prepare("INSERT INTO clients (name,img,gallery_id,contacts_position,main_position) VALUES (?,?,?,?,?)");
+			$insert->execute(array($new_perfs[0][1],$namePath,$gallery_id,$position,$position));
+			break;
 	}
+	// $w = 101;
+	// $h = 50;
+	// 	if($w>$h){
+	// 			$scale= $w/$h;
+	// 			$newHeight = round(($w-100)/$scale);
+	// 			echo $scale."<br>";
+	// 			echo $newHeight."<br>";
+	// 			echo $h-$newHeight."<br>";
+	// 			resize($file,$namePath,100,$h-$newHeight);
+	// 		}elseif($w<$h){
+	// 			resize($file,$namePath,100,100);
+	// 		}
+	// $url = 'http://insta/gallery.php';
+	// $gallery_id = explode('/',$url);
+	// echo end($gallery_id);
+
 ?>

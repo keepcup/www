@@ -146,6 +146,21 @@ $(document).ready(function() {
 			$.post('backend/delete.php', {gallerydeleteflag: galleryDeleteFlag , tablename: tablename, id : galleryId});
 		}, timeOut);
 	})
+	$('.clients_delete').live('click',function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.clients-prewiew').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.closest('.right-content').prev().find('.tname').text();
+			var deletePosition = closeCross.closest('.clients-prewiew').attr('id').split('_');
+			var saveView = closeCross.closest('.upload_preview');
+			closeCross.closest('.clients-prewiew').remove();
+			var position = saveView.sortable("toArray");
+			alert(deletePosition[1]);
+			$.post('backend/position.php', {position:position, tablename: tablename});
+			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
+		}, timeOut);
+	})
 	var lastInsertdeId;
 	// Загрузка изображений на сервер
 	$('.save').live('click',function() {
@@ -161,7 +176,8 @@ $(document).ready(function() {
 				$.post('backend/upload.php', {tablefile: tableFile, tablename: tableName, file :dataArray[saveIndex][index] });
 			});
 		}else if(saveButton.hasClass('new_gallery_save')){
-			var textserialize = $('#new_gallery_form').serialize();
+			var new_gallery_form = $('#new_gallery_form')
+			var textserialize = new_gallery_form.serialize();
 			var position = saveView.sortable("toArray");
 			startPosition = saveView.find('.photo-preview-old').length;
 			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
@@ -178,9 +194,15 @@ $(document).ready(function() {
 			});
 			
 			dataArray[saveIndex] = [];
+			new_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
+			new_gallery_form.find('.h_2').val('Заголовок 2');
+			new_gallery_form.find('.date').val('ДАТА');
+			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
+			saveButton.closest('.new_gallery').addClass('display');
 			return false;
 		}else if(saveButton.hasClass('new_closed_gallery_save')){
-			var textserialize = $('#new_closed_gallery_form').serialize();
+			new_closed_gallery_form = $('#new_closed_gallery_form');
+			var textserialize = new_closed_gallery_form.serialize();
 			var position = saveView.sortable("toArray");
 			startPosition = saveView.find('.photo-preview-old').length;
 			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
@@ -196,6 +218,12 @@ $(document).ready(function() {
 			});
 			
 			dataArray[saveIndex] = [];
+			new_closed_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
+			new_closed_gallery_form.find('.h_2').val('Заголовок 2');
+			new_closed_gallery_form.find('.date').val('ДАТА');
+			new_closed_gallery_form.find('.pass').val('ПАРОЛЬ');
+			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
+			saveButton.closest('.new_gallery').addClass('display');
 			return false;
 		}else if(saveButton.hasClass('update_gallery_save')){
 			var textserialize = saveButton.closest('.gallery-photos').prev().find('.gallery_update_form').serialize();
@@ -232,16 +260,47 @@ $(document).ready(function() {
 			});
 			dataArray[saveIndex] = [];
 			return false;
-		}else{
-			
-			var position = saveView.sortable("toArray");
+		}else if(saveButton.hasClass('contacts_save')){
+			var textserialize = $('#contacts_form').serialize();
+			var tableName ='contacts';
+			$.post('backend/update.php', { textserialize:textserialize, tablename: tableName });
+			return false;
+		}else if(saveButton.hasClass('password_save')){
+			var textserialize = $('#password_form').serialize();
+			var tableName ='password';
+			$.post('backend/update.php', { textserialize:textserialize, tablename: tableName });
+			return false;
+		}else if(saveButton.hasClass('new_client_save')){
+			var new_client_form = $('#new_client_form')
+			var textserialize = new_client_form.serialize();
+			var clientsPosition = saveButton.closest('.new-clients').next().find('.upload_preview');
 
+			var position = clientsPosition.sortable("toArray");
+			startPosition = clientsPosition.find('.clients-prewiew').length;
+			
+			var tableName = saveButton.next().text();
+			file = dataArray[saveIndex];
+
+			// var files = e.dataTransfer.files;
+			// loadInView(files,Index);
+			maxPosition =Math.max.apply(null,position.join("").split(tableName+'_'))+1;
+			$.each(dataArray[saveIndex], function(index, file) {
+				
+				$.post('backend/upload.php', {textserialize:textserialize ,tablename: tableName, file :dataArray[saveIndex][index], position:maxPosition}, function(dataid,success){
+					lastInsertedId= dataid;
+					// $.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
+					// alert(lastInsertedId);
+				});
+			});
+			dataArray[saveIndex] = [];
+			window.location.reload();
+		}else{
+			var position = saveView.sortable("toArray");
 			startPosition = saveView.find('.photo-preview-old').length;
 			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
 
 			var tableName = saveButton.next().text();
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
-			
 			$.post('backend/position.php', {position:position, tablename: tableName });
 			$.each(dataArray[saveIndex], function(index, file) {	
 				// загружаем страницу и передаем значения, используя HTTP POST запрос

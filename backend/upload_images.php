@@ -1,30 +1,22 @@
  <?php
 include '../db.php';
-// Все загруженные файлы помещаются в эту папку
 include 'cut_images.php';
 
-// Вытаскиваем необходимые данные
 $files = $_POST['file'];
-// $name = $_POST['file'];
 $startPosition =$_POST['startPosition'];
 $table = $_POST['tablename'];
 $position = $_POST['position'];
 foreach ($files as $key => $value) {
 	$name = $files[$key]['name'];
 	$file = $files[$key]['value'];
-	// Получаем расширение файла;
 	$getMime = explode('.', $name);
 	$mime = end($getMime);
 
-	// Выделим данные
 	$data = explode(',', $file);
 
-	// Декодируем данные, закодированные алгоритмом MIME base64
 	$encodedData = str_replace(' ','+',$data[1]);
 	$decodedData = base64_decode($encodedData);
 
-	// Вы можете использовать данное имя файла, или создать произвольное имя.
-	// Мы будем создавать произвольное имя!
 	$randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 
 	switch($table){

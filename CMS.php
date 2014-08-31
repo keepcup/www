@@ -43,6 +43,7 @@
 					$position_row = $position->fetch();
 					$main_slider = $position_row['mainSlider'];
 					$main_clients = $position_row['mainClients'];
+					$contacts_clients = $position_row['contactsClients'];
 
 					$slider = $db->prepare("SELECT * FROM main_slider ORDER BY FIELD( position,  $main_slider)");
 					$slider->execute();
@@ -579,7 +580,7 @@
 						<p class="date"><?echo $gallery_row[$i]['date']?></p>
 						<div class="gallery-label">
 							<p class="h_1"><?echo $gallery_row[$i]['title']?></p>
-							<p class="h_2"><?echo $gallery_row[$i]['title_small'].$gallery_row[$i]['position']?></p>
+							<p class="h_2"><?echo $gallery_row[$i]['title_small']?></p>
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
@@ -635,48 +636,54 @@
 				<?}?>
 				</div>
 			</div>
+			<?
+			$contacts_db = $db->prepare("SELECT * FROM contacts");
+			$contacts_db->execute();
+			$contacts_row = $contacts_db->fetch();
+			?>
 			<h2>Контакты</h2>
 			<div class="CMS-block info-clients">
 				<div class="left-label">
 					<p>Информация</p>
 				</div>
 				<div class="right-content">
+					<form id='contacts_form'>
 					<ul>
 						<li>
 							<div class="label fb_CMS"></div>
-							<input type="text">
+							<input type="text" name="fb" value="<?echo $contacts_row['fb']?>">
 						</li>
 						<li>
 							<p class="label">mail</p>
-							<input type="text">
+							<input type="text" name="mail" value="<?echo $contacts_row['mail']?>">
 						</li>
 						<li>
 							<div class="label vk_CMS"></div>
-							<input type="text">
+							<input type="text" name="vk" value="<?echo $contacts_row['vk']?>">
 						</li>
 						<li>
 							<p class="label">phone1</p>
-							<input type="text">
+							<input type="text" name="phone1" value="<?echo $contacts_row['phone1']?>">
 						</li>
 						<li>
 							<div class="label inst_CMS"></div>
-							<input type="text">
+							<input type="text" name="insta" value="<?echo $contacts_row['insta']?>">
 						</li>
 						<li>
 							<p class="label">phone2</p>
-							<input type="text">
+							<input type="text" name="phone2" value="<?echo $contacts_row['phone2']?>">
 						</li>
 						<li>
 							<div class="label tw_CMS"></div>
-							<input type="text">
+							<input type="text" name="tw" value="<?echo $contacts_row['tw']?>">
 						</li>
 						<li>
-							<div class="button save">
+							<div class="button save contacts_save">
 								<p>Сохранить</p>
 							</div>
 						</li>
 					</ul>
-					
+					</form>
 				</div>
 			</div>
 			<div class="CMS-block new-clients">
@@ -687,26 +694,28 @@
 					<div class="CMS-buttons">
 						<div class="button add_photo">
 							<form class="frm"> 
-								<input type="file" multiple class="upload_btn" />
+								<input type="file" class="upload_btn" />
 							</form>
 							<p>Добавить лого</p>
 						</div>
-						<div class="button save">
+						<div class="button save new_client_save">
 							<p>Сохранить</p>
 						</div>
+						<span class='display tname'>clients</span>
 					</div>
 					<div class="new_client-logo CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="images/clients/3.png"alt="">
 							</div>
 						</span>
 					</div>
 					<div class="new_client-form">
+						<form id="new_client_form">
 						<p>название компании</p>
 						<input type="text" name="company_name">
 						<p>ссылка на мероприятие</p>
 						<input type="text" name="event_url">
+						</form>
 					</div>				
 				</div>
 			</div>
@@ -714,59 +723,25 @@
 				<div class="left-label">
 					<p>Клиенты</p>
 				</div>
+				<div class="CMS-buttons">
+					<div class="button save">
+						<p>Сохранить</p>
+					</div>
+					<span class='display tname'>contactsclients</span>
+				</div>
 				<div class="right-content sortable">
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
+					<?
+					$contacts_clients_db = $db->prepare("SELECT * FROM clients ORDER BY FIELD( contacts_position,  $contacts_clients)");
+					$contacts_clients_db->execute();
+					$contacts_clients_row = $contacts_clients_db->fetchAll();
+					$mcontacts_clients_count = $contacts_clients_db->rowCount();
+					for($i=0;$i<$mcontacts_clients_count;$i++){
+					?>
+					<div id="clients_<?echo $contacts_clients_row[$i]['main_position']?>" class="clients-prewiew">
+						<img src="<?echo $contacts_clients_row[$i]['img']?>" alt="">
+						<div class="close_cross clients_delete"></div>
 					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
-					<div class="clients-prewiew">
-						<img src="images/clients/1.png" alt="">
-						<div class="close_cross"></div>
-					</div>
+					<?}?>
 				</div>
 			</div>
 			<h2>Мероприятия</h2>
@@ -879,7 +854,6 @@
 					<?}?>
 				</div>
 			</div>
-
 			<h2>Пароль</h2>
 			<div class="CMS-block chng_pass last_block">
 				<div class="left-label">
@@ -887,15 +861,17 @@
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
-						<div class="button save">
+						<div class="button save password_save">
 							<p>Сохранить</p>
 						</div>
 					</div>
 					<div class="chng_pass-form">
+						<form id='password_form'>
 						<p>старый пароль</p>
-						<input type="password" name="old_pass">
+						<input type="password" name="old_pass" value="">
 						<p>новый пароль</p>
-						<input type="password" name="new_pass">
+						<input type="password" name="new_pass" value="">
+						</form>
 					</div>
 				</div>
 			</div>

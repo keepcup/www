@@ -1,12 +1,9 @@
 <?php
 include '../db.php';
-// Все загруженные файлы помещаются в эту папку
 include 'cut_images.php';
 include 'strtr.php';
-// Вытаскиваем необходимые данные
 $table = $_POST['tablename'];
 $position = $_POST['position'];
-// Получаем расширение файла
 
 
 	switch($table){
@@ -65,6 +62,35 @@ $position = $_POST['position'];
 				$update_2 = $db->prepare("UPDATE gallery_img SET img=? WHERE gallery_id = ? ");
 				$update_2->execute(array($namePath, $update_id ));
 			}
+			break;
+		case 'contacts':
+			$results = urldecode($_POST['textserialize']);
+			$perfs = explode("&", $results);
+			foreach($perfs as $i => $value) {
+				$new_perfs[$i] = explode("=", $value);
+			}
+
+			$update = $db->prepare("UPDATE $table SET vk=?, fb =?, insta = ?, tw = ?, mail = ?, phone1 = ?, phone2 = ?");
+			$update->execute(array($new_perfs[2][1],$new_perfs[0][1],$new_perfs[4][1],$new_perfs[6][1],$new_perfs[1][1],$new_perfs[3][1],$new_perfs[5][1]));
+			break;
+		case 'password':
+			$results = urldecode($_POST['textserialize']);
+			$perfs = explode("&", $results);
+			foreach($perfs as $i => $value) {
+				$new_perfs[$i] = explode("=", $value);
+			}
+
+			$old_pass = sha1($new_perfs[0][1]);
+
+			$select = $db->prepare("SELECT password FROM admin WHERE id='1'");
+			$select->execute();
+			$select_row = $select->fetch();
+
+			if($old_pass == $select_row['password']){
+				$new_pass = sha1($new_perfs[1][1]);
+				$update = $db->prepare("UPDATE admin SET password = ? WHERE id = '1'");
+				$update->execute(array($new_pass));
+			};
 			break;
 	}
 ?>

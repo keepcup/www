@@ -22,6 +22,10 @@ function resize($file_input, $file_output, $w_o, $h_o, $percent = false) {
 	if (!$w_o) $w_o = $h_o/($h_i/$w_i);
 
 	$img_o = imagecreatetruecolor($w_o, $h_o);
+	if($ext == 'png'){
+		imageAlphaBlending($img_o, false);
+		imageSaveAlpha($img_o, true);
+	}
 	imagecopyresampled($img_o, $img, 0, 0, 0, 0, $w_o, $h_o, $w_i, $h_i);
 	if ($type == 2) {
 		return imagejpeg($img_o,$file_output,90);
