@@ -296,6 +296,9 @@ $(document).ready(function() {
 			// var files = e.dataTransfer.files;
 			// loadInView(files,Index);
 			maxPosition =Math.max.apply(null,position.join("").split(tableName+'_'))+1;
+			alert(position)
+				alert(tableName)
+			$.post('backend/position.php', {position:position, tablename: tableName });
 			$.each(dataArray[saveIndex], function(index, file) {
 				$.post('backend/upload.php', {textserialize:textserialize ,tablename: tableName, file :dataArray[saveIndex][index], position:maxPosition}, function(dataid,success){
 					dataArray[saveIndex] = [];
@@ -322,7 +325,7 @@ $(document).ready(function() {
 				$.post('backend/update.php', {textserialize:textserialize , tablename: tableName,file :file, id:updateId}, function(data, success) {
 					alert(data);
 					dataArray[saveIndex] = [];
-					// window.location.reload();
+					window.location.reload();
 				});
 		}else{
 			var position = saveView.sortable("toArray");

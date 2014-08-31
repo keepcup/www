@@ -93,14 +93,21 @@ $position = $_POST['position'];
 			};
 			break;
 		case 'blog':
-			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
-			
+			$update_id= $_POST['id'];
+			$select = $db->prepare("SELECT img FROM blog WHERE id = ?");
+			$select->execute(array($update_id));
+			$select_row = $select->fetch();
+			$namePath = $select_row['img'];
+
 			$results = urldecode($_POST['textserialize']);
 			$perfs = explode("&", $results);
 			foreach($perfs as $i => $value) {
 				$new_perfs[$i] = explode("=", $value);
 			}
+
 			if(!empty($_POST['file'])){
+
+				$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
 					$files = $_POST['file'];
 				foreach ($files as $key => $value) {
 					$name = $files[$key]['name'];
@@ -109,7 +116,7 @@ $position = $_POST['position'];
 					$mime = end($getMime);
 					$randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 				}
-					$namePath = "../images/gallery/images/".$randomName;
+				$namePath = "../images/gallery/images/".$randomName;
 				list($w, $h) = getimagesize($file);
 
 				if($w>640 && $h>427){
@@ -119,6 +126,7 @@ $position = $_POST['position'];
 				}else{
 					resize($file,$namePath,640,427);
 				}
+				unlink($select_row['img']);
 			}
 			$gallery_id = explode('/',$new_perfs[4][1]);
 			$gallery_id = end($gallery_id);
@@ -133,18 +141,10 @@ $position = $_POST['position'];
 			}else{
 				$gallery_id= 0;
 			}
-			$update_id= $_POST['id'];
-
-			$select = $db->prepare("SELECT img FROM blog WHERE id = ?");
-			$select->execute(array($update_id));
-			$select_row = $select->fetch();
-			unlink($select_row['img']);
-
+			echo $select_row['id'];
 			$update = $db->prepare("UPDATE blog SET title = ?,title_small=?,date=?,img=?,text = ?, gallery_id=? WHERE id = ?");
-			$update->execute(array($new_perfs[0][1],$new_perfs[1][1],$new_perfs[3][1],$namePath,$new_perfs[2][1],$gallery_id,$update_id));
-
-			// $insert = $db->prepare("INSERT INTO blog (title,title_small,date,img,text,gallery_id) VALUES (?,?,?,?,?,?)");
-			// $insert->execute(array($new_perfs[0][1],$new_perfs[1][1],$new_perfs[3][1],$namePath,$new_perfs[2][1],$gallery_id));
+			$update->execute(array($new_perfs[0][1],$new_perfs[1][1],$new_perfs[3][1],$namePath,$new_perfs[2][1],$gallery_id,$update_id ));
 			break;
 	}
+
 ?>

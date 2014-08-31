@@ -138,14 +138,14 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$insert->execute(array($new_perfs[0][1],$namePath,$gallery_id,$position,$position));
 			break;
 		case 'blog':
-			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
+			
 			
 			$results = urldecode($_POST['textserialize']);
 			$perfs = explode("&", $results);
 			foreach($perfs as $i => $value) {
 				$new_perfs[$i] = explode("=", $value);
 			}
-
+			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
 			list($w, $h) = getimagesize($file);
 			if($w>640 && $h>427){
 				$w=($w-640)/2;

@@ -43,6 +43,7 @@
 					$position_row = $position->fetch();
 					$main_slider = $position_row['mainSlider'];
 					$main_clients = $position_row['mainClients'];
+					$photography = $position_row['photography'];
 					$contacts_clients = $position_row['contactsClients'];
 
 					$slider = $db->prepare("SELECT * FROM main_slider ORDER BY FIELD( position,  $main_slider)");
@@ -426,7 +427,7 @@
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 					<?
-					$photography_db = $db->prepare("SELECT * FROM photography ORDER BY FIELD( position,  $main_slider)");
+					$photography_db = $db->prepare("SELECT * FROM photography ORDER BY FIELD( position,  $photography)");
 					$photography_db->execute();
 					$photography_row = $photography_db->fetchAll();
 					$photography_count = $photography_db->rowCount();
@@ -737,7 +738,7 @@
 					$contacts_clients_count = $contacts_clients_db->rowCount();
 					for($i=0;$i<$contacts_clients_count;$i++){
 					?>
-					<div id="clients_<?echo $contacts_clients_row[$i]['main_position']?>" class="clients-prewiew">
+					<div id="clients_<?echo $contacts_clients_row[$i]['contacts_position']?>" class="clients-prewiew">
 						<img src="<?echo $contacts_clients_row[$i]['img']?>" alt="">
 						<div class="close_cross clients_delete"></div>
 					</div>
@@ -804,7 +805,7 @@
 					for($i=0;$i<$blog_count;$i++){
 					$photo_count=0;
 					if($blog_row[$i]['gallery_id'] !=0){
-						$blog_number = $db->prepare("SELECT position FROM gallery WHERE id=?");
+						$blog_number = $db->prepare("SELECT url_name,position FROM gallery WHERE id=?");
 						$blog_number->execute(array($blog_row[$i]['gallery_id']));
 						$blog_number_row = $blog_number->fetch();
 						if(!empty($blog_number_row)){
@@ -868,7 +869,7 @@
 						</div>
 						<div class="bottom-side">
 							<input type="text" name="date" class="date" placeholder="ДАТА" value="<?echo $blog_row[$i]['date'];?>">						
-							<input type="text" name="gallery_url" class="gallery_url" value="<?echo $blog_row[$i]['gallery_id'];?>">
+							<input type="text" name="gallery_url" class="gallery_url" value="<?echo $blog_number_row['url_name'];?>">
 							<p class="label-gallery_url">ссылка на галерею</p>
 							<p class="label-date">в формате 01.02</p>
 						</div>
