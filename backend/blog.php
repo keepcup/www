@@ -15,8 +15,10 @@ for($i=0;$i<$select_count;$i++){
 			$blog_number = $db->prepare("SELECT photo,url_name FROM gallery WHERE id=?");
 			$blog_number->execute(array($row[$i]['gallery_id']));
 			$blog_number_row = $blog_number->fetch();
-			$photo=explode(',', $blog_number_row['photo']);
-			$photo_count=count($photo);
+			if(!empty($blog_number_row)){
+				$photo=explode(',', $blog_number_row['photo']);
+				$photo_count=count($photo);
+			}
 		}
 ?>
 		<div class="blog">

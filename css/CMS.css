@@ -527,6 +527,10 @@ body,html{
 					color: #7f7f7f;
 					text-align: right;
 				}
+				.event img{
+					max-width:152px; 
+					max-height:102px;
+				}
 				.event-edit-form .left-side .button.save {margin-bottom:20px;}
 				.button.decline {
 					background-color: #d9dbdd;

@@ -92,5 +92,59 @@ $position = $_POST['position'];
 				$update->execute(array($new_pass));
 			};
 			break;
+		case 'blog':
+			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
+			
+			$results = urldecode($_POST['textserialize']);
+			$perfs = explode("&", $results);
+			foreach($perfs as $i => $value) {
+				$new_perfs[$i] = explode("=", $value);
+			}
+			if(!empty($_POST['file'])){
+					$files = $_POST['file'];
+				foreach ($files as $key => $value) {
+					$name = $files[$key]['name'];
+					$file = $files[$key]['value'];
+					$getMime = explode('.', $name);
+					$mime = end($getMime);
+					$randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+				}
+					$namePath = "../images/gallery/images/".$randomName;
+				list($w, $h) = getimagesize($file);
+
+				if($w>640 && $h>427){
+					$w=($w-640)/2;
+					$h=($h-427)/2;
+					crop($file,$namePath,array($w,$h,-$w,-$h));
+				}else{
+					resize($file,$namePath,640,427);
+				}
+			}
+			$gallery_id = explode('/',$new_perfs[4][1]);
+			$gallery_id = end($gallery_id);
+			if(!empty($gallery_id)){
+				$select = $db->prepare("SELECT id,url_name FROM gallery WHERE url_name = ?");
+				$select->execute(array($gallery_id));
+				$select_row = $select->fetch();
+				$gallery_id = $select_row['id'];
+				if(empty($gallery_id)){
+					$gallery_id= 0;
+				}
+			}else{
+				$gallery_id= 0;
+			}
+			$update_id= $_POST['id'];
+
+			$select = $db->prepare("SELECT img FROM blog WHERE id = ?");
+			$select->execute(array($update_id));
+			$select_row = $select->fetch();
+			unlink($select_row['img']);
+
+			$update = $db->prepare("UPDATE blog SET title = ?,title_small=?,date=?,img=?,text = ?, gallery_id=? WHERE id = ?");
+			$update->execute(array($new_perfs[0][1],$new_perfs[1][1],$new_perfs[3][1],$namePath,$new_perfs[2][1],$gallery_id,$update_id));
+
+			// $insert = $db->prepare("INSERT INTO blog (title,title_small,date,img,text,gallery_id) VALUES (?,?,?,?,?,?)");
+			// $insert->execute(array($new_perfs[0][1],$new_perfs[1][1],$new_perfs[3][1],$namePath,$new_perfs[2][1],$gallery_id));
+			break;
 	}
 ?>

@@ -24,7 +24,8 @@ $(document).ready(function(){
     //     $(".sortable_edit").find('.upload_preview').sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
     // })
     $('.gallery-buttons').find('.edit').click(function(){
-        $('.your_events').find('.gallery-edit-form, .event-edit-form').fadeOut(0);
+        $('.gallery-edit-form, .event-edit-form').not('.notfade').fadeOut(0);
+        $('.gallery').fadeIn(0);
         $(this).closest('.gallery').next().fadeIn(100);
         $(this).closest('.gallery').fadeOut(0);
     });

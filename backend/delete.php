@@ -67,5 +67,17 @@ $deletePosition =$_POST['deletePosition'];
 			$delete = $db->prepare("DELETE FROM clients WHERE id=?");
 			$delete->execute(array($select_row['id']));
 			break;
+		case 'blog':
+				$id = $_POST['id'];
+				$select = $db->prepare("SELECT id,img FROM blog WHERE id = ?");
+				$select->execute(array($id));
+				$select_row = $select->fetchAll();
+
+				foreach ($select_row as $key => $value) {
+					unlink($select_row[$key]['img']);
+				}
+				$delete = $db->prepare("DELETE FROM blog WHERE id=?");
+				$delete->execute(array($id));
+			break;
 	}
 ?>

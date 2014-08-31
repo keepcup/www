@@ -523,7 +523,7 @@
 					<p>Новая галерея</p>
 				</div>
 				<div class="right-content">
-					<div class="gallery-edit-form">
+					<div class="gallery-edit-form notfade">
 						 <div class="CMS-buttons">
 							<form id="new_closed_gallery_form">
 							<input type="text" name="h_1" class="h_1" value="ЗАГОЛОВОК 1" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
@@ -734,8 +734,8 @@
 					$contacts_clients_db = $db->prepare("SELECT * FROM clients ORDER BY FIELD( contacts_position,  $contacts_clients)");
 					$contacts_clients_db->execute();
 					$contacts_clients_row = $contacts_clients_db->fetchAll();
-					$mcontacts_clients_count = $contacts_clients_db->rowCount();
-					for($i=0;$i<$mcontacts_clients_count;$i++){
+					$contacts_clients_count = $contacts_clients_db->rowCount();
+					for($i=0;$i<$contacts_clients_count;$i++){
 					?>
 					<div id="clients_<?echo $contacts_clients_row[$i]['main_position']?>" class="clients-prewiew">
 						<img src="<?echo $contacts_clients_row[$i]['img']?>" alt="">
@@ -750,26 +750,27 @@
 					<p>Новое мероприятие</p>
 				</div>
 				<div class="right-content">
-					<div class="event-edit-form"><!-- just copy this block -->
+					<div class="event-edit-form notfade">
 						<div class="left-side">
 							<div class="button add_photo">
 								<form class="frm"> 
-									<input type="file" multiple class="upload_btn" />
+									<input type="file" class="upload_btn" />
 								</form>
 								<p>Добавить фото</p>
 							</div>
-							<div class="button save">
+							<div class="button save new_blog_save">
 								<p>Сохранить</p>
 							</div>
+							<span class='display tname'>blog</span>
 						</div>
 						<div class="new_client-logo CMS-prewiew" ondragover="return false" ondragstart="return false">
 							<span class="delete_current upload_preview">
 								<div class="photo-preview">
-									<img src="images/index/slider_test.png" alt="">
 									<div class="close_cross"></div>	
 								</div>
 							</span>
 						</div>
+						<form id="new_blog_form">
 						<div class="right-side">
 							<p class="h_1">заголовок1</p>
 							<input type="text" name="event-h_1">
@@ -784,7 +785,8 @@
 							<input type="text" name="gallery_url" class="gallery_url">
 							<p class="label-gallery_url">ссылка на галерею</p>
 							<p class="label-date">в формате 01.02</p>
-						</div>						
+						</div>
+						</form>					
 					</div>
 				</div>
 			</div>
@@ -793,23 +795,41 @@
 					<p>Ваши мероприятия</p>
 				</div>
 				<div class="right-content sbscroller">
-				<?for($i=0;$i<9;$i++){?>
+					<?
+					$blog_db = $db->prepare("SELECT * FROM blog ORDER BY id DESC");
+					$blog_db->execute();
+					$blog_row = $blog_db->fetchAll();
+					$blog_count = $blog_db->rowCount();
+
+					for($i=0;$i<$blog_count;$i++){
+					$photo_count=0;
+					if($blog_row[$i]['gallery_id'] !=0){
+						$blog_number = $db->prepare("SELECT position FROM gallery WHERE id=?");
+						$blog_number->execute(array($blog_row[$i]['gallery_id']));
+						$blog_number_row = $blog_number->fetch();
+						if(!empty($blog_number_row)){
+							$photo=explode(',', $blog_number_row['position']);
+							$photo_count=count($photo);
+						}
+					}
+					?>
 					<div class="gallery event">
-						<img class="prewiew" src="images/index/slider_test.png" alt="">
-						<p class="date">24.05</p>
+						<img class="prewiew" src="<?echo $blog_row[$i]['img'];?>" alt="">
+						<p class="date"><?echo $blog_row[$i]['date'];?></p>
 						<div class="gallery-label">
-							<p class="h_1">Инстабудка для SMASHBOX</p>
-							<p class="h_2">в сети магазинов РивГош</p>
+							<p class="h_1"><?echo $blog_row[$i]['title'];?></p>
+							<p class="h_2"><?echo $blog_row[$i]['title_small'];?></p>
 						</div>
 						<div class="photo-label">
-							<p>333338</p>
+							<p><?echo $photo_count;?></p>
 							<div class="event-photos-label"></div>
 						</div>
 						<div class="gallery-buttons">
 							<div class="edit"></div>
-							<div class="close_cross"></div>
+							<span class="display tid"><?echo $blog_row[$i]['id'];?></span>
+							<div class="close_cross delete_blog"></div>
+							<span class="display tname">blog</span>
 						</div>
-						<p class="pass">пароль: 245B7</p>						
 					</div>
 					<!---->
 					<div class="event-edit-form display">
@@ -820,9 +840,11 @@
 								</form>
 								<p>Добавить фото</p>
 							</div>
-							<div class="button save">
+							<span class='display tid'><?echo $blog_row[$i]['id']?></span>
+							<div class="button save update_blog_save">
 								<p>Сохранить</p>
 							</div>
+							<span class='display tname'>blog</span>
 							<div class="button decline">
 								<p>Отменить</p>
 							</div>
@@ -830,26 +852,27 @@
 						<div class="new_client-logo CMS-prewiew" ondragover="return false" ondragstart="return false">
 							<span class="delete_current upload_preview">
 								<div class="photo-preview">
-									<img src="images/index/slider_test.png" alt="">
-									<div class="close_cross"></div>	
+									<img class="prewiew" src="<?echo $blog_row[$i]['img'];?>" alt="">
 								</div>
 							</span>
 						</div>
+						<form id="update_blog_form">
 						<div class="right-side">
 							<p class="h_1">заголовок1</p>
-							<input type="text" name="event-h_1">
+							<input type="text" name="event-h_1" value="<?echo $blog_row[$i]['title'];?>">
 							<p class="h_2">заголовок2</p>
-							<input type="text" name="event-h_2">
+							<input type="text" name="event-h_2" value="<?echo $blog_row[$i]['title_small'];?>">
 							<p class="label-text">текст мероприятия</p>
-							<textarea name="event-text" ></textarea>
+							<textarea name="event-text"><?echo $blog_row[$i]['text'];?></textarea>
 							<p class="label-symbols_left">1000 символов</p>
 						</div>
 						<div class="bottom-side">
-							<input type="text" name="date" class="date" placeholder="ДАТА">						
-							<input type="text" name="gallery_url" class="gallery_url">
+							<input type="text" name="date" class="date" placeholder="ДАТА" value="<?echo $blog_row[$i]['date'];?>">						
+							<input type="text" name="gallery_url" class="gallery_url" value="<?echo $blog_row[$i]['gallery_id'];?>">
 							<p class="label-gallery_url">ссылка на галерею</p>
 							<p class="label-date">в формате 01.02</p>
-						</div>						
+						</div>
+						</form>				
 					</div><!-- event-edit-form -->
 					<?}?>
 				</div>

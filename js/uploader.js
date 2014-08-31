@@ -35,8 +35,8 @@ $(document).ready(function() {
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
-		loadInView(files,Index);
 
+		loadInView(files,Index);
 	});
 	
 	// При нажатии на кнопку выбора файлов
@@ -138,6 +138,18 @@ $(document).ready(function() {
 		closeCross= $(this);
 		timeOut= 500;
 		closeCross.closest('.gallery').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.next().text();
+			var galleryId = closeCross.prev().text();
+			closeCross.closest('.gallery').remove();
+			var galleryDeleteFlag = 1;
+			$.post('backend/delete.php', {gallerydeleteflag: galleryDeleteFlag , tablename: tablename, id : galleryId});
+		}, timeOut);
+	})
+	$('.delete_blog').click(function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.photo-preview').fadeOut(timeOut)
 		setTimeout( function() {
 			var tablename = closeCross.next().text();
 			var galleryId = closeCross.prev().text();
@@ -285,15 +297,33 @@ $(document).ready(function() {
 			// loadInView(files,Index);
 			maxPosition =Math.max.apply(null,position.join("").split(tableName+'_'))+1;
 			$.each(dataArray[saveIndex], function(index, file) {
-				
 				$.post('backend/upload.php', {textserialize:textserialize ,tablename: tableName, file :dataArray[saveIndex][index], position:maxPosition}, function(dataid,success){
-					lastInsertedId= dataid;
-					// $.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
-					// alert(lastInsertedId);
+					dataArray[saveIndex] = [];
+					window.location.reload();
 				});
 			});
-			dataArray[saveIndex] = [];
-			window.location.reload();
+			
+		}else if(saveButton.hasClass('new_blog_save')){
+			var textserialize = $('#new_blog_form').serialize();
+			var position = saveView.sortable("toArray");
+			var tableName = saveButton.next().text();
+			$.each(dataArray[saveIndex], function(index, file) {
+				$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName,file :dataArray[saveIndex][index]}, function(data, success) {
+					dataArray[saveIndex] = [];
+					window.location.reload();
+				});
+			});
+		}else if(saveButton.hasClass('update_blog_save')){
+			var textserialize = $('#update_blog_form').serialize();
+			var position = saveView.sortable("toArray");
+			var tableName = saveButton.next().text();
+			var updateId = saveButton.prev().text();
+			file = dataArray[saveIndex];
+				$.post('backend/update.php', {textserialize:textserialize , tablename: tableName,file :file, id:updateId}, function(data, success) {
+					alert(data);
+					dataArray[saveIndex] = [];
+					// window.location.reload();
+				});
 		}else{
 			var position = saveView.sortable("toArray");
 			startPosition = saveView.find('.photo-preview-old').length;
