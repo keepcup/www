@@ -1565,7 +1565,7 @@ textarea{
 	.sticky-1180-insta {
 		position: fixed !important;
 		top: 60px !important;
-		z-index: 9999;
+		z-index: 999;
 	}
 		.header-menu>ul {
 			width: 880px;
@@ -1599,6 +1599,7 @@ textarea{
 			background: #f3f3f3;
 			left: -20px;
 			top: 60px;
+			z-index: 1000;
 		}
 		/*li.insta-butt:hover>ul {display: block;}*/
 			.header-menu-down li {
