@@ -114,7 +114,7 @@ body,html{
 			line-height: 58px;
 		}
 		.header-menu a:hover {color: #999;}
-		a.active-url {color: #f58026;}
+		.active-url {color: #f58026 !important;}
 	.insta-butt {
 		position: relative;
 		line-height: 60px;

@@ -39,7 +39,7 @@
 				<ul>
 					<li><a href="#index">главная</a></li>
 					<li class="insta-butt">
-						<a href="" onclick="return false">фотобудка</a>
+						<a href="" onclick="return false" class="photobudka">фотобудка</a>
 						<ul class="header-menu-down">
 							<li><a href="#instabudka">Инстабудка</a></li>
 							<li><a href="#instamini">Инстамини</a></li>
