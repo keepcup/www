@@ -245,11 +245,6 @@
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
-
-			<h2 id="instamini" >Инстамини</h2>
-=======
->>>>>>> origin/Alex
 			<div class="CMS-block instamini">
 				<div class="left-label">
 				</div>
@@ -355,11 +350,6 @@
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
-
-			<h2 id="instashar">Инсташар</h2>
-=======
->>>>>>> origin/Alex
 			<div class="CMS-block instamini">
 				<div class="left-label">
 				</div>
@@ -463,9 +453,6 @@
 				</div>
 			</div>
 
-<<<<<<< HEAD
-			<h2 id="photography">Фотосъёмка</h2>
-=======
 			<h2>Инсташар</h2>
 			<div class="CMS-block instamini">
 				<div class="left-label">
@@ -597,7 +584,6 @@
 			</div>
 			
 			<h2>Фотосъёмка</h2>
->>>>>>> origin/Alex
 			<div class="CMS-block CMS-main-slide last_block">
 				<div class="left-label">
 					<p>Фотографии</p>
