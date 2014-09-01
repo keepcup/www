@@ -19,6 +19,8 @@ $(document).ready(function() {
 		dataArray[i] = [];
 	}
 	var Index;
+	var maxPosition;
+	var beforePosition;
 // $('.sortable').on( function() {
 // 	$('.sortable').sbscroller('refresh');
 // });
@@ -33,8 +35,8 @@ $(document).ready(function() {
 		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
-		loadInView(files,Index);
 
+		loadInView(files,Index);
 	});
 	
 	// При нажатии на кнопку выбора файлов
@@ -79,6 +81,14 @@ $(document).ready(function() {
 		
 	// Процедура добавления эскизов на страницу
 	function addImage(ind,cs,Index) {
+		var tableName = cs.closest('.CMS-prewiew').prev('div').find('.tname').text();
+
+		if(cs.hasClass('delete_current')){
+			maxPosition = ind;
+		}else{
+			beforePosition = cs.sortable("toArray");
+			maxPosition =Math.max.apply(null,beforePosition.join("").split(tableName+'_'))+1;
+		}
 		// Если индекс отрицательный значит выводим весь массив изображений
 		if (ind < 0 ) { 
 		start = 0; end = dataArray[Index].length; 
@@ -89,90 +99,253 @@ $(document).ready(function() {
 		// Цикл для каждого элемента массива
 		for (i = start; i < end; i++) {
 			// размещаем загруженные изображения
-			cs.append('<div class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
+			cs.append('<div id="'+tableName+'_'+maxPosition+'" class="photo-preview photo-preview-new"><img src="'+dataArray[Index][i].value+'" alt=""><div class="close_cross close_cross_new"></div></div>'); 
 		}
 		$(".sortable").children().sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
 		$('.sortable').sbscroller('refresh');
 		return false;
 	}
 	
-	// Функция удаления всех изображений
-	/*function restartFiles() {
-		// Удаляем все изображения на странице и скрываем кнопки
-		$('#dropped-files > .image').remove();
 	
-		// Очищаем массив
-		dataArray.length = 0;
-		
-		return false;
-	}*/
-	$('.close_cross').live('click',function(){
+	$('.close_cross_new').live('click',function(){
 		$this= $(this);
 		timeOut= 500;
 		$this.closest('.photo-preview').fadeOut(timeOut)
 		setTimeout( function() { $this.closest('.photo-preview').remove()}, timeOut);
-	});
-	$('.close_cross_new').live('click',function(){
-		Index = $('.CMS-prewiew').index($(this).closest('.CMS-prewiew'));
-		deleteIndex = $(this).closest('.CMS-prewiew').find('.close_cross_new').index(this);
-		// dataArray[Index][deleteIndex]=[];
+
+		Index = $('.CMS-prewiew').index($this.closest('.CMS-prewiew'));
+		deleteIndex = $this.closest('.CMS-prewiew').find('.close_cross_new').index(this);
 		dataArray[Index].splice(deleteIndex,1);
-		// alert(deleteIndex)
-		// alert(dataArray[Index][0]);
-		
 	})
-	// Удаление только выбранного изображения 
-	/*$("#dropped-files").on("click","a[id^='drop']", function() {
-		// получаем название id
- 		var elid = $(this).attr('id');
-		// создаем массив для разделенных строк
-		var temp = new Array();
-		// делим строку id на 2 части
-		temp = elid.split('-');
-		// получаем значение после тире тоесть индекс изображения в массиве
-		dataArray.splice(temp[1],1);
-		// Удаляем старые эскизы
-		$('#dropped-files > .image').remove();
-		// Обновляем эскизи в соответсвии с обновленным массивом
-		addImage(-1);		
-	});
-	
-	// Удалить все изображения кнопка 
-	$('#dropped-files #upload-button .delete').click(restartFiles);
-	*/
+	$('.photo-preview-old').find('.close_cross').live('click',function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.photo-preview').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.closest('.CMS-prewiew').prev().find('.tname').text();
+			var galleryId = closeCross.closest('.CMS-prewiew').prev().find('.tid').text();
+			var deletePosition = closeCross.closest('.photo-preview-old').attr('id').split('_');
+			var saveView = closeCross.closest('.upload_preview');
+			closeCross.closest('.photo-preview').remove();
+			var position = saveView.sortable("toArray");
+			
+			alert(galleryId)
+			$.post('backend/position.php', {position:position, tablename: tablename, id : galleryId });
+			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename, id : galleryId});
+		}, timeOut);
+	})
+	$('.delete_gallery').click(function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.gallery').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.next().text();
+			var galleryId = closeCross.prev().text();
+			closeCross.closest('.gallery').remove();
+			var galleryDeleteFlag = 1;
+			$.post('backend/delete.php', {gallerydeleteflag: galleryDeleteFlag , tablename: tablename, id : galleryId});
+		}, timeOut);
+	})
+	$('.delete_blog').click(function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.photo-preview').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.next().text();
+			var galleryId = closeCross.prev().text();
+			closeCross.closest('.gallery').remove();
+			var galleryDeleteFlag = 1;
+			$.post('backend/delete.php', {gallerydeleteflag: galleryDeleteFlag , tablename: tablename, id : galleryId});
+		}, timeOut);
+	})
+	$('.clients_delete').live('click',function(){
+		closeCross= $(this);
+		timeOut= 500;
+		closeCross.closest('.clients-prewiew').fadeOut(timeOut)
+		setTimeout( function() {
+			var tablename = closeCross.closest('.right-content').prev().find('.tname').text();
+			var deletePosition = closeCross.closest('.clients-prewiew').attr('id').split('_');
+			var saveView = closeCross.closest('.upload_preview');
+			closeCross.closest('.clients-prewiew').remove();
+			var position = saveView.sortable("toArray");
+			alert(deletePosition[1]);
+			$.post('backend/position.php', {position:position, tablename: tablename});
+			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
+		}, timeOut);
+	})
+	var lastInsertdeId;
 	// Загрузка изображений на сервер
 	$('.save').live('click',function() {
-		var saveView = $(this).parent('div').next().find('.upload_preview');
-		$(this).parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
-		saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
-		// Для каждого файла
-		$.each(dataArray[saveIndex], function(index, file) {	
-			// загружаем страницу и передаем значения, используя HTTP POST запрос 
-			$.post('backend/upload.php', dataArray[saveIndex][index], function(data) {
-				var fileName = dataArray[saveIndex][index].name;
-				// Формируем в виде списка все загруженные изображения
-				// data формируется в upload.php
-				var dataSplit = data.split(':');
+		var saveButton = $(this);
+		var saveView = saveButton.parent('div').next().find('.upload_preview');
+		var saveIndex = $('.CMS-prewiew').find('.upload_preview').index(saveView);
+		if(saveButton.hasClass('instabudka_save')){
+			var table = saveButton.next().text().split("_");
+			var tableName = table[0];
+			var tableFile = table[1];
+			$.each(dataArray[saveIndex], function(index, file) {	
+				// загружаем страницу и передаем значения, используя HTTP POST запрос
+				$.post('backend/upload.php', {tablefile: tableFile, tablename: tableName, file :dataArray[saveIndex][index] });
 			});
-		});
+		}else if(saveButton.hasClass('new_gallery_save')){
+			var new_gallery_form = $('#new_gallery_form')
+			var textserialize = new_gallery_form.serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
 
-		// alert(dataArray[saveIndex].length)
-		dataArray[saveIndex] = [];
-		// Показываем список загруженных файлов
-		return false;
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			// $.post('backend/position.php', {position:position, tablename: tableName });
+			file = dataArray[saveIndex];
+			alert(position)
+			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
+				lastInsertedId= dataid;
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName, position: position});
+				alert(lastInsertedId);
+			});
+			
+			dataArray[saveIndex] = [];
+			new_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
+			new_gallery_form.find('.h_2').val('Заголовок 2');
+			new_gallery_form.find('.date').val('ДАТА');
+			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
+			saveButton.closest('.new_gallery').addClass('display');
+			return false;
+		}else if(saveButton.hasClass('new_closed_gallery_save')){
+			new_closed_gallery_form = $('#new_closed_gallery_form');
+			var textserialize = new_closed_gallery_form.serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			// $.post('backend/position.php', {position:position, tablename: tableName });
+			file = dataArray[saveIndex];
+			alert(tableName)
+			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(dataid,success){
+				lastInsertedId= dataid;
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName});
+				alert(lastInsertedId);
+			});
+			
+			dataArray[saveIndex] = [];
+			new_closed_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
+			new_closed_gallery_form.find('.h_2').val('Заголовок 2');
+			new_closed_gallery_form.find('.date').val('ДАТА');
+			new_closed_gallery_form.find('.pass').val('ПАРОЛЬ');
+			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
+			saveButton.closest('.new_gallery').addClass('display');
+			return false;
+		}else if(saveButton.hasClass('update_gallery_save')){
+			var textserialize = saveButton.closest('.gallery-photos').prev().find('.gallery_update_form').serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			// $.post('backend/position.php', {position:position, tablename: tableName });
+			file = dataArray[saveIndex];
+			id= saveButton.prev().text()
+			alert(position)
+			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
+				lastInsertedId= dataid;
+				$.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
+				alert(lastInsertedId);
+			});
+			dataArray[saveIndex] = [];
+			return false;
+		}else if(saveButton.hasClass('update_closed_gallery_save')){
+			var textserialize = saveButton.closest('.gallery-photos').prev().find('.gallery_update_form').serialize();
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			file = dataArray[saveIndex];
+			id= saveButton.prev().text()
+			alert(id)
+			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position,file :file}, function(dataid,success){
+				lastInsertedId= dataid;
+				// $.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
+				alert(lastInsertedId);
+			});
+			dataArray[saveIndex] = [];
+			return false;
+		}else if(saveButton.hasClass('contacts_save')){
+			var textserialize = $('#contacts_form').serialize();
+			var tableName ='contacts';
+			$.post('backend/update.php', { textserialize:textserialize, tablename: tableName });
+			return false;
+		}else if(saveButton.hasClass('password_save')){
+			var textserialize = $('#password_form').serialize();
+			var tableName ='password';
+			$.post('backend/update.php', { textserialize:textserialize, tablename: tableName });
+			return false;
+		}else if(saveButton.hasClass('new_client_save')){
+			var new_client_form = $('#new_client_form')
+			var textserialize = new_client_form.serialize();
+			var clientsPosition = saveButton.closest('.new-clients').next().find('.upload_preview');
+
+			var position = clientsPosition.sortable("toArray");
+			startPosition = clientsPosition.find('.clients-prewiew').length;
+			
+			var tableName = saveButton.next().text();
+			file = dataArray[saveIndex];
+
+			// var files = e.dataTransfer.files;
+			// loadInView(files,Index);
+			maxPosition =Math.max.apply(null,position.join("").split(tableName+'_'))+1;
+			alert(position)
+				alert(tableName)
+			$.post('backend/position.php', {position:position, tablename: tableName });
+			$.each(dataArray[saveIndex], function(index, file) {
+				$.post('backend/upload.php', {textserialize:textserialize ,tablename: tableName, file :dataArray[saveIndex][index], position:maxPosition}, function(dataid,success){
+					dataArray[saveIndex] = [];
+					window.location.reload();
+				});
+			});
+			
+		}else if(saveButton.hasClass('new_blog_save')){
+			var textserialize = $('#new_blog_form').serialize();
+			var position = saveView.sortable("toArray");
+			var tableName = saveButton.next().text();
+			$.each(dataArray[saveIndex], function(index, file) {
+				$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName,file :dataArray[saveIndex][index]}, function(data, success) {
+					dataArray[saveIndex] = [];
+					window.location.reload();
+				});
+			});
+		}else if(saveButton.hasClass('update_blog_save')){
+			var textserialize = $('#update_blog_form').serialize();
+			var position = saveView.sortable("toArray");
+			var tableName = saveButton.next().text();
+			var updateId = saveButton.prev().text();
+			file = dataArray[saveIndex];
+				$.post('backend/update.php', {textserialize:textserialize , tablename: tableName,file :file, id:updateId}, function(data, success) {
+					alert(data);
+					dataArray[saveIndex] = [];
+					window.location.reload();
+				});
+		}else{
+			var position = saveView.sortable("toArray");
+			startPosition = saveView.find('.photo-preview-old').length;
+			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
+
+			var tableName = saveButton.next().text();
+			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
+			$.post('backend/position.php', {position:position, tablename: tableName });
+			$.each(dataArray[saveIndex], function(index, file) {	
+				// загружаем страницу и передаем значения, используя HTTP POST запрос
+				$.post('backend/upload.php', {position:position[index+startPosition], tablename: tableName, file :dataArray[saveIndex][index] });
+			});
+			dataArray[saveIndex] = [];
+			return false;
+		}
 	});
-	// Простые стили для области перетаскивания
-	/*$('.CMS-prewiew').on('dragenter', function() {
-		$(this).css({'box-shadow' : 'inset 0px 0px 20px rgba(0, 0, 0, 0.1)', 'border' : '4px dashed #bb2b2b'});
-		return false;
-	});*/
-	
+
 	$('.CMS-prewiew').live('drop', function() {
-		//$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
 		return false;
 	});
-	/*$('.CMS-prewiew').on('dragleave', function() {
-		$(this).css({'box-shadow' : 'none', 'border' : '4px dashed rgba(0,0,0,0.2)'});
-		return false;
-	});*/
+	
 });

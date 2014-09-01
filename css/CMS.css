@@ -164,9 +164,21 @@ body,html{
 		/*.CMS-block .CMS-prewiew {padding: 18px 0 20px 20px;}*/
 			.CMS-block.CMS-main-slide {	height: 262px;}
 			.CMS-block.CMS-main-clients {
+				position: relative;
 				min-height: 170px;
 				max-height: 722px;
 			}
+				.CMS-block.CMS-main-clients .CMS-buttons{
+					position: absolute;
+					top:600px; 
+					right:0;
+					width: 1016px;
+					z-index: 1;
+				}
+				.CMS-block.CMS-main-clients .save{
+					width: 100%;
+					cursor: pointer;
+				}
 				.CMS-block.CMS-main-clients .left-label span {color: #a8a8a8;}
 		.CMS-block.CMS-main-clients .right-content {
 			position: relative;
@@ -515,6 +527,10 @@ body,html{
 					color: #7f7f7f;
 					text-align: right;
 				}
+				.event img{
+					max-width:152px; 
+					max-height:102px;
+				}
 				.event-edit-form .left-side .button.save {margin-bottom:20px;}
 				.button.decline {
 					background-color: #d9dbdd;
@@ -767,3 +783,56 @@ body,html{
 .display{
 	display: none;
 }
+.gallery-edit-form .closed_gallery{
+	height: 0px;
+	width: 0px;
+	padding: 0;
+	margin: 0;
+}
+.closed_gallery .photo-left{
+	position: absolute;
+	top:0px;
+	right: 30px;
+}
+.closed_gallery .button{
+	
+	width: 132px;
+	float: right;
+}
+
+.edit_closed_gallery .CMS-buttons{
+	height: 198px;
+}
+	.gallery-edit-form  .edit_closed_gallery-photos{
+		height: 0px;
+		padding: 0;
+		margin: 0;
+		border:0;
+	}
+	.edit_closed_gallery-photos .photo-left{
+		position: absolute;
+		top:18px;
+		right: 30px;
+		width: 150px;
+	}
+	.edit_closed_gallery-photos .button{
+		width: 132px;
+		float: right;
+	}
+	.gallery-edit-form{
+		position: relative;
+	}
+.clients-clients{
+	position: relative;
+}
+.clients-clients .CMS-buttons{
+	position: absolute;
+	top:658px; 
+	right:0;
+	width: 1016px;
+	z-index: 1;
+}
+	.clients-clients .save{
+		width: 100%;
+		cursor: pointer;
+	}

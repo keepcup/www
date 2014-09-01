@@ -2,18 +2,20 @@
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
 <!-- <script src="/js/idangerous.swiper.min.js"></script> -->
 	<div class="content">
+		<?
+		$slider = $db->prepare("SELECT * FROM main_slider");
+		$slider->execute();
+		$slider_row = $slider->fetchAll();
+		$slider_count = $slider->rowCount();
+		?>
 		<div class="swiper-container">
 			<div class="button-swiper-left"></div>
 			<div class="swiper-wrapper">
+				<?for($i=0;$i<$slider_count;$i++){?>
 				<div class="swiper-slide">
-				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img ">
+				   <img src="<?echo $slider_row[$i]['img'];?>" alt="" class="slider_img ">
 				</div>
-				<div class="swiper-slide">
-				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
-				</div>
-				<div class="swiper-slide">
-				   <img src="images/index/instabudka_header.jpg" alt="" class="slider_img">
-				</div>
+				<?}?>
 		    </div>
 		    <div class="button-swiper-right"></div>
 		</div>

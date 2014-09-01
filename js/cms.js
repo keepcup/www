@@ -24,7 +24,8 @@ $(document).ready(function(){
     //     $(".sortable_edit").find('.upload_preview').sortable({ revert:true, cancel: ".ps-scrollbar-y-rail"});
     // })
     $('.gallery-buttons').find('.edit').click(function(){
-        $('.your_events').find('.gallery-edit-form, .event-edit-form').fadeOut(0);
+        $('.gallery-edit-form, .event-edit-form').not('.notfade').fadeOut(0);
+        $('.gallery').fadeIn(0);
         $(this).closest('.gallery').next().fadeIn(100);
         $(this).closest('.gallery').fadeOut(0);
     });
@@ -61,4 +62,22 @@ $(document).ready(function(){
         checkboxClass: 'icheckbox_minimal-green',
         increaseArea: '100%' 
     });
+    $('.create_new_gallery').click(function(){
+        $(this).closest('.create_gallery').next().next().addClass('display');
+        create_new_gallery = $(this).closest('.create_gallery').next();
+        if(create_new_gallery.hasClass('display')){
+            create_new_gallery.removeClass('display');
+        }else{
+            create_new_gallery.addClass('display');
+        }
+    })
+    $('.create_new_closed_gallery').click(function(){
+        $(this).closest('.create_gallery').next().addClass('display');;
+        create_new_gallery = $(this).closest('.create_gallery').next().next();
+        if(create_new_gallery.hasClass('display')){
+            create_new_gallery.removeClass('display');
+        }else{
+            create_new_gallery.addClass('display');
+        }
+    })
 })/*end*/
