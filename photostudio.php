@@ -1,7 +1,12 @@
 <?include "header.php";?>
 		<div class="content photostudio">
 			<div class="photostudio-belt">
-				<img src="images/photostudio/main.jpg" alt="">
+				<?
+				$insta_db = $db->prepare("SELECT * FROM insta WHERE id = 13");
+				$insta_db->execute();
+				$insta_row = $insta_db->fetch();
+				?>
+				<img src="<?echo $insta_row['img'];?>" alt="">
 				<ul>
 					<li>выезд профессиональных фотографов на ваш праздник – свадьбу, корпоратив или другое событие</li>
 					<li>фотосъемка со студийным освещением и оборудованием</li>

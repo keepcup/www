@@ -3,9 +3,9 @@
 			<div class="top-block-belt">
 				<div class="pennant-info">
 					<div class="info">
-						<p class="e-mail">E-mail: info@instabudka.ru</p>
-						<p class="contacts-phone first">Елизавета +7 (906) 098 26 93</p>
-						<p class="contacts-phone">Александр +7 (916) 034 62 54</p>
+						<p class="e-mail">E-mail: <?echo $contacts_row['mail']?></p>
+						<p class="contacts-phone first">Елизавета <?echo $contacts_row['phone1']?></p>
+						<p class="contacts-phone">Александр <?echo $contacts_row['phone2']?></p>
 						<p class="social-headline">Мы в социальных сетях:</p>
 						<ul class="social">
 							<li class="vk"><a href="vk.com"></a></li>

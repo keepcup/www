@@ -26,7 +26,7 @@ $position =implode(",", $_POST['position']);
 			break;
 		case 'contactsclients' || 'clients':
 			$position = str_replace('clients_','',$position);
-			$insert = $db->prepare("UPDATE position SET contactsClients='$position'");
+			$insert = $db->prepare("UPDATE position SET contactsClients='$position',mainClients='$position'");
 			$insert->execute();
 			break;
 	}

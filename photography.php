@@ -6,42 +6,21 @@
 				</p>
 			</div>
 			<div class="img-belt">
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
+				<?
+				$position = $db->prepare("SELECT * FROM position");
+				$position->execute();
+				$position_row = $position->fetch();
+				$photography = $position_row['photography'];
+				$photography_db = $db->prepare("SELECT * FROM photography ORDER BY FIELD( position,  $photography)");
+				$photography_db->execute();
+				$photography_row = $photography_db->fetchAll();
+				$photography_count = $photography_db->rowCount();
+				for($i=0;$i<$photography_count;$i++){
+				?>
+				<a class="fancybox" rel="group" href="<?echo $photography_row[$i]['img'];?>">
+					<img src="<?echo $photography_row[$i]['img'];?>" alt="">
 				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
-				<a class="fancybox" rel="group" href="images/photography/photorraphy-test.jpg">
-					<img src="images/photography/photorraphy-test.jpg" alt="">
-				</a>
+				<?}?>
 			</div>
 		</div>
 		<script>
