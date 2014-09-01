@@ -12,14 +12,20 @@
 	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 </head>
 <body>
+<?include "db.php";?>
+<?
+$contacts = $db->prepare("SELECT * FROM contacts WHERE id=1");
+$contacts->execute();
+$contacts_row = $contacts->fetch();
+?>
 <div class="container">
 	<div class="header">
 		<a href="/"><img src="images/header/logo.png" alt="" class="logo"></a>
 		<div class="title_block">
 			<div class="phone"></div>
 			<ul class="phone-down">
-				<li class="phone-contact">Елизавета +7 (906) 098 26 93</li>
-				<li class="phone-contact">Александр +7 (916) 034 62 54</li>
+				<li class="phone-contact">Елизавета <?echo $contacts_row['phone1']?></li>
+				<li class="phone-contact">Александр <?echo $contacts_row['phone2']?></li>
 				<li class="phone-social">
 					<a href="/"><div class="phone-social_1"></div></a>
 					<a href="/"><div class="phone-social_2"></div></a>
@@ -92,9 +98,9 @@
 					</div>
 					<a href="/"><img src="images/header/logo.jpg" alt="" class="logo" width="250"></a>
 					<div class="header-contacts">
-						<p class="header-contacts-phone_1">Елизавета  +7 (906) 098 26 93</p>
-						<p class="header-contacts-phone_2">Александр  +7 (916) 034 62 54</p>
-						<p class="header-contacts-mail">info@instabudka.ru</p>
+						<p class="header-contacts-phone_1">Елизавета  <?echo $contacts_row['phone1']?></p>
+						<p class="header-contacts-phone_2">Александр  <?echo $contacts_row['phone2']?></p>
+						<p class="header-contacts-mail"><?echo $contacts_row['mail']?></p>
 					</div>
 				</div><!-- end of top_content -->				
 			</div>
@@ -110,12 +116,21 @@
 						</ul>
 					</li>
 					<li><a href="/photography.php">фотосъёмка</a></li>
-					<li><a class="active-url" href="/photostudio.php">мобильная фотостудия</a></li>
+					<li><a href="/photostudio.php">мобильная фотостудия</a></li>
 					<li><a href="/gallery.php">галерея</a></li>
 					<li><a href="/contacts.php">контакты</a></li>
 					<li><a href="/blog.php">мероприятия</a></li>
 				</ul>
-				<script>
+			</div>	
+			<script>
+					pathUrl = window.location.pathname;
+					pathUrl = pathUrl.split(".");
+					$.each($(".header-menu, .menu-down").find('a'), function(){
+						href = $(this).attr('href').split(".");
+						if(href[0] == pathUrl[0]){
+							$(this).addClass('active-url');
+						}
+					});
 					$( "li.insta-butt>ul" ).hide();
 					$("li.insta-butt").mouseenter(function(){
 						if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
@@ -126,8 +141,6 @@
 						$( "li.insta-butt>ul" ).slideUp( "fast", function() {
 							$( "li.insta-butt>ul" ).hide();
 						});
-					})
-				</script>
-			</div>			
-		</div><!-- end of header-main-1180 -->
-<?include "db.php";?>
+					});
+				</script>	
+	</div><!-- end of header-main-1180 -->

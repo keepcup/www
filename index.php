@@ -3,7 +3,12 @@
 <!-- <script src="/js/idangerous.swiper.min.js"></script> -->
 	<div class="content">
 		<?
-		$slider = $db->prepare("SELECT * FROM main_slider");
+		$position = $db->prepare("SELECT * FROM position");
+		$position->execute();
+		$position_row = $position->fetch();
+		$main_slider = $position_row['mainSlider'];
+		$main_clients = $position_row['mainClients'];
+		$slider = $db->prepare("SELECT * FROM main_slider ORDER BY FIELD( position,  $main_slider)");
 		$slider->execute();
 		$slider_row = $slider->fetchAll();
 		$slider_count = $slider->rowCount();

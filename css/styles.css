@@ -1483,6 +1483,7 @@ textarea{
 }/*end of 768px*/
 /*888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
 /*1180px*/
+.active-url {color: #f58026 !important;}
 @media all and (min-width: 1197px) {
 	/*header-main-1180*/
 	.header {display: none;}
@@ -1581,7 +1582,7 @@ textarea{
 			line-height: 58px;
 		}
 		.header-menu a:hover {color: #999;}
-		.active-url {color: #f58026;}
+		
 	.insta-butt {
 		position: relative;
 		line-height: 60px;

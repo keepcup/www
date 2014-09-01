@@ -49,11 +49,11 @@ for($i=0;$i<$select_count;$i++){
 		</div>
 <?	}elseif ($url=='index'){?>		
 			<div class="news">
-				<a href="/blog.php">
-					<img src="images/blog/images/<?echo $row[$i]['photo']?>" alt="<?echo $row[$i]['url_name']?>" class="news_img">
+				<a href="/blog.php?id=<?echo $row[$i]['id']?>">
+					<img src="<?echo $row[$i]['img']?>" alt="<?echo $row[$i]['title']?>" class="news_img">
 					<div class="news-text">
-						<p class="news-date">14.05</p>
-						<p class="news-title"><?echo $row[$i]['title']?></p>
+						<p class="news-date"><?echo $row[$i]['date']?></p>
+						<p class="news-title"><?echo $row[$i]['title'].'<br>'.$row[$i]['title_small']?></p>
 					</div>
 				</a>	
 			</div>
