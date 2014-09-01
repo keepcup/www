@@ -36,6 +36,31 @@ $(document).ready(function(){
             } else {
                 $(".title_block").removeClass("sticky");
             }
+
+            // insta-menu lightning
+            var descr = $(".content").find("h2:contains('описание')");
+            var func = $(".content").find("h2:contains('функции')");
+            var decor = $(".content").find("h2:contains('оформление')");
+            var feat = $(".content").find("h2:contains('особенности')");
+            var onPoint = 170;
+            if (descr.offset().top - $(window).scrollTop() < onPoint && func.offset().top - $(window).scrollTop() >= onPoint && $(".insta-menu").find("li:contains("+descr.text()+")").hasClass("active-url") == false) {
+            	$(".insta-menu").find("li").removeClass("active-url")
+            	$(".insta-menu").find("li:contains("+descr.text()+")").addClass("active-url");
+            } else if (func.offset().top - $(window).scrollTop() < onPoint && decor.offset().top - $(window).scrollTop() >= onPoint && $(".insta-menu").find("li:contains("+func.text()+")").hasClass("active-url") == false) {
+            	$(".insta-menu").find("li").removeClass("active-url")
+            	$(".insta-menu").find("li:contains("+func.text()+")").addClass("active-url");
+            } else if (decor.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+decor.text()+")").hasClass("active-url") == false) {
+            	if ($(location).attr('pathname') == '/instashar.php') {
+            		$(".insta-menu").find("li").removeClass("active-url")
+            		$(".insta-menu").find("li:contains("+decor.text()+")").addClass("active-url");
+            	} else if (feat.offset().top - $(window).scrollTop() >= onPoint) {
+            		$(".insta-menu").find("li").removeClass("active-url")
+            		$(".insta-menu").find("li:contains("+decor.text()+")").addClass("active-url");
+            	}         	
+            } else if (feat.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+feat.text()+")").hasClass("active-url") == false) {
+            	$(".insta-menu").find("li").removeClass("active-url")
+            	$(".insta-menu").find("li:contains("+feat.text()+")").addClass("active-url");
+            }
         });
 
         $(".insta-menu").find("li").click(function(){ 
