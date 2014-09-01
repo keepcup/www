@@ -34,6 +34,7 @@
 			<p class="title">главная</p>
 			<div class="menu"></div>
 			<ul class="menu-down">
+				<li><a href="/index.php">главная</a></li>
 				<li class="insta-list">
 					<a href="/instabudka.php">инстабудка</a>
 					<a href="/instamini.php">инстамини</a>
@@ -99,6 +100,7 @@
 			</div>
 			<div class="header-menu">
 				<ul>
+					<li><a href="/index.php">главная</a></li>
 					<li class="insta-butt">
 						<a href="#">фотобудка</a>
 						<ul class="header-menu-down">
@@ -113,6 +115,19 @@
 					<li><a href="/contacts.php">контакты</a></li>
 					<li><a href="/blog.php">мероприятия</a></li>
 				</ul>
+				<script>
+					$( "li.insta-butt>ul" ).hide();
+					$("li.insta-butt").mouseenter(function(){
+						if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
+						    $( "li.insta-butt>ul" ).slideDown( "fast" );
+						}
+					});
+					$("li.insta-butt").mouseleave(function(){
+						$( "li.insta-butt>ul" ).slideUp( "fast", function() {
+							$( "li.insta-butt>ul" ).hide();
+						});
+					})
+				</script>
 			</div>			
 		</div><!-- end of header-main-1180 -->
 <?include "db.php";?>

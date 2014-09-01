@@ -43,6 +43,12 @@ textarea{
 		border-top:2px solid #dddddd;
 		border-bottom:2px solid #dddddd;
 	}
+	.sticky {
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+		background-color: #fff;
+	}
 		.title{
 			font-size: 18px;
 			font-weight: 700;
@@ -589,8 +595,11 @@ textarea{
 			height: 10px;			
 		}
 
-
-		.gallery:nth-of-type(even){
+		a.gallery-bgc {
+			display: block;
+			overflow: hidden;
+		}
+		.gallery-bgc:nth-child(even){
 				background: #eee;
 			}
 		.gallery-text_block{
@@ -1399,7 +1408,7 @@ textarea{
 		width: 48.484848%;
 		float: left;		
 	}
-		.photography .img-belt img:nth-child(even) {float: right;}
+		.photography .img-belt a:nth-child(even) img {float: right;}
 	/*contacts*/
 	.contacts .map-box {
 		width: 100%;
@@ -1547,8 +1556,13 @@ textarea{
 		height: 58px;
 		border-bottom: 2px solid #dddddd;
 	}
+	.sticky-1180 {
+		position: fixed; 
+		top: 0;
+		background-color: #fff;
+	}
 		.header-menu>ul {
-			width: 800px;
+			width: 880px;
 			height: auto;
 			display: block;
 			margin: 0 auto;
@@ -1574,13 +1588,13 @@ textarea{
 	}
 		.header-menu-down {
 			position: absolute;
-			display: none;
+			display: block;
 			width: 132px;
 			background: #f3f3f3;
 			left: -20px;
 			top: 60px;
 		}
-		li.insta-butt:hover>ul {display: block;}
+		/*li.insta-butt:hover>ul {display: block;}*/
 			.header-menu-down li {
 				font-size: 16px;
 				text-transform: uppercase;
@@ -1726,10 +1740,10 @@ textarea{
 	}
 
 	/*gallery*/
-	.gallery:nth-of-type(even){
+	.gallery-bgc:nth-child(even){
 		background: #eee;
 	}
-	.gallery:nth-of-type(odd){
+	.gallery-bgc:nth-child(odd){
 		background: #fff;
 	}
 		.gallery-text-belt{
@@ -1838,7 +1852,7 @@ textarea{
 				right: 0;
 				margin: 0;
 				padding-bottom: 59px;
-			}
+			}	
 			.blog-social{
 				display: inline-block;
 				float: left;
@@ -1853,6 +1867,8 @@ textarea{
 					position: absolute;
 					bottom: 0;
 				}
+				/*Safari-Fix*/
+				.blog-date { right: 360px;}
 				.blog-social li{
 					display: inline-block;
 					width: 16px;
@@ -2261,7 +2277,6 @@ textarea{
 		.decor .function-block ul.function-block_2 li {
 				display: block;
 				font-family: 'Roboto Condensed';
-				font-weight: 300;
 				font-size: 22px;
 				text-transform: lowercase;
 				line-height: 22px;
@@ -2548,7 +2563,7 @@ textarea{
 		margin: 0 20px 20px 0;
 	}
 		.photography .img-belt img:nth-child(n) {display: inline-block;}
-		.photography .img-belt img:nth-child(3n+3) {margin-right: 0;}
+		.photography .img-belt a:nth-child(3n+3) img {margin-right: 0;}
 			/*photostudio*/
 	.photostudio {
 		width: 1180px;
