@@ -38,4 +38,9 @@ $(document).ready(function(){
             }
         });
 
+        $(".insta-menu").find("li").click(function(){ 
+        	var txt = $(this).text();    	
+        	$('html, body').animate({scrollTop: $(".content").find("h2:contains("+txt+")").offset().top-160}, 300);
+        })
+
 })
