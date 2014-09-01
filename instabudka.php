@@ -1,4 +1,8 @@
-<?include "header.php";?>
+<?include "header.php";
+$insta_db = $db->prepare("SELECT * FROM insta");
+$insta_db->execute();
+$insta_row = $insta_db->fetchAll();
+?>
 	<div class="content">		
 		<div class="description">
 			<div class="insta-menu">
@@ -12,7 +16,7 @@
 					</ul>
 				</div>
 			</div>
-			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[0]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote">
 					<span class='quote'>«</span>
@@ -64,7 +68,7 @@
 			</div>
 		</div><!--description-end-->
 		<div class="function">
-			<img class="description-img" src="images/instabudka/instabudka_osobennosti.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[1]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
@@ -79,7 +83,7 @@
 						<p class="function-block_1">
 							хромакей <span>интерактивная замена фона</span>
 						</p>
-						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="123">
+						<img class="function-img function-img-first" src="<?echo $insta_row[2]['img'];?>" alt="123">
 						<p class="function-block_2">
 							выбираете фон из 6-ти предложенных, делаете снимки на зеленом фоне, а фотобудка автомати&shy;чески меняет фон и распечатывает получившие&shy;ся фото
 						</p>
@@ -110,7 +114,7 @@
 			</div>
 		</div><!--function-end-->
 		<div class="decor">
-			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[3]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> <span class='description-quote-span'>инстабудка повышает</span>
@@ -124,7 +128,7 @@
 						<p class="function-block_1 decor-block_1">
 							брендирование фотобудки
 						</p>
-						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="">
+						<img class="function-img function-img-first" src="<?echo $insta_row[4]['img'];?>" alt="">
 						<ul class="function-block_2">
 							<li>Бесплатная разработка дизайн макета панелей фотобудки. </li>
 							<li>Печать на пластиковых панелях с высоким разрешением. </li>
@@ -161,7 +165,7 @@
 			</div>
 		</div><!--decor-end-->
 		<div class="features">
-			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[5]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote features-quote">
 					<span class='quote'>«</span> <span class='description-quote-span'>яркие впечатления</span>

@@ -1,4 +1,8 @@
-<?include "header.php";?>
+<?include "header.php";
+$insta_db = $db->prepare("SELECT * FROM insta");
+$insta_db->execute();
+$insta_row = $insta_db->fetchAll();
+?>
 	<div class="content instashar">
 		<div class="description">
 			<div class="insta-menu">
@@ -11,7 +15,7 @@
 					</ul>
 				</div>
 			</div>
-			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[8]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote">
 					<span class='quote'>«</span>
@@ -60,7 +64,7 @@
 			</div>
 		</div><!--description-end-->
 		<div class="function">
-			<img class="description-img" src="images/instabudka/instabudka_osobennosti.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[9]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
@@ -107,7 +111,7 @@
 			</div>
 		</div><!--function-end-->
 		<div class="decor">
-			<img class="description-img" src="images/instabudka/instabudka_oformlenie.jpg" alt="">
+			<img class="description-img" src="<?echo $insta_row[10]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> 

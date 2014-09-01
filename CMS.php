@@ -196,7 +196,6 @@
 			</div>
 			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Оформление</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -220,9 +219,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="CMS-block instamini last_block">
+			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Особенности</p>
+					<p>Оформление</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -246,11 +245,13 @@
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
 
 			<h2 id="instamini" >Инстамини</h2>
+=======
+>>>>>>> origin/Alex
 			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Описание</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -274,9 +275,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="CMS-block instamini">
+			<div class="CMS-block instamini last_block">
 				<div class="left-label">
-					<p>Функции</p>
+					<p>Особенности</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -300,9 +301,11 @@
 					</div>
 				</div>
 			</div>
+
+			<h2>Инстамини</h2>
 			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Оформление</p>
+					<p>Описание</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -326,9 +329,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="CMS-block instamini last_block">
+			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Особенности   </p>
+					<p>Функции</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -352,11 +355,13 @@
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
 
 			<h2 id="instashar">Инсташар</h2>
+=======
+>>>>>>> origin/Alex
 			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Описание</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -382,7 +387,7 @@
 			</div>
 			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Функции</p>
+					<p>Оформление</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -408,7 +413,6 @@
 			</div>
 			<div class="CMS-block instamini">
 				<div class="left-label">
-					<p>Оформление</p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -434,7 +438,7 @@
 			</div>
 			<div class="CMS-block instamini last_block">
 				<div class="left-label">
-					<p>Особенности</p>
+					<p>Особенности   </p>
 				</div>
 				<div class="right-content">
 					<div class="CMS-buttons">
@@ -459,7 +463,141 @@
 				</div>
 			</div>
 
+<<<<<<< HEAD
 			<h2 id="photography">Фотосъёмка</h2>
+=======
+			<h2>Инсташар</h2>
+			<div class="CMS-block instamini">
+				<div class="left-label">
+					<p>Описание</p>
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button add_photo">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
+							<p>Изменить фотографию</p>
+						</div>
+						<div class="button save instabudka_save">
+							<p>Сохранить</p>
+						</div>
+						<span class='display tname'>insta_13</span>
+					</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-preview photo-preview-old delete_current">
+								<img src="<?echo $insta_row[12]['img'];?>" alt="" class="">
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="CMS-block instamini">
+				<div class="left-label">
+					<p>Функции</p>
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button add_photo">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
+							<p>Изменить фотографию</p>
+						</div>
+						<div class="button save instabudka_save">
+							<p>Сохранить</p>
+						</div>
+						<span class='display tname'>insta_14</span>
+					</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-preview photo-preview-old delete_current">
+								<img src="<?echo $insta_row[13]['img'];?>" alt="" class="">
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="CMS-block instamini">
+				<div class="left-label">
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button add_photo">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
+							<p>Изменить фотографию</p>
+						</div>
+						<div class="button save instabudka_save">
+							<p>Сохранить</p>
+						</div>
+						<span class='display tname'>insta_15</span>
+					</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-preview photo-preview-old delete_current">
+								<img src="<?echo $insta_row[14]['img'];?>" alt="" class="">
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="CMS-block instamini">
+				<div class="left-label">
+					<p>Оформление</p>
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button add_photo">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
+							<p>Изменить фотографию</p>
+						</div>
+						<div class="button save instabudka_save">
+							<p>Сохранить</p>
+						</div>
+						<span class='display tname'>insta_16</span>
+					</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-preview photo-preview-old delete_current">
+								<img src="<?echo $insta_row[15]['img'];?>" alt="" class="">
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="CMS-block instamini last_block">
+				<div class="left-label">
+				</div>
+				<div class="right-content">
+					<div class="CMS-buttons">
+						<div class="button add_photo">
+							<form class="frm"> 
+								<input type="file" multiple class="upload_btn" />
+							</form>
+							<p>Изменить фотографию</p>
+						</div>
+						<div class="button save instabudka_save">
+							<p>Сохранить</p>
+						</div>
+						<span class='display tname'>insta_17</span>
+					</div>
+					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
+						<span class="delete_current upload_preview">
+							<div class="photo-preview photo-preview-old delete_current">
+								<img src="<?echo $insta_row[16]['img'];?>" alt="" class="">
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			
+			<h2>Фотосъёмка</h2>
+>>>>>>> origin/Alex
 			<div class="CMS-block CMS-main-slide last_block">
 				<div class="left-label">
 					<p>Фотографии</p>
@@ -510,12 +648,12 @@
 						<div class="button save instabudka_save">
 							<p>Сохранить</p>
 						</div>
-						<span class='display tname'>insta_13</span>
+						<span class='display tname'>insta_18</span>
 					</div>
 					<div class="CMS-prewiew" ondragover="return false" ondragstart="return false">
 						<span class="delete_current upload_preview">
 							<div class="photo-preview photo-preview-old delete_current">
-								<img src="<?echo $insta_row[12]['img'];?>" alt="" class="">
+								<img src="<?echo $insta_row[17]['img'];?>" alt="" class="">
 							</div>
 						</span>
 					</div>
