@@ -120,8 +120,8 @@ $position = $_POST['position'];
 				list($w, $h) = getimagesize($file);
 
 				if($w>640 && $h>427){
-					$w=($w-640)/2;
-					$h=($h-427)/2;
+					$w=($w-639)/2;
+					$h=($h-426)/2;
 					crop($file,$namePath,array($w,$h,-$w,-$h));
 				}else{
 					resize($file,$namePath,640,427);

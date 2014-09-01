@@ -686,7 +686,7 @@
 				</div>
 				<div class="right-content sbscroller">
 				<?
-				$gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY id DESC");
+				$gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY id");
 				// $gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY date DESC");
 				$gallery_db->execute();
 				$gallery_row = $gallery_db->fetchAll();

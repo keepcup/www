@@ -1,21 +1,11 @@
-<?
-switch($url){
-	case 'index':$limit=3;break;
-	case 'blog':$limit=2;break;
-}
-if(!empty($_GET['id'])){
-	$select = $db->prepare("SELECT * FROM blog WHERE id =? ORDER BY id DESC");
-	$select->execute(array($_GET['id']));
-}else{
-	$select = $db->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT :skip ");
-	$select->bindValue(':skip', intval($limit), PDO::PARAM_INT);
-	$select->execute();
-}
-
+<?include "../db.php";
+$limit = $_GET['limit'];
+$select = $db->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT :skip,2");
+$select->bindValue(':skip', intval($limit), PDO::PARAM_INT);
+$select->execute();
 $row = $select->fetchAll();
 $select_count = $select->rowCount();
 for($i=0;$i<$select_count;$i++){
-	if($url=='blog'){
 		$photo_count=0;
 		if($row[$i]['gallery_id'] !=0){
 			$blog_number = $db->prepare("SELECT url_name,position FROM gallery WHERE id=?");
@@ -34,7 +24,6 @@ for($i=0;$i<$select_count;$i++){
 					<p class="blog-title"><span><?echo $row[$i]['title']?></span>
 					<br>
 					<?echo $row[$i]['title_small']?></p>
-					<?if(!empty($_GET['id'])){?><a href="/blog.php">< все мероприятия</a><?};?>
 				</div>
 				<img src="<?echo $row[$i]['img']?>" alt="">
 				<p class="blog-date">
@@ -56,15 +45,5 @@ for($i=0;$i<$select_count;$i++){
 				</div>
 			</div>
 		</div>
-<?	}elseif ($url=='index'){?>		
-			<div class="news">
-				<a href="/blog.php?id=<?echo $row[$i]['id']?>">
-					<img src="<?echo $row[$i]['img']?>" alt="<?echo $row[$i]['title']?>" class="news_img">
-					<div class="news-text">
-						<p class="news-date"><?echo $row[$i]['date']?></p>
-						<p class="news-title"><?echo $row[$i]['title'].'<br>'.$row[$i]['title_small']?></p>
-					</div>
-				</a>	
-			</div>
-	<?}		
+	<?
 }?>

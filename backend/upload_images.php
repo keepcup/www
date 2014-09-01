@@ -27,8 +27,8 @@ foreach ($files as $key => $value) {
 			
 			list($w, $h) = getimagesize($file);
 			if($w>1728 && $h>698){
-				$w=($w-1728)/2;
-				$h=($h-698)/2;
+				$w=($w-1727)/2;
+				$h=($h-697)/2;
 				crop($file,$namePath,array($w,$h,-$w,-$h));
 			}else{
 				resize($file,$namePath,1728,698);

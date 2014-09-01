@@ -12,8 +12,8 @@ if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
 		<head>
 			<meta property="og:type"            content="article" /> 
 			<meta property="og:title"           content="<?echo $row['title']." ".$row['title_small']?>" />
-			<meta property="og:url"           	content="<?echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>" />
-			<meta property="og:image"           content="<?echo "http://".$_SERVER['HTTP_HOST']."/images/blog/images/".$row['photo']?>" />
+			<meta property="og:url"           	content="<?echo "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."?id=".$row['id']?>" />
+			<meta property="og:image"           content="<?echo "http://".$_SERVER['HTTP_HOST'].$row['img']?>" />
 			<meta property="og:description"     content="<?echo $row['text']?>" />
 		</head>
 			<div class="blog">
@@ -23,7 +23,7 @@ if ((in_array($_SERVER['HTTP_USER_AGENT'], array(
 						<br>
 						<?echo $row['title_small']?></p>
 					</div>
-					<img class="blog-img" src="../images/blog/images/<?echo $row['photo']?>" alt="<?echo $row['url_name']?>">
+					<img class="blog-img" src="<?echo $row['img']?>" alt="">
 					<div class="blog-text-belt">
 						<p class="blog-text"><?echo $row['text']?></p>
 					</div>

@@ -4,7 +4,7 @@ $(document).ready(function(){
 		var id = close_gallery.prev().text();
 		var password= close_gallery.val();
 		var count = password.length;
-		if(count==3){
+		if(count>2){
 			$.post("backend/close_gallery.php", {password: password,id:id},success);
 			function success(fbf){
 				if(fbf!=''){

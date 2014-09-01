@@ -3,6 +3,12 @@ switch($url){
 	case 'index':$limit=15;break;
 	case 'contacts':$limit=99999;break;
 }
+if($url == 'contacts'){
+	$position = $db->prepare("SELECT contactsClients FROM position");
+	$position->execute();
+	$position_row = $position->fetch();
+	$main_clients = $position_row['contactsClients'];
+}
 $select = $db->prepare("SELECT * FROM clients ORDER BY FIELD( main_position,  $main_clients) LIMIT :skip");
 $select->bindValue(':skip', intval($limit), PDO::PARAM_INT);
 $select->execute();

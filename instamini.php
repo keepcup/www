@@ -16,7 +16,7 @@ $insta_row = $insta_db->fetchAll();
 					</ul>
 				</div>
 			</div>
-			<img class="description-img" src="<?echo $insta_row[4]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[6]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote">
 					<span class='quote'>«</span>
@@ -66,7 +66,7 @@ $insta_row = $insta_db->fetchAll();
 			</div>
 		</div><!--description-end-->
 		<div class="function">
-			<img class="description-img" src="<?echo $insta_row[5]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[7]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
@@ -81,7 +81,7 @@ $insta_row = $insta_db->fetchAll();
 						<p class="function-block_1">
 							Фон для фотографии
 						</p>
-						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="123">
+						<img class="function-img function-img-first" src="<?echo $insta_row[8]['img'];?>" alt="123">
 						<p class="function-block_2">
 							Для Инстамини можно выбрать любой фон: баннер, стена или любой другой пейзаж
 						</p>
@@ -112,7 +112,7 @@ $insta_row = $insta_db->fetchAll();
 			</div>
 		</div><!--function-end-->
 		<div class="decor">
-			<img class="description-img" src="<?echo $insta_row[6]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[9]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> 
@@ -127,7 +127,7 @@ $insta_row = $insta_db->fetchAll();
 						<p class="function-block_1 decor-block_1">
 							брендирование фотостойки
 						</p>
-						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="">
+						<img class="function-img function-img-first" src="<?echo $insta_row[10]['img'];?>" alt="">
 						<ul class="function-block_2">
 							<li>Бесплатная разработка дизайн макета панелей фотостойки. </li>
 							<li>Печать наклеек на переднюю и заднюю панели фотостойки. </li>
@@ -164,7 +164,7 @@ $insta_row = $insta_db->fetchAll();
 			</div>
 		</div><!--decor-end-->
 		<div class="features">
-			<img class="description-img" src="<?echo $insta_row[7]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[11]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote features-quote">
 					<span class='quote'>«</span> 

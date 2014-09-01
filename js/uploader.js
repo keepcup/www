@@ -252,6 +252,7 @@ $(document).ready(function() {
 				lastInsertedId= dataid;
 				$.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
 				alert(lastInsertedId);
+				window.location.reload();
 			});
 			dataArray[saveIndex] = [];
 			return false;
@@ -269,6 +270,7 @@ $(document).ready(function() {
 				lastInsertedId= dataid;
 				// $.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
 				alert(lastInsertedId);
+				window.location.reload();
 			});
 			dataArray[saveIndex] = [];
 			return false;

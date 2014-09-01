@@ -15,7 +15,7 @@ $insta_row = $insta_db->fetchAll();
 					</ul>
 				</div>
 			</div>
-			<img class="description-img" src="<?echo $insta_row[8]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[12]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote">
 					<span class='quote'>«</span>
@@ -64,7 +64,7 @@ $insta_row = $insta_db->fetchAll();
 			</div>
 		</div><!--description-end-->
 		<div class="function">
-			<img class="description-img" src="<?echo $insta_row[9]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[13]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote function-quote">
 					<span class='quote'>«</span>
@@ -80,7 +80,7 @@ $insta_row = $insta_db->fetchAll();
 						<p class="function-block_1">
 							оригинальный дизайн
 						</p>
-						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="123">
+						<img class="function-img function-img-first" src="<?echo $insta_row[14]['img'];?>" alt="123">
 						<p class="function-block_2">
 							Уникальный дизайн инстаграм принтера в форме сферы; возможность установить на любой ровной поверхности или опциональной стойке; компактные размеры.
 						</p>
@@ -111,7 +111,7 @@ $insta_row = $insta_db->fetchAll();
 			</div>
 		</div><!--function-end-->
 		<div class="decor">
-			<img class="description-img" src="<?echo $insta_row[10]['img'];?>" alt="">
+			<img class="description-img" src="<?echo $insta_row[15]['img'];?>" alt="">
 			<div class="belt_1180">
 				<p class="description-quote decor-quote">
 						<span class='quote'>«</span> 
@@ -125,7 +125,7 @@ $insta_row = $insta_db->fetchAll();
 						<p class="function-block_1 decor-block_1">
 							брендирование <span>инстаграм принтера</span>
 						</p>
-						<img class="function-img function-img-first" src="images/instabudka/desc_test.jpg" alt="">
+						<img class="function-img function-img-first" src="<?echo $insta_row[16]['img'];?>" alt="">
 						<ul class="function-block_2">
 							<li>Бесплатная разработка дизайн макета внешней поверхности Инсташара;</li>
 							<li>печать наклеек на поверхность с подсветкой для вашего бренда; </li>

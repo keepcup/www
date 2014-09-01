@@ -22,9 +22,9 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$namePath = '../images/index/'.$_POST['tablename']."/".$randomName;
 			
 			list($w, $h) = getimagesize($file);
-			if($w>1728 && $h>698){
-				$w=($w-1728)/2;
-				$h=($h-698)/2;
+			if($w>1728 or $h>698){
+				$w=($w-1727)/2;
+				$h=($h-697)/2;
 				crop($file,$namePath,array($w,$h,-$w,-$h));
 			}else{
 				resize($file,$namePath,1728,698);
@@ -37,18 +37,18 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 		case 'insta':
 			$namePath = '../images/instabudka/'.$_POST['tablename'].'_'.$_POST['tablefile'].'.'.$mime;
 			list($w, $h) = getimagesize($file);
-			if($_POST['tablefile'] == 13){
+			if($_POST['tablefile'] == 18){
 				if($w>640 && $h>427){
-					$w=($w-640)/2;
-					$h=($h-427)/2;
+					$w=($w-639)/2;
+					$h=($h-426)/2;
 					crop($file,$namePath,array($w,$h,-$w,-$h));
 				}else{
 					resize($file,$namePath,640,427);
 				}
 			}else{
-				if($w>1728 && $h>698){
-					$w=($w-1728)/2;
-					$h=($h-698)/2;
+				if($w>1727 && $h>697){
+					$w=($w-1727)/2;
+					$h=($h-697)/2;
 					crop($file,$namePath,array($w,$h,-$w,-$h));
 				}else{
 					resize($file,$namePath,1728,698);
@@ -63,8 +63,8 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			#сохраняет и в джпг и в пнг исправить
 			list($w, $h) = getimagesize($file);
 			if($w>1728 && $h>698){
-				$w=($w-1728)/2;
-				$h=($h-698)/2;
+				$w=($w-1727)/2;
+				$h=($h-697)/2;
 				crop($file,$namePath,array($w,$h,-$w,-$h));
 			}else{
 				resize($file,$namePath,1728,698);
@@ -148,8 +148,8 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
 			list($w, $h) = getimagesize($file);
 			if($w>640 && $h>427){
-				$w=($w-640)/2;
-				$h=($h-427)/2;
+				$w=($w-639)/2;
+				$h=($h-426)/2;
 				crop($file,$namePath,array($w,$h,-$w,-$h));
 			}else{
 				resize($file,$namePath,640,427);

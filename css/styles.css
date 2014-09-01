@@ -687,6 +687,14 @@ textarea{
 			position: relative;
 			width: 100%;
 		}
+			.blog-text_block a{
+				position: absolute;
+				top:55px;
+				right: 20px;
+				font-size: 20px;
+				font-weight: 300;
+				color:#999;
+			}
 			.blog-title span{
 				font-size: 26px;
 				color: #f58026;
