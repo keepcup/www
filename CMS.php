@@ -51,6 +51,7 @@
 					<li><a href="#gallery">галерея</a></li>
 					<li><a href="#contacts">контакты</a></li>
 					<li><a href="#blog">мероприятия</a></li>
+					<li><a href="#pass">пароль</a></li>
 				</ul>
 				<script>
 					$( "li.insta-butt>ul" ).hide();
@@ -1056,7 +1057,8 @@
 					<?}?>
 				</div>
 			</div>
-			<h2>Пароль</h2>
+
+			<h2 id="pass">Пароль</h2>
 			<div class="CMS-block chng_pass last_block">
 				<div class="left-label">
 					<p>Смена пароля</p>
