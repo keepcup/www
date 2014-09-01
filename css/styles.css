@@ -1562,6 +1562,11 @@ textarea{
 		top: 0;
 		background-color: #fff;
 	}
+	.sticky-1180-insta {
+		position: fixed !important;
+		top: 60px !important;
+		z-index: 9999;
+	}
 		.header-menu>ul {
 			width: 880px;
 			height: auto;

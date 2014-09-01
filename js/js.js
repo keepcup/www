@@ -24,9 +24,11 @@ $(document).ready(function(){
 									 //проверяем прошли ли мы хедер-высоту менюшки
             if ($(window).scrollTop()>$(".header-main-1180").height()-$(".header-menu").height()-5){
                 $(".header-menu").addClass("sticky-1180");//назначаем класс
+                $(".insta-menu").addClass("sticky-1180-insta");
             } else {
 //если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс
                 $(".header-menu").removeClass("sticky-1180");
+                $(".insta-menu").removeClass("sticky-1180-insta");
             }
             // то же для моб и планшетной версии
             if ($(window).scrollTop()>$(".header").height()-$(".title-block").height()-40){
@@ -35,4 +37,5 @@ $(document).ready(function(){
                 $(".title_block").removeClass("sticky");
             }
         });
+
 })
