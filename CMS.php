@@ -16,8 +16,59 @@
 <body>
 <?include "db.php";?>
 	<div class="container">
+	<div class="header-main-1180">
+			<div class="header-top">
+				<div class="header-top-content">
+					<div class="header-social">
+						<ul>
+							<li id="vk"><a href="vk.com
+							"></a></li>
+							<li id="fb"><a href="facebook.com"></a></li>
+							<li id="gram"><a href="instagram.com"></a></li>
+						</ul>
+					</div>
+					<a href="/"><img src="images/header/logo.jpg" alt="" class="logo" width="250"></a>
+					<div class="header-contacts">
+						<p class="header-contacts-phone_1">Елизавета  +7 (906) 098 26 93</p>
+						<p class="header-contacts-phone_2">Александр  +7 (916) 034 62 54</p>
+						<p class="header-contacts-mail">info@instabudka.ru</p>
+					</div>
+				</div><!-- end of top_content -->				
+			</div>
+			<div class="header-menu">
+				<ul>
+					<li><a href="#index">главная</a></li>
+					<li class="insta-butt">
+						<a href="" onclick="return false">фотобудка</a>
+						<ul class="header-menu-down">
+							<li><a href="#instabudka">Инстабудка</a></li>
+							<li><a href="#instamini">Инстамини</a></li>
+							<li><a href="#instashar">инсташар</a></li>
+						</ul>
+					</li>
+					<li><a href="#photography">фотосъёмка</a></li>
+					<li><a href="#photostudio">мобильная фотостудия</a></li>
+					<li><a href="#gallery">галерея</a></li>
+					<li><a href="#contacts">контакты</a></li>
+					<li><a href="#blog">мероприятия</a></li>
+				</ul>
+				<script>
+					$( "li.insta-butt>ul" ).hide();
+					$("li.insta-butt").mouseenter(function(){
+						if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
+						    $( "li.insta-butt>ul" ).slideDown( "fast" );
+						}
+					});
+					$("li.insta-butt").mouseleave(function(){
+						$( "li.insta-butt>ul" ).slideUp( "fast", function() {
+							$( "li.insta-butt>ul" ).hide();
+						});
+					})
+				</script>
+			</div>			
+		</div><!-- end of header-main-1180 -->
 		<div class="content CMS">
-			<h2>Главная</h2>
+			<h2 id="index" >Главная</h2>
 			<div class="CMS-block CMS-main-slide">
 				<div class="left-label">
 					<p>Слайдер</p>
@@ -89,7 +140,8 @@
 			$insta_db->execute();
 			$insta_row = $insta_db->fetchAll();
 			?>
-			<h2>Инстабудка</h2>
+
+			<h2 id="instabudka">Инстабудка</h2>
 			<div class="CMS-block instamini">
 				<div class="left-label">
 					<p>Описание</p>
@@ -195,7 +247,7 @@
 				</div>
 			</div>
 
-			<h2>Инстамини</h2>
+			<h2 id="instamini" >Инстамини</h2>
 			<div class="CMS-block instamini">
 				<div class="left-label">
 					<p>Описание</p>
@@ -301,7 +353,7 @@
 				</div>
 			</div>
 
-			<h2>Инсташар</h2>
+			<h2 id="instashar">Инсташар</h2>
 			<div class="CMS-block instamini">
 				<div class="left-label">
 					<p>Описание</p>
@@ -407,7 +459,7 @@
 				</div>
 			</div>
 
-			<h2>Фотосъёмка</h2>
+			<h2 id="photography">Фотосъёмка</h2>
 			<div class="CMS-block CMS-main-slide last_block">
 				<div class="left-label">
 					<p>Фотографии</p>
@@ -442,7 +494,7 @@
 				</div>
 			</div>
 
-			<h2>Мобильная фотостудия</h2>
+			<h2 id="photostudio">Мобильная фотостудия</h2>
 			<div class="CMS-block instamini last_block">
 				<div class="left-label">
 					<p>Фото</p>
@@ -470,7 +522,7 @@
 				</div>
 			</div>
 
-			<h2>Галерея</h2>
+			<h2 id="gallery">Галерея</h2>
 			<div class="CMS-block create_gallery">
 				<div class="left-label">
 					<p>Создать</p>
@@ -642,7 +694,8 @@
 			$contacts_db->execute();
 			$contacts_row = $contacts_db->fetch();
 			?>
-			<h2>Контакты</h2>
+
+			<h2 id="contacts">Контакты</h2>
 			<div class="CMS-block info-clients">
 				<div class="left-label">
 					<p>Информация</p>
@@ -745,7 +798,8 @@
 					<?}?>
 				</div>
 			</div>
-			<h2>Мероприятия</h2>
+
+			<h2 id="blog">Мероприятия</h2>
 			<div class="CMS-block new_event">
 				<div class="left-label">
 					<p>Новое мероприятие</p>

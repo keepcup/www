@@ -81,3 +81,35 @@ $(document).ready(function(){
         }
     })
 })/*end*/
+
+$(document).ready(function(){
+        $(window).scroll(function(){ //во время прокрутки страницы
+                                     //проверяем прошли ли мы хедер-высоту менюшки
+            var windowTop = $(window).scrollTop();                           
+            if (windowTop>$(".header-main-1180").height()-$(".header-menu").height()-5){
+                $(".header-menu").addClass("sticky-1180");//назначаем класс
+            } else {
+            //если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс
+                $(".header-menu").removeClass("sticky-1180");
+            }
+            // то же для моб и планшетной версии
+            if (windowTop>$(".header").height()-$(".title-block").height()-40){
+                $(".title_block").addClass("sticky");//назначаем класс
+            } else {
+                $(".title_block").removeClass("sticky");
+            }
+            if (windowTop >= 60 && windowTop < 1004) {
+                if ($("a[href=#index]").hasClass("active-url") == false) {
+                    $(".header-menu").find("a").removeClass("active-url");
+                    $("a[href=#index]").addClass("active-url");
+                }                
+            }
+        });
+
+        $('a[href^="#"]').click(function(){
+            var target = $(this).attr('href');
+            $('html, body').animate({scrollTop: $(target).offset().top-160}, 300);
+            alert($(target).offset().top-160);
+            return false; 
+        }); 
+})
