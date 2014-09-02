@@ -393,7 +393,7 @@ textarea{
 		}
 		.description-text{
 			text-align: center;
-			margin-bottom: 26px;
+			margin-bottom: 55px;
 		}
 			.description-text-facebook{
 				display: inline-block;
@@ -426,7 +426,7 @@ textarea{
 			height: 112px;
 			padding-top:1px;
 		}
-				.description-block:nth-of-type(even){
+				.description-block:nth-of-type(odd){
 					background: #eee;
 				}
 				.description-block_1{
@@ -2190,6 +2190,7 @@ textarea{
 			}
 			.description-text{
 				margin-top: 38px;
+				margin-bottom: 39px;
 			}
 			.description-text span{
 				font-size: 36px;

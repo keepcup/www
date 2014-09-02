@@ -28,10 +28,8 @@ $insta_row = $insta_db->fetchAll();
 			<!--<div class="description-pennant"></div>-->
 			<p class="description-text">
 				<span>ДЕЛАЕТ МОМЕНТАЛЬНЫЕ СНИМКИ</span><br>
-				<span>ПЕЧАТАЕТ ЗА 10 СЕКУНД</span><br>
-				<span>размещаете фото в</span><a class='description-text-instagram'></a><br>
-				<span>со специальным #хештегом,</span><br>
-				<span>следит за этим #хештегом</span><br>
+				<span>следит за вашим #хештегом в</span><a class='description-text-instagram'></a><br>
+				<span>ПЕЧАТАЕТ СНИМКИ ЗА 10 СЕКУНД</span>
 			</p>
 
 			<div class="belt_1180">
