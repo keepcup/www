@@ -102,7 +102,6 @@
 	background: transparent url('fancybox.png') -40px 0px;
 	cursor: pointer;
 	z-index: 1103;
-	display: none;
 }
 
 #fancybox-error {
@@ -139,7 +138,6 @@
 	outline: none;
 	background: transparent url('blank.gif');
 	z-index: 1102;
-	display: none;
 }
 
 #fancybox-left {
@@ -172,15 +170,12 @@
 	background-position: -40px -60px;
 }
 
-#fancybox-left:hover, #fancybox-right:hover {
-	visibility: visible; /* IE6 */
-}
 
-#fancybox-left:hover span {
+#fancybox-left span {
 	left: 20px;
 }
 
-#fancybox-right:hover span {
+#fancybox-right span {
 	left: auto;
 	right: 20px;
 }

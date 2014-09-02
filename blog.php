@@ -22,14 +22,16 @@ $(window).scroll(function(){
  	}
 });
 
-$(".blog-text_display").toggle(
-	function(){
-		$(this).closest(".blog-belt").find(".blog-text").css("max-height", "+=200");
-		$(this).closest(".blog-belt").find(".blog-text-belt").css("height", "+=60");
-	}, function() {
-		$(this).closest(".blog-belt").find(".blog-text").css("max-height", "-=200");
-		$(this).closest(".blog-belt").find(".blog-text-belt").css("height", "-=60");
-	});
+// $(".blog-text_display").toggle(
+// 	function(){
+// 		$(this).closest(".blog-belt").find(".blog-text").css({
+// 			"max-height", "none"
+// 		})
+// 	}, function() {
+// 		$(this).closest(".blog-belt").find(".blog-text").css({
+// 			"max-height", "160"
+// 		})
+// 	});
 <?}?>
 </script>
 <?include "footer.php";?>

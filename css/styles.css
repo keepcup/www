@@ -1506,7 +1506,7 @@ textarea{
 		margin: 0 auto;
 		display: block;
 		position: relative;
-		z-index: 8000;
+		z-index: 1050;
 	}
 	.header-top{
 		width: 100%;
