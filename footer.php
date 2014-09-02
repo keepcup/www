@@ -39,7 +39,7 @@
 						</ul>
 					</div>
 					<div class="footer-logos">
-						<a href="/" id="asart_logo"></a>
+						<a href="http://asartdesign.ru/" id="asart_logo"></a>
 						<div class="footer-razrab">
 							<p>разработка проекта</p>
 							<a href="/">Asart group</a>

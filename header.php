@@ -53,6 +53,7 @@ $contacts_row = $contacts->fetch();
 				<li><a href="/blog.php">мероприятия</a></li>
 			</ul>
 			<script>
+
 				var menuDown = $('.menu-down');
 				var menu = $('.menu');
 				var phoneDown = $('.phone-down');
@@ -125,7 +126,12 @@ $contacts_row = $contacts->fetch();
 					pathUrl = window.location.pathname;
 					pathUrl = pathUrl.split(".");
 					$.each($(".header-menu, .menu-down").find('a'), function(){
+						 if( $(this).attr('href') == pathUrl[0]+'.'+pathUrl[1]){
+						 	$('.title').text($(this).text())
+						 }
+
 						href = $(this).attr('href').split(".");
+						
 						if(href[0] == pathUrl[0]){
 							$(this).addClass('active-url');
 						}
