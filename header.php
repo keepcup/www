@@ -8,8 +8,8 @@
 	<script src="js/js.js"></script>
 
 	<!-- Add fancyBox -->
-	<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-	<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.js"></script>`
 </head>
 <body>
 <?include "db.php";?>
