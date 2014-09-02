@@ -26,7 +26,7 @@ $select_img_count = $select_img->rowCount();
 					<?
 					for($i=0;$i<$select_img_count;$i++){?>
 						<a class="fancybox" rel="group" href="<?echo $img_row[$i]['img'];?>">
-							<img src="<?echo $img_row[$i]['img'];?>" alt="" />
+							<img src="<?echo $img_row[$i]['img_preview'];?>" alt="" />
 						</a>
 					<?};?>
 				</div>

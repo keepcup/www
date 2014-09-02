@@ -33,7 +33,7 @@ for($i=0;$i<$select_count;$i++){
 					<div class="gallery-img_block">
 						<?
 						for($d=0;$d<$select_img_count;$d++){?>
-							<img src="<?echo $img_row[$d]['img'];?>" alt="">
+							<img src="<?echo $img_row[$d]['img_preview'];?>" alt="">
 						<?};?>
 					</div>
 				</div>

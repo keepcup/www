@@ -249,7 +249,7 @@ textarea{
 		width: 100%;
 		height: auto;
 		margin: 0 0 37px 0;
-		font-size: 0.001px;
+		font-size: 0.0001pt;
 	}
 		.clients_block li{
 			width: 33.3%;
@@ -260,6 +260,7 @@ textarea{
 			display: inline-block;
 			overflow: hidden;
 			margin-top: 2%;
+			font-size: 0.0001pt;
 		}
 			.clients_block img{
 				width: 100px;
@@ -1709,7 +1710,7 @@ textarea{
 		width: 33.33%;
 		height: auto;
 		min-height: 262px;
-		display: inline-block;
+		float: left;
 		margin-bottom: 59px;
 	}
 		.news_img{
@@ -1958,6 +1959,10 @@ textarea{
 			.footer-menu li {
 				display: inline-block;
 				margin: 0 10px;
+				text-transform: uppercase;
+				font-size: 18px;
+				font-weight: 300;
+				letter-spacing: 0px;
 			}
 
 			.footer-menu li:first-child { margin-left: 0; }

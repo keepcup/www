@@ -36,7 +36,7 @@ for($i=0;$i<$select_count;$i++){
 					<a href="http://twitter.com/share?url=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>&text=<?echo $row[$i]['title']." ".$row[$i]['title_small']?>"><li class="blog-social-tw"></li></a>	
 				</ul>
 				<!-- <div class="blog-social addthis_sharing_toolbox"></div> -->
-				<?if($photo_count!=0){?><a href="gallery/<?echo $blog_number_row['url_name']?>" class="blog-number"><?echo $photo_count;?><span></span></a><?}?>
+				<?if($photo_count!=0){?><a href="gallery_one.php?url_name=/<?echo $blog_number_row['url_name']?>" class="blog-number"><?echo $photo_count;?><span></span></a><?}?>
 				<div class="blog-text-belt">
 					<p class="blog-text"><?echo $row[$i]['text']?></p>
 				</div>

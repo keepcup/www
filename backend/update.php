@@ -119,7 +119,7 @@ $position = $_POST['position'];
 				$namePath = "../images/gallery/images/".$randomName;
 				list($w, $h) = getimagesize($file);
 
-				if($w>640 && $h>427){
+				if($w>640 || $h>427){
 					$w=($w-639)/2;
 					$h=($h-426)/2;
 					crop($file,$namePath,array($w,$h,-$w,-$h));

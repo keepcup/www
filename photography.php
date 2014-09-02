@@ -18,7 +18,7 @@
 				for($i=0;$i<$photography_count;$i++){
 				?>
 				<a class="fancybox" rel="group" href="<?echo $photography_row[$i]['img'];?>">
-					<img src="<?echo $photography_row[$i]['img'];?>" alt="">
+					<img src="<?echo $photography_row[$i]['img_preview'];?>" alt="">
 				</a>
 				<?}?>
 			</div>

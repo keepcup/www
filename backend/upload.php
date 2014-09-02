@@ -22,7 +22,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$namePath = '../images/index/'.$_POST['tablename']."/".$randomName;
 			
 			list($w, $h) = getimagesize($file);
-			if($w>1728 or $h>698){
+			if($w>1728 || $h>698){
 				$w=($w-1727)/2;
 				$h=($h-697)/2;
 				crop($file,$namePath,array($w,$h,-$w,-$h));
@@ -38,7 +38,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$namePath = '../images/instabudka/'.$_POST['tablename'].'_'.$_POST['tablefile'].'.'.$mime;
 			list($w, $h) = getimagesize($file);
 			if($_POST['tablefile'] == 18){
-				if($w>640 && $h>427){
+				if($w>640 || $h>427){
 					$w=($w-639)/2;
 					$h=($h-426)/2;
 					crop($file,$namePath,array($w,$h,-$w,-$h));
@@ -46,7 +46,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 					resize($file,$namePath,640,427);
 				}
 			}else{
-				if($w>1727 && $h>697){
+				if($w>1727 || $h>697){
 					$w=($w-1727)/2;
 					$h=($h-697)/2;
 					crop($file,$namePath,array($w,$h,-$w,-$h));
@@ -59,20 +59,33 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			break;
 		case 'photography':
 			$namePath = '../images/'.$_POST['tablename']."/".$randomName;
+			$namePathPreview = "../images/gallery/images/preview_".$randomName;
 			#узнать величину картинок
 			#сохраняет и в джпг и в пнг исправить
 			list($w, $h) = getimagesize($file);
-			if($w>1728 && $h>698){
-				$w=($w-1727)/2;
-				$h=($h-697)/2;
-				crop($file,$namePath,array($w,$h,-$w,-$h));
+			if($w>1980 ||$h>1200){
+				if($w>$h){
+					$scale= $w/$h;
+					$newHeight = round(($w-1980)/$scale);
+					resize($file,$namePath,1980,$h-$newHeight);
+				}elseif($w<$h){
+					$scale= $h/$w;
+					$newHeight = round(($h-1200)/$scale);
+					resize($file,$namePath,$w-$newHeight,1200);
+				}
 			}else{
-				resize($file,$namePath,1728,698);
+				resize($file,$namePath,$w,$h);
 			}
-			
+			if($w>380 || $h>250){
+				$w=($w-380)/2;
+				$h=($h-250)/2;
+				crop($file,$namePathPreview,array($w,$h,-$w,-$h));
+			}else{
+				resize($file,$namePathPreview,380,250);
+			}
 			$position = str_replace($table.'_','',$position);
-			$insert = $db->prepare("INSERT INTO $table (img,position) VALUES (?,?)");
-			$insert->execute(array($namePath,$position));
+			$insert = $db->prepare("INSERT INTO $table (img,img_preview,position) VALUES (?,?,?)");
+			$insert->execute(array($namePath,$namePathPreview,$position));
 			break;
 		case 'gallery':
 			$results = urldecode($_POST['textserialize']);
@@ -111,14 +124,15 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			foreach($perfs as $i => $value) {
 				$new_perfs[$i] = explode("=", $value);
 			}
-
 			list($w, $h) = getimagesize($file);
 			if($w>$h){
 				$scale= $w/$h;
 				$newHeight = round(($w-100)/$scale);
 				resize($file,$namePath,100,$h-$newHeight);
 			}elseif($w<$h){
-				resize($file,$namePath,100,100);
+				$scale= $h/$w;
+				$newHeight = round(($h-100)/$scale);
+				resize($file,$namePath,$w-$newHeight,100);
 			}
 			$gallery_id = explode('/',$new_perfs[1][1]);
 			$gallery_id = end($gallery_id);
@@ -147,7 +161,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}
 			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
 			list($w, $h) = getimagesize($file);
-			if($w>640 && $h>427){
+			if($w>640 || $h>427){
 				$w=($w-639)/2;
 				$h=($h-426)/2;
 				crop($file,$namePath,array($w,$h,-$w,-$h));

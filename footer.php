@@ -1,14 +1,15 @@
 	<div class="footer">
 		<div class="social-footer">
 			<ul class="social-footer">
-				<li><a href="/" class="vk_ft"></a></li>
-				<li><a href="/" class="fb_ft"></a></li>
-				<li><a href="/" class="inst_ft"></a></li>
+				<li><a href="<?echo $contacts_row['vk']?>" class="vk_ft"></a></li>
+				<li><a href="<?echo $contacts_row['fb']?>" class="fb_ft"></a></li>
+				<li><a href="<?echo $contacts_row['insta']?>" class="inst_ft"></a></li>
 			</ul>
 		</div>
+		<a href="/contacts.php#zakaz">
 		<div class="order_button">
 			<p>заказать фотобудку</p>
-		</div>
+		</div></a>
 		<p class="asart">разработка проекта <a href="http://asartdesign.ru/">Asart group</a></p>
 	</div>
 	<!-- footer-main-1180 -->
@@ -17,24 +18,24 @@
 				<div class="footer-left">
 					<div class="footer-menu">
 						<ul>
-							<li><a href="/">фотобудка</a></li>
-							<li><a href="/">фотосъёмка</a></li>
-							<li><a href="/">мобильная фотостудия</a></li>
-							<li><a href="/">галерея</a></li>
-							<li><a href="/">контакты</a></li>
-							<li><a href="/">мероприятия</a></li>
+							<li>фотобудка</li>
+							<li><a href="/photography.php">фотосъёмка</a></li>
+							<li><a href="/photostudio.php">мобильная фотостудия</a></li>
+							<li><a href="/gallery.php">галерея</a></li>
+							<li><a href="/contacts.php">контакты</a></li>
+							<li><a href="/blog.php">мероприятия</a></li>
 						</ul>
 					</div>
 					<div class="footer-links">
 						<ul>
-							<li><a href="/">&bull; инстабудка</a></li>
-							<li><a href="/">&bull; инстамини</a></li>
-							<li><a href="/">&bull; инсташар</a></li>
+							<li><a href="/instabudka.php">&bull; инстабудка</a></li>
+							<li><a href="/instamini.php">&bull; инстамини</a></li>
+							<li><a href="/instashar.php">&bull; инсташар</a></li>
 						</ul>
 						<ul>
-							<li><a href="/">&bull; на связи</a></li>
-							<li><a href="/">&bull; наши клиенты</a></li>
-							<li><a href="/">&bull; форма заказа</a></li>
+							<li><a href="/contacts.php">&bull; на связи</a></li>
+							<li><a href="/contacts.php#clients">&bull; наши клиенты</a></li>
+							<li><a href="/contacts.php#zakaz">&bull; форма заказа</a></li>
 						</ul>
 					</div>
 					<div class="footer-logos">
@@ -49,9 +50,9 @@
 				<div class="footer-right">
 					<div class="footer-social">
 						<ul>
-							<li id="ft_vk"><a href="vk.com"></a></li>
-							<li id="ft_fb"><a href="facebook.com"></a></li>
-							<li id="ft_gram"><a href="instagram.com"></a></li>
+							<li id="ft_vk"><a href="<?echo $contacts_row['vk']?>"></a></li>
+							<li id="ft_fb"><a href="<?echo $contacts_row['fb']?>"></a></li>
+							<li id="ft_gram"><a href="<?echo $contacts_row['insta']?>"></a></li>
 						</ul>
 					</div>
 					<div class="footer-contacts">
@@ -59,7 +60,7 @@
 						<p>Александр +7 (916) 034 62 54</p>
 						<p class="email">info@instabudka.ru</p>
 					</div>
-					<a href="/" class="zakaz_butt">заказать фотобудку</a>
+					<a href="/contacts.php#zakaz" class="zakaz_butt">заказать фотобудку</a>
 				</div>
 			</div>
 			<!-- end of footer_content -->

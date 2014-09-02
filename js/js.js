@@ -15,27 +15,31 @@ $(document).ready(function(){
 			}
 		}
 	});
-    
-
-})/*end*/
-
-$(document).ready(function(){
+    pathUrl = window.location.pathname;
+    pathUrl = pathUrl.split(".");
+    $(window).scroll(function(){
+        if ($(window).scrollTop()>$(".header-main-1180").height()-$(".header-menu").height()-5){
+            $(".header-menu").addClass("sticky-1180");//назначаем класс
+            $(".insta-menu").addClass("sticky-1180-insta");
+        } else {
+            $(".header-menu").removeClass("sticky-1180");
+            $(".insta-menu").removeClass("sticky-1180-insta");
+         }
+        if ($(window).scrollTop()>$(".header").height()-$(".title-block").height()-40){
+             $(".title_block").addClass("sticky");//назначаем класс
+        } else {
+            $(".title_block").removeClass("sticky");
+        }
+    });
+    if($('.insta-menu').length >0 ){
         $(window).scroll(function(){ //во время прокрутки страницы
 									 //проверяем прошли ли мы хедер-высоту менюшки
-            if ($(window).scrollTop()>$(".header-main-1180").height()-$(".header-menu").height()-5){
-                $(".header-menu").addClass("sticky-1180");//назначаем класс
-                $(".insta-menu").addClass("sticky-1180-insta");
-            } else {
+            
+   
 //если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс
-                $(".header-menu").removeClass("sticky-1180");
-                $(".insta-menu").removeClass("sticky-1180-insta");
-            }
+                
             // то же для моб и планшетной версии
-            if ($(window).scrollTop()>$(".header").height()-$(".title-block").height()-40){
-                $(".title_block").addClass("sticky");//назначаем класс
-            } else {
-                $(".title_block").removeClass("sticky");
-            }
+           
 
             // insta-menu lightning
             var descr = $(".content").find("h2:contains('описание')");
@@ -67,5 +71,12 @@ $(document).ready(function(){
         	var txt = $(this).text();    	
         	$('html, body').animate({scrollTop: $(".content").find("h2:contains("+txt+")").offset().top-160}, 300);
         })
-
+     }
+    var hashData = location.hash;
+    hashData = hashData.split('#');
+    if(hashData!=''){
+        $('html, body').animate({
+            scrollTop: $('.'+hashData[1]).offset().top-150
+            }, 0);
+    }
 })

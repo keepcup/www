@@ -27,14 +27,14 @@ $contacts_row = $contacts->fetch();
 				<li class="phone-contact">Елизавета <?echo $contacts_row['phone1']?></li>
 				<li class="phone-contact">Александр <?echo $contacts_row['phone2']?></li>
 				<li class="phone-social">
-					<a href="/"><div class="phone-social_1"></div></a>
-					<a href="/"><div class="phone-social_2"></div></a>
-					<a href="/"><div class="phone-social_3"></div></a>
+					<a href="<?echo $contacts_row['vk']?>"><div class="phone-social_1"></div></a>
+					<a href="<?echo $contacts_row['fb']?>"><div class="phone-social_2"></div></a>
+					<a href="<?echo $contacts_row['insta']?>"><div class="phone-social_3"></div></a>
 				</li>
-				<li>
+				<li><a href="/contacts.php#zakaz">
 					<div class="order_button">
 						<p>Заказать фотобудку</p>						
-					</div>
+					</div></a>
 				</li>
 			</ul>
 			<p class="title">главная</p>
@@ -90,10 +90,9 @@ $contacts_row = $contacts->fetch();
 				<div class="header-top-content">
 					<div class="header-social">
 						<ul>
-							<li id="vk"><a href="vk.com
-							"></a></li>
-							<li id="fb"><a href="facebook.com"></a></li>
-							<li id="gram"><a href="instagram.com"></a></li>
+							<li id="vk"><a href="<?echo $contacts_row['vk']?>"></a></li>
+							<li id="fb"><a href="<?echo $contacts_row['fb']?>"></a></li>
+							<li id="gram"><a href="<?echo $contacts_row['insta']?>"></a></li>
 						</ul>
 					</div>
 					<a href="/"><img src="images/header/logo.jpg" alt="" class="logo" width="250"></a>
@@ -131,6 +130,9 @@ $contacts_row = $contacts->fetch();
 							$(this).addClass('active-url');
 						}
 					});
+					if(pathUrl[0]=='/'){
+							$(".header-menu, .menu-down").find('a:eq(0)').addClass('active-url');
+						}
 					$( "li.insta-butt>ul" ).hide();
 					$("li.insta-butt").mouseenter(function(){
 						if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
