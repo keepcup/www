@@ -21,6 +21,13 @@ $(window).scroll(function(){
 		limit+=2;
  	}
 });
+
+$(".blog-text_display").toggle(
+	function(){
+		$(this).closest(".blog-belt").find(".blog-text").css("max-height", "+=200");
+	}, function() {
+		$(this).closest(".blog-belt").find(".blog-text").css("max-height", "-=200");
+	});
 <?}?>
 </script>
 <?include "footer.php";?>
