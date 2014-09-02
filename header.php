@@ -53,7 +53,6 @@ $contacts_row = $contacts->fetch();
 				<li><a href="/blog.php">мероприятия</a></li>
 			</ul>
 			<script>
-
 				var menuDown = $('.menu-down');
 				var menu = $('.menu');
 				var phoneDown = $('.phone-down');
