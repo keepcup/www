@@ -34,4 +34,3 @@ $(".blog-text_display").live( "click", function() {
 <?}?>
 </script>
 <?include "footer.php";?>
-
