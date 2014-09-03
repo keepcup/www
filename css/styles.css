@@ -489,6 +489,7 @@ textarea{
 			}
 			p.function-block_2 {
 				font-family: 'Roboto';
+				font-weight: 300;
 				font-size: 18px;
 				color:#666;
 			}
@@ -2299,6 +2300,7 @@ textarea{
 		.decor .function-block ul.function-block_2 li {
 				display: block;
 				font-family: 'Roboto Condensed';
+				font-weight: 300;
 				font-size: 22px;
 				text-transform: lowercase;
 				line-height: 22px;
