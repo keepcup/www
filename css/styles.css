@@ -393,7 +393,7 @@ textarea{
 		}
 		.description-text{
 			text-align: center;
-			margin-bottom: 26px;
+			margin-bottom: 55px;
 		}
 			.description-text-facebook{
 				display: inline-block;
@@ -426,7 +426,7 @@ textarea{
 			height: 112px;
 			padding-top:1px;
 		}
-				.description-block:nth-of-type(even){
+				.description-block:nth-of-type(odd){
 					background: #eee;
 				}
 				.description-block_1{
@@ -489,6 +489,7 @@ textarea{
 			}
 			p.function-block_2 {
 				font-family: 'Roboto';
+				font-weight: 300;
 				font-size: 18px;
 				color:#666;
 			}
@@ -753,6 +754,7 @@ textarea{
 				text-indent: 40px;
 				line-height: 22px;
 				margin: 85px 0 0 10px;
+				min-height: 85px;
 				max-height: 160px;
 				overflow: hidden;
 			}
@@ -1505,7 +1507,7 @@ textarea{
 		margin: 0 auto;
 		display: block;
 		position: relative;
-		z-index: 8000;
+		z-index: 1050;
 	}
 	.header-top{
 		width: 100%;
@@ -2189,6 +2191,7 @@ textarea{
 			}
 			.description-text{
 				margin-top: 38px;
+				margin-bottom: 39px;
 			}
 			.description-text span{
 				font-size: 36px;
@@ -2297,6 +2300,7 @@ textarea{
 		.decor .function-block ul.function-block_2 li {
 				display: block;
 				font-family: 'Roboto Condensed';
+				font-weight: 300;
 				font-size: 22px;
 				text-transform: lowercase;
 				line-height: 22px;
