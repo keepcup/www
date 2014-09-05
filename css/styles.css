@@ -63,7 +63,8 @@ textarea{
 			left: 4.166666666%;
 			width: 41px;
 			height: 42px;
-			background: url(../images/header/phone_pikt.png);
+			background-image: url(../images/header/phone_pikt.png);
+			background-position: 0 0;
 			cursor: pointer;
 		}
 		.menu{
@@ -72,7 +73,8 @@ textarea{
 			right: 4.166666666%;
 			width: 32px;
 			height: 32px;
-			background: url(../images/header/menu_pikt.png);
+			background-image: url(../images/header/menu_pikt.png);
+			background-position: 0 0;
 			cursor: pointer;
 		}
 		.menu-down, .phone-down{

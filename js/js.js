@@ -115,24 +115,24 @@ $(document).ready(function(){
                 $('.menu').click(function(){                    
                     if(menuDown.css('display') == 'none'){
                         menuDown.css({"display":"block"});
-                        menu.css({"background":"url(../images/header/menu_pikt_active.png)"});
+                        menu.css({"background-position":"-32px 0"});
                         phoneDown.css({"display":"none"});
-                        phone.css({"background":"url(../images/header/phone_pikt.png)"});
+                        phone.css({"background-position":"0 0"});
                     }else{
                         menuDown.css({"display":"none"});
-                        menu.css({"background":"url(../images/header/menu_pikt.png)"});
+                        menu.css({"background-position":"0 0"});
 
                     }
                 })
                 $('.phone').click(function(){
                     if(phoneDown.css('display') == 'none'){
                         phoneDown.css({"display":"block"});
-                        phone.css({"background":"url(../images/header/phone_pikt_active.png)"});
+                        phone.css({"background-position":"-41px 0"});
                         menuDown.css({"display":"none"});
-                        menu.css({"background":"url(../images/header/menu_pikt.png)"});
+                        menu.css({"background-position":"0 0"});
                     }else{
                         phoneDown.css({"display":"none"});
-                        phone.css({"background":"url(../images/header/phone_pikt.png)"});
+                        phone.css({"background-position":"0 0"});
 
                     }
                 })
