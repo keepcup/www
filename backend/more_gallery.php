@@ -19,7 +19,7 @@ for($i=0;$i<$select_count;$i++){
 	if($row[$i]['password'] == ''){
 		// echo date('d.m',strtotime($row[$i]['date']))
 		?>
-		<a href="/gallery_one.php?url_name=<?echo $row[$i]['url_name'];?>" class="gallery-bgc">
+		<a href="/gallery/<?echo $row[$i]['url_name'];?>" class="gallery-bgc">
 			<div class="gallery">
 				<span class="id"><?echo $row[$i]['id'];?></span>
 				<div class="gallery-text-belt">

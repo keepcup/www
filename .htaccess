@@ -1,0 +1,41 @@
+Options -ExecCGI
+AddHandler cgi-script .pl .py .jsp. htm .shtml .sh .asp .cgi
+<IfModule mod_gzip.c>
+mod_gzip_on         Yes
+mod_gzip_dechunk    Yes
+mod_gzip_item_include file          \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler       ^cgi-script$
+mod_gzip_item_include mime      ^text\.*
+mod_gzip_item_include mime      ^application/x-javascript.*
+mod_gzip_item_exclude mime      ^image\.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+Options All -Indexes
+RewriteEngine On # Включение режима 
+RewriteCond %{HTTP_HOST} ^test.asartdesign [NC]
+RewriteRule ^(.*)$ http://www.test.asartdesign.ru/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ http://www.test.asartdesign.ru/ [R=301,L]
+RewriteRule ^/?$ index.php [NC,L]
+#статичные страницы
+RewriteRule ^photography/?$ photography.php [NC,L]
+RewriteRule ^blog/?$ blog.php [NC,L]
+RewriteRule ^photostudio/?$ photostudio.php [NC,L]
+RewriteRule ^gallery/?$ gallery.php [NC,L]
+RewriteRule ^contacts/?$ contacts.php [NC,L]
+RewriteRule ^instabudka/?$ instabudka.php [NC,L]
+RewriteRule ^instamini/?$ instamini.php [NC,L]
+RewriteRule ^instashar/?$ instashar.php [NC,L]
+RewriteRule ^photography/?$ photography.php [NC,L]
+RewriteRule ^photography/?$ photography.php [NC,L]
+
+#страницы с параметрами
+RewriteRule ^gallery/([A-Za-z0-9-]+)/?$ gallery_one.php?url_name=$1 [NC,L] 
+RewriteRule ^gallery/([A-Za-z0-9-]+)/?$ gallery_one.php?url_name=$1 [NC,L] 
+RewriteRule ^blog/([A-Za-z0-9-]+)/?$ blog.php?id=$1 [NC,L] 
+
+#RewriteRule ^portfolio/([A-Za-z0-9-]+)/?$ portfolio_template.php?url_name=$1 [NC,L] 
+
+#RewriteRule ^blognote/?$ blog.php [NC,L]
+#RewriteRule ^gallery/([A-Za-z0-9-]+)/?$ gallery_one.php?url_name=$1 [NC,L] 
+#RewriteRule ^catalog/room([0-9])+$ %{REQUEST_URI}/ [R=301,L] 

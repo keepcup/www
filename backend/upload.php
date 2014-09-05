@@ -37,7 +37,8 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 		case 'insta':
 			$namePath = '../images/instabudka/'.$_POST['tablename'].'_'.$_POST['tablefile'].'.'.$mime;
 			list($w, $h) = getimagesize($file);
-			if($_POST['tablefile'] == 18){
+			$tablefile = $_POST['tablefile'];
+			if($table == 3 || $table == 5 || $table == 9 || $table == 11 || $table == 15 || $table == 17|| $table == 18 ){
 				if($w>640 || $h>427){
 					$w=($w-639)/2;
 					$h=($h-426)/2;
@@ -47,19 +48,23 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 				}
 			}else{
 				if($w>1727 || $h>697){
-					$w=($w-1727)/2;
-					$h=($h-697)/2;
-					crop($file,$namePath,array($w,$h,-$w,-$h));
+					if($h>697){
+						$h=($h-697)/2;
+						crop($file,$namePath,array(0,$h,0,-$h));
+					}elseif($w>1727){
+						$h=($h-1727)/2;
+						crop($file,$namePath,array($w,$h,-$w,$h));
+					}
 				}else{
 					resize($file,$namePath,1728,698);
 				}
 			}
 			$update = $db->prepare("UPDATE $table SET img = ? WHERE id = ? ");
-			$update->execute(array($namePath,$_POST['tablefile']));
+			$update->execute(array($namePath,$tablefile));
 			break;
 		case 'photography':
 			$namePath = '../images/'.$_POST['tablename']."/".$randomName;
-			$namePathPreview = "../images/gallery/images/preview_".$randomName;
+			$namePathPreview = "../images/".$_POST['tablename']."/preview_".$randomName;
 			#узнать величину картинок
 			#сохраняет и в джпг и в пнг исправить
 			list($w, $h) = getimagesize($file);
@@ -75,14 +80,35 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 				}
 			}else{
 				resize($file,$namePath,$w,$h);
-			}
+			};
+
 			if($w>380 || $h>250){
-				$w=($w-380)/2;
-				$h=($h-250)/2;
-				crop($file,$namePathPreview,array($w,$h,-$w,-$h));
+				if($w>$h){
+					$scale= $w/$h;
+					$newHeight = round(($w-380)/$scale);
+					resize($file,$namePathPreview,380,$h-$newHeight);
+				}elseif($w<$h){
+					$scale= $h/$w;
+					$newHeight = round(($h-250)/$scale);
+					resize($file,$namePathPreview,$w-$newHeight,250);
+				}
 			}else{
-				resize($file,$namePathPreview,380,250);
-			}
+				resize($file,$namePathPreview,$w,$h);
+			};
+			// if($w>600 || $h>364){
+			// 	$w=($w-600)/2;
+			// 	$h=($h-364)/2;
+			// 	crop($file,$namePathPreview,array($w,$h,-$w,-$h));
+			// }else{
+			// 	resize($file,$namePathPreview,600,364);
+			// }
+			// if($w>380 || $h>250){
+			// 	$w=($w-380)/2;
+			// 	$h=($h-250)/2;
+			// 	crop($namePathPreview,$namePathPreview,array($w,$h,-$w,-$h));
+			// }else{
+			// 	resize($namePathPreview,$namePathPreview,380,250);
+			// }
 			$position = str_replace($table.'_','',$position);
 			$insert = $db->prepare("INSERT INTO $table (img,img_preview,position) VALUES (?,?,?)");
 			$insert->execute(array($namePath,$namePathPreview,$position));
@@ -95,7 +121,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}
 			$url_name = translit($new_perfs[0][1].' '.$new_perfs[2][1]);
 			$url_name = str_replace(' ','-',$url_name)."-".$new_perfs[1][1];
-
+			$url_name = preg_replace("/[^a-z0-9-]/i","", $url_name);
 			$position =implode(",", $_POST['position']);
 			$position = str_replace($table.'_','',$position);
 

@@ -7,7 +7,7 @@ for($i=0;$i<$select_count;$i++){
 
 	$gallery_id = $row[$i]['id'];
 	$position = $row[$i]['position'];
-	$select_img = $db->prepare("SELECT img FROM gallery_img WHERE gallery_id=? ORDER BY FIELD( position, $position) LIMIT 6");
+	$select_img = $db->prepare("SELECT img,img_preview FROM gallery_img WHERE gallery_id=? ORDER BY FIELD( position, $position) LIMIT 6");
 	$select_img->execute(array($gallery_id));
 	$img_row = $select_img->fetchAll();
 	$select_img_count = $select_img->rowCount();
@@ -17,7 +17,7 @@ for($i=0;$i<$select_count;$i++){
 	if($row[$i]['password'] == ''){
 		// echo date('d.m',strtotime($row[$i]['date']))
 		?>
-		<a href="/gallery_one.php?url_name=<?echo $row[$i]['url_name'];?>" class="gallery-bgc">
+		<a href="/gallery/<?echo $row[$i]['url_name'];?>" class="gallery-bgc">
 			<div class="gallery">
 				<span class="id"><?echo $row[$i]['id'];?></span>
 				<div class="gallery-text-belt">
@@ -33,7 +33,7 @@ for($i=0;$i<$select_count;$i++){
 					<div class="gallery-img_block">
 						<?
 						for($d=0;$d<$select_img_count;$d++){?>
-							<img src="<?echo $img_row[$d]['img_preview'];?>" alt="">
+							<img src="/<?echo $img_row[$d]['img_preview'];?>" alt="">
 						<?};?>
 					</div>
 				</div>

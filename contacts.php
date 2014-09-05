@@ -8,9 +8,9 @@
 						<p class="contacts-phone">Александр <?echo $contacts_row['phone2']?></p>
 						<p class="social-headline">Мы в социальных сетях:</p>
 						<ul class="social">
-							<li class="vk"><a href="vk.com"></a></li>
-							<li class="fb"><a href="facebook.com"></a></li>
-							<li class="gram"><a href="instagram.com"></a></li>
+							<li class="vk"><a href="<?echo $contacts_row['vk']?>"></a></li>
+							<li class="fb"><a href="<?echo $contacts_row['fb']?>"></a></li>
+							<li class="gram"><a href="<?echo $contacts_row['insta']?>"></a></li>
 						</ul>
 						<p class="adress">Наш адрес: г. Москва, Варшавское шоссе 17</p>
 					</div>
@@ -30,9 +30,11 @@
 					<p>
 						просто оставьте свои контакты, и мы свяжемся с вами в ближайшее время
 					</p>
-					<input type="text" name="e-mail" class="e-mail" value="e-mail" onfocus="if(this.value=='e-mail') this.value='';" onblur="if(!this.value) this.value='e-mail';">
-					<input type="text" name="name" class="name" value="Имя" onfocus="if(this.value=='Имя') this.value='';" onblur="if(!this.value) this.value='Имя';">
-					<textarea name="comments" class="comments"></textarea>
+					<form action="backend/mail.php" method="POST" id="contacts_from">
+						<input type="text" name="mail" class="e-mail" value="e-mail" onfocus="if(this.value=='e-mail') this.value='';" onblur="if(!this.value) this.value='e-mail';">
+						<input type="text" name="name" class="name" value="Имя" onfocus="if(this.value=='Имя') this.value='';" onblur="if(!this.value) this.value='Имя';">
+						<textarea name="comments" class="comments"></textarea>
+					</form>
 					<p class="comments-label">ваши комментарии к заказу</p>
 					<div class="button-send">
 						<p>Отправить заявку</p>

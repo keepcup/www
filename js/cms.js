@@ -80,9 +80,7 @@ $(document).ready(function(){
             create_new_gallery.addClass('display');
         }
     })
-})/*end*/
 
-$(document).ready(function(){
         $(window).scroll(function(){ //во время прокрутки страницы
                                      //проверяем прошли ли мы хедер-высоту менюшки
             var windowTop = $(window).scrollTop();                           

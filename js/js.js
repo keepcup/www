@@ -79,4 +79,61 @@ $(document).ready(function(){
             scrollTop: $('.'+hashData[1]).offset().top-150
             }, 0);
     }
+    $('.button-send').click(function(){
+        $('#contacts_from').submit();
+    })
+    // header
+    pathUrl = window.location.pathname;
+    pathUrl = pathUrl.split(".");
+    $.each($(".header-menu, .menu-down").find('a'), function(){
+        if( $(this).attr('href') == pathUrl[0]+'.'+pathUrl[1]){
+            $('.title').text($(this).text())
+        }
+        href = $(this).attr('href').split(".");
+        if(href[0] == pathUrl[0]){
+            $(this).addClass('active-url');
+        }
+    });
+    if(pathUrl[0]=='/'){
+        $(".header-menu, .menu-down").find('a:eq(0)').addClass('active-url');
+    }
+                    $( "li.insta-butt>ul" ).hide();
+                    $("li.insta-butt").mouseenter(function(){
+                        if ( $( "li.insta-butt>ul" ).is( ":hidden" ) ) {
+                            $( "li.insta-butt>ul" ).slideDown( "fast" );
+                        }
+                    });
+                    $("li.insta-butt").mouseleave(function(){
+                        $( "li.insta-butt>ul" ).slideUp( "fast", function() {
+                            $( "li.insta-butt>ul" ).hide();
+                        });
+                    });
+    var menuDown = $('.menu-down');
+                var menu = $('.menu');
+                var phoneDown = $('.phone-down');
+                var phone = $('.phone');
+                $('.menu').click(function(){                    
+                    if(menuDown.css('display') == 'none'){
+                        menuDown.css({"display":"block"});
+                        menu.css({"background":"url(../images/header/menu_pikt_active.png)"});
+                        phoneDown.css({"display":"none"});
+                        phone.css({"background":"url(../images/header/phone_pikt.png)"});
+                    }else{
+                        menuDown.css({"display":"none"});
+                        menu.css({"background":"url(../images/header/menu_pikt.png)"});
+
+                    }
+                })
+                $('.phone').click(function(){
+                    if(phoneDown.css('display') == 'none'){
+                        phoneDown.css({"display":"block"});
+                        phone.css({"background":"url(../images/header/phone_pikt_active.png)"});
+                        menuDown.css({"display":"none"});
+                        menu.css({"background":"url(../images/header/menu_pikt.png)"});
+                    }else{
+                        phoneDown.css({"display":"none"});
+                        phone.css({"background":"url(../images/header/phone_pikt.png)"});
+
+                    }
+                })
 })

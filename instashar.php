@@ -148,7 +148,7 @@ $insta_row = $insta_db->fetchAll();
 		</div><!--decor-end-->
 		<div class="other_gallery">
 			<div class="line"></div>
-			<p><a href="/gallery.php" class="other_gallery-text">галерея мероприятий</a></p>
+			<p><a href="/gallery" class="other_gallery-text">галерея мероприятий</a></p>
 			<div class="line"></div>
 		</div>
 	</div><!--content_end-->

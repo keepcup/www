@@ -129,7 +129,6 @@ $(document).ready(function() {
 			closeCross.closest('.photo-preview').remove();
 			var position = saveView.sortable("toArray");
 			
-			alert(galleryId)
 			$.post('backend/position.php', {position:position, tablename: tablename, id : galleryId });
 			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename, id : galleryId});
 		}, timeOut);
@@ -168,7 +167,6 @@ $(document).ready(function() {
 			var saveView = closeCross.closest('.upload_preview');
 			closeCross.closest('.clients-prewiew').remove();
 			var position = saveView.sortable("toArray");
-			alert(deletePosition[1]);
 			$.post('backend/position.php', {position:position, tablename: tablename});
 			$.post('backend/delete.php', {deletePosition:deletePosition[1], tablename: tablename});
 		}, timeOut);
@@ -198,19 +196,18 @@ $(document).ready(function() {
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 			// $.post('backend/position.php', {position:position, tablename: tableName });
 			file = dataArray[saveIndex];
-			alert(position)
 			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
 				lastInsertedId= dataid;
-				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName, position: position});
-				alert(lastInsertedId);
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName, position: position}, function(data,success){
+					window.location.reload();
+				});
 			});
-			
 			dataArray[saveIndex] = [];
-			new_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
-			new_gallery_form.find('.h_2').val('Заголовок 2');
-			new_gallery_form.find('.date').val('ДАТА');
-			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
-			saveButton.closest('.new_gallery').addClass('display');
+			// new_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
+			// new_gallery_form.find('.h_2').val('Заголовок 2');
+			// new_gallery_form.find('.date').val('ДАТА');
+			// saveButton.closest('.photo-left').next().find('.photo-preview').remove();
+			// saveButton.closest('.new_gallery').addClass('display');
 			return false;
 		}else if(saveButton.hasClass('new_closed_gallery_save')){
 			new_closed_gallery_form = $('#new_closed_gallery_form');
@@ -222,11 +219,9 @@ $(document).ready(function() {
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 			// $.post('backend/position.php', {position:position, tablename: tableName });
 			file = dataArray[saveIndex];
-			alert(tableName)
 			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(dataid,success){
 				lastInsertedId= dataid;
 				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName});
-				alert(lastInsertedId);
 			});
 			
 			dataArray[saveIndex] = [];
@@ -247,12 +242,12 @@ $(document).ready(function() {
 			// $.post('backend/position.php', {position:position, tablename: tableName });
 			file = dataArray[saveIndex];
 			id= saveButton.prev().text()
-			alert(position)
 			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
 				lastInsertedId= dataid;
-				$.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
-				alert(lastInsertedId);
-				window.location.reload();
+				alert(lastInsertedId)
+				$.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition}, function(dataid,success){
+					window.location.reload();
+				});
 			});
 			dataArray[saveIndex] = [];
 			return false;
@@ -265,11 +260,9 @@ $(document).ready(function() {
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
 			file = dataArray[saveIndex];
 			id= saveButton.prev().text()
-			alert(id)
 			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position,file :file}, function(dataid,success){
 				lastInsertedId= dataid;
 				// $.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition});
-				alert(lastInsertedId);
 				window.location.reload();
 			});
 			dataArray[saveIndex] = [];
@@ -298,8 +291,9 @@ $(document).ready(function() {
 			// var files = e.dataTransfer.files;
 			// loadInView(files,Index);
 			maxPosition =Math.max.apply(null,position.join("").split(tableName+'_'))+1;
-			alert(position)
-				alert(tableName)
+			if(position.length == 0){
+				position[0] = 'clients_1';
+			}
 			$.post('backend/position.php', {position:position, tablename: tableName });
 			$.each(dataArray[saveIndex], function(index, file) {
 				$.post('backend/upload.php', {textserialize:textserialize ,tablename: tableName, file :dataArray[saveIndex][index], position:maxPosition}, function(dataid,success){
@@ -325,7 +319,6 @@ $(document).ready(function() {
 			var updateId = saveButton.prev().text();
 			file = dataArray[saveIndex];
 				$.post('backend/update.php', {textserialize:textserialize , tablename: tableName,file :file, id:updateId}, function(data, success) {
-					alert(data);
 					dataArray[saveIndex] = [];
 					window.location.reload();
 				});

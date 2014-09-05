@@ -1,7 +1,7 @@
 <?
 switch($url){
 	case 'index':$limit=3;break;
-	case 'blog':$limit=2;break;
+	case 'blog':$limit=3;break;
 }
 if(!empty($_GET['id'])){
 	$select = $db->prepare("SELECT * FROM blog WHERE id =? ORDER BY id DESC");
@@ -30,11 +30,11 @@ for($i=0;$i<$select_count;$i++){
 ?>
 		<div class="blog">
 			<div class="blog-belt">
+			<?if(!empty($_GET['id'])){?><a href="/blog" class="blog_all">< все мероприятия</a><?};?>
 				<div class="blog-text_block">
 					<p class="blog-title"><span><?echo $row[$i]['title']?></span>
 					<br>
 					<?echo $row[$i]['title_small']?></p>
-					<?if(!empty($_GET['id'])){?><a href="/blog.php">< все мероприятия</a><?};?>
 				</div>
 				<img src="<?echo $row[$i]['img']?>" alt="">
 				<p class="blog-date">
@@ -44,7 +44,7 @@ for($i=0;$i<$select_count;$i++){
 				<ul class="blog-social">
 					<a href="http://vk.com/share.php?url=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>"><li class="blog-social-vk"></li></a>
 					<a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>"><li class="blog-social-fb"></li></a>
-					<a href="http://twitter.com/share?url=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/backend/blog_repost.php?id=<?echo $row[$i]['id']?>&text=<?echo $row[$i]['title']." ".$row[$i]['title_small']?>"><li class="blog-social-tw"></li></a>	
+					<a href="http://twitter.com/share?url=http%3A%2F%2F<?echo $_SERVER['HTTP_HOST']?>/blog/<?echo $row[$i]['id']?>&text=<?echo $row[$i]['title']." ".$row[$i]['title_small']?>"><li class="blog-social-tw"></li></a>	
 				</ul>
 				<!-- <div class="blog-social addthis_sharing_toolbox"></div> -->
 				<?if($photo_count!=0){?><a href="gallery_one.php?url_name=<?echo $blog_number_row['url_name']?>" class="blog-number"><?echo $photo_count;?><span></span></a><?}?>

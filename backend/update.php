@@ -15,7 +15,7 @@ $position = $_POST['position'];
 			}
 			$url_name = translit($new_perfs[0][1].' '.$new_perfs[2][1]);
 			$url_name = str_replace(' ','-',$url_name)."-".$new_perfs[1][1];
-
+			$url_name = preg_replace("/[^a-z0-9-]/i","", $url_name);
 			$position =implode(",", $_POST['position']);
 			$position = str_replace($table.'_','',$position);
 			$update_id = $_POST['id'];

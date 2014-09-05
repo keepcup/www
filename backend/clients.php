@@ -15,6 +15,7 @@ $select->execute();
 $row = $select->fetchAll();
 $select_count = $select->rowCount();
 ?>
+
 <ul class="clients_block"><!--
 	<?
 	for($i=0;$i<$select_count;$i++){

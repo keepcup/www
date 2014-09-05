@@ -19,23 +19,23 @@
 					<div class="footer-menu">
 						<ul>
 							<li>фотобудка</li>
-							<li><a href="/photography.php">фотосъёмка</a></li>
-							<li><a href="/photostudio.php">мобильная фотостудия</a></li>
-							<li><a href="/gallery.php">галерея</a></li>
-							<li><a href="/contacts.php">контакты</a></li>
-							<li><a href="/blog.php">мероприятия</a></li>
+							<li><a href="/photography">фотосъёмка</a></li>
+							<li><a href="/photostudio">мобильная фотостудия</a></li>
+							<li><a href="/gallery">галерея</a></li>
+							<li><a href="/contacts">контакты</a></li>
+							<li><a href="/blog">мероприятия</a></li>
 						</ul>
 					</div>
 					<div class="footer-links">
 						<ul>
-							<li><a href="/instabudka.php">&bull; инстабудка</a></li>
-							<li><a href="/instamini.php">&bull; инстамини</a></li>
-							<li><a href="/instashar.php">&bull; инсташар</a></li>
+							<li><a href="/instabudka">&bull; инстабудка</a></li>
+							<li><a href="/instamini">&bull; инстамини</a></li>
+							<li><a href="/instashar">&bull; инсташар</a></li>
 						</ul>
 						<ul>
-							<li><a href="/contacts.php">&bull; на связи</a></li>
-							<li><a href="/contacts.php#clients">&bull; наши клиенты</a></li>
-							<li><a href="/contacts.php#zakaz">&bull; форма заказа</a></li>
+							<li><a href="/contacts">&bull; на связи</a></li>
+							<li><a href="/contacts#clients">&bull; наши клиенты</a></li>
+							<li><a href="/contacts#zakaz">&bull; форма заказа</a></li>
 						</ul>
 					</div>
 					<div class="footer-logos">
@@ -60,7 +60,7 @@
 						<p>Александр +7 (916) 034 62 54</p>
 						<p class="email">info@instabudka.ru</p>
 					</div>
-					<a href="/contacts.php#zakaz" class="zakaz_butt">заказать фотобудку</a>
+					<a href="/contacts#zakaz" class="zakaz_butt">заказать фотобудку</a>
 				</div>
 			</div>
 			<!-- end of footer_content -->

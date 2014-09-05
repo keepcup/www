@@ -2,7 +2,7 @@
 		<div class="content photostudio">
 			<div class="photostudio-belt">
 				<?
-				$insta_db = $db->prepare("SELECT * FROM insta WHERE id = 13");
+				$insta_db = $db->prepare("SELECT * FROM insta WHERE id = 18");
 				$insta_db->execute();
 				$insta_row = $insta_db->fetch();
 				?>

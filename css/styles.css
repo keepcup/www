@@ -14,7 +14,7 @@ body,html{
 }
 .container{
 	width:100%;
-	min-width: 395px;
+	min-width: 480px;
 	min-height: 100%;
 	height: auto;
 }
@@ -130,7 +130,7 @@ textarea{
 					height: 55px;
 					padding-bottom: 3px;
 				}
-				.phone-down li.phone-contact:first-child {padding-left: 2px;}
+				.phone-down li.phone-contact:first-child {padding-left: 2px;box-sizing:border-box;}
 			.phone-social{
 				height: 58px;
 			}
@@ -687,16 +687,9 @@ textarea{
 		}
 		.blog-text_block{
 			position: relative;
-			width: 100%;
+			width: 800px;
 		}
-			.blog-text_block a{
-				position: absolute;
-				top:55px;
-				right: 20px;
-				font-size: 20px;
-				font-weight: 300;
-				color:#999;
-			}
+			
 			.blog-title span{
 				font-size: 26px;
 				color: #f58026;
@@ -825,6 +818,7 @@ textarea{
 		display: block;
 		width: 100%;
 		margin-bottom: 20px;
+		max-width: 100%;
 	}
 	/*contacts*/
 	.contacts .info {
@@ -951,6 +945,21 @@ textarea{
 	.main-h2{
 		display: none;
 	}
+	/*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
+@media all and (max-width: 767px){
+	.blog_all{
+		font-size: 28px;
+		font-weight: 400;
+		color:#999;
+		width: 100%;
+		background: #dddddd;
+		display: block;
+		text-align: center;
+		margin-top: 0px;
+		line-height: 55px;
+		padding-bottom: 5px;
+	}
+}
 /*768px*/
 /*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
 @media all and (min-width: 768px) and (max-width: 1179px){
@@ -1239,6 +1248,7 @@ textarea{
 
 	/*blog*/
 	.blog-belt{
+		position: relative;
 		width:  85.9375%;
 		margin: auto;
 	}
@@ -1416,10 +1426,14 @@ textarea{
 		overflow: hidden;
 	}
 	.photography .img-belt img {
-		width: 48.484848%;
-		float: left;		
+		width: 48.48484848484848%;
+		float: left;
+		max-width: 100%;
+		min-width: 320px;
+		min-height: 213px;	
 	}
 		.photography .img-belt a:nth-child(even) img {float: right;}
+		.photography .img-belt a:nth-child(odd) img {clear: both;}
 	/*contacts*/
 	.contacts .map-box {
 		width: 100%;
@@ -1490,6 +1504,17 @@ textarea{
 		width: 58.7%;
 		margin: 30px 20.65%;
 	}
+	.blog_all{
+		font-size: 28px;
+		font-weight: 400;
+		color:#999;
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin-top: 0px;
+		line-height: 55px;
+		padding-bottom: 5px;
+	}
 
 }/*end of 768px*/
 /*888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
@@ -1514,6 +1539,14 @@ textarea{
 		min-width: 1180px;
 		height: 120px;
 		border-bottom: 2px solid #dddddd;
+	}
+	.blog_all{
+		position: absolute;
+		top:55px;
+		right: 20px;
+		font-size: 20px;
+		font-weight: 300;
+		color:#999;
 	}
 	.header-top-content {
 		width: 1180px;
@@ -1728,7 +1761,8 @@ textarea{
 			.news-title {
 				width: 59%;
 				font-size: 27px;
-				margin-top: 28px;
+				margin-top: 32px;
+				line-height: 28px;
 			}
 			.news-date {
 				width: 150px;
@@ -1935,6 +1969,7 @@ textarea{
 		min-width: 1180px;
 		height: auto;
 		display: block;
+		margin-top:-2px; 
 	}
 	.footer-content {
 		width: 1180px;
@@ -2718,4 +2753,7 @@ textarea{
 	bottom: 0;
 	right: 0;
 	z-index: 9;
+}
+.blog_all{
+
 }

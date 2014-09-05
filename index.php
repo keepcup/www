@@ -26,17 +26,17 @@
 		</div>
 		<h1 class="main-h1"><span>выездные фотобудки</span> <span>в аренду</span></h1>
 		<div class="insta_block">
-			<a href="/instabudka.php">
+			<a href="/instabudka">
 			<div class="insta insta_1">
 				<p class="insta_text">инстабудка</p>
 			</div>
 			</a>
-			<a href="/instamini.php">
+			<a href="/instamini">
 			<div class="insta insta_2">
 				<p class="insta_text">инстамини</p>
 			</div>
 			</a>
-			<a href="/instashar.php">
+			<a href="/instashar">
 			<div class="insta insta_3">
 				<p class="insta_text">инсташар</p>
 			</div>
@@ -49,25 +49,19 @@
 			<?include 'backend/clients.php';?>
 		</div><!--belt-end-->
 		<div class="other_clients">
-			<p><a href="" class="other_clients-text">другие клиенты</a></p>
+			<p><a href="/contacts#clients" class="other_clients-text">другие клиенты</a></p>
 			<div class="pennant"></div>
 		</div>
 	</div><!--content_end-->
 	<script>
-			// var swiperHeight = $('.swiper-container').find('img').height()
-			// $('.swiper-container').css({height: swiperHeight})
-				//Unset height
-				
-			// $('.swiper-container').css({height:''})
-				//Calc Height
 			window.onload = function() {
 				var mySwiper = new Swiper('.swiper-container',{
 					freeModeFluid: true,
 				    autoplay: 20000,
 				    autoplayDisableOnInteraction: false,
 				    speed: 500,
-				    loop: true,
-				    calculateHeight:true
+				    calculateHeight:true,
+				    loop: true
 				})
 			}
 				//ReInit Swiper
