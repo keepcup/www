@@ -2111,9 +2111,9 @@ textarea{
 
 		.footer-social li:last-child {margin-right: 0;}
 
-		li#ft_vk 	{	background: url(../images/header/social_pikt_foot.png) 	0 0;	}
-		li#ft_fb 	{	background: url(../images/header/social_pikt_foot.png) -54px 0;	}
-		li#ft_gram  {	background: url(../images/header/social_pikt_foot.png) -109px 0;}
+		li#ft_vk 	{	background: url(../images/header/social_pikt_foot.png) 	0 0 no-repeat;	  }
+		li#ft_fb 	{	background: url(../images/header/social_pikt_foot.png) -55px 0 no-repeat; }
+		li#ft_gram  {	background: url(../images/header/social_pikt_foot.png) -109px 0 no-repeat;}
 
 		.footer-contacts {
 			height: auto;
