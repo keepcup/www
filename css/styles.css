@@ -1807,6 +1807,7 @@ textarea{
 			.gallery-text_block, .gallery-closed_block, .gallery-img_block{
 					width: 1180px;
 					margin: auto;
+					overflow: hidden;  /*сброс флоатов*/
 				}
 				.gallery-date{
 					font-size: 63px;
@@ -1830,21 +1831,19 @@ textarea{
 			width: 100%;
 			margin:auto;
 			padding: 38px 0 33px 0;
-			font-size: 0.001px;
+			font-size: 0.001px;			
 		}
 				.gallery-img-belt img{
+					display: block;
 					width: 380px;
 					margin: 0 20px 20px 0 !important;
-				}
-				
+					float: left;
+				}				
 				.gallery-img-belt img:nth-of-type(3n+3){
 					margin-right: 0 !important;
 				}
 				.gallery-img-belt a:nth-of-type(3n+3) img{
 					margin-right: 0 !important;
-				}
-				.gallery-img_block img{
-					display: inline-block !important;
 				}
 		.gallery-shadow_box{
 			display: none;
@@ -2621,13 +2620,15 @@ textarea{
 		width: 1180px;
 		font-size: 0.001px;
 		margin-bottom: 24px;
+		overflow: hidden;  /*сброс флоатов*/
 	}
 	.photography .img-belt img {		
 		width: 380px;
 		height: 253px;
 		margin: 0 20px 20px 0;
+		float: left;
 	}
-		.photography .img-belt img:nth-child(n) {display: inline-block;}
+		.photography .img-belt img:nth-child(n) {display: block;}
 		.photography .img-belt a:nth-child(3n+3) img {margin-right: 0;}
 			/*photostudio*/
 	.photostudio {
