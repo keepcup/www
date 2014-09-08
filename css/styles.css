@@ -1621,9 +1621,9 @@ textarea{
 		}
 		.header-menu>ul>li {
 			display: inline-block;
-			margin: 0 10px;
+			margin-right: 23px;
 		}
-			.header-menu>ul>li:first-child {margin-left: 0;}
+			.header-menu>ul>li:first-child {margin-right: 0;}
 			.header-menu>ul>li:last-child {margin: 0; float: right;}
 		.header-menu>ul>li>a {
 			display: inline-block;
