@@ -2112,7 +2112,10 @@ textarea{
 		.footer-social li:last-child {margin-right: 0;}
 
 		li#ft_vk 	{	background: url(../images/header/social_pikt_foot.png) 	0 0 no-repeat;	  }
-		li#ft_fb 	{	background: url(../images/header/social_pikt_foot.png) -55px 0 no-repeat; }
+		li#ft_fb 	{
+			width: 32px;	
+			background: url(../images/header/social_pikt_foot.png) -54px 0 no-repeat;
+		}
 		li#ft_gram  {	background: url(../images/header/social_pikt_foot.png) -109px 0 no-repeat;}
 
 		.footer-contacts {
@@ -2477,10 +2480,12 @@ textarea{
 	.contacts.content {
 	}
 	.top-block-belt {
-		width: 1186px;
+		width: 1195px;
 		height: auto;		
 		margin: 0 auto;
 		overflow: hidden;
+		position: relative;
+		left: 8px;
 	}
 	.pennant-info {
 		width: 300px;
@@ -2488,15 +2493,10 @@ textarea{
 		margin: 0 auto 100px auto;
 		float: right;
 		position: relative;
-		right: 12px;
+		right: 20px;
 		z-index: 2;
-
-			-webkit-box-shadow: -6px 0px 20px -7px rgba(0, 0, 0, .7),
-							     6px 0px 20px -7px rgba(0, 0, 0, .7);
-			   -moz-box-shadow: -6px 0px 20px -7px rgba(0, 0, 0, .7),
-							     6px 0px 20px -7px rgba(0, 0, 0, .7);
-					box-shadow: -6px 0px 20px -7px rgba(0, 0, 0, .7),
-							     6px 0px 20px -7px rgba(0, 0, 0, .7);
+		box-shadow: -6px 0px 20px -7px rgba(0, 0, 0, .7),
+					 6px 0px 20px -7px rgba(0, 0, 0, .7);
 	}
 			.pennant-info:before, .pennant-info:after {
 			        content:"";
@@ -2507,9 +2507,7 @@ textarea{
 			        width:50%;
 			        height:20%;
 			        max-width:300px;
-			    -webkit-box-shadow:0 10px 20px -0px rgba(0, 0, 0, .5);
-			       -moz-box-shadow:0 10px 20px -0px rgba(0, 0, 0, .5);
-			            box-shadow:0 10px 20px -0px rgba(0, 0, 0, .5);
+			        box-shadow:0 10px 20px -0px rgba(0, 0, 0, .5);
 			    -webkit-transform:rotate(-3deg);
 			       -moz-transform:rotate(-3deg);
 			        -ms-transform:rotate(-3deg);
@@ -2527,12 +2525,12 @@ textarea{
 			}
 		.contacts .info {
 			width: 260px;
-			height: 300px;
+			height: 271px;
 			position: absolute;
 			z-index: 1;
 			background: #eee;
 			margin: 0;
-			padding: 41px 24px 32px 16px;
+			padding: 41px 24px 0 16px;
 		}
 		.contacts .pennant-tails {
 			display: block;
