@@ -1614,7 +1614,7 @@ textarea{
 		z-index: 999;
 	}
 		.header-menu>ul {
-			width: 880px;
+			width: 852px;
 			height: auto;
 			display: block;
 			margin: 0 auto;
@@ -1622,8 +1622,9 @@ textarea{
 		.header-menu>ul>li {
 			display: inline-block;
 			margin: 0 10px;
-
 		}
+			.header-menu>ul>li:first-child {margin-left: 0;}
+			.header-menu>ul>li:last-child {margin: 0; float: right;}
 		.header-menu>ul>li>a {
 			display: inline-block;
 			text-transform: uppercase;
@@ -2162,7 +2163,7 @@ textarea{
 	top: 0;
 }
 	.insta-menu-block {
-		width: 880px;
+		width: 854px;
 		height: 100%;
 		font-size: 0.001px;
 		margin: 0 auto;
@@ -2179,13 +2180,10 @@ textarea{
 			color: #f58026;
 			width: 190px;
 			float: left;
-			margin-left: 9px;
 		}
 		.insta-menu-block ul {
-			margin-left: 24px;
 			vertical-align: top;
 			float: right;
-			margin-right: 5px;
 		}
 		.insta-menu-block ul li {
 			font-size: 19px;
@@ -2193,6 +2191,7 @@ textarea{
 			line-height: 54px;
 			cursor: pointer;
 		}
+			.insta-menu-block ul li:last-child {margin-right: 0;}
 			.insta-menu-block ul li:hover {
 				color: #f58026;
 			}
