@@ -12,19 +12,23 @@ $(document).ready(function(){
 					close_gallery.next().css({"background":"#33cc99","color":"#fff"}).attr({"onclick":"","href":"/images/gallery/close/"+fbf});
 
 				}
-			}
+			}	
 		}
 	});
     pathUrl = window.location.pathname;
     pathUrl = pathUrl.split(".");
     $(window).scroll(function(){
-        if ($(window).scrollTop()>$(".header-main-1180").height()-$(".header-menu").height()-5){
+    	if (pathUrl[0].indexOf("/insta") >= 0) {
+    		if ($(window).scrollTop()>$(".header-main-1180").height()-5) {
+    			$(".insta-menu").addClass("sticky-1180-insta");
+    		} else {
+    			$(".insta-menu").removeClass("sticky-1180-insta");
+    		}
+    	} else if ($(window).scrollTop()>$(".header-main-1180").height()-$(".header-menu").height()-5){
             $(".header-menu").addClass("sticky-1180");//назначаем класс
-            $(".insta-menu").addClass("sticky-1180-insta");
         } else {
             $(".header-menu").removeClass("sticky-1180");
-            $(".insta-menu").removeClass("sticky-1180-insta");
-         }
+        }
         if ($(window).scrollTop()>$(".header").height()-$(".title-block").height()-40){
              $(".title_block").addClass("sticky");//назначаем класс
         } else {
@@ -33,15 +37,10 @@ $(document).ready(function(){
     });
     if($('.insta-menu').length >0 ){
         $(window).scroll(function(){ //во время прокрутки страницы
-									 //проверяем прошли ли мы хедер-высоту менюшки
-            
-   
-//если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс
-                
-            // то же для моб и планшетной версии
-           
-
-            // insta-menu lightning
+									 //проверяем прошли ли мы хедер-высоту менюшки          
+  			//если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс                
+            // то же для моб и планшетной версии          
+			// insta-menu lightning
             var descr = $(".content").find("h2:contains('описание')");
             var func = $(".content").find("h2:contains('функции')");
             var decor = $(".content").find("h2:contains('оформление')");
