@@ -1,6 +1,14 @@
 <?php
-$select = $db->prepare("SELECT id,url_name FROM gallery WHERE url_name = ?");
-$select->execute(array($gallery_id));
-$select_row = $select->fetch();
-$gallery_id = $select_row['id'];
+if($_POST['name'] !='' && !empty($_POST['name']) && !empty($_POST['password'])){
+	include '../db.php';
+	$select = $db->prepare("SELECT login,password FROM admin WHERE id = 1");
+	$select->execute();
+	$select_row = $select->fetch();
+	$login = $_POST['name'];
+	$password = sha1($_POST['password']);
+
+	if($login == $select_row['login'] && $password == $select_row['password']){
+		$_SESSION['admin'] = 1;
+	};
+}
 ?>
