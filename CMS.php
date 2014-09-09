@@ -1,3 +1,10 @@
+<?php
+session_start();
+if($_SESSION['admin']!='144'){
+	header('Location:../cms_enter.php');
+	die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

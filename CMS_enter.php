@@ -11,11 +11,11 @@
 		<div class="content">
 			<div class="enter-form">
 				<p>login</p>
-				<form id='form'>
+				<form id='form' method="POST" action="/backend/cms_enter.php">
 				<input type="text" name='login' class="display" value="">
 				<input type="text" name='name'>
 				<p>password</p>
-				<input type="password">
+				<input type="password" name="password">
 				</form>
 				<div class="enter-butt">
 					<p>вход</p>
@@ -25,8 +25,7 @@
 	</div><!-- end of container -->
 <script>
 	$('.enter-butt').click(function(){
-		alert('sd')
-		$('.form').submit();
+		$('#form').submit();
 	})
 </script>
 
