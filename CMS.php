@@ -608,6 +608,7 @@ if($_SESSION['admin']!='144'){
 							<p>Сохранить</p>
 						</div>
 						<span class='display tname'>photography</span>
+						<!-- привет, я комментарий -->
 					</div>
 					<div class="CMS-prewiew photo sortable" ondragover="return false" ondragstart="return false">
 					<?
