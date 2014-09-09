@@ -971,7 +971,6 @@ textarea{
 /*888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
 /*1180px*/
 .active-url {color: #f58026 !important;}
-@media all and (min-width: 1197px) {
 	/*header-main-1180*/
 	.header {display: none;}
 	.header-main-1180{
@@ -2116,7 +2115,6 @@ textarea{
 			width: 380px;
 			margin: 0 auto;
 		}
-}
 /*swiper*/
 .swiper-container {
 	width: 100%;
