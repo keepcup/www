@@ -310,7 +310,7 @@ textarea{
 	.order_button{
 		width:95.8%;
 		height: 60px;
-		margin: 30px 2.0833333333%;
+		margin: 30px 2.0833333333% 11px 2.0833333333%;
 		background: #f58026;
 		border-radius:7px;
 	}
@@ -327,7 +327,8 @@ textarea{
 		font-size: 18px;
 		font-weight: 300;
 		color: #999999;
-			text-align: center;
+		text-align: center;
+		margin-bottom: 11px;
 
 	}
 		.asart a{
@@ -337,6 +338,12 @@ textarea{
 			color: #e94e1b;
 			background: url(../images/index/asart_underline.png) bottom repeat-x;
 		}
+	.foot-copyright {
+		font-family: 'Roboto';
+		font-size: 12px;
+		color: #f58026;
+		text-align: center;
+	}
 /*instabudka*/
 	.description{
 		position: relative;
@@ -1467,7 +1474,7 @@ textarea{
 	}
 /*footer*/
 	.footer {
-		height: 251px;
+		height: 270px;
 	}
 	.social-footer {
 		width: 100%;
@@ -1503,8 +1510,9 @@ textarea{
 
 	.order_button{
 		width: 58.7%;
-		margin: 30px 20.65%;
+		margin: 30px 20.65% 11px 20.65%;
 	}
+	.foot-copyright {margin-bottom: 19px;}
 	.blog_all{
 		font-size: 28px;
 		font-weight: 400;
@@ -2077,6 +2085,10 @@ textarea{
 					color: #e94e1b;
 					text-decoration: underline;
 				}
+			.foot-copyright {
+				display: inline-block;
+				margin: 18px 0 0 106px;
+			}
 
 			.footer-logos a.logo {
 				float: right;

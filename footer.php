@@ -11,6 +11,9 @@
 			<p>заказать фотобудку</p>
 		</div></a>
 		<p class="asart">разработка проекта <a href="http://asartdesign.ru/">Asart group</a></p>
+		<p class="foot-copyright">
+			INSTABUDKA.RU <?php echo date("Y");?> | Все права защищены
+		</p>
 	</div>
 	<!-- footer-main-1180 -->
 		<div class="footer-main-1180">
@@ -44,6 +47,9 @@
 							<p>разработка проекта</p>
 							<a href="/">Asart group</a>
 						</div>
+						<p class="foot-copyright">
+							INSTABUDKA.RU <?php echo date("Y");?> | Все права защищены
+						</p>
 					</div>
 				</div>
 				<!-- EOF left -->
