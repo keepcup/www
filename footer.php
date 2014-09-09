@@ -73,5 +73,6 @@
 		</div>
 		<!-- end of footer -->
 </div><!--container_end-->
+<script type="text/javascript" src="js/retina.js"></script>
 </body>
 </html>
