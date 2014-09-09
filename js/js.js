@@ -35,7 +35,7 @@ $(document).ready(function(){
             $(".title_block").removeClass("sticky");
         }
     });
-    if($('.insta-menu').length >0 ){
+    if($('.insta-menu').length > 0 ){
         $(window).scroll(function(){ //во время прокрутки страницы
 									 //проверяем прошли ли мы хедер-высоту менюшки          
   			//если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс                
@@ -53,17 +53,19 @@ $(document).ready(function(){
             	$(".insta-menu").find("li").removeClass("active-url")
             	$(".insta-menu").find("li:contains("+func.text()+")").addClass("active-url");
             } else if (decor.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+decor.text()+")").hasClass("active-url") == false) {
-            	if ($(location).attr('pathname') == '/instashar.php') {
+            	if (pathUrl[0].indexOf("instashar") >= 0) {
             		$(".insta-menu").find("li").removeClass("active-url")
             		$(".insta-menu").find("li:contains("+decor.text()+")").addClass("active-url");
             	} else if (feat.offset().top - $(window).scrollTop() >= onPoint) {
             		$(".insta-menu").find("li").removeClass("active-url")
             		$(".insta-menu").find("li:contains("+decor.text()+")").addClass("active-url");
             	}         	
-            } else if (feat.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+feat.text()+")").hasClass("active-url") == false) {
-            	$(".insta-menu").find("li").removeClass("active-url")
-            	$(".insta-menu").find("li:contains("+feat.text()+")").addClass("active-url");
-            }
+            } else if (pathUrl[0].indexOf("instashar") <= 0) {
+	            if (feat.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+feat.text()+")").hasClass("active-url") == false) {
+	            	$(".insta-menu").find("li").removeClass("active-url")
+	            	$(".insta-menu").find("li:contains("+feat.text()+")").addClass("active-url");   
+	        	}
+	        }
         });
 
         $(".insta-menu").find("li").click(function(){ 
