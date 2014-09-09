@@ -85,17 +85,16 @@ $(document).ready(function(){
     })
     // header
     pathUrl = window.location.pathname;
-    pathUrl = pathUrl.split(".");
     $.each($(".header-menu, .menu-down").find('a'), function(){
-        if( $(this).attr('href') == pathUrl[0]+'.'+pathUrl[1]){
+        if( $(this).attr('href') == pathUrl){
             $('.title').text($(this).text())
         }
-        href = $(this).attr('href').split(".");
-        if(href[0] == pathUrl[0]){
+        href = $(this).attr('href');
+        if(href == pathUrl){
             $(this).addClass('active-url');
         }
     });
-    if(pathUrl[0]=='/'){
+    if(pathUrl=='/'){
         $(".header-menu, .menu-down").find('a:eq(0)').addClass('active-url');
     }
                     $( "li.insta-butt>ul" ).hide();
