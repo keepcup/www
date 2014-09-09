@@ -55,9 +55,9 @@ foreach ($files as $key => $value) {
 			// 	resize($file,$namePath,1728,698);
 			// }
 			
-				$position[$key+$startPosition] = str_replace($table.'_','',$position[$key+$startPosition]);
+				$position =$key+1;
 				$insert = $db->prepare("INSERT INTO gallery_img (img,img_preview,gallery_id,position) VALUES (?,?,?,?)");
-				$insert->execute(array($namePath,$namePathPreview,$gallery_id,$position[$key+$startPosition]));
+				$insert->execute(array($namePath,$namePathPreview,$gallery_id,$position));
 				echo $gallery_id;
 			break;
 		case 'gallery_closed':
