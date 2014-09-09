@@ -33,6 +33,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$position = str_replace($table.'_','',$position);
 			$insert = $db->prepare("INSERT INTO main_slider (img,position) VALUES (?,?)");
 			$insert->execute(array($namePath,$position));
+			echo $position;
 			break;
 		case 'insta':
 			$namePath = '../images/instabudka/'.$_POST['tablename'].'_'.$_POST['tablefile'].'.'.$mime;
