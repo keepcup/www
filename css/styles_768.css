@@ -781,7 +781,7 @@ textarea{
 						height: 10px;
 						margin-right: 17px;
 					}
-	/*photostudio*/
+		/*photostudio*/
 	.photostudio img{ width: 100%; }
 	.photostudio ul {
 		list-style: none;
@@ -955,7 +955,7 @@ textarea{
 		display: none;
 	}
 	/*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
-
+@media all and (max-width: 767px){
 	.blog_all{
 		font-size: 28px;
 		font-weight: 400;
@@ -968,10 +968,10 @@ textarea{
 		line-height: 55px;
 		padding-bottom: 5px;
 	}
-
+}
 /*768px*/
 /*88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888*/
-
+@media all and (min-width: 768px) and (max-width: 1179px){
 	.phone{
 		left: 11.067708333%;
 	}
@@ -1138,6 +1138,7 @@ textarea{
 		.gallery-closed_input input {
 			width: 430px;
 		}
+	
 	/*other_gallery*/
 
 	.other_gallery { height: auto;}
@@ -1433,7 +1434,8 @@ textarea{
 		line-height: 55px;
 		padding-bottom: 5px;
 	}
-/*end of 768px*/
+
+}/*end of 768px*/
 /*swiper*/
 .swiper-container {
 	width: 100%;
