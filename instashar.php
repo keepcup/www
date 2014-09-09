@@ -27,8 +27,8 @@ $insta_row = $insta_db->fetchAll();
 			<h2 class="instabudka_h2">описание</h2>
 			<!--<div class="description-pennant"></div>-->
 			<p class="description-text">
-				<span>ДЕЛАЕТ МОМЕНТАЛЬНЫЕ СНИМКИ</span><br>
-				<span>следит за вашим #хештегом в</span><a class='description-text-instagram'></a><br>
+				<span>следит за вашим #хештегом в</span><br>
+				<span>instagram</span><br>
 				<span>ПЕЧАТАЕТ СНИМКИ ЗА 10 СЕКУНД</span>
 			</p>
 
