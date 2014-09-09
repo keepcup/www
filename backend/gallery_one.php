@@ -15,7 +15,7 @@ $select_img_count = $select_img->rowCount();
 			<span class="id"><?echo $row['id']?></span>
 			<div class="gallery-text-belt">
 				<div class="gallery-text_block">
-					<p class="gallery-date"><?echo $row['date']?></p>
+					<p class="gallery-date"><?echo date('d.m' ,$row['date']);?></p>
 					<p class="gallery-title"><span><?echo $row['title']?></span><br>
 						<?echo $row['title_small']?>
 					</p>

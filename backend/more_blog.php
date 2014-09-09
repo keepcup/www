@@ -1,6 +1,6 @@
 <?include "../db.php";
 $limit = $_GET['limit'];
-$select = $db->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT :skip,2");
+$select = $db->prepare("SELECT * FROM blog ORDER BY date DESC LIMIT :skip,2");
 $select->bindValue(':skip', intval($limit), PDO::PARAM_INT);
 $select->execute();
 $row = $select->fetchAll();
@@ -27,7 +27,7 @@ for($i=0;$i<$select_count;$i++){
 				</div>
 				<img src="<?echo $row[$i]['img']?>" alt="">
 				<p class="blog-date">
-					<?$row[$i]['date'] = explode('.',$row[$i]['date']);?>
+					<?$row[$i]['date'] = explode('.',date('d.m' ,$row[$i]['date']));?>
 					<span><?echo $row[$i]['date'][0]?></span>.<?echo $row[$i]['date'][1]?>
 				</p>
 				<ul class="blog-social">

@@ -125,9 +125,10 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$url_name = preg_replace("/[^a-z0-9-]/i","", $url_name);
 			$position =implode(",", $_POST['position']);
 			$position = str_replace($table.'_','',$position);
+			$date = strtotime($new_perfs[1][1].'.'.date('Y'));
 
 			$insert = $db->prepare("INSERT INTO $table (title,title_small,date,url_name,position) VALUES (?,?,?,?,?)");
-			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$url_name, $position));
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$date,$url_name, $position));
 			echo $db->lastInsertId(); 
 			break;
 		case 'gallery_closed':
@@ -138,9 +139,10 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}
 			$url_name = translit($new_perfs[0][1].' '.$new_perfs[2][1]);
 			$url_name = str_replace(' ','-',$url_name)."-".$new_perfs[1][1];
+			$date = strtotime($new_perfs[1][1].'.'.date('Y'));
 
 			$insert = $db->prepare("INSERT INTO gallery (title,title_small,date,password,url_name) VALUES (?,?,?,?,?)");
-			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$new_perfs[1][1],$new_perfs[3][1],$url_name));
+			$insert->execute(array($new_perfs[0][1],$new_perfs[2][1],$date,$new_perfs[3][1],$url_name));
 			echo $db->lastInsertId(); 
 			break;
 		case 'clients':
@@ -179,8 +181,6 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$insert->execute(array($new_perfs[0][1],$namePath,$gallery_id,$position,$position));
 			break;
 		case 'blog':
-			
-			
 			$results = urldecode($_POST['textserialize']);
 			$perfs = explode("&", $results);
 			foreach($perfs as $i => $value) {
@@ -208,8 +208,9 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}else{
 				$gallery_id= 0;
 			}
+			$date = strtotime($new_perfs[3][1].'.'.date('Y'));
 			$insert = $db->prepare("INSERT INTO blog (title,title_small,date,img,text,gallery_id) VALUES (?,?,?,?,?,?)");
-			$insert->execute(array($new_perfs[0][1],$new_perfs[1][1],$new_perfs[3][1],$namePath,$new_perfs[2][1],$gallery_id));
+			$insert->execute(array($new_perfs[0][1],$new_perfs[1][1],$date,$namePath,$new_perfs[2][1],$gallery_id));
 			break;
 	}
 	// $w = 101;
