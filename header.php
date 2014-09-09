@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Instabudka</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/css/styles_768.css">
+	<link rel="stylesheet" href="/css/styles_1180.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="/js/js.js"></script>
 	<!-- Add fancyBox -->
