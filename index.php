@@ -1,4 +1,7 @@
-<?include "header.php";$url='index';?>
+<?include "header.php";$url='index';
+require_once 'backend/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+?>
 <script src="/js/idangerous.swiper-2.1.min.js"></script>
 <!-- <script src="/js/idangerous.swiper.min.js"></script> -->
 	<div class="content">
