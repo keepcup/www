@@ -32,7 +32,7 @@ $(document).ready(function() {
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		
 		//dataArray[Index]=dataArrayArray;
-		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();dataArray[Index]=[];}
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
 		previewZone = $(this).parent().parent().parent().next().find('.upload_preview');
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		$('.photo-preview-new').not(previewZone+'.photo-preview-new').remove();
-		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();dataArray[Index]=[];}
 		
    		// Заполняем массив выбранными изображениями
    		var files = $(this)[0].files;
@@ -205,8 +205,8 @@ $(document).ready(function() {
 			// new_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
 			// new_gallery_form.find('.h_2').val('Заголовок 2');
 			// new_gallery_form.find('.date').val('ДАТА');
-			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
-			saveButton.closest('.new_gallery').addClass('display');
+			// saveButton.closest('.photo-left').next().find('.photo-preview').remove();
+			// saveButton.closest('.new_gallery').addClass('display');
 			return false;
 		}else if(saveButton.hasClass('new_closed_gallery_save')){
 			new_closed_gallery_form = $('#new_closed_gallery_form');

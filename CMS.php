@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 if($_SESSION['admin']!='144'){
 	header('Location:../cms_enter.php');

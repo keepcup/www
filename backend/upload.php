@@ -23,11 +23,19 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			
 			list($w, $h) = getimagesize($file);
 			if($w>1728 || $h>698){
-				$w=($w-1727)/2;
-				$h=($h-697)/2;
-				crop($file,$namePath,array($w,$h,-$w,-$h));
+				if($w>2500){
+					resize($file, $namePath, 2000, 0);
+					list($w, $h) = getimagesize($namePath);
+					$w=($w-1727)/2;
+					$h=($h-697)/2;
+					crop($namePath,$namePath,array($w,$h,-$w,-$h));
+				}else{
+					$w=($w-1727)/2;
+					$h=($h-697)/2;
+					crop($file,$namePath,array($w,$h,-$w,-$h));
+				}
 			}else{
-				resize($file,$namePath,1728,698);
+				resize($namePath,$namePath,1728,698);
 			}
 			
 			$position = str_replace($table.'_','',$position);
@@ -39,22 +47,34 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$namePath = '../images/instabudka/'.$_POST['tablename'].'_'.$_POST['tablefile'].'.'.$mime;
 			list($w, $h) = getimagesize($file);
 			$tablefile = $_POST['tablefile'];
-			if($table == 3 || $table == 5 || $table == 9 || $table == 11 || $table == 15 || $table == 17|| $table == 18 ){
+			if($tablefile == '3' || $tablefile == '5' || $tablefile == '9' || $tablefile == '11' || $tablefile == '15' || $tablefile == '17' || $tablefile == '18' ){
 				if($w>640 || $h>427){
-					$w=($w-639)/2;
-					$h=($h-426)/2;
-					crop($file,$namePath,array($w,$h,-$w,-$h));
+					if($w>1000){
+						resize($file, $namePath, 1000, 0);
+						list($w, $h) = getimagesize($namePath);
+						$w=($w-639)/2;
+						$h=($h-426)/2;
+						crop($namePath,$namePath,array($w,$h,-$w,-$h));
+					}else{
+						$w=($w-639)/2;
+						$h=($h-426)/2;
+						crop($file,$namePath,array($w,$h,-$w,-$h));
+					}
 				}else{
 					resize($file,$namePath,640,427);
 				}
 			}else{
 				if($w>1727 || $h>697){
-					if($h>697){
+					if($w>2500){
+						resize($file, $namePath, 2000, 0);
+						list($w, $h) = getimagesize($namePath);
+						$w=($w-1727)/2;
 						$h=($h-697)/2;
-						crop($file,$namePath,array(0,$h,0,-$h));
-					}elseif($w>1727){
-						$h=($h-1727)/2;
-						crop($file,$namePath,array($w,$h,-$w,$h));
+						crop($namePath,$namePath,array($w,$h,-$w,-$h));
+					}else{
+						$w=($w-1727)/2;
+						$h=($h-697)/2;
+						crop($file,$namePath,array($w,$h,-$w,-$h));
 					}
 				}else{
 					resize($file,$namePath,1728,698);
@@ -71,45 +91,28 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			list($w, $h) = getimagesize($file);
 			if($w>1980 ||$h>1200){
 				if($w>$h){
-					$scale= $w/$h;
-					$newHeight = round(($w-1980)/$scale);
-					resize($file,$namePath,1980,$h-$newHeight);
+					resize($file,$namePath,1980,0);
 				}elseif($w<$h){
-					$scale= $h/$w;
-					$newHeight = round(($h-1200)/$scale);
-					resize($file,$namePath,$w-$newHeight,1200);
+					resize($file,$namePath,0,1200);
 				}
 			}else{
 				resize($file,$namePath,$w,$h);
 			};
-
 			if($w>380 || $h>250){
-				if($w>$h){
-					$scale= $w/$h;
-					$newHeight = round(($w-380)/$scale);
-					resize($file,$namePathPreview,380,$h-$newHeight);
-				}elseif($w<$h){
-					$scale= $h/$w;
-					$newHeight = round(($h-250)/$scale);
-					resize($file,$namePathPreview,$w-$newHeight,250);
+				if($w>1000){
+					resize($file, $namePathPreview, 500, 0);
+					list($w, $h) = getimagesize($namePathPreview);
+					$w=(round($w-379)/2);
+					$h=(round($h-249)/2);
+					crop($namePathPreview,$namePathPreview,array($w,$h,-$w,-$h));
+				}else{
+					$w=(round($w-379)/2);
+					$h=(round($h-249)/2);
+					crop($file,$namePathPreview,array($w,$h,-$w,-$h));
 				}
 			}else{
 				resize($file,$namePathPreview,$w,$h);
 			};
-			// if($w>600 || $h>364){
-			// 	$w=($w-600)/2;
-			// 	$h=($h-364)/2;
-			// 	crop($file,$namePathPreview,array($w,$h,-$w,-$h));
-			// }else{
-			// 	resize($file,$namePathPreview,600,364);
-			// }
-			// if($w>380 || $h>250){
-			// 	$w=($w-380)/2;
-			// 	$h=($h-250)/2;
-			// 	crop($namePathPreview,$namePathPreview,array($w,$h,-$w,-$h));
-			// }else{
-			// 	resize($namePathPreview,$namePathPreview,380,250);
-			// }
 			$position = str_replace($table.'_','',$position);
 			$insert = $db->prepare("INSERT INTO $table (img,img_preview,position) VALUES (?,?,?)");
 			$insert->execute(array($namePath,$namePathPreview,$position));
@@ -155,13 +158,9 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}
 			list($w, $h) = getimagesize($file);
 			if($w>$h){
-				$scale= $w/$h;
-				$newHeight = round(($w-100)/$scale);
-				resize($file,$namePath,100,$h-$newHeight);
+				resize($file,$namePath,100,0);
 			}elseif($w<$h){
-				$scale= $h/$w;
-				$newHeight = round(($h-100)/$scale);
-				resize($file,$namePath,$w-$newHeight,100);
+				resize($file,$namePath,0,100);
 			}
 			$gallery_id = explode('/',$new_perfs[1][1]);
 			$gallery_id = end($gallery_id);
@@ -188,10 +187,19 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			}
 			$namePath = '../images/'.$_POST['tablename']."/images/".$randomName;
 			list($w, $h) = getimagesize($file);
+
 			if($w>640 || $h>427){
-				$w=($w-639)/2;
-				$h=($h-426)/2;
-				crop($file,$namePath,array($w,$h,-$w,-$h));
+				if($w>2500){
+					resize($file, $namePath, 1000, 0);
+					list($w, $h) = getimagesize($namePath);
+					$w=($w-639)/2;
+					$h=($h-426)/2;
+					crop($namePath,$namePath,array($w,$h,-$w,-$h));
+				}else{
+					$w=($w-639)/2;
+					$h=($h-426)/2;
+					crop($file,$namePath,array($w,$h,-$w,-$h));
+				}
 			}else{
 				resize($file,$namePath,640,427);
 			}
@@ -213,20 +221,4 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			$insert->execute(array($new_perfs[0][1],$new_perfs[1][1],$date,$namePath,$new_perfs[2][1],$gallery_id));
 			break;
 	}
-	// $w = 101;
-	// $h = 50;
-	// 	if($w>$h){
-	// 			$scale= $w/$h;
-	// 			$newHeight = round(($w-100)/$scale);
-	// 			echo $scale."<br>";
-	// 			echo $newHeight."<br>";
-	// 			echo $h-$newHeight."<br>";
-	// 			resize($file,$namePath,100,$h-$newHeight);
-	// 		}elseif($w<$h){
-	// 			resize($file,$namePath,100,100);
-	// 		}
-	// $url = 'http://insta/gallery.php';
-	// $gallery_id = explode('/',$url);
-	// echo end($gallery_id);
-
 ?>

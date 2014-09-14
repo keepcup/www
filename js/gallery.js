@@ -2,7 +2,7 @@ $(document).ready(function(){
 scroll = 600;
 limit = 2;
 $(window).scroll(function(){
-    if($(document).scrollTop() > $('#more').offset().top-800){
+    if($(document).scrollTop() > $('#more').offset().top-1000){
         scroll+=400;
             $.ajax({
                 url:'backend/more_gallery.php',

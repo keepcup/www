@@ -36,6 +36,7 @@ $(document).ready(function(){
         }
     });
     if($('.insta-menu').length >0 ){
+        $('.insta-butt').children('a').addClass('active-url')
         $(window).scroll(function(){ //во время прокрутки страницы
 									 //проверяем прошли ли мы хедер-высоту менюшки          
   			//если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс                
