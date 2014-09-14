@@ -189,7 +189,7 @@ $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
 			list($w, $h) = getimagesize($file);
 
 			if($w>640 || $h>427){
-				if($w>2500){
+				if($w>1000){
 					resize($file, $namePath, 1000, 0);
 					list($w, $h) = getimagesize($namePath);
 					$w=($w-639)/2;
