@@ -54,7 +54,6 @@
 		</div>
 	</div><!--content_end-->
 	<script>
-			window.onload = function() {
 				var mySwiper = new Swiper('.swiper-container',{
 					freeModeFluid: true,
 				    autoplay: 20000,
@@ -63,17 +62,14 @@
 				    calculateHeight:true,
 				    loop: true
 				})
-			}
 				//ReInit Swiper
 				// swiper.reInit()
-			var mySwiper = $('.swiper-container').swiper()
 			$(window).resize(function(){
 				//Unset height
 				$('.swiper-container').css({height:''})
 				//Calc Height
 				$('.swiper-container').css({height: $('.swiper-container').find('img').height()})
 				//ReInit Swiper
-				mySwiper.reInit()
 				page_w = $("html").width()
 			})
 				page_w = $("html").width();	

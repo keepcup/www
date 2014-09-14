@@ -1,6 +1,6 @@
 <?include "../db.php";
 $limit = $_GET['limit'];
-$select = $db->prepare("SELECT * FROM gallery ORDER BY id DESC LIMIT :skip,2");
+$select = $db->prepare("SELECT * FROM gallery ORDER BY date DESC LIMIT :skip,2");
 $select->bindValue(':skip', intval($limit), PDO::PARAM_INT);
 $select->execute();
 $row = $select->fetchAll();
@@ -24,7 +24,7 @@ for($i=0;$i<$select_count;$i++){
 				<span class="id"><?echo $row[$i]['id'];?></span>
 				<div class="gallery-text-belt">
 					<div class="gallery-text_block">
-						<p class="gallery-date"><?echo $row[$i]['date'];?></p>
+						<p class="gallery-date"><?echo date('d.m' ,$row[$i]['date']);?></p>
 						<p class="gallery-title"><span><?echo $row[$i]['title']?></span><br>
 							<?echo $row[$i]['title_small']?>
 						</p>
@@ -45,7 +45,7 @@ for($i=0;$i<$select_count;$i++){
 	<?}elseif($row[$i]['password'] != ''){?>	
 			<div class="gallery closed gallery-bgc">
 				<div class="gallery-text_block">
-					<p class="gallery-date"><?echo $row[$i]['date']?></p>
+					<p class="gallery-date"><?echo date('d.m' ,$row[$i]['date']);?></p>
 					<p class="gallery-title"><span>закрытая фотогаллерея <!-- <span class="gallery-date-close">(<?echo date('d.m',strtotime($row[$i]['date']))?>)</span> --></span><br>
 						введите код для просмотра фотографий
 					</p>

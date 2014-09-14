@@ -4,10 +4,10 @@ switch($url){
 	case 'blog':$limit=3;break;
 }
 if(!empty($_GET['id'])){
-	$select = $db->prepare("SELECT * FROM blog WHERE id =? ORDER BY id DESC");
+	$select = $db->prepare("SELECT * FROM blog WHERE id =? ORDER BY date DESC");
 	$select->execute(array($_GET['id']));
 }else{
-	$select = $db->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT :skip ");
+	$select = $db->prepare("SELECT * FROM blog ORDER BY date DESC LIMIT :skip ");
 	$select->bindValue(':skip', intval($limit), PDO::PARAM_INT);
 	$select->execute();
 }
@@ -38,7 +38,7 @@ for($i=0;$i<$select_count;$i++){
 				</div>
 				<img src="<?echo $row[$i]['img']?>" alt="">
 				<p class="blog-date">
-					<?$row[$i]['date'] = explode('.',$row[$i]['date']);?>
+					<?$row[$i]['date'] = explode('.',date('d.m' ,$row[$i]['date']));?>
 					<span><?echo $row[$i]['date'][0]?></span>.<?echo $row[$i]['date'][1]?>
 				</p>
 				<ul class="blog-social">
@@ -61,7 +61,7 @@ for($i=0;$i<$select_count;$i++){
 				<a href="/blog.php?id=<?echo $row[$i]['id']?>">
 					<img src="<?echo $row[$i]['img']?>" alt="<?echo $row[$i]['title']?>" class="news_img">
 					<div class="news-text">
-						<p class="news-date"><?echo $row[$i]['date']?></p>
+						<p class="news-date"><?echo date('d.m' ,$row[$i]['date']);?></p>
 						<p class="news-title"><?echo $row[$i]['title'].'<br>'.$row[$i]['title_small']?></p>
 					</div>
 				</a>	

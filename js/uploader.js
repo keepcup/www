@@ -32,7 +32,7 @@ $(document).ready(function() {
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		
 		//dataArray[Index]=dataArrayArray;
-		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();dataArray[Index]=[];}
 		var defaultUploadBtn = $(this).prev().find('input');
 		var files = e.dataTransfer.files;
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
 		previewZone = $(this).parent().parent().parent().next().find('.upload_preview');
 		Index = $('.CMS-prewiew').find('.upload_preview').index(previewZone);
 		$('.photo-preview-new').not(previewZone+'.photo-preview-new').remove();
-		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();}
+		if(previewZone.hasClass('delete_current')){previewZone.find('div').remove();dataArray[Index]=[];}
 		
    		// Заполняем массив выбранными изображениями
    		var files = $(this)[0].files;
@@ -189,7 +189,6 @@ $(document).ready(function() {
 			var new_gallery_form = $('#new_gallery_form')
 			var textserialize = new_gallery_form.serialize();
 			var position = saveView.sortable("toArray");
-			startPosition = saveView.find('.photo-preview-old').length;
 			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
 
 			var tableName = saveButton.next().text();
@@ -198,7 +197,7 @@ $(document).ready(function() {
 			file = dataArray[saveIndex];
 			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
 				lastInsertedId= dataid;
-				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName, position: position}, function(data,success){
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName}, function(data,success){
 					window.location.reload();
 				});
 			});
@@ -213,7 +212,6 @@ $(document).ready(function() {
 			new_closed_gallery_form = $('#new_closed_gallery_form');
 			var textserialize = new_closed_gallery_form.serialize();
 			var position = saveView.sortable("toArray");
-			startPosition = saveView.find('.photo-preview-old').length;
 			saveView.find('.photo-preview-new').removeClass('photo-preview-new').addClass('photo-preview-old');
 			var tableName = saveButton.next().text();
 			saveButton.parent('div').next().find('.upload_preview').find('.close_cross_new').removeClass('close_cross_new');
@@ -221,14 +219,16 @@ $(document).ready(function() {
 			file = dataArray[saveIndex];
 			$.post('backend/upload.php', {textserialize:textserialize , tablename: tableName}, function(dataid,success){
 				lastInsertedId= dataid;
-				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName});
+				$.post('backend/upload_images.php', {lastinsertedid:lastInsertedId ,file :file, tablename: tableName}, function(data,success){
+					window.location.reload();
+				});
 			});
 			
 			dataArray[saveIndex] = [];
-			new_closed_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
-			new_closed_gallery_form.find('.h_2').val('Заголовок 2');
-			new_closed_gallery_form.find('.date').val('ДАТА');
-			new_closed_gallery_form.find('.pass').val('ПАРОЛЬ');
+			// new_closed_gallery_form.find('.h_1').val('ЗАГОЛОВОК 1');
+			// new_closed_gallery_form.find('.h_2').val('Заголовок 2');
+			// new_closed_gallery_form.find('.date').val('ДАТА');
+			// new_closed_gallery_form.find('.pass').val('ПАРОЛЬ');
 			saveButton.closest('.photo-left').next().find('.photo-preview').remove();
 			saveButton.closest('.new_gallery').addClass('display');
 			return false;
@@ -244,7 +244,6 @@ $(document).ready(function() {
 			id= saveButton.prev().text()
 			$.post('backend/update.php', {id: id , textserialize:textserialize , tablename: tableName, position:position}, function(dataid,success){
 				lastInsertedId= dataid;
-				alert(lastInsertedId)
 				$.post('backend/upload_images.php', {lastinsertedid:id ,file :file, tablename: tableName, position:position, startPosition:startPosition}, function(dataid,success){
 					window.location.reload();
 				});
@@ -334,7 +333,6 @@ $(document).ready(function() {
 			$.post('backend/position.php', {position:position, tablename: tableName });
 			$.each(dataArray[saveIndex], function(index, file) {
 				indexPosition = index+1;
-				alert(indexPosition);
 				// загружаем страницу и передаем значения, используя HTTP POST запрос
 				$.post('backend/upload.php', {position:indexPosition+startPosition, tablename: tableName, file :dataArray[saveIndex][index] },function(data,success){
 					// alert(data)

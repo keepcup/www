@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 if($_SESSION['admin']!='144'){
 	header('Location:../cms_enter.php');
@@ -747,7 +748,7 @@ if($_SESSION['admin']!='144'){
 				</div>
 				<div class="right-content sbscroller">
 				<?
-				$gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY id DESC");
+				$gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY date DESC");
 				// $gallery_db = $db->prepare("SELECT * FROM gallery ORDER BY date DESC");
 				$gallery_db->execute();
 				$gallery_row = $gallery_db->fetchAll();
@@ -763,7 +764,7 @@ if($_SESSION['admin']!='144'){
 				?>	
 					<div class="gallery">
 						<?if($gallery_row[$i]['password'] == ''){?><img class="prewiew" src="<?echo $gallery_img_row[0]['img']?>" alt=""><?}?>
-						<p class="date"><?echo $gallery_row[$i]['date']?></p>
+						<p class="date"><?echo date('d.m' ,$gallery_row[$i]['date']);?></p>
 						<div class="gallery-label">
 							<p class="h_1"><?echo $gallery_row[$i]['title']?></p>
 							<p class="h_2"><?echo $gallery_row[$i]['title_small']?></p>
@@ -781,7 +782,7 @@ if($_SESSION['admin']!='144'){
 						<div class="CMS-buttons">
 							<form class="gallery_update_form">
 							<input type="text" name="h_1" class="h_1" value="<?echo $gallery_row[$i]['title']?>" onfocus="if(this.value=='ЗАГОЛОВОК 1') this.value='';" onblur="if(!this.value) this.value='ЗАГОЛОВОК 1';">
-							<input type="text" name="date" class="date" value="<?echo $gallery_row[$i]['date']?>" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
+							<input type="text" name="date" class="date" value="<?echo date('d.m' ,$gallery_row[$i]['date']);?>" onfocus="if(this.value=='ДАТА') this.value='';" onblur="if(!this.value) this.value='ДАТА';">
 							<p class="label-date">в формате 01.02</p>
 							<input type="text" name="h_2" class="h_2" value="<?echo $gallery_row[$i]['title_small']?>" onfocus="if(this.value=='Заголовок 2') this.value='';" onblur="if(!this.value) this.value='Заголовок 2';">
 							<?if($gallery_row[$i]['password'] != ''){?><input type="text" name="pass" class="pass" value="<?echo $gallery_row[$i]['password']?>" onfocus="if(this.value=='ПАРОЛЬ') this.value='';" onblur="if(!this.value) this.value='ПАРОЛЬ';">
@@ -984,7 +985,7 @@ if($_SESSION['admin']!='144'){
 				</div>
 				<div class="right-content sbscroller">
 					<?
-					$blog_db = $db->prepare("SELECT * FROM blog ORDER BY id DESC");
+					$blog_db = $db->prepare("SELECT * FROM blog ORDER BY date DESC");
 					$blog_db->execute();
 					$blog_row = $blog_db->fetchAll();
 					$blog_count = $blog_db->rowCount();
@@ -1003,7 +1004,7 @@ if($_SESSION['admin']!='144'){
 					?>
 					<div class="gallery event">
 						<img class="prewiew" src="<?echo $blog_row[$i]['img'];?>" alt="">
-						<p class="date"><?echo $blog_row[$i]['date'];?></p>
+						<p class="date"><?echo date('d.m' ,$blog_row[$i]['date']);?></p>
 						<div class="gallery-label">
 							<p class="h_1"><?echo $blog_row[$i]['title'];?></p>
 							<p class="h_2"><?echo $blog_row[$i]['title_small'];?></p>
@@ -1055,7 +1056,7 @@ if($_SESSION['admin']!='144'){
 							<p class="label-symbols_left">1000 символов</p>
 						</div>
 						<div class="bottom-side">
-							<input type="text" name="date" class="date" placeholder="ДАТА" value="<?echo $blog_row[$i]['date'];?>">						
+							<input type="text" name="date" class="date" placeholder="ДАТА" value="<?echo date('d.m' ,$blog_row[$i]['date']);?>">						
 							<input type="text" name="gallery_url" class="gallery_url" value="<?echo $blog_number_row['url_name'];?>">
 							<p class="label-gallery_url">ссылка на галерею</p>
 							<p class="label-date">в формате 01.02</p>

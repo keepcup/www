@@ -29,35 +29,32 @@ foreach ($files as $key => $value) {
 			list($w, $h) = getimagesize($file);
 			if($w>1980 ||$h>1200){
 				if($w>$h){
-					$scale= $w/$h;
-					$newHeight = round(($w-1980)/$scale);
-					resize($file,$namePath,1980,$h-$newHeight);
+					resize($file,$namePath,1980,0);
 				}elseif($w<$h){
-					$scale= $h/$w;
-					$newHeight = round(($h-1200)/$scale);
-					resize($file,$namePath,$w-$newHeight,1200);
+					resize($file,$namePath,0,1200);
 				}
 			}else{
 				resize($file,$namePath,$w,$h);
 			}
 			if($w>380 || $h>250){
-				$w=($w-380)/2;
-				$h=($h-250)/2;
-				crop($file,$namePathPreview,array($w,$h,-$w,-$h));
+				if($w>1000){
+					resize($file, $namePathPreview, 500, 0);
+					list($w, $h) = getimagesize($namePathPreview);
+					$w=(round($w-379)/2);
+					$h=(round($h-249)/2);
+					crop($namePathPreview,$namePathPreview,array($w,$h,-$w,-$h));
+				}else{
+					$w=(round($w-379)/2);
+					$h=(round($h-249)/2);
+					crop($file,$namePathPreview,array($w,$h,-$w,-$h));
+				}
 			}else{
 				resize($file,$namePathPreview,380,169);
 			}
-			// if($w>1728 || $h>698){
-			// 	$w=($w-1727)/2;
-			// 	$h=($h-697)/2;
-			// 	crop($file,$namePath,array($w,$h,-$w,-$h));
-			// }else{
-			// 	resize($file,$namePath,1728,698);
-			// }
-			
-				$position[$key+$startPosition] = str_replace($table.'_','',$position[$key+$startPosition]);
+
+				$position =$key+1;
 				$insert = $db->prepare("INSERT INTO gallery_img (img,img_preview,gallery_id,position) VALUES (?,?,?,?)");
-				$insert->execute(array($namePath,$namePathPreview,$gallery_id,$position[$key+$startPosition]));
+				$insert->execute(array($namePath,$namePathPreview,$gallery_id,$position));
 				echo $gallery_id;
 			break;
 		case 'gallery_closed':
