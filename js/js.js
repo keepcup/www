@@ -16,9 +16,8 @@ $(document).ready(function(){
 		}
 	});
     pathUrl = window.location.pathname;
-    pathUrl = pathUrl.split(".");
     $(window).scroll(function(){
-    	if (pathUrl[0].indexOf("/insta") >= 0) {
+    	if (pathUrl.indexOf("/insta") >= 0) {
     		if ($(window).scrollTop()>$(".header-main-1180").height()-5) {
     			$(".insta-menu").addClass("sticky-1180-insta");
     		} else {
@@ -55,14 +54,14 @@ $(document).ready(function(){
             	$(".insta-menu").find("li").removeClass("active-url")
             	$(".insta-menu").find("li:contains("+func.text()+")").addClass("active-url");
             } else if (decor.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+decor.text()+")").hasClass("active-url") == false) {
-            	if (pathUrl[0].indexOf("instashar") >= 0) {
+            	if (pathUrl.indexOf("instashar") >= 0) {
             		$(".insta-menu").find("li").removeClass("active-url")
             		$(".insta-menu").find("li:contains("+decor.text()+")").addClass("active-url");
             	} else if (feat.offset().top - $(window).scrollTop() >= onPoint) {
             		$(".insta-menu").find("li").removeClass("active-url")
             		$(".insta-menu").find("li:contains("+decor.text()+")").addClass("active-url");
             	}         	
-            } else if (pathUrl[0].indexOf("instashar") <= 0) {
+            } else if (pathUrl.indexOf("instashar") <= 0) {
 	            if (feat.offset().top - $(window).scrollTop() < onPoint && $(".insta-menu").find("li:contains("+feat.text()+")").hasClass("active-url") == false) {
 	            	$(".insta-menu").find("li").removeClass("active-url")
 	            	$(".insta-menu").find("li:contains("+feat.text()+")").addClass("active-url");   
