@@ -35,12 +35,9 @@ $(document).ready(function(){
             $(".title_block").removeClass("sticky");
         }
     });
-<<<<<<< HEAD
-    if($('.insta-menu').length > 0 ){
-=======
+
     if($('.insta-menu').length >0 ){
         $('.insta-butt').children('a').addClass('active-url')
->>>>>>> origin/cms_правки
         $(window).scroll(function(){ //во время прокрутки страницы
 									 //проверяем прошли ли мы хедер-высоту менюшки          
   			//если не достигли указанной высоты или когда проскролили вверх страницы удаляем класс                
